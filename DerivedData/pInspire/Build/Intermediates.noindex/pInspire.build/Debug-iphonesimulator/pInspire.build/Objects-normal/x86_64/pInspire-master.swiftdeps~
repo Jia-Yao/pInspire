@@ -1,0 +1,7 @@
+version: "Apple Swift version 4.1 (swiftlang-902.0.48 clang-902.0.37.1)"
+options: "120b28e85ad1e6ca6bc1c95768eab84d"
+build_time: [1524955051, 719101000]
+inputs:
+  "/Users/jiayao/Desktop/stanford/Spring2018/CS377u/pInspire/pInspire/CreatePollViewController.swift": [1524955051, 0]
+  "/Users/jiayao/Desktop/stanford/Spring2018/CS377u/pInspire/pInspire/AppDelegate.swift": [1524948880, 0]
+  "/Users/jiayao/Desktop/stanford/Spring2018/CS377u/pInspire/pInspire/pInspireViewController.swift": [1524955014, 0]
