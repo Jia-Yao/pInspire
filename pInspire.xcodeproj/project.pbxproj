@@ -14,6 +14,8 @@
 		1803781320951712009F214E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1803781120951712009F214E /* LaunchScreen.storyboard */; };
 		1803781B20952DE5009F214E /* pInspireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1803781A20952DE5009F214E /* pInspireViewController.swift */; };
 		1803781D2095318F009F214E /* Poll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1803781C2095318F009F214E /* Poll.swift */; };
+		BAA4076A2095372800453A34 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA407692095372800453A34 /* User.swift */; };
+		BAA4076C2095388D00453A34 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA4076B2095388D00453A34 /* Option.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		1803781420951712009F214E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1803781A20952DE5009F214E /* pInspireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pInspireViewController.swift; sourceTree = "<group>"; };
 		1803781C2095318F009F214E /* Poll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poll.swift; sourceTree = "<group>"; };
+		BAA407692095372800453A34 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BAA4076B2095388D00453A34 /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,12 +66,22 @@
 				1803781A20952DE5009F214E /* pInspireViewController.swift */,
 				1803780A20951710009F214E /* CreatePollViewController.swift */,
 				1803780C20951710009F214E /* Main.storyboard */,
-				1803781C2095318F009F214E /* Poll.swift */,
+				BAA4076D20953A6700453A34 /* Model */,
 				1803780F20951712009F214E /* Assets.xcassets */,
 				1803781120951712009F214E /* LaunchScreen.storyboard */,
 				1803781420951712009F214E /* Info.plist */,
 			);
 			path = pInspire;
+			sourceTree = "<group>";
+		};
+		BAA4076D20953A6700453A34 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BAA407692095372800453A34 /* User.swift */,
+				1803781C2095318F009F214E /* Poll.swift */,
+				BAA4076B2095388D00453A34 /* Option.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +158,8 @@
 				1803781D2095318F009F214E /* Poll.swift in Sources */,
 				1803780B20951710009F214E /* CreatePollViewController.swift in Sources */,
 				1803780720951710009F214E /* AppDelegate.swift in Sources */,
+				BAA4076A2095372800453A34 /* User.swift in Sources */,
+				BAA4076C2095388D00453A34 /* Option.swift in Sources */,
 				1803781B20952DE5009F214E /* pInspireViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
