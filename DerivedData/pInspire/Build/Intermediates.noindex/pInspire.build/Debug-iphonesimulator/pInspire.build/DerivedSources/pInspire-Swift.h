@@ -164,6 +164,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 #if __has_feature(modules)
 @import UIKit;
+@import Foundation;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -196,18 +197,42 @@ SWIFT_CLASS("_TtC8pInspire11AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSBundle;
+@class UITextField;
 @class NSCoder;
 
+SWIFT_CLASS("_TtC8pInspire23CreatePollTableViewCell")
+@interface CreatePollTableViewCell : UITableViewCell
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified choiceContent;
+- (void)awakeFromNib;
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated;
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UIButton;
+@class UITableView;
+@class UISwitch;
+@class UIStoryboardSegue;
+@class NSBundle;
+
 SWIFT_CLASS("_TtC8pInspire24CreatePollViewController")
-@interface CreatePollViewController : UIViewController
+@interface CreatePollViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified doneButton;
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified pollQuestion;
+@property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified options;
+@property (nonatomic, weak) IBOutlet UISwitch * _Null_unspecified anonymousSwitch;
 - (void)viewDidLoad;
-- (void)didReceiveMemoryWarning;
+- (BOOL)textFieldShouldReturn:(UITextField * _Nonnull)textField SWIFT_WARN_UNUSED_RESULT;
+- (void)textFieldDidEndEditing:(UITextField * _Nonnull)textField;
+- (void)textFieldDidBeginEditing:(UITextField * _Nonnull)textField;
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (IBAction)cancel:(UIButton * _Nonnull)sender;
+- (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UITableView;
 
 SWIFT_CLASS("_TtC8pInspire22pInspireViewController")
 @interface pInspireViewController : UITableViewController

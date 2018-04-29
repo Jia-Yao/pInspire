@@ -13,9 +13,10 @@
 		1803781020951712009F214E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1803780F20951712009F214E /* Assets.xcassets */; };
 		1803781320951712009F214E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1803781120951712009F214E /* LaunchScreen.storyboard */; };
 		1803781B20952DE5009F214E /* pInspireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1803781A20952DE5009F214E /* pInspireViewController.swift */; };
-		1803781D2095318F009F214E /* Poll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1803781C2095318F009F214E /* Poll.swift */; };
-		BAA4076A2095372800453A34 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA407692095372800453A34 /* User.swift */; };
-		BAA4076C2095388D00453A34 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA4076B2095388D00453A34 /* Option.swift */; };
+		1803782120953D14009F214E /* CreatePollTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1803782020953D14009F214E /* CreatePollTableViewCell.swift */; };
+		1803782F20954A25009F214E /* Choice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1803782C20954A25009F214E /* Choice.swift */; };
+		1803783020954A25009F214E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1803782D20954A25009F214E /* User.swift */; };
+		1803783120954A25009F214E /* Poll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1803782E20954A25009F214E /* Poll.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,9 +28,10 @@
 		1803781220951712009F214E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1803781420951712009F214E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1803781A20952DE5009F214E /* pInspireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pInspireViewController.swift; sourceTree = "<group>"; };
-		1803781C2095318F009F214E /* Poll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poll.swift; sourceTree = "<group>"; };
-		BAA407692095372800453A34 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		BAA4076B2095388D00453A34 /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
+		1803782020953D14009F214E /* CreatePollTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePollTableViewCell.swift; sourceTree = "<group>"; };
+		1803782C20954A25009F214E /* Choice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Choice.swift; sourceTree = "<group>"; };
+		1803782D20954A25009F214E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1803782E20954A25009F214E /* Poll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Poll.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,22 +68,15 @@
 				1803781A20952DE5009F214E /* pInspireViewController.swift */,
 				1803780A20951710009F214E /* CreatePollViewController.swift */,
 				1803780C20951710009F214E /* Main.storyboard */,
-				BAA4076D20953A6700453A34 /* Model */,
+				1803782020953D14009F214E /* CreatePollTableViewCell.swift */,
 				1803780F20951712009F214E /* Assets.xcassets */,
 				1803781120951712009F214E /* LaunchScreen.storyboard */,
 				1803781420951712009F214E /* Info.plist */,
+				1803782C20954A25009F214E /* Choice.swift */,
+				1803782E20954A25009F214E /* Poll.swift */,
+				1803782D20954A25009F214E /* User.swift */,
 			);
 			path = pInspire;
-			sourceTree = "<group>";
-		};
-		BAA4076D20953A6700453A34 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				BAA407692095372800453A34 /* User.swift */,
-				1803781C2095318F009F214E /* Poll.swift */,
-				BAA4076B2095388D00453A34 /* Option.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,11 +150,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1803781D2095318F009F214E /* Poll.swift in Sources */,
+				1803782120953D14009F214E /* CreatePollTableViewCell.swift in Sources */,
 				1803780B20951710009F214E /* CreatePollViewController.swift in Sources */,
+				1803783020954A25009F214E /* User.swift in Sources */,
+				1803783120954A25009F214E /* Poll.swift in Sources */,
+				1803782F20954A25009F214E /* Choice.swift in Sources */,
 				1803780720951710009F214E /* AppDelegate.swift in Sources */,
-				BAA4076A2095372800453A34 /* User.swift in Sources */,
-				BAA4076C2095388D00453A34 /* Option.swift in Sources */,
 				1803781B20952DE5009F214E /* pInspireViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
