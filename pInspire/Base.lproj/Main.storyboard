@@ -133,21 +133,32 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTL-2T-0iX">
                                                 <rect key="frame" x="201.66666666666663" y="0.0" width="141.33333333333337" height="30"/>
                                                 <state key="normal" title="Done"/>
+                                                <connections>
+                                                    <action selector="done:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="hN3-7L-nVn"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter poll question" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sNZ-py-ENe">
-                                        <rect key="frame" x="0.0" y="38.000000000000007" width="343" height="94.666666666666686"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Poll Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9p-5T-76G">
+                                        <rect key="frame" x="0.0" y="38" width="90.666666666666671" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dKo-Wm-qmF">
+                                        <rect key="frame" x="0.0" y="64" width="343" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="lZt-8b-G0V"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                    </textField>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="UGB-NQ-Wya">
-                                        <rect key="frame" x="0.0" y="140.66666666666666" width="343" height="31"/>
+                                        <rect key="frame" x="0.0" y="172" width="343" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ask Anonymously" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBF-aQ-T7o">
                                                 <rect key="frame" x="0.0" y="0.0" width="286" height="31"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -156,54 +167,58 @@
                                             </switch>
                                         </subviews>
                                     </stackView>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1lu-w4-hPB">
-                                        <rect key="frame" x="0.0" y="179.66666666666669" width="343" height="522.33333333333326"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Abn-my-aHd" userLabel="ChoicesTable">
+                                        <rect key="frame" x="0.0" y="211" width="343" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="aA7-Re-aTX" customClass="CreatePollTableViewCell" customModule="pInspire" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChoiceCellUnit" id="B0z-JF-lcp" customClass="CreatePollTableViewCell" customModule="pInspire" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aA7-Re-aTX" id="jDJ-sl-Dby">
-                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="43.666666666666664"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B0z-JF-lcp" id="mXD-eB-i7r">
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lrD-x7-EXD">
-                                                            <rect key="frame" x="0.0" y="6.0000000000000018" width="343" height="31.666666666666671"/>
-                                                            <subviews>
-                                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mio-0p-XTh">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="313" height="31.666666666666668"/>
-                                                                    <nil key="textColor"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                    <textInputTraits key="textInputTraits"/>
-                                                                </textField>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35C-hS-jQj">
-                                                                    <rect key="frame" x="313" y="0.0" width="30" height="31.666666666666668"/>
-                                                                    <state key="normal" title="+"/>
-                                                                </button>
-                                                            </subviews>
-                                                        </stackView>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter answer choice" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YgJ-7w-PVt">
+                                                            <rect key="frame" x="0.0" y="7" width="343" height="30"/>
+                                                            <nil key="textColor"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                        </textField>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="lrD-x7-EXD" firstAttribute="leading" secondItem="jDJ-sl-Dby" secondAttribute="leading" id="3yS-o0-xJd"/>
-                                                        <constraint firstAttribute="bottom" secondItem="lrD-x7-EXD" secondAttribute="bottom" constant="6" id="8yn-Kn-TnC"/>
-                                                        <constraint firstAttribute="trailing" secondItem="lrD-x7-EXD" secondAttribute="trailing" id="Ny9-XZ-Qap"/>
-                                                        <constraint firstItem="lrD-x7-EXD" firstAttribute="top" secondItem="jDJ-sl-Dby" secondAttribute="top" constant="6" id="V8Y-IV-nLD"/>
+                                                        <constraint firstItem="YgJ-7w-PVt" firstAttribute="centerY" secondItem="mXD-eB-i7r" secondAttribute="centerY" id="85s-8z-M6y"/>
+                                                        <constraint firstItem="YgJ-7w-PVt" firstAttribute="leading" secondItem="mXD-eB-i7r" secondAttribute="leading" id="Tu1-1Y-6L1"/>
+                                                        <constraint firstAttribute="trailing" secondItem="YgJ-7w-PVt" secondAttribute="trailing" id="sC9-H4-6oo"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
-                                                    <outlet property="choiceContent" destination="Mio-0p-XTh" id="06O-IS-Dnl"/>
+                                                    <outlet property="choiceContent" destination="YgJ-7w-PVt" id="b7t-E4-Bbw"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="8rJ-Kc-sve" id="Et5-nO-aX6"/>
+                                            <outlet property="delegate" destination="8rJ-Kc-sve" id="T9S-Nw-Jku"/>
+                                        </connections>
                                     </tableView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJM-HJ-g2B">
+                                        <rect key="frame" x="0.0" y="269" width="343" height="433"/>
+                                        <state key="normal" title="Add answer choice"/>
+                                        <connections>
+                                            <action selector="addAnswerChoice:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="MbV-Fe-3jJ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="dKo-Wm-qmF" firstAttribute="leading" secondItem="SlQ-S4-BYH" secondAttribute="leading" id="0iz-ik-kkG"/>
                                     <constraint firstItem="I9y-g4-3P7" firstAttribute="leading" secondItem="SlQ-S4-BYH" secondAttribute="leading" id="9s0-6N-PjK"/>
                                     <constraint firstAttribute="trailing" secondItem="I9y-g4-3P7" secondAttribute="trailing" id="EKN-hP-rKq"/>
+                                    <constraint firstAttribute="trailing" secondItem="dKo-Wm-qmF" secondAttribute="trailing" id="J3P-Jn-tzn"/>
+                                    <constraint firstItem="ZJM-HJ-g2B" firstAttribute="centerX" secondItem="SlQ-S4-BYH" secondAttribute="centerX" id="Kre-cJ-tYf"/>
                                     <constraint firstAttribute="trailing" secondItem="UGB-NQ-Wya" secondAttribute="trailing" id="TMP-9m-pSm"/>
-                                    <constraint firstAttribute="trailing" secondItem="sNZ-py-ENe" secondAttribute="trailing" id="aen-fl-ott"/>
-                                    <constraint firstItem="sNZ-py-ENe" firstAttribute="leading" secondItem="SlQ-S4-BYH" secondAttribute="leading" id="jSZ-O1-4P7"/>
+                                    <constraint firstItem="Abn-my-aHd" firstAttribute="leading" secondItem="SlQ-S4-BYH" secondAttribute="leading" id="la9-bp-8pe"/>
                                     <constraint firstItem="UGB-NQ-Wya" firstAttribute="leading" secondItem="SlQ-S4-BYH" secondAttribute="leading" id="sB3-LL-06f"/>
+                                    <constraint firstAttribute="trailing" secondItem="Abn-my-aHd" secondAttribute="trailing" id="yHo-Tc-1nY"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -226,9 +241,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="anonymousSwitch" destination="qlE-RH-KV8" id="d2o-aL-JA3"/>
+                        <outlet property="choicesTable" destination="Abn-my-aHd" id="lL9-2z-9xu"/>
                         <outlet property="doneButton" destination="HTL-2T-0iX" id="42m-rN-hXa"/>
-                        <outlet property="options" destination="1lu-w4-hPB" id="UIX-fP-V7Z"/>
-                        <outlet property="pollQuestion" destination="sNZ-py-ENe" id="HvO-5G-mGX"/>
+                        <outlet property="pollQuestion" destination="dKo-Wm-qmF" id="zXd-ki-D5Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>

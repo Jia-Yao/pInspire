@@ -9,15 +9,14 @@
 import UIKit
 import os.log
 
-class CreatePollViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
+class CreatePollViewController: UIViewController, UITextViewDelegate, UITableViewDelegate, UITableViewDataSource {
 
     //MARK: Properties
     
     @IBOutlet weak var doneButton: UIButton!
-    @IBOutlet weak var pollQuestion: UITextField!
-    @IBOutlet weak var options: UITableView!
+    @IBOutlet weak var pollQuestion: UITextView!
     @IBOutlet weak var anonymousSwitch: UISwitch!
-    
+    @IBOutlet weak var choicesTable: UITableView!
     var poll: Poll?
     var choices = [Choice]()
     var user = User()
@@ -25,39 +24,76 @@ class CreatePollViewController: UIViewController, UITextFieldDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         pollQuestion.delegate = self
-        options.delegate = self
-        options.dataSource = self
+        pollQuestion.becomeFirstResponder()
+        pollQuestion.layer.borderColor = UIColor.blue.cgColor
+        pollQuestion.layer.borderWidth = 1
         updateDoneButtonState()
+        choices.append(Choice(for: "", votes: 0))
+        choices.append(Choice(for: "", votes: 0))
     }
     
-    //MARK: UITextFieldDelegate, UITableViewDataSource
+    @IBAction func addAnswerChoice(_ sender: UIButton) {
+        let newIndexPath = IndexPath(row: choices.count, section: 0)
+        choices.append(Choice(for: "", votes: 0))
+        choicesTable.insertRows(at: [newIndexPath], with: .automatic)
+    }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+    //MARK: UITextViewDelegate
+    
+    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+        textView.resignFirstResponder()
         return true
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
+    func textViewDidEndEditing(_ textView: UITextView) {
+        pollQuestion.layer.borderColor = UIColor.clear.cgColor
         updateDoneButtonState()
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        pollQuestion.layer.borderColor = UIColor.blue.cgColor
         doneButton.isEnabled = false
     }
     
-    //MARK: UITableViewDelegate
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+    
+    //MARK: UITableViewDelegate, UITableViewDataSource
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return choices.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "CreatePollTableViewCell"
+        
+        let cellIdentifier = "ChoiceCellUnit"
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? CreatePollTableViewCell  else {
             fatalError("The dequeued cell is not an instance of CreatePollTableViewCell.")
         }
-        
+        let choice = choices[indexPath.row]
+        cell.choiceContent.text = choice.content
+        print ("here" + String(choices.count) + String(indexPath.row))
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            choices.remove(at: indexPath.row)
+            choicesTable.deleteRows(at: [indexPath], with: .fade)
+        }
     }
     
     //MARK: Navigation
@@ -66,26 +102,33 @@ class CreatePollViewController: UIViewController, UITextFieldDelegate, UITableVi
         dismiss(animated: true, completion: nil)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
-        
-        guard let button = sender as? UIBarButtonItem, button === doneButton else {
-            os_log("The done button was not pressed, cancelling", log: OSLog.default, type: .debug)
-            return
+    @IBAction func done(_ sender: UIButton) {
+        if let question = pollQuestion.text {
+            let isAnonymous = anonymousSwitch.isOn
+            for row in 0..<choicesTable.numberOfRows(inSection: 0) {
+                let indexPath = IndexPath(row: row, section: 0)
+                guard let cell = choicesTable.cellForRow(at: indexPath) as? CreatePollTableViewCell else {
+                    fatalError("The referenced cell is not an instance of CreatePollTableViewCell.")
+                }
+                choices[row].content = cell.choiceContent.text ?? ""
+            }
+            poll = Poll(question: question, choices: choices, user: user, isAnonymous: isAnonymous)
+            
+//            print(question + " " + String(isAnonymous))
+//            for row in 0..<choices.count{
+//                print (String(row) + " " + choices[row].content)
+//            }
+            
+            // TODO: Save to Firebase
         }
-        
-        let question = pollQuestion.text ?? ""
-        let isAnonymous = anonymousSwitch.isOn
-        
-        poll = Poll(question: question, choices: choices, user: user, isAnonymous: isAnonymous)
+        dismiss(animated: true, completion: nil)
     }
     
-
     //MARK: Private Methods
     
     private func updateDoneButtonState() {
         let text = pollQuestion.text ?? ""
-        doneButton.isEnabled = !text.isEmpty
+        doneButton.isEnabled = !text.isEmpty && choices.count > 1
     }
 }
 
