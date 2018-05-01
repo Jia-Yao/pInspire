@@ -17,6 +17,9 @@
 		1803782F20954A25009F214E /* Choice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1803782C20954A25009F214E /* Choice.swift */; };
 		1803783020954A25009F214E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1803782D20954A25009F214E /* User.swift */; };
 		1803783120954A25009F214E /* Poll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1803782E20954A25009F214E /* Poll.swift */; };
+		BA5987BC20961657009B79DF /* pInspireTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5987BB20961657009B79DF /* pInspireTableViewCell.swift */; };
+		BAA407712095641500453A34 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAA407702095641500453A34 /* GoogleService-Info.plist */; };
+		BC8430815C1C18F0C72688FB /* Pods_pInspire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25C1CB3A78BAC357D82577D /* Pods_pInspire.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,11 @@
 		1803782C20954A25009F214E /* Choice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Choice.swift; sourceTree = "<group>"; };
 		1803782D20954A25009F214E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1803782E20954A25009F214E /* Poll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Poll.swift; sourceTree = "<group>"; };
+		5E060C68B10B5E55EFA9B67F /* Pods-pInspire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pInspire.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pInspire/Pods-pInspire.debug.xcconfig"; sourceTree = "<group>"; };
+		7CAFC73FB83272A2286306FD /* Pods-pInspire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pInspire.release.xcconfig"; path = "Pods/Target Support Files/Pods-pInspire/Pods-pInspire.release.xcconfig"; sourceTree = "<group>"; };
+		BA5987BB20961657009B79DF /* pInspireTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pInspireTableViewCell.swift; sourceTree = "<group>"; };
+		BAA407702095641500453A34 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E25C1CB3A78BAC357D82577D /* Pods_pInspire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pInspire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC8430815C1C18F0C72688FB /* Pods_pInspire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +59,8 @@
 			children = (
 				1803780520951710009F214E /* pInspire */,
 				1803780420951710009F214E /* Products */,
+				D004B08D252D84D00B315D81 /* Pods */,
+				E35FAC79770523346C02F232 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,9 +75,11 @@
 		1803780520951710009F214E /* pInspire */ = {
 			isa = PBXGroup;
 			children = (
+				BA5987BB20961657009B79DF /* pInspireTableViewCell.swift */,
 				1803780620951710009F214E /* AppDelegate.swift */,
 				1803781A20952DE5009F214E /* pInspireViewController.swift */,
 				1803780A20951710009F214E /* CreatePollViewController.swift */,
+				BAA407702095641500453A34 /* GoogleService-Info.plist */,
 				1803780C20951710009F214E /* Main.storyboard */,
 				1803782020953D14009F214E /* CreatePollTableViewCell.swift */,
 				1803780F20951712009F214E /* Assets.xcassets */,
@@ -79,6 +92,23 @@
 			path = pInspire;
 			sourceTree = "<group>";
 		};
+		D004B08D252D84D00B315D81 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5E060C68B10B5E55EFA9B67F /* Pods-pInspire.debug.xcconfig */,
+				7CAFC73FB83272A2286306FD /* Pods-pInspire.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E35FAC79770523346C02F232 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E25C1CB3A78BAC357D82577D /* Pods_pInspire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +116,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1803781720951712009F214E /* Build configuration list for PBXNativeTarget "pInspire" */;
 			buildPhases = (
+				0BFFCF4FDFBBBE91F199411C /* [CP] Check Pods Manifest.lock */,
 				180377FF20951710009F214E /* Sources */,
 				1803780020951710009F214E /* Frameworks */,
 				1803780120951710009F214E /* Resources */,
+				433FE9D2F04BA398A2E014F3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -138,12 +170,56 @@
 			buildActionMask = 2147483647;
 			files = (
 				1803781320951712009F214E /* LaunchScreen.storyboard in Resources */,
+				BAA407712095641500453A34 /* GoogleService-Info.plist in Resources */,
 				1803781020951712009F214E /* Assets.xcassets in Resources */,
 				1803780E20951710009F214E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0BFFCF4FDFBBBE91F199411C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-pInspire-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		433FE9D2F04BA398A2E014F3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-pInspire/Pods-pInspire-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pInspire/Pods-pInspire-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		180377FF20951710009F214E /* Sources */ = {
@@ -153,6 +229,7 @@
 				1803782120953D14009F214E /* CreatePollTableViewCell.swift in Sources */,
 				1803780B20951710009F214E /* CreatePollViewController.swift in Sources */,
 				1803783020954A25009F214E /* User.swift in Sources */,
+				BA5987BC20961657009B79DF /* pInspireTableViewCell.swift in Sources */,
 				1803783120954A25009F214E /* Poll.swift in Sources */,
 				1803782F20954A25009F214E /* Choice.swift in Sources */,
 				1803780720951710009F214E /* AppDelegate.swift in Sources */,
@@ -298,6 +375,7 @@
 		};
 		1803781820951712009F214E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E060C68B10B5E55EFA9B67F /* Pods-pInspire.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -315,6 +393,7 @@
 		};
 		1803781920951712009F214E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CAFC73FB83272A2286306FD /* Pods-pInspire.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -7,19 +7,66 @@
 //
 
 import UIKit
+import Firebase
 
 class pInspireViewController: UITableViewController {
 
+    @IBOutlet var pollTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        configureDatabase()
+        self.pollTableView.rowHeight = CGFloat(250)
+        // delegate and data source
+        self.pollTableView.delegate = self
+        self.pollTableView.dataSource = self
+        
+        // Along with auto layout, these are the keys for enabling variable cell height
+        // self.pollTableView.estimatedRowHeight = 150
+        // self.pollTableView.rowHeight = UITableViewAutomaticDimension
+        
     }
-
+    var ref: DatabaseReference!
+    fileprivate var _refHandle: DatabaseHandle?
+    var pollTimeline = [Poll]()
+    
+    func configureDatabase() {
+        ref = Database.database().reference()
+        // Listen for new messages in the Firebase database
+        
+        _refHandle = self.ref.child("Polls").observe(.childAdded, with: { [weak self] (snapshot) -> Void in
+            guard let strongSelf = self else { return }
+            
+            //iterating through all the values
+            for poll in snapshot.children.allObjects as! [DataSnapshot] {
+                //getting values
+                let pollObject = poll.value as? [String: AnyObject]
+                let pollQuestion  = pollObject!["Question"]
+                var choices = [Choice]()
+                if let choiceObject = pollObject!["Choice"] as? [String: Int] {
+                    choices.append(Choice(for: "Yes", votes: choiceObject["Yes"]!))
+                    choices.append(Choice(for: "No", votes: choiceObject["No"]!))
+                }
+                //creating poll object with model and fetched values
+                let newPoll = Poll(question: (pollQuestion as! String), choices: choices, user: User(), isAnonymous: false)
+                
+                //appending it to list
+                self?.pollTimeline.append(newPoll)
+                strongSelf.pollTableView.insertRows(at: [IndexPath(row: strongSelf.pollTimeline.count-1, section: 0)], with: .automatic)
+            }
+            
+            //reloading the tableview
+            // self?.pollTableView.reloadData()
+        })
+        
+    }
+    
+    deinit {
+        if let refHandle = _refHandle {
+            self.ref.child("Polls").child("Polls").removeObserver(withHandle: refHandle)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -28,24 +75,32 @@ class pInspireViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return pollTimeline.count
     }
 
-    /*
+    private struct Constants {
+        static let PollQuestionFieldName:String = "Question"
+        static let PollChoiceFieldName: String = "Choice"
+        // static let PollChoiceNumName: String = "votes"
+        
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let identifier = "PollCellUnit"
+        let cell = self.pollTableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! pInspireTableViewCell
+        // Unpack message from Firebase DataSnapshot
+        let poll: Poll = self.pollTimeline[indexPath.row]
+        cell.questionLabelView.preferredMaxLayoutWidth = self.pollTableView.bounds.width
+        cell.questionLabelView.text = "\(poll.question)"
+        //for button in cell.choiceButtonView:
+        // cell.choiceButtonView
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

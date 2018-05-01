@@ -13,8 +13,9 @@ class Choice {
     var numOfVotes: Int = 0
     var visibleUsers = [User]()
     private var invisibleUsers = [User]()
-    init(for choice: String){
+    init(for choice: String, votes: Int){
         content = choice
+        numOfVotes = votes
     }
 }
 
