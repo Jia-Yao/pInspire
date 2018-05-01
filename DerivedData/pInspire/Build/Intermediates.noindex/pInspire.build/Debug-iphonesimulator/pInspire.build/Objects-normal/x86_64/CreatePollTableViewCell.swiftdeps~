@@ -7,11 +7,13 @@ provides-member:
 - ["8pInspire23CreatePollTableViewCellC", ""]
 provides-dynamic-lookup:
 - "awakeFromNib"
+- "choiceContent"
 - "setSelected"
 depends-top-level:
 - "Bool"
 - "CreatePollTableViewCell"
 - "UITableViewCell"
+- "UITextField"
 depends-member:
 - ["So15CALayerDelegateP", ""]
 - !private ["So15CALayerDelegateP", "awakeFromNib"]
@@ -22,7 +24,9 @@ depends-member:
 - !private ["s7CVarArgP", "init"]
 - !private ["s7CVarArgP", "setSelected"]
 - ["8pInspire23CreatePollTableViewCellC", "Bool"]
+- ["8pInspire23CreatePollTableViewCellC", "UITextField"]
 - ["8pInspire23CreatePollTableViewCellC", "awakeFromNib"]
+- ["8pInspire23CreatePollTableViewCellC", "choiceContent"]
 - ["8pInspire23CreatePollTableViewCellC", "deinit"]
 - ["8pInspire23CreatePollTableViewCellC", "init"]
 - ["8pInspire23CreatePollTableViewCellC", "setSelected"]
@@ -47,7 +51,9 @@ depends-member:
 - !private ["So8NSCodingP", "init"]
 - !private ["So8NSCodingP", "setSelected"]
 - ["So8NSObjectC", "Bool"]
+- ["So8NSObjectC", "UITextField"]
 - ["So8NSObjectC", "awakeFromNib"]
+- ["So8NSObjectC", "choiceContent"]
 - ["So8NSObjectC", "init"]
 - ["So8NSObjectC", "setSelected"]
 - ["So16NSObjectProtocolP", ""]
@@ -91,7 +97,9 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "init"]
 - !private ["So30UIPasteConfigurationSupportingP", "setSelected"]
 - ["So11UIResponderC", "Bool"]
+- ["So11UIResponderC", "UITextField"]
 - ["So11UIResponderC", "awakeFromNib"]
+- ["So11UIResponderC", "choiceContent"]
 - ["So11UIResponderC", "init"]
 - ["So11UIResponderC", "setSelected"]
 - ["So30UIResponderStandardEditActionsP", ""]
@@ -99,8 +107,10 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "init"]
 - !private ["So30UIResponderStandardEditActionsP", "setSelected"]
 - ["So15UITableViewCellC", "Bool"]
+- ["So15UITableViewCellC", "UITextField"]
 - ["So15UITableViewCellC", ""]
 - ["So15UITableViewCellC", "awakeFromNib"]
+- ["So15UITableViewCellC", "choiceContent"]
 - ["So15UITableViewCellC", "init"]
 - ["So15UITableViewCellC", "setSelected"]
 - ["So18UITraitEnvironmentP", ""]
@@ -108,7 +118,9 @@ depends-member:
 - !private ["So18UITraitEnvironmentP", "init"]
 - !private ["So18UITraitEnvironmentP", "setSelected"]
 - ["So6UIViewC", "Bool"]
+- ["So6UIViewC", "UITextField"]
 - ["So6UIViewC", "awakeFromNib"]
+- ["So6UIViewC", "choiceContent"]
 - ["So6UIViewC", "init"]
 - ["So6UIViewC", "setSelected"]
 - ["s37_DefaultCustomPlaygroundQuickLookableP", ""]
@@ -173,4 +185,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
-interface-hash: "9e6ac3e9d2ce33cd20111d33ee0a72da"
+interface-hash: "fa9ac4be8243ae82503cfef0cdfefcf3"

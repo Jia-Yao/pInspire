@@ -33,7 +33,7 @@ depends-top-level:
 - !private "OSLog"
 - "Poll"
 - !private "StringLiteralType"
-- "UIBarButtonItem"
+- !private "UIBarButtonItem"
 - "UIButton"
 - "UIStoryboardSegue"
 - "UISwitch"
@@ -132,7 +132,7 @@ depends-member:
 - ["8pInspire24CreatePollViewControllerC", "Int"]
 - !private ["8pInspire24CreatePollViewControllerC", "OSLog"]
 - ["8pInspire24CreatePollViewControllerC", "Poll"]
-- ["8pInspire24CreatePollViewControllerC", "UIBarButtonItem"]
+- !private ["8pInspire24CreatePollViewControllerC", "UIBarButtonItem"]
 - ["8pInspire24CreatePollViewControllerC", "UIButton"]
 - ["8pInspire24CreatePollViewControllerC", "UIStoryboardSegue"]
 - ["8pInspire24CreatePollViewControllerC", "UISwitch"]
@@ -566,7 +566,7 @@ depends-member:
 - ["So8NSObjectC", "Int"]
 - !private ["So8NSObjectC", "OSLog"]
 - ["So8NSObjectC", "Poll"]
-- ["So8NSObjectC", "UIBarButtonItem"]
+- !private ["So8NSObjectC", "UIBarButtonItem"]
 - ["So8NSObjectC", "UIButton"]
 - ["So8NSObjectC", "UIStoryboardSegue"]
 - ["So8NSObjectC", "UISwitch"]
@@ -978,7 +978,7 @@ depends-member:
 - ["So11UIResponderC", "Int"]
 - !private ["So11UIResponderC", "OSLog"]
 - ["So11UIResponderC", "Poll"]
-- ["So11UIResponderC", "UIBarButtonItem"]
+- !private ["So11UIResponderC", "UIBarButtonItem"]
 - ["So11UIResponderC", "UIButton"]
 - ["So11UIResponderC", "UIStoryboardSegue"]
 - ["So11UIResponderC", "UISwitch"]
@@ -1418,7 +1418,7 @@ depends-member:
 - ["So16UIViewControllerC", "Int"]
 - !private ["So16UIViewControllerC", "OSLog"]
 - ["So16UIViewControllerC", "Poll"]
-- ["So16UIViewControllerC", "UIBarButtonItem"]
+- !private ["So16UIViewControllerC", "UIBarButtonItem"]
 - ["So16UIViewControllerC", "UIButton"]
 - ["So16UIViewControllerC", "UIStoryboardSegue"]
 - ["So16UIViewControllerC", "UISwitch"]
@@ -1681,4 +1681,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
-interface-hash: "36702a8b5c5b48f8eb3c3a9cdadb8355"
+interface-hash: "9a80ef627241def20da7a392cbf59294"

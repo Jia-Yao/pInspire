@@ -1,15 +1,15 @@
 ### Swift dependencies file v0 ###
 provides-top-level:
-- "Option"
+- "Choice"
 provides-nominal:
-- "8pInspire6OptionC"
+- "8pInspire6ChoiceC"
 provides-member:
-- ["8pInspire6OptionC", ""]
+- ["8pInspire6ChoiceC", ""]
 provides-dynamic-lookup:
 depends-top-level:
 - "AssignmentPrecedence"
+- "Choice"
 - "Int"
-- "Option"
 - "String"
 - "StringLiteralType"
 - "User"
@@ -17,6 +17,15 @@ depends-member:
 - ["Sa", "init"]
 - ["s23BidirectionalCollectionP", "init"]
 - ["s7CVarArgP", "init"]
+- ["8pInspire6ChoiceC", "Int"]
+- ["8pInspire6ChoiceC", "String"]
+- ["8pInspire6ChoiceC", "User"]
+- ["8pInspire6ChoiceC", "content"]
+- ["8pInspire6ChoiceC", "deinit"]
+- ["8pInspire6ChoiceC", "init"]
+- !private ["8pInspire6ChoiceC", "invisibleUsers"]
+- ["8pInspire6ChoiceC", "numOfVotes"]
+- ["8pInspire6ChoiceC", "visibleUsers"]
 - ["s10CollectionP", "init"]
 - ["s10ComparableP", "init"]
 - ["s28CustomDebugStringConvertibleP", "init"]
@@ -34,15 +43,6 @@ depends-member:
 - ["s25LosslessStringConvertibleP", "init"]
 - ["s10MirrorPathP", "init"]
 - ["s17MutableCollectionP", "init"]
-- ["8pInspire6OptionC", "Int"]
-- ["8pInspire6OptionC", "String"]
-- ["8pInspire6OptionC", "User"]
-- ["8pInspire6OptionC", "content"]
-- ["8pInspire6OptionC", "deinit"]
-- ["8pInspire6OptionC", "init"]
-- !private ["8pInspire6OptionC", "invisibleUsers"]
-- ["8pInspire6OptionC", "numOfVotes"]
-- ["8pInspire6OptionC", "visibleUsers"]
 - ["s22RandomAccessCollectionP", "init"]
 - ["s26RangeReplaceableCollectionP", "init"]
 - ["s8SequenceP", "init"]
@@ -63,6 +63,7 @@ depends-nominal:
 - "Sa"
 - "s23BidirectionalCollectionP"
 - "s7CVarArgP"
+- "8pInspire6ChoiceC"
 - "s10CollectionP"
 - "s10ComparableP"
 - "s28CustomDebugStringConvertibleP"
@@ -80,7 +81,6 @@ depends-nominal:
 - "s25LosslessStringConvertibleP"
 - "s10MirrorPathP"
 - "s17MutableCollectionP"
-- "8pInspire6OptionC"
 - "s22RandomAccessCollectionP"
 - "s26RangeReplaceableCollectionP"
 - "s8SequenceP"
@@ -124,4 +124,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
-interface-hash: "5dca552e41b7ebda0fd3b767315f1947"
+interface-hash: "b7d909f33468f22ec0bcb5e521b23ba3"

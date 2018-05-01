@@ -23,50 +23,43 @@
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PollCellUnit" rowHeight="247" id="77E-lG-uLc" customClass="pInspireTableViewCell" customModule="pInspire" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="247"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="77E-lG-uLc" id="HAR-VI-r29" customClass="pInspireTableViewCell" customModule="pInspire">
+                                <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="77E-lG-uLc" id="HAR-VI-r29">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="246.66666666666666"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bym-wt-hey">
-                                            <rect key="frame" x="16" y="0.0" width="343" height="246.66666666666666"/>
+                                            <rect key="frame" x="16" y="16" width="343" height="215"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ksi-Pq-C3X">
-                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="246.66666666666666"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ksi-Pq-C3X">
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="215"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="625-14-mrd">
                                                             <rect key="frame" x="0.0" y="0.0" width="343" height="100"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="343" id="9UZ-og-seY"/>
-                                                                <constraint firstAttribute="height" constant="100" id="JJA-8c-Vae"/>
+                                                                <constraint firstAttribute="height" constant="100" id="JGe-93-edz"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="klY-Q0-NuH">
-                                                            <rect key="frame" x="0.0" y="118.66666666666669" width="343" height="30"/>
+                                                            <rect key="frame" x="0.0" y="108" width="343" height="30"/>
                                                             <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="30" id="Nr8-rq-gxz"/>
-                                                            </constraints>
                                                             <state key="normal" title="Yes"/>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qr-3M-5Ix">
-                                                            <rect key="frame" x="0.0" y="167" width="343" height="30"/>
+                                                            <rect key="frame" x="0.0" y="146" width="343" height="30"/>
                                                             <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="30" id="Ikh-Dy-9cR"/>
-                                                            </constraints>
                                                             <state key="normal" title="No"/>
                                                             <connections>
                                                                 <action selector="pressChoiceButton:" destination="77E-lG-uLc" eventType="touchUpInside" id="v2a-fC-CvU"/>
                                                             </connections>
                                                         </button>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="Fn2-Rn-8IA">
-                                                            <rect key="frame" x="0.0" y="215.66666666666666" width="343" height="31"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Fn2-Rn-8IA">
+                                                            <rect key="frame" x="0.0" y="184" width="343" height="31"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vote anonymously" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ftt-uo-XEi">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="144" height="20.333333333333332"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="286" height="20.333333333333332"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -82,11 +75,10 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="bym-wt-hey" firstAttribute="centerX" secondItem="map-rC-ato" secondAttribute="centerX" id="2cT-8x-xsv"/>
-                                        <constraint firstItem="bym-wt-hey" firstAttribute="centerY" secondItem="map-rC-ato" secondAttribute="centerY" id="3Up-tY-b8w"/>
-                                        <constraint firstItem="bym-wt-hey" firstAttribute="leading" secondItem="map-rC-ato" secondAttribute="leading" constant="16" id="4wt-1x-SZ4"/>
-                                        <constraint firstItem="map-rC-ato" firstAttribute="trailing" secondItem="bym-wt-hey" secondAttribute="trailing" constant="16" id="8wC-5Z-2Gi"/>
-                                        <constraint firstItem="map-rC-ato" firstAttribute="top" secondItem="Ksi-Pq-C3X" secondAttribute="top" id="QoI-tl-QE4"/>
+                                        <constraint firstItem="bym-wt-hey" firstAttribute="leading" secondItem="map-rC-ato" secondAttribute="leading" constant="16" id="9mK-PQ-pvo"/>
+                                        <constraint firstItem="bym-wt-hey" firstAttribute="top" secondItem="map-rC-ato" secondAttribute="top" constant="16" id="Mt9-4w-eep"/>
+                                        <constraint firstItem="map-rC-ato" firstAttribute="bottom" secondItem="bym-wt-hey" secondAttribute="bottom" constant="16" id="hJb-o5-3Y2"/>
+                                        <constraint firstItem="map-rC-ato" firstAttribute="trailing" secondItem="bym-wt-hey" secondAttribute="trailing" constant="16" id="ncb-W8-hpe"/>
                                     </constraints>
                                     <viewLayoutGuide key="safeArea" id="map-rC-ato"/>
                                 </tableViewCellContentView>

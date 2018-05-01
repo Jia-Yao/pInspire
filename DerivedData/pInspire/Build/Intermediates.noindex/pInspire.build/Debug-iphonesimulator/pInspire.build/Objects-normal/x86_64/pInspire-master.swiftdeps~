@@ -1,11 +1,12 @@
 version: "Apple Swift version 4.1 (swiftlang-902.0.48 clang-902.0.37.1)"
-options: "120b28e85ad1e6ca6bc1c95768eab84d"
-build_time: [1524966074, 278187000]
+options: "73041460bfb3da5291b64dcdd212f8ef"
+build_time: [1525157297, 137036000]
 inputs:
-  "/Users/jiayao/Desktop/stanford/Spring2018/CS377u/pInspire/pInspire/CreatePollTableViewCell.swift": [1524964688, 0]
-  "/Users/jiayao/Desktop/stanford/Spring2018/CS377u/pInspire/pInspire/CreatePollViewController.swift": [1524966025, 0]
-  "/Users/jiayao/Desktop/stanford/Spring2018/CS377u/pInspire/pInspire/User.swift": [1524962422, 0]
-  "/Users/jiayao/Desktop/stanford/Spring2018/CS377u/pInspire/pInspire/Poll.swift": [1524962203, 0]
-  "/Users/jiayao/Desktop/stanford/Spring2018/CS377u/pInspire/pInspire/Choice.swift": [1524961980, 0]
-  "/Users/jiayao/Desktop/stanford/Spring2018/CS377u/pInspire/pInspire/AppDelegate.swift": [1524948880, 0]
-  "/Users/jiayao/Desktop/stanford/Spring2018/CS377u/pInspire/pInspire/pInspireViewController.swift": [1524955014, 0]
+  "/Users/jiayao/Desktop/github/pInspire/pInspire/CreatePollTableViewCell.swift": [1525157274, 0]
+  "/Users/jiayao/Desktop/github/pInspire/pInspire/CreatePollViewController.swift": [1525157274, 0]
+  "/Users/jiayao/Desktop/github/pInspire/pInspire/User.swift": [1525157274, 0]
+  "/Users/jiayao/Desktop/github/pInspire/pInspire/pInspireTableViewCell.swift": [1525157293, 0]
+  "/Users/jiayao/Desktop/github/pInspire/pInspire/Poll.swift": [1525157274, 0]
+  "/Users/jiayao/Desktop/github/pInspire/pInspire/Choice.swift": [1525157293, 0]
+  "/Users/jiayao/Desktop/github/pInspire/pInspire/AppDelegate.swift": [1525157293, 0]
+  "/Users/jiayao/Desktop/github/pInspire/pInspire/pInspireViewController.swift": [1525157293, 0]

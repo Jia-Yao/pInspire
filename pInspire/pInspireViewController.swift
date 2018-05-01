@@ -44,8 +44,9 @@ class pInspireViewController: UITableViewController {
                 let pollQuestion  = pollObject!["Question"]
                 var choices = [Choice]()
                 if let choiceObject = pollObject!["Choice"] as? [String: Int] {
-                    choices.append(Choice(for: "Yes", votes: choiceObject["Yes"]!))
-                    choices.append(Choice(for: "No", votes: choiceObject["No"]!))
+                    for (content, votes) in choiceObject {
+                        choices.append(Choice(for: content, votes: votes))
+                    }
                 }
                 //creating poll object with model and fetched values
                 let newPoll = Poll(question: (pollQuestion as! String), choices: choices, user: User(), isAnonymous: false)
