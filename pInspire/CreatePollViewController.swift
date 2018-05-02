@@ -8,6 +8,7 @@
 
 import UIKit
 import os.log
+import Firebase
 
 class CreatePollViewController: UIViewController, UITextViewDelegate, UITableViewDelegate, UITableViewDataSource {
 
@@ -21,6 +22,11 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
     var choices = [Choice]()
     var user = User()
     
+    // Database configuration
+    var refPoll: DatabaseReference!
+    // var refUser: DatabaseReference!
+    fileprivate var _refHandle: DatabaseHandle?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         pollQuestion.delegate = self
@@ -28,13 +34,15 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
         pollQuestion.layer.borderColor = UIColor.blue.cgColor
         pollQuestion.layer.borderWidth = 1
         updateDoneButtonState()
-        choices.append(Choice(for: "", votes: 0))
-        choices.append(Choice(for: "", votes: 0))
+        choices.append(Choice())
+        choices.append(Choice())
+        refPoll = Database.database().reference().child("Polls")
+        // refUser = Database.database().reference().child("Users")
     }
     
     @IBAction func addAnswerChoice(_ sender: UIButton) {
         let newIndexPath = IndexPath(row: choices.count, section: 0)
-        choices.append(Choice(for: "", votes: 0))
+        choices.append(Choice())
         choicesTable.insertRows(at: [newIndexPath], with: .automatic)
     }
     
@@ -112,7 +120,7 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
                 }
                 choices[row].content = cell.choiceContent.text ?? ""
             }
-            poll = Poll(question: question, choices: choices, user: user, isAnonymous: isAnonymous)
+            poll = Poll(question: question, choices: choices, user: "Amy", isAnonymous: isAnonymous)
             
 //            print(question + " " + String(isAnonymous))
 //            for row in 0..<choices.count{
@@ -120,6 +128,7 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
 //            }
             
             // TODO: Save to Firebase
+            writeNewPoll(withPoll: poll!)
         }
         dismiss(animated: true, completion: nil)
     }
@@ -130,5 +139,37 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
         let text = pollQuestion.text ?? ""
         doneButton.isEnabled = !text.isEmpty && choices.count > 1
     }
+    func writeNewPoll(withPoll poll: Poll) {//} userID: String, username: String, title: String, body: String) {
+        // Create new post at /user-posts/$userid/$postid and at
+        // /posts/$postid simultaneously
+        // [START write_fan_out]
+        var choicesDict = [String: Dictionary<String, Bool>]()
+        for choice in poll.choices {
+            choicesDict[choice.content] = ["dummy": false]
+        }
+        let key = refPoll.child("Polls").childByAutoId().key
+        let newPoll = ["Question": poll.question,
+                       "Choices": choicesDict,
+                    "Anonymity": poll.initiatorAnonymous,
+                    "Initiator": poll.initiator] as [String : Any]
+        let childUpdates = ["/Polls/\(key)": newPoll]
+                        //"/user-posts/\(userID)/\(key)/": post]
+        refPoll.updateChildValues(childUpdates)
+        // [END write_fan_out]
+    }
 }
+/*
+struct answer
+struct PostDictAdvanced {
+    let question: String
+    let anonymity: Bool
+    let initiator: String
+    let choices: [String]
+    let v: [String: UInt64]
+    
+    init(title: String, categories: [String: UInt64]) {
+        self.title = title
+        self.categories = categories
+    }
+}*/
 

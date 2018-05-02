@@ -12,9 +12,9 @@ import os.log
 class Poll{
     var question: String = ""
     var choices = [Choice]()
-    var initiator: User = User()
+    var initiator: String = ""
     var initiatorAnonymous: Bool = false
-    init(question: String, choices: [Choice], user: User, isAnonymous: Bool) {
+    init(question: String, choices: [Choice], user: String, isAnonymous: Bool) {
         self.question = question
         self.choices = choices
         self.initiator = user

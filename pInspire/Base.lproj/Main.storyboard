@@ -20,21 +20,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PollCellUnit" rowHeight="247" id="77E-lG-uLc" customClass="pInspireTableViewCell" customModule="pInspire" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="247"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PollCellUnit" rowHeight="405" id="77E-lG-uLc" customClass="pInspireTableViewCell" customModule="pInspire" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="405"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="77E-lG-uLc" id="HAR-VI-r29">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="246.66666666666666"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="404.66666666666669"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bym-wt-hey">
-                                            <rect key="frame" x="16" y="16" width="343" height="215"/>
+                                            <rect key="frame" x="16" y="16" width="343" height="372.66666666666669"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ksi-Pq-C3X">
-                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="215"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="372.66666666666669"/>
                                                     <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bXl-fR-veu">
+                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anonymous Poll" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Fw-iw-4vN">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="122.66666666666667" height="30"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihc-dZ-MHa">
+                                                                    <rect key="frame" x="290" y="0.0" width="53" height="30"/>
+                                                                    <state key="normal" title="Articles"/>
+                                                                </button>
+                                                            </subviews>
+                                                        </stackView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="625-14-mrd">
-                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="100"/>
+                                                            <rect key="frame" x="0.0" y="38" width="343" height="100"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="100" id="JGe-93-edz"/>
                                                             </constraints>
@@ -43,20 +58,39 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="klY-Q0-NuH">
-                                                            <rect key="frame" x="0.0" y="108" width="343" height="30"/>
+                                                            <rect key="frame" x="0.0" y="146" width="343" height="30"/>
                                                             <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal" title="Yes"/>
+                                                            <connections>
+                                                                <action selector="tapChoice:" destination="77E-lG-uLc" eventType="touchUpInside" id="lAz-wT-tEp"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DSg-3P-jTG">
+                                                            <rect key="frame" x="0.0" y="184" width="343" height="30"/>
+                                                            <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <state key="normal" title="Yes"/>
+                                                            <connections>
+                                                                <action selector="tapChoice:" destination="77E-lG-uLc" eventType="touchUpInside" id="hGq-nv-FHs"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qj2-U7-NP3">
+                                                            <rect key="frame" x="0.0" y="222" width="343" height="30"/>
+                                                            <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <state key="normal" title="Yes"/>
+                                                            <connections>
+                                                                <action selector="tapChoice:" destination="77E-lG-uLc" eventType="touchUpInside" id="usx-4q-HZp"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qr-3M-5Ix">
-                                                            <rect key="frame" x="0.0" y="146" width="343" height="30"/>
+                                                            <rect key="frame" x="0.0" y="260" width="343" height="30"/>
                                                             <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal" title="No"/>
                                                             <connections>
-                                                                <action selector="pressChoiceButton:" destination="77E-lG-uLc" eventType="touchUpInside" id="v2a-fC-CvU"/>
+                                                                <action selector="tapChoice:" destination="77E-lG-uLc" eventType="touchUpInside" id="tvs-Za-OUK"/>
                                                             </connections>
                                                         </button>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Fn2-Rn-8IA">
-                                                            <rect key="frame" x="0.0" y="184" width="343" height="31"/>
+                                                            <rect key="frame" x="0.0" y="298" width="343" height="36.666666666666686"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vote anonymously" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ftt-uo-XEi">
                                                                     <rect key="frame" x="0.0" y="0.0" width="286" height="20.333333333333332"/>
@@ -69,6 +103,25 @@
                                                                 </switch>
                                                             </subviews>
                                                         </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="hQD-oM-3si">
+                                                            <rect key="frame" x="0.0" y="342.66666666666669" width="343" height="30"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="left" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNI-lS-1yv">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="47" height="30"/>
+                                                                    <state key="normal" title="Report"/>
+                                                                    <connections>
+                                                                        <action selector="tapReport:" destination="77E-lG-uLc" eventType="touchUpInside" id="VQI-Bz-6xZ"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="right" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJC-IT-kub">
+                                                                    <rect key="frame" x="307" y="0.0" width="36" height="30"/>
+                                                                    <state key="normal" title="Stats"/>
+                                                                    <connections>
+                                                                        <action selector="pressStatsButton:" destination="77E-lG-uLc" eventType="touchUpInside" id="odA-vB-Yok"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </subviews>
+                                                        </stackView>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
@@ -77,15 +130,23 @@
                                     <constraints>
                                         <constraint firstItem="bym-wt-hey" firstAttribute="leading" secondItem="map-rC-ato" secondAttribute="leading" constant="16" id="9mK-PQ-pvo"/>
                                         <constraint firstItem="bym-wt-hey" firstAttribute="top" secondItem="map-rC-ato" secondAttribute="top" constant="16" id="Mt9-4w-eep"/>
+                                        <constraint firstItem="hQD-oM-3si" firstAttribute="trailing" secondItem="cNI-lS-1yv" secondAttribute="trailing" constant="296" id="PiZ-0P-hyH"/>
                                         <constraint firstItem="map-rC-ato" firstAttribute="bottom" secondItem="bym-wt-hey" secondAttribute="bottom" constant="16" id="hJb-o5-3Y2"/>
                                         <constraint firstItem="map-rC-ato" firstAttribute="trailing" secondItem="bym-wt-hey" secondAttribute="trailing" constant="16" id="ncb-W8-hpe"/>
                                     </constraints>
                                     <viewLayoutGuide key="safeArea" id="map-rC-ato"/>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="articlesButtonView" destination="ihc-dZ-MHa" id="km7-B6-swn"/>
+                                    <outlet property="initiatorLabelView" destination="4Fw-iw-4vN" id="qBy-ut-4uE"/>
                                     <outlet property="questionLabelView" destination="625-14-mrd" id="4p4-xh-hBy"/>
                                     <outlet property="questionLableView" destination="625-14-mrd" id="Eh6-HX-0br"/>
-                                    <outletCollection property="ChoiceButtonView" destination="6qr-3M-5Ix" collectionClass="NSMutableArray" id="Mbc-uA-PKO"/>
+                                    <outlet property="reportButtonView" destination="cNI-lS-1yv" id="rUh-gC-eSv"/>
+                                    <outlet property="statsButtonView" destination="iJC-IT-kub" id="pmL-fR-uZr"/>
+                                    <outletCollection property="choiceButtonView" destination="klY-Q0-NuH" collectionClass="NSMutableArray" id="3bu-Nv-Ldw"/>
+                                    <outletCollection property="choiceButtonView" destination="6qr-3M-5Ix" collectionClass="NSMutableArray" id="vgU-IK-0cT"/>
+                                    <outletCollection property="choiceButtonView" destination="qj2-U7-NP3" collectionClass="NSMutableArray" id="Pzu-jf-bUL"/>
+                                    <outletCollection property="choiceButtonView" destination="DSg-3P-jTG" collectionClass="NSMutableArray" id="wvu-Tc-m56"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -95,6 +156,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="pInspire" id="gLI-An-BP1">
+                        <barButtonItem key="leftBarButtonItem" systemItem="search" id="b1m-cV-mrC"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="qPC-PS-enO">
                             <connections>
                                 <segue destination="8rJ-Kc-sve" kind="presentation" id="Cnf-Gz-bAj"/>
@@ -123,14 +185,14 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="I9y-g4-3P7">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4NE-43-sLs">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4NE-43-sLs">
                                                 <rect key="frame" x="0.0" y="0.0" width="193.66666666666666" height="30"/>
                                                 <state key="normal" title="Cancel"/>
                                                 <connections>
                                                     <action selector="cancel:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="215-Lh-ubu"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTL-2T-0iX">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTL-2T-0iX">
                                                 <rect key="frame" x="201.66666666666663" y="0.0" width="141.33333333333337" height="30"/>
                                                 <state key="normal" title="Done"/>
                                                 <connections>

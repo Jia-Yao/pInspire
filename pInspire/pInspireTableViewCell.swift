@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol pInspireTableViewCellDelegate : class {
+    func didTapChoice(_ sender: pInspireTableViewCell, button: UIButton)
+    // func didTapStats(_ sender: pInspireTableViewCell)
+}
+
 class pInspireTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
@@ -15,11 +20,22 @@ class pInspireTableViewCell: UITableViewCell {
         // Initialization code
     }
 
+    @IBOutlet weak var articlesButtonView: UIButton!
+    @IBOutlet weak var initiatorLabelView: UILabel!
     @IBOutlet weak var questionLabelView: UILabel!
     @IBOutlet var choiceButtonView: [UIButton]! 
     @IBOutlet weak var questionLableView: UILabel!
+    @IBOutlet weak var reportButtonView: UIButton!
+    @IBOutlet weak var statsButtonView: UIButton!
     
-    @IBAction func pressChoiceButton(_ sender: UIButton) {
+    weak var delegate: pInspireTableViewCellDelegate?
+    
+    @IBAction func tapChoice(_ sender: UIButton) {
+        delegate?.didTapChoice(self, button: sender)
+    }
+    
+    @IBAction func tapReport(_ sender: UIButton) {
+        // delegate?.didTapReport(self, button: sender)
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
