@@ -12,24 +12,38 @@ import Firebase
 class pInspireViewController: UITableViewController, pInspireTableViewCellDelegate {
 
     @IBOutlet var pollTableView: UITableView!
-    
+    @objc private func handleRefresh(sender refreshControl: UIRefreshControl) {
+        configureDatabase()
+        refreshControl.endRefreshing()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // configureDatabase()
-        // self.pollTableView.rowHeight = CGFloat(250)
         // delegate and data source
         self.pollTableView.delegate = self
         self.pollTableView.dataSource = self
+        
+        // Refresh control
+        if #available(iOS 10.0, *) {
+            let refreshControl = UIRefreshControl()
+            let title = NSLocalizedString("PullToRefresh", comment: "Pull to refresh")
+            refreshControl.attributedTitle = NSAttributedString(string: title)
+            refreshControl.addTarget(self,
+                                     action: #selector(handleRefresh(sender:)),
+                                     for: .valueChanged)
+            self.pollTableView.refreshControl = refreshControl
+        }
         
         // Along with auto layout, these are the keys for enabling variable cell height
         self.pollTableView.estimatedRowHeight = 150
         self.pollTableView.rowHeight = UITableViewAutomaticDimension
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         // catch my View up to date with what went on while I was off-screen
         self.configureDatabase()
     }
+    
     
     var ref: DatabaseReference!
     fileprivate var _refHandle: DatabaseHandle?
@@ -37,7 +51,6 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
     var userName = "Amy"
     func didTapChoice(_ sender: pInspireTableViewCell, button: UIButton) {
         guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
-        print("pressed button", tappedIndexPath)
         let poll = pollTimeline[pollTimeline.count - 1 - tappedIndexPath.row]
         let choices = poll.choices
         let choosedButtonIndex = sender.choiceButtonView.index(of: button)
@@ -115,6 +128,8 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
         static let PollChoiceFieldName: String = "Choices"
         static let PollAnonymousFieldName: String = "Anonymity"
         static let PollInitiatorFieldName: String = "Initiator"
+        static let PollOptionColorWhenChosen: UIColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        static let PollOptionColorWhenNotChosen: UIColor = #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -148,7 +163,7 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
             choiceButtonView.isHidden = false
             
             let choiceModel = poll.choices[index]
-            choiceButtonView.backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
+            choiceButtonView.backgroundColor = Constants.PollOptionColorWhenNotChosen
             
             choiceButtonView.setTitle("\(choiceModel.content)", for:UIControlState.normal)
             choiceButtonView.isEnabled = true
@@ -170,9 +185,9 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
             let choiceModel = poll.choices[index]
             
             if choiceModel.userHasVotedThis(user: userName) {
-                choiceButtonView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+                choiceButtonView.backgroundColor = Constants.PollOptionColorWhenChosen
             } else {
-                choiceButtonView.backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
+                choiceButtonView.backgroundColor = Constants.PollOptionColorWhenNotChosen
             }
             let numOfVotes = choiceModel.numOfVotesForUser(for: userName)
             choiceButtonView.setTitle("\(choiceModel.content) (\(numOfVotes))", for: UIControlState.normal)

@@ -17,6 +17,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        
+        // navigation bar customize color
+        let navigationBarAppearace = UINavigationBar.appearance()
+        
+        // Color of Navigation Bar background
+        navigationBarAppearace.barTintColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        // Color of Navigation Bar Title
+        navigationBarAppearace.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white,
+                                                      NSAttributedStringKey.font: UIFont(name: "Georgia-Bold", size: 24)!] as [NSAttributedStringKey : Any]
+        // Color of Navigation Bar back indicator, button titles, button images
+        navigationBarAppearace.tintColor = UIColor.white
         return true
     }
 

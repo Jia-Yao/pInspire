@@ -17,15 +17,41 @@ class pInspireTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.layer.cornerRadius = 8
     }
-
+    
     @IBOutlet weak var voteAnonymouslySwitch: UISwitch!
+    
     @IBOutlet weak var articlesButtonView: UIButton!
+
     @IBOutlet weak var initiatorLabelView: UILabel!
+    
     @IBOutlet weak var questionLabelView: UILabel!
-    @IBOutlet var choiceButtonView: [UIButton]! 
-    @IBOutlet weak var questionLableView: UILabel!
+    
+    
+    @IBOutlet var choiceButtonView: [UIButton]! {
+        didSet {
+            // Button UI
+            for button in self.choiceButtonView {
+                // button.layer.borderWidth = 1.0
+                button.layer.cornerRadius = 8
+                // button.layer.borderColor = UIColor.blue.cgColor
+                // button.layer.backgroundColor = #colorLiteral(red: 1, green: 0.5980699052, blue: 0.1727632673, alpha: 1)
+                // button.layer.masksToBounds = true
+            }
+        }
+    }
+    
+    @IBOutlet weak var questionLableView: UILabel! {
+        didSet {
+            questionLableView.layer.borderWidth = 1.0
+            questionLableView.layer.cornerRadius = 8
+            questionLabelView.layer.borderColor = UIColor.blue.cgColor
+
+            questionLableView.backgroundColor = UIColor.white
+            questionLableView.layer.masksToBounds = true
+        }
+    }
     @IBOutlet weak var reportButtonView: UIButton!
     @IBOutlet weak var statsButtonView: UIButton!
     @IBOutlet weak var voteLabelView: UILabel!
