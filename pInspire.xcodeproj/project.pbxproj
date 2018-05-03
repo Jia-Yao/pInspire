@@ -17,6 +17,7 @@
 		1803782F20954A25009F214E /* Choice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1803782C20954A25009F214E /* Choice.swift */; };
 		1803783020954A25009F214E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1803782D20954A25009F214E /* User.swift */; };
 		1803783120954A25009F214E /* Poll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1803782E20954A25009F214E /* Poll.swift */; };
+		BA47C889209BB0880073242E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47C888209BB0880073242E /* WebViewController.swift */; };
 		BA5987BC20961657009B79DF /* pInspireTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5987BB20961657009B79DF /* pInspireTableViewCell.swift */; };
 		BAA407712095641500453A34 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAA407702095641500453A34 /* GoogleService-Info.plist */; };
 		BAB4949B209AE4A20077B3EB /* roundedButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB4949A209AE4A20077B3EB /* roundedButtonView.swift */; };
@@ -38,6 +39,7 @@
 		1803782E20954A25009F214E /* Poll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Poll.swift; sourceTree = "<group>"; };
 		5E060C68B10B5E55EFA9B67F /* Pods-pInspire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pInspire.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pInspire/Pods-pInspire.debug.xcconfig"; sourceTree = "<group>"; };
 		7CAFC73FB83272A2286306FD /* Pods-pInspire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pInspire.release.xcconfig"; path = "Pods/Target Support Files/Pods-pInspire/Pods-pInspire.release.xcconfig"; sourceTree = "<group>"; };
+		BA47C888209BB0880073242E /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		BA5987BB20961657009B79DF /* pInspireTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pInspireTableViewCell.swift; sourceTree = "<group>"; };
 		BAA407702095641500453A34 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BAB4949A209AE4A20077B3EB /* roundedButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roundedButtonView.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 		1803780520951710009F214E /* pInspire */ = {
 			isa = PBXGroup;
 			children = (
+				BA47C888209BB0880073242E /* WebViewController.swift */,
 				BA5987BB20961657009B79DF /* pInspireTableViewCell.swift */,
 				1803780620951710009F214E /* AppDelegate.swift */,
 				1803781A20952DE5009F214E /* pInspireViewController.swift */,
@@ -232,6 +235,7 @@
 				1803782120953D14009F214E /* CreatePollTableViewCell.swift in Sources */,
 				BAB4949B209AE4A20077B3EB /* roundedButtonView.swift in Sources */,
 				1803780B20951710009F214E /* CreatePollViewController.swift in Sources */,
+				BA47C889209BB0880073242E /* WebViewController.swift in Sources */,
 				1803783020954A25009F214E /* User.swift in Sources */,
 				BA5987BC20961657009B79DF /* pInspireTableViewCell.swift in Sources */,
 				1803783120954A25009F214E /* Poll.swift in Sources */,

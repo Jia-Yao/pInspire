@@ -49,6 +49,9 @@
                                                                     <state key="normal" title="Read more">
                                                                         <color key="titleColor" red="0.9137254901960784" green="0.13725490196078433" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     </state>
+                                                                    <connections>
+                                                                        <segue destination="lMo-C1-biO" kind="show" id="cbU-Ye-6mU"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                         </stackView>
@@ -220,6 +223,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lVg-Em-aL3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2578" y="-571"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="bkg-za-WXF">
+            <objects>
+                <viewController id="lMo-C1-biO" customClass="WebViewController" customModule="pInspire" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xsq-xM-vVO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ggv-OJ-iyz">
+                                <rect key="frame" x="16" y="88" width="343" height="641"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ggv-OJ-iyz" firstAttribute="leading" secondItem="Yxz-qT-hYH" secondAttribute="leading" constant="16" id="Er3-75-alE"/>
+                            <constraint firstItem="Yxz-qT-hYH" firstAttribute="trailing" secondItem="Ggv-OJ-iyz" secondAttribute="trailing" constant="16" id="HCC-l1-npJ"/>
+                            <constraint firstItem="Ggv-OJ-iyz" firstAttribute="bottom" secondItem="Yxz-qT-hYH" secondAttribute="bottom" id="MPC-nc-6gb"/>
+                            <constraint firstItem="Ggv-OJ-iyz" firstAttribute="top" secondItem="Yxz-qT-hYH" secondAttribute="top" id="uRn-LG-cBg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Yxz-qT-hYH"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="Ggv-OJ-iyz" id="6nX-fC-vd2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oZC-Y8-bsd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3348" y="-571.18226600985224"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="kBd-Tv-7UC">
