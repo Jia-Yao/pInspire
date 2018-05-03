@@ -355,21 +355,30 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="UGB-NQ-Wya">
-                                        <rect key="frame" x="0.0" y="172" width="343" height="31"/>
+                                        <rect key="frame" x="0.0" y="172" width="343" height="18"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ask Anonymously" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBF-aQ-T7o">
-                                                <rect key="frame" x="0.0" y="0.0" width="286" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="286" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qlE-RH-KV8">
-                                                <rect key="frame" x="294" y="0.0" width="51" height="31"/>
+                                                <rect key="frame" x="294" y="0.0" width="51" height="18"/>
                                             </switch>
                                         </subviews>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJM-HJ-g2B">
+                                        <rect key="frame" x="0.0" y="198" width="343" height="30"/>
+                                        <state key="normal" title="Add answer choice">
+                                            <color key="titleColor" red="0.92156862750000001" green="0.18823529410000001" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addAnswerChoice:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="MbV-Fe-3jJ"/>
+                                        </connections>
+                                    </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Abn-my-aHd" userLabel="ChoicesTable">
-                                        <rect key="frame" x="0.0" y="211" width="343" height="50"/>
+                                        <rect key="frame" x="0.0" y="236" width="343" height="466"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChoiceCellUnit" id="B0z-JF-lcp" customClass="CreatePollTableViewCell" customModule="pInspire" customModuleProvider="target">
@@ -380,7 +389,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter answer choice" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YgJ-7w-PVt">
-                                                            <rect key="frame" x="0.0" y="7" width="692" height="30"/>
+                                                            <rect key="frame" x="0.0" y="7" width="343" height="30"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits"/>
@@ -402,22 +411,13 @@
                                             <outlet property="delegate" destination="8rJ-Kc-sve" id="T9S-Nw-Jku"/>
                                         </connections>
                                     </tableView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJM-HJ-g2B">
-                                        <rect key="frame" x="0.0" y="269" width="343" height="433"/>
-                                        <state key="normal" title="Add answer choice">
-                                            <color key="titleColor" red="0.92156862750000001" green="0.18823529410000001" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="addAnswerChoice:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="MbV-Fe-3jJ"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="dKo-Wm-qmF" firstAttribute="leading" secondItem="SlQ-S4-BYH" secondAttribute="leading" id="0iz-ik-kkG"/>
                                     <constraint firstItem="I9y-g4-3P7" firstAttribute="leading" secondItem="SlQ-S4-BYH" secondAttribute="leading" id="9s0-6N-PjK"/>
+                                    <constraint firstItem="ZJM-HJ-g2B" firstAttribute="centerX" secondItem="SlQ-S4-BYH" secondAttribute="centerX" id="Cvt-Q2-YyC"/>
                                     <constraint firstAttribute="trailing" secondItem="I9y-g4-3P7" secondAttribute="trailing" id="EKN-hP-rKq"/>
                                     <constraint firstAttribute="trailing" secondItem="dKo-Wm-qmF" secondAttribute="trailing" id="J3P-Jn-tzn"/>
-                                    <constraint firstItem="ZJM-HJ-g2B" firstAttribute="centerX" secondItem="SlQ-S4-BYH" secondAttribute="centerX" id="Kre-cJ-tYf"/>
                                     <constraint firstAttribute="trailing" secondItem="UGB-NQ-Wya" secondAttribute="trailing" id="TMP-9m-pSm"/>
                                     <constraint firstItem="Abn-my-aHd" firstAttribute="leading" secondItem="SlQ-S4-BYH" secondAttribute="leading" id="la9-bp-8pe"/>
                                     <constraint firstItem="UGB-NQ-Wya" firstAttribute="leading" secondItem="SlQ-S4-BYH" secondAttribute="leading" id="sB3-LL-06f"/>
