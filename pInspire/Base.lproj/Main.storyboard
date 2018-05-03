@@ -246,7 +246,7 @@
             </objects>
             <point key="canvasLocation" x="906" y="842"/>
         </scene>
-        <!--Item-->
+        <!--Profile-->
         <scene sceneID="P2Y-b2-I8s">
             <objects>
                 <viewController id="YHm-qz-Gb0" sceneMemberID="viewController">
@@ -256,7 +256,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="f4x-tH-haT"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="user_male" selectedImage="user_male" id="OSk-sG-BSG"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="user_male" selectedImage="user_male" id="OSk-sG-BSG"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="46D-ij-0HY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
