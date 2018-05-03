@@ -28,6 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                       NSAttributedStringKey.font: UIFont(name: "Georgia-Bold", size: 24)!] as [NSAttributedStringKey : Any]
         // Color of Navigation Bar back indicator, button titles, button images
         navigationBarAppearace.tintColor = UIColor.white
+        
+        // Color of Tab bar items
+        UITabBar.appearance().barTintColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1) 
+        UITabBar.appearance().tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         return true
     }
 
