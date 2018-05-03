@@ -22,7 +22,7 @@ class pInspireTableViewCell: UITableViewCell {
     
     @IBOutlet weak var voteAnonymouslySwitch: UISwitch!{
         didSet {
-            voteAnonymouslySwitch.onTintColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+            voteAnonymouslySwitch.onTintColor = #colorLiteral(red: 0.9568627451, green: 0.4078431373, blue: 0.2235294118, alpha: 1)
         }
     }
     

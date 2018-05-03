@@ -27,9 +27,9 @@ class WebViewController: UIViewController, WKNavigationDelegate {
         webView.load(URLRequest(url: url))
         
         // 2
-        let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView.reload))
-        toolbarItems = [refresh]
-        navigationController?.isToolbarHidden = false
+        // let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView.reload))
+        // toolbarItems = [refresh]
+        // navigationController?.isToolbarHidden = false
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {

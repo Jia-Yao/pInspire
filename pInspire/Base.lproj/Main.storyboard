@@ -322,14 +322,18 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4NE-43-sLs">
                                                 <rect key="frame" x="0.0" y="0.0" width="193.66666666666666" height="30"/>
-                                                <state key="normal" title="Cancel"/>
+                                                <state key="normal" title="Cancel">
+                                                    <color key="titleColor" red="0.92156862745098034" green="0.18823529411764706" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="cancel:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="215-Lh-ubu"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTL-2T-0iX">
                                                 <rect key="frame" x="201.66666666666663" y="0.0" width="141.33333333333337" height="30"/>
-                                                <state key="normal" title="Done"/>
+                                                <state key="normal" title="Done">
+                                                    <color key="titleColor" red="0.92156862750000001" green="0.18823529410000001" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="done:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="hN3-7L-nVn"/>
                                                 </connections>
@@ -376,7 +380,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter answer choice" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YgJ-7w-PVt">
-                                                            <rect key="frame" x="0.0" y="7" width="343" height="30"/>
+                                                            <rect key="frame" x="0.0" y="7" width="692" height="30"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits"/>
@@ -400,7 +404,9 @@
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJM-HJ-g2B">
                                         <rect key="frame" x="0.0" y="269" width="343" height="433"/>
-                                        <state key="normal" title="Add answer choice"/>
+                                        <state key="normal" title="Add answer choice">
+                                            <color key="titleColor" red="0.92156862750000001" green="0.18823529410000001" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="addAnswerChoice:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="MbV-Fe-3jJ"/>
                                         </connections>

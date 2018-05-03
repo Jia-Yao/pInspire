@@ -16,7 +16,11 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
     
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var pollQuestion: UITextView!
-    @IBOutlet weak var anonymousSwitch: UISwitch!
+    @IBOutlet weak var anonymousSwitch: UISwitch! {
+        didSet {
+            anonymousSwitch.onTintColor = #colorLiteral(red: 0.9568627451, green: 0.4078431373, blue: 0.2235294118, alpha: 1)
+        }
+    }
     @IBOutlet weak var choicesTable: UITableView!
     var poll: Poll?
     var choices = [Choice]()
@@ -31,7 +35,7 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
         super.viewDidLoad()
         pollQuestion.delegate = self
         pollQuestion.becomeFirstResponder()
-        pollQuestion.layer.borderColor = UIColor.blue.cgColor
+        pollQuestion.layer.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         pollQuestion.layer.borderWidth = 1
         updateDoneButtonState()
         choices.append(Choice())
@@ -59,7 +63,7 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        pollQuestion.layer.borderColor = UIColor.blue.cgColor
+        pollQuestion.layer.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         doneButton.isEnabled = false
     }
     
