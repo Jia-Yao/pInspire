@@ -120,7 +120,6 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
                 }
                 choices[row].content = cell.choiceContent.text ?? ""
             }
-            poll = Poll(question: question, choices: choices, user: "Amy", isAnonymous: isAnonymous)
             
 //            print(question + " " + String(isAnonymous))
 //            for row in 0..<choices.count{
@@ -128,7 +127,7 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
 //            }
             
             // TODO: Save to Firebase
-            writeNewPoll(withPoll: poll!)
+            writeNewPoll(question: question, choices: choices, user: "Amy", isAnonymous: isAnonymous)
         }
         dismiss(animated: true, completion: nil)
     }
@@ -139,23 +138,20 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
         let text = pollQuestion.text ?? ""
         doneButton.isEnabled = !text.isEmpty && choices.count > 1
     }
-    func writeNewPoll(withPoll poll: Poll) {//} userID: String, username: String, title: String, body: String) {
-        // Create new post at /user-posts/$userid/$postid and at
-        // /posts/$postid simultaneously
-        // [START write_fan_out]
+    func writeNewPoll(question: String, choices: [Choice], user: String, isAnonymous: Bool) {
+        // Create new post at /Polls/$key
         var choicesDict = [String: Dictionary<String, Bool>]()
-        for choice in poll.choices {
+        for choice in choices {
             choicesDict[choice.content] = ["dummy": false]
         }
         let key = refPoll.child("Polls").childByAutoId().key
-        let newPoll = ["Question": poll.question,
+        let newPoll = ["Question": question,
                        "Choices": choicesDict,
-                    "Anonymity": poll.initiatorAnonymous,
-                    "Initiator": poll.initiator] as [String : Any]
+                    "Anonymity": isAnonymous,
+                    "Initiator": user] as [String : Any]
         let childUpdates = ["/Polls/\(key)": newPoll]
-                        //"/user-posts/\(userID)/\(key)/": post]
         refPoll.updateChildValues(childUpdates)
-        // [END write_fan_out]
+
     }
 }
 /*

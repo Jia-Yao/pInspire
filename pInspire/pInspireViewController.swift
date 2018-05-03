@@ -30,30 +30,26 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
         // catch my View up to date with what went on while I was off-screen
         self.configureDatabase()
     }
-
+    
     var ref: DatabaseReference!
     fileprivate var _refHandle: DatabaseHandle?
     var pollTimeline = [Poll]()
-    
+    var userName = "Amy"
     func didTapChoice(_ sender: pInspireTableViewCell, button: UIButton) {
         guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
         print("pressed button", tappedIndexPath)
-        // updateModelAndWriteData()
-        let poll = pollTimeline[tappedIndexPath.row]
+        let poll = pollTimeline[pollTimeline.count - 1 - tappedIndexPath.row]
         let choices = poll.choices
-        for indexOfChoice in 0..<choices.count {
-            let choice = choices[indexOfChoice]
-            let button = sender.choiceButtonView[indexOfChoice]
-            button.setTitle("\(choice.content) (\(choice.numOfVotes))", for: UIControlState.normal)
-            button.isEnabled = false
-        }
-        button.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        sender.statsButtonView.isHidden = false
+        let choosedButtonIndex = sender.choiceButtonView.index(of: button)
+        
+        choices[choosedButtonIndex!].addUser(user: userName, isAnonymous: sender.voteAnonymously)
+        updateViewForhasVoted(for: sender, withPoll: poll)
+        writeVoteData(id: poll.Id, choiceContent: choices[choosedButtonIndex!].content, userName: userName, isAnonymous: sender.voteAnonymously)
     }
     
-    /* func updateModelAndWriteData(for poll: Poll, ) {
-        
-    }*/
+    func writeVoteData(id: String, choiceContent: String, userName: String, isAnonymous: Bool){
+        ref.child("Polls/Polls").child(id).child(Constants.PollChoiceFieldName).child(choiceContent).child(userName).setValue(isAnonymous)
+    }
     
     func configureDatabase() {
         ref = Database.database().reference()
@@ -63,9 +59,10 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
             guard let strongSelf = self else { return }
             
             //iterating through all the values
-            strongSelf.pollTimeline = [Poll]()
+            strongSelf.pollTimeline.removeAll()
             for poll in snapshot.children.allObjects as! [DataSnapshot] {
                 //getting values
+                let pollKey = poll.key
                 let pollObject = poll.value as? [String: AnyObject]
                 let pollQuestion  = pollObject![Constants.PollQuestionFieldName]
                 let pollInitiator = pollObject![Constants.PollInitiatorFieldName]
@@ -79,7 +76,7 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
                     }
                 }
                 //creating poll object with model and fetched values
-                let newPoll = Poll(question: (pollQuestion as! String), choices: choices, user: pollInitiator as! String , isAnonymous: pollAnonymous as! Bool)
+                let newPoll = Poll(Id: pollKey, question: (pollQuestion as! String), choices: choices, user: pollInitiator as! String , isAnonymous: pollAnonymous as! Bool)
                 
                 //appending it to list
                 self?.pollTimeline.append(newPoll)
@@ -126,23 +123,66 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
         cell.delegate = self
         
         // Unpack message from Firebase DataSnapshot
-        let poll: Poll = self.pollTimeline[indexPath.row]
+        let totalCount = self.pollTimeline.count
+        let poll: Poll = self.pollTimeline[totalCount - 1 - indexPath.row]
         cell.questionLabelView.preferredMaxLayoutWidth = self.pollTableView.bounds.width
         cell.questionLabelView.text = "\(poll.question)"
         cell.initiatorLabelView.text = poll.initiatorAnonymous ? "Anonymous" : "\(poll.initiator)"
+        let userHasVoted = poll.userHasVoted(user: "Amy")
+        if userHasVoted {
+            updateViewForhasVoted(for: cell, withPoll: poll)
+        } else {
+            updateViewForNotVote(for: cell, withPoll: poll)
+        }
+        
+        return cell
+    }
+
+    func updateViewForNotVote(for cell: pInspireTableViewCell, withPoll poll: Poll) {
+
+        cell.statsButtonView.isHidden = true
+        cell.voteAnonymouslySwitch.isHidden = false
+        cell.voteLabelView.isHidden = false
         for index in 0..<poll.choices.count {
-            cell.choiceButtonView[index].setTitle("\(poll.choices[index].content)", for:UIControlState.normal)
+            let choiceButtonView = cell.choiceButtonView[index]
+            choiceButtonView.isHidden = false
+            
+            let choiceModel = poll.choices[index]
+            choiceButtonView.backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
+            
+            choiceButtonView.setTitle("\(choiceModel.content)", for:UIControlState.normal)
+            choiceButtonView.isEnabled = true
         }
         // Hide unnecessary buttons.
         for index in poll.choices.count..<cell.choiceButtonView.count {
             cell.choiceButtonView[index].isHidden = true
         }
-        cell.statsButtonView.isHidden = true
-        
-        return cell
     }
-    
 
+    func updateViewForhasVoted(for cell: pInspireTableViewCell, withPoll poll: Poll) {
+        cell.statsButtonView.isHidden = false
+        cell.voteAnonymouslySwitch.isHidden = true
+        cell.voteLabelView.isHidden = true
+        for index in 0..<poll.choices.count {
+            let choiceButtonView = cell.choiceButtonView[index]
+            choiceButtonView.isHidden = false
+            
+            let choiceModel = poll.choices[index]
+            
+            if choiceModel.userHasVotedThis(user: userName) {
+                choiceButtonView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+            } else {
+                choiceButtonView.backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
+            }
+            let numOfVotes = choiceModel.numOfVotesForUser(for: userName)
+            choiceButtonView.setTitle("\(choiceModel.content) (\(numOfVotes))", for: UIControlState.normal)
+            choiceButtonView.isEnabled = false
+        }
+        // Hide unnecessary buttons.
+        for index in poll.choices.count..<cell.choiceButtonView.count {
+            cell.choiceButtonView[index].isHidden = true
+        }
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -185,7 +225,24 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-    }
-    */
+        if let identifier = segue.identifier {
+            let destination = segue.destination.contents
 
+            if let destination = destination as?  Image {
+                
+            }
+            if identifier ==
+        }
+    }*/
+    
+}
+
+extension UIViewController {
+    var contents: UIViewController {
+        if let navcon = self as? UINavigationController {
+            return navcon.visibleViewController ?? self
+        } else {
+            return self
+        }
+    }
 }

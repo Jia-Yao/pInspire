@@ -20,6 +20,7 @@ class pInspireTableViewCell: UITableViewCell {
         // Initialization code
     }
 
+    @IBOutlet weak var voteAnonymouslySwitch: UISwitch!
     @IBOutlet weak var articlesButtonView: UIButton!
     @IBOutlet weak var initiatorLabelView: UILabel!
     @IBOutlet weak var questionLabelView: UILabel!
@@ -27,6 +28,13 @@ class pInspireTableViewCell: UITableViewCell {
     @IBOutlet weak var questionLableView: UILabel!
     @IBOutlet weak var reportButtonView: UIButton!
     @IBOutlet weak var statsButtonView: UIButton!
+    @IBOutlet weak var voteLabelView: UILabel!
+    
+    var voteAnonymously: Bool {
+        get {
+            return voteAnonymouslySwitch.isOn
+        }
+    }
     
     weak var delegate: pInspireTableViewCellDelegate?
     

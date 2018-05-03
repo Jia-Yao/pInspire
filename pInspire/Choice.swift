@@ -17,6 +17,18 @@ class Choice {
         }
     }
     
+    func numOfVotesForUser(for user: String) -> Int {
+        if invisibleUsers.contains(user) {
+            return numOfVotes + 1
+        } else {
+            return numOfVotes
+        }
+    }
+    
+    func userHasVotedThis(user:String) -> Bool {
+        return votesDict.keys.contains(user)
+    }
+    
     private var votesDict = [String: Bool]()
     
     var visibleUsers: [String] {
@@ -24,10 +36,19 @@ class Choice {
             return [String](votesDict.filter{$0.value == true}.keys)
         }
     }
+    
+    func containUserVote(user: String) -> Bool {
+        return votesDict.keys.contains(user)
+    }
+    
     private var invisibleUsers: [String] {
         get {
             return [String](votesDict.filter{$0.value == false}.keys)
         }
+    }
+    
+    func addUser(user: String, isAnonymous: Bool) {
+        votesDict[user] = !isAnonymous
     }
     
     convenience init(for choice: String, votes: Dictionary<String, Bool>){
