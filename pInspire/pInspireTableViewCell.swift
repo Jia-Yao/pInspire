@@ -20,7 +20,11 @@ class pInspireTableViewCell: UITableViewCell {
         self.layer.cornerRadius = 8
     }
     
-    @IBOutlet weak var voteAnonymouslySwitch: UISwitch!
+    @IBOutlet weak var voteAnonymouslySwitch: UISwitch!{
+        didSet {
+            voteAnonymouslySwitch.onTintColor = #colorLiteral(red: 0.9921568627, green: 0.7333333333, blue: 0.3019607843, alpha: 1)
+        }
+    }
     
     @IBOutlet weak var articlesButtonView: UIButton!
 
@@ -46,7 +50,7 @@ class pInspireTableViewCell: UITableViewCell {
         didSet {
             questionLableView.layer.borderWidth = 1.0
             questionLableView.layer.cornerRadius = 8
-            questionLabelView.layer.borderColor = UIColor.blue.cgColor
+            questionLabelView.layer.borderColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
 
             questionLableView.backgroundColor = UIColor.white
             questionLableView.layer.masksToBounds = true

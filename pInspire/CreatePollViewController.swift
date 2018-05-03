@@ -138,6 +138,7 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
         let text = pollQuestion.text ?? ""
         doneButton.isEnabled = !text.isEmpty && choices.count > 1
     }
+    
     func writeNewPoll(question: String, choices: [Choice], user: String, isAnonymous: Bool) {
         // Create new post at /Polls/$key
         var choicesDict = [String: Dictionary<String, Bool>]()

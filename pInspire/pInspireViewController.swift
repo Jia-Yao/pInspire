@@ -128,8 +128,8 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
         static let PollChoiceFieldName: String = "Choices"
         static let PollAnonymousFieldName: String = "Anonymity"
         static let PollInitiatorFieldName: String = "Initiator"
-        static let PollOptionColorWhenChosen: UIColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
-        static let PollOptionColorWhenNotChosen: UIColor = #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
+        static let PollOptionColorWhenChosen: UIColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+        static let PollOptionColorWhenNotChosen: UIColor = #colorLiteral(red: 0.9921568627, green: 0.7333333333, blue: 0.3019607843, alpha: 1)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

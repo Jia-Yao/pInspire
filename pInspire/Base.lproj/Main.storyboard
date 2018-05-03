@@ -46,7 +46,9 @@
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihc-dZ-MHa">
                                                                     <rect key="frame" x="290" y="0.0" width="53" height="20.333333333333332"/>
-                                                                    <state key="normal" title="Articles"/>
+                                                                    <state key="normal" title="Articles">
+                                                                        <color key="titleColor" red="0.9137254901960784" green="0.13725490196078433" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </state>
                                                                 </button>
                                                             </subviews>
                                                         </stackView>
@@ -123,6 +125,7 @@
                                                                 </label>
                                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HVE-iQ-Ove">
                                                                     <rect key="frame" x="294" y="0.0" width="51" height="26.333333333333332"/>
+                                                                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </switch>
                                                             </subviews>
                                                         </stackView>
@@ -131,14 +134,18 @@
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="left" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNI-lS-1yv">
                                                                     <rect key="frame" x="0.0" y="0.0" width="47" height="30"/>
-                                                                    <state key="normal" title="Report"/>
+                                                                    <state key="normal" title="Report">
+                                                                        <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </state>
                                                                     <connections>
                                                                         <action selector="tapReport:" destination="77E-lG-uLc" eventType="touchUpInside" id="VQI-Bz-6xZ"/>
                                                                     </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="right" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJC-IT-kub">
                                                                     <rect key="frame" x="307" y="0.0" width="36" height="30"/>
-                                                                    <state key="normal" title="Stats"/>
+                                                                    <state key="normal" title="Stats">
+                                                                        <color key="titleColor" red="0.91372549020000005" green="0.13725490200000001" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </state>
                                                                     <connections>
                                                                         <action selector="pressStatsButton:" destination="77E-lG-uLc" eventType="touchUpInside" id="odA-vB-Yok"/>
                                                                         <segue destination="uCt-MA-1xr" kind="show" identifier="show stats" id="eth-lp-4XU"/>
@@ -228,7 +235,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HzW-mX-fIC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1" y="843"/>
+            <point key="canvasLocation" x="-295" y="827"/>
         </scene>
         <!--Notifications-->
         <scene sceneID="0da-lA-qUm">
