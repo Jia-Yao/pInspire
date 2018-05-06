@@ -24,7 +24,8 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
     @IBOutlet weak var choicesTable: UITableView!
     var poll: Poll?
     var choices = [Choice]()
-    var user = User()
+    var user: User?
+    var userName: String?
     
     // Database configuration
     var refPoll: DatabaseReference!
@@ -93,7 +94,6 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
         }
         let choice = choices[indexPath.row]
         cell.choiceContent.text = choice.content
-        print ("here" + String(choices.count) + String(indexPath.row))
         return cell
     }
     
@@ -131,7 +131,7 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
 //            }
             
             // TODO: Save to Firebase
-            writeNewPoll(question: question, choices: choices, user: "Amy", isAnonymous: isAnonymous)
+            writeNewPoll(question: question, choices: choices, user: userName!, isAnonymous: isAnonymous)
         }
         dismiss(animated: true, completion: nil)
     }

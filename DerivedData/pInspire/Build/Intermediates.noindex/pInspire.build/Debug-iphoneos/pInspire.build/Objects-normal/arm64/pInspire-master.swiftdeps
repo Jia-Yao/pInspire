@@ -1,0 +1,14 @@
+version: "Apple Swift version 4.1 (swiftlang-902.0.48 clang-902.0.37.1)"
+options: "88ffb6e0d869cfd93956268be85faca4"
+build_time: [1525557430, 195605000]
+inputs:
+  "/Users/jiayao/Desktop/github/pInspire/pInspire/CreatePollTableViewCell.swift": [1525198471, 0]
+  "/Users/jiayao/Desktop/github/pInspire/pInspire/roundedButtonView.swift": [1525367258, 0]
+  "/Users/jiayao/Desktop/github/pInspire/pInspire/CreatePollViewController.swift": [1525556462, 0]
+  "/Users/jiayao/Desktop/github/pInspire/pInspire/WebViewController.swift": [1525556462, 0]
+  "/Users/jiayao/Desktop/github/pInspire/pInspire/User.swift": [1525367258, 0]
+  "/Users/jiayao/Desktop/github/pInspire/pInspire/pInspireTableViewCell.swift": [1525556462, 0]
+  "/Users/jiayao/Desktop/github/pInspire/pInspire/Poll.swift": [1525367258, 0]
+  "/Users/jiayao/Desktop/github/pInspire/pInspire/Choice.swift": [1525367258, 0]
+  "/Users/jiayao/Desktop/github/pInspire/pInspire/AppDelegate.swift": !dirty [1525557313, 0]
+  "/Users/jiayao/Desktop/github/pInspire/pInspire/pInspireViewController.swift": [1525556462, 0]

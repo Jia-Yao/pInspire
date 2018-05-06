@@ -11,11 +11,22 @@ import Firebase
 
 class pInspireViewController: UITableViewController, pInspireTableViewCellDelegate {
 
+    //MARK: Properties
+    
     @IBOutlet var pollTableView: UITableView!
+    var ref: DatabaseReference!
+    fileprivate var _refHandle: DatabaseHandle?
+    var pollTimeline = [Poll]()
+    var user: User?
+    var userName: String?
+    
+    //MARK: View-related Methods
+    
     @objc private func handleRefresh(sender refreshControl: UIRefreshControl) {
         configureDatabase()
         refreshControl.endRefreshing()
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // delegate and data source
@@ -32,7 +43,7 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
                                      for: .valueChanged)
             self.pollTableView.refreshControl = refreshControl
         }
-        
+
         // Along with auto layout, these are the keys for enabling variable cell height
         self.pollTableView.estimatedRowHeight = 150
         self.pollTableView.rowHeight = UITableViewAutomaticDimension
@@ -44,20 +55,15 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
         self.configureDatabase()
     }
     
-    
-    var ref: DatabaseReference!
-    fileprivate var _refHandle: DatabaseHandle?
-    var pollTimeline = [Poll]()
-    var userName = "Amy"
     func didTapChoice(_ sender: pInspireTableViewCell, button: UIButton) {
         guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
         let poll = pollTimeline[pollTimeline.count - 1 - tappedIndexPath.row]
         let choices = poll.choices
         let choosedButtonIndex = sender.choiceButtonView.index(of: button)
         
-        choices[choosedButtonIndex!].addUser(user: userName, isAnonymous: sender.voteAnonymously)
+        choices[choosedButtonIndex!].addUser(user: userName!, isAnonymous: sender.voteAnonymously)
         updateViewForhasVoted(for: sender, withPoll: poll)
-        writeVoteData(id: poll.Id, choiceContent: choices[choosedButtonIndex!].content, userName: userName, isAnonymous: sender.voteAnonymously)
+        writeVoteData(id: poll.Id, choiceContent: choices[choosedButtonIndex!].content, userName: userName!, isAnonymous: sender.voteAnonymously)
     }
     
     func writeVoteData(id: String, choiceContent: String, userName: String, isAnonymous: Bool){
@@ -108,11 +114,6 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -145,13 +146,12 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
         cell.questionLabelView.preferredMaxLayoutWidth = self.pollTableView.bounds.width
         cell.questionLabelView.text = "\(poll.question)"
         cell.initiatorLabelView.text = poll.initiatorAnonymous ? "Anonymous" : "\(poll.initiator)"
-        let userHasVoted = poll.userHasVoted(user: "Amy")
+        let userHasVoted = poll.userHasVoted(user: userName!)
         if userHasVoted {
             updateViewForhasVoted(for: cell, withPoll: poll)
         } else {
             updateViewForNotVote(for: cell, withPoll: poll)
         }
-        
         return cell
     }
 
@@ -186,12 +186,12 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
             
             let choiceModel = poll.choices[index]
             
-            if choiceModel.userHasVotedThis(user: userName) {
+            if choiceModel.userHasVotedThis(user: userName!) {
                 choiceButtonView.backgroundColor = Constants.PollOptionColorWhenChosen
             } else {
                 choiceButtonView.backgroundColor = Constants.PollOptionColorWhenNotChosen
             }
-            let numOfVotes = choiceModel.numOfVotesForUser(for: userName)
+            let numOfVotes = choiceModel.numOfVotesForUser(for: userName!)
             choiceButtonView.setTitle("\(choiceModel.content) (\(numOfVotes))", for: UIControlState.normal)
             choiceButtonView.isEnabled = false
         }
@@ -234,23 +234,20 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
         return true
     }
     */
-
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        if let identifier = segue.identifier {
-            let destination = segue.destination.contents
-
-            if let destination = destination as?  Image {
-                
+        switch(segue.identifier ?? "") {
+        case "CreatePoll":
+            if let createPollController = segue.destination as? CreatePollViewController{
+                createPollController.user = user
+                createPollController.userName = userName
             }
-            if identifier ==
+        default:
+            print("pInspire: Unexpected Segue Identifier; \(segue.identifier ?? "")")
         }
-    }*/
+    }
     
 }
 

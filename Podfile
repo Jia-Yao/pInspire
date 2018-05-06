@@ -8,4 +8,7 @@ target 'pInspire' do
   # Pods for pInspire
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+  pod 'FBSDKLoginKit'
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
 end

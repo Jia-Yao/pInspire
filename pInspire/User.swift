@@ -9,10 +9,10 @@
 import Foundation
 
 class User {
-    var userName: String = ""
-    var password: String = ""
-    var initiatedPolls = [Poll]()
-    var participatedPolls = [Poll]()
+    var userId: String = ""
+    var firstName: String = ""
+    var lastName: String = ""
+    var profilePhoto: String = ""
     init(){
         
     }
