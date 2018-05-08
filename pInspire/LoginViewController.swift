@@ -15,8 +15,8 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
     
     //MARK: Properties
     
-    var loginButton = LoginButton(readPermissions: [ .publicProfile ])
-    var user = User()
+    var loginButton = LoginButton(readPermissions: [ .publicProfile, .userFriends ])
+    var user = User(userId: "", firstName: "", lastName: "", profilePhoto: "")
     var refUser: DatabaseReference!
     
     //MARK: View-related Methods
@@ -107,11 +107,20 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch(segue.identifier ?? "") {
         case "LoggingIn":
-            if let tabBarController = segue.destination as? UITabBarController,
-                let navigationController = tabBarController.viewControllers![0] as? UINavigationController,
+            if let tabBarController = segue.destination as? UITabBarController{
+                if let navigationController = tabBarController.viewControllers![0] as? UINavigationController,
                 let pInspireController = navigationController.topViewController as? pInspireViewController{
                     pInspireController.user = user
                     pInspireController.userName = user.firstName + " " + user.lastName
+                }
+                if let navigationController = tabBarController.viewControllers![1] as? UINavigationController,
+                    let contactsController = navigationController.topViewController as? ContactsTableViewController{
+                    contactsController.me = user
+                }
+                if let navigationController = tabBarController.viewControllers![3] as? UINavigationController,
+                    let discussionsController = navigationController.topViewController as? DiscussionGroupTableViewController{
+                    discussionsController.me = user
+                }
                 // TODO: May need to set user for other tabs as well
             }
         default:

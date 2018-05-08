@@ -21,6 +21,10 @@
 		18078582209E72D300317AF3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18078581209E72D300317AF3 /* ProfileViewController.swift */; };
 		18078586209EB71D00317AF3 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18078585209EB71D00317AF3 /* ContactsTableViewController.swift */; };
 		18078588209EB8F200317AF3 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18078587209EB8F200317AF3 /* ContactsTableViewCell.swift */; };
+		189A74D920A17AE400E502B0 /* DiscussionGroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189A74D820A17AE400E502B0 /* DiscussionGroupTableViewController.swift */; };
+		189A74DB20A17B6E00E502B0 /* DiscussionGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189A74DA20A17B6E00E502B0 /* DiscussionGroupTableViewCell.swift */; };
+		189A74DD20A17FAB00E502B0 /* GroupInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189A74DC20A17FAB00E502B0 /* GroupInfo.swift */; };
+		189A74DF20A184C500E502B0 /* DiscussionRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189A74DE20A184C500E502B0 /* DiscussionRoomViewController.swift */; };
 		BA47C889209BB0880073242E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47C888209BB0880073242E /* WebViewController.swift */; };
 		BA5987BC20961657009B79DF /* pInspireTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5987BB20961657009B79DF /* pInspireTableViewCell.swift */; };
 		BAA407712095641500453A34 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAA407702095641500453A34 /* GoogleService-Info.plist */; };
@@ -45,6 +49,10 @@
 		18078581209E72D300317AF3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		18078585209EB71D00317AF3 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		18078587209EB8F200317AF3 /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
+		189A74D820A17AE400E502B0 /* DiscussionGroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionGroupTableViewController.swift; sourceTree = "<group>"; };
+		189A74DA20A17B6E00E502B0 /* DiscussionGroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionGroupTableViewCell.swift; sourceTree = "<group>"; };
+		189A74DC20A17FAB00E502B0 /* GroupInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInfo.swift; sourceTree = "<group>"; };
+		189A74DE20A184C500E502B0 /* DiscussionRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionRoomViewController.swift; sourceTree = "<group>"; };
 		5E060C68B10B5E55EFA9B67F /* Pods-pInspire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pInspire.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pInspire/Pods-pInspire.debug.xcconfig"; sourceTree = "<group>"; };
 		7CAFC73FB83272A2286306FD /* Pods-pInspire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pInspire.release.xcconfig"; path = "Pods/Target Support Files/Pods-pInspire/Pods-pInspire.release.xcconfig"; sourceTree = "<group>"; };
 		BA47C888209BB0880073242E /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +107,10 @@
 				1803781120951712009F214E /* LaunchScreen.storyboard */,
 				1807857F209E64F200317AF3 /* LoginViewController.swift */,
 				1803780C20951710009F214E /* Main.storyboard */,
+				189A74DE20A184C500E502B0 /* DiscussionRoomViewController.swift */,
+				189A74DA20A17B6E00E502B0 /* DiscussionGroupTableViewCell.swift */,
+				189A74D820A17AE400E502B0 /* DiscussionGroupTableViewController.swift */,
+				189A74DC20A17FAB00E502B0 /* GroupInfo.swift */,
 				BA5987BB20961657009B79DF /* pInspireTableViewCell.swift */,
 				1803781A20952DE5009F214E /* pInspireViewController.swift */,
 				1803782E20954A25009F214E /* Poll.swift */,
@@ -228,6 +240,8 @@
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -239,6 +253,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -256,8 +272,11 @@
 			files = (
 				18078588209EB8F200317AF3 /* ContactsTableViewCell.swift in Sources */,
 				1803782120953D14009F214E /* CreatePollTableViewCell.swift in Sources */,
+				189A74DD20A17FAB00E502B0 /* GroupInfo.swift in Sources */,
 				BAB4949B209AE4A20077B3EB /* roundedButtonView.swift in Sources */,
 				1803780B20951710009F214E /* CreatePollViewController.swift in Sources */,
+				189A74D920A17AE400E502B0 /* DiscussionGroupTableViewController.swift in Sources */,
+				189A74DB20A17B6E00E502B0 /* DiscussionGroupTableViewCell.swift in Sources */,
 				BA47C889209BB0880073242E /* WebViewController.swift in Sources */,
 				1803783020954A25009F214E /* User.swift in Sources */,
 				18078586209EB71D00317AF3 /* ContactsTableViewController.swift in Sources */,
@@ -268,6 +287,7 @@
 				1803780720951710009F214E /* AppDelegate.swift in Sources */,
 				1803781B20952DE5009F214E /* pInspireViewController.swift in Sources */,
 				18078580209E64F200317AF3 /* LoginViewController.swift in Sources */,
+				189A74DF20A184C500E502B0 /* DiscussionRoomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

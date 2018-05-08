@@ -13,7 +13,10 @@ class User {
     var firstName: String = ""
     var lastName: String = ""
     var profilePhoto: String = ""
-    init(){
-        
+    init(userId:String, firstName:String, lastName:String, profilePhoto:String){
+        self.userId = userId
+        self.firstName = firstName
+        self.lastName = lastName
+        self.profilePhoto = profilePhoto
     }
 }

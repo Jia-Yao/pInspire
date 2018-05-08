@@ -1,0 +1,500 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "ProfileViewController"
+provides-nominal:
+- "8pInspire21ProfileViewControllerC"
+provides-member:
+- ["8pInspire21ProfileViewControllerC", ""]
+provides-dynamic-lookup:
+- "viewDidLoad"
+depends-top-level:
+- "Array"
+- "AssignmentPrecedence"
+- "LoginButton"
+- "LoginButtonDelegate"
+- "LoginResult"
+- "ProfileViewController"
+- !private "StringLiteralType"
+- "UIViewController"
+depends-member:
+- !private ["12FacebookCore26AppEventParameterValueTypeP", "init"]
+- !private ["s23BidirectionalCollectionP", "init"]
+- !private ["So15CALayerDelegateP", "addSubview"]
+- !private ["So15CALayerDelegateP", "center"]
+- !private ["So15CALayerDelegateP", "delegate"]
+- ["So15CALayerDelegateP", "init"]
+- ["s7CVarArgP", "LoginButton"]
+- ["s7CVarArgP", ""]
+- !private ["s7CVarArgP", "addSubview"]
+- !private ["s7CVarArgP", "center"]
+- !private ["s7CVarArgP", "delegate"]
+- ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "loginButton"]
+- ["s7CVarArgP", "loginButtonDidCompleteLogin"]
+- ["s7CVarArgP", "loginButtonDidLogOut"]
+- !private ["s7CVarArgP", "performSegue"]
+- !private ["s7CVarArgP", "view"]
+- !private ["s7CVarArgP", "viewDidLoad"]
+- !private ["s10CollectionP", "init"]
+- !private ["s10ComparableP", "init"]
+- ["s28CustomDebugStringConvertibleP", "LoginButton"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s28CustomDebugStringConvertibleP", "addSubview"]
+- !private ["s28CustomDebugStringConvertibleP", "center"]
+- !private ["s28CustomDebugStringConvertibleP", "delegate"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "loginButton"]
+- ["s28CustomDebugStringConvertibleP", "loginButtonDidCompleteLogin"]
+- ["s28CustomDebugStringConvertibleP", "loginButtonDidLogOut"]
+- !private ["s28CustomDebugStringConvertibleP", "performSegue"]
+- !private ["s28CustomDebugStringConvertibleP", "view"]
+- !private ["s28CustomDebugStringConvertibleP", "viewDidLoad"]
+- !private ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s17CustomReflectableP", "init"]
+- ["s23CustomStringConvertibleP", "LoginButton"]
+- ["s23CustomStringConvertibleP", ""]
+- !private ["s23CustomStringConvertibleP", "addSubview"]
+- !private ["s23CustomStringConvertibleP", "center"]
+- !private ["s23CustomStringConvertibleP", "delegate"]
+- ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "loginButton"]
+- ["s23CustomStringConvertibleP", "loginButtonDidCompleteLogin"]
+- ["s23CustomStringConvertibleP", "loginButtonDidLogOut"]
+- !private ["s23CustomStringConvertibleP", "performSegue"]
+- !private ["s23CustomStringConvertibleP", "view"]
+- !private ["s23CustomStringConvertibleP", "viewDidLoad"]
+- !private ["s9DecodableP", "init"]
+- !private ["s9EncodableP", "init"]
+- ["s9EquatableP", "LoginButton"]
+- ["s9EquatableP", ""]
+- !private ["s9EquatableP", "addSubview"]
+- !private ["s9EquatableP", "center"]
+- !private ["s9EquatableP", "delegate"]
+- ["s9EquatableP", "init"]
+- !private ["s9EquatableP", "loginButton"]
+- ["s9EquatableP", "loginButtonDidCompleteLogin"]
+- ["s9EquatableP", "loginButtonDidLogOut"]
+- !private ["s9EquatableP", "performSegue"]
+- !private ["s9EquatableP", "view"]
+- !private ["s9EquatableP", "viewDidLoad"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- ["s8HashableP", "LoginButton"]
+- ["s8HashableP", ""]
+- !private ["s8HashableP", "addSubview"]
+- !private ["s8HashableP", "center"]
+- !private ["s8HashableP", "delegate"]
+- ["s8HashableP", "init"]
+- !private ["s8HashableP", "loginButton"]
+- ["s8HashableP", "loginButtonDidCompleteLogin"]
+- ["s8HashableP", "loginButtonDidLogOut"]
+- !private ["s8HashableP", "performSegue"]
+- !private ["s8HashableP", "view"]
+- !private ["s8HashableP", "viewDidLoad"]
+- !private ["13FacebookLogin0B6ButtonC", "center"]
+- !private ["13FacebookLogin0B6ButtonC", "delegate"]
+- ["13FacebookLogin0B6ButtonC", "init"]
+- ["13FacebookLogin0B14ButtonDelegateP", "LoginButton"]
+- ["13FacebookLogin0B14ButtonDelegateP", ""]
+- !private ["13FacebookLogin0B14ButtonDelegateP", "loginButton"]
+- ["13FacebookLogin0B14ButtonDelegateP", "loginButtonDidCompleteLogin"]
+- ["13FacebookLogin0B14ButtonDelegateP", "loginButtonDidLogOut"]
+- !private ["13FacebookLogin0B14ButtonDelegateP", "performSegue"]
+- !private ["13FacebookLogin0B14ButtonDelegateP", "view"]
+- !private ["s25LosslessStringConvertibleP", "init"]
+- !private ["s10MirrorPathP", "init"]
+- ["So8NSCodingP", "LoginButton"]
+- ["So8NSCodingP", ""]
+- !private ["So8NSCodingP", "addSubview"]
+- !private ["So8NSCodingP", "center"]
+- !private ["So8NSCodingP", "delegate"]
+- ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "loginButton"]
+- ["So8NSCodingP", "loginButtonDidCompleteLogin"]
+- ["So8NSCodingP", "loginButtonDidLogOut"]
+- !private ["So8NSCodingP", "performSegue"]
+- !private ["So8NSCodingP", "view"]
+- !private ["So8NSCodingP", "viewDidLoad"]
+- ["So26NSExtensionRequestHandlingP", "LoginButton"]
+- ["So26NSExtensionRequestHandlingP", ""]
+- !private ["So26NSExtensionRequestHandlingP", "init"]
+- !private ["So26NSExtensionRequestHandlingP", "loginButton"]
+- ["So26NSExtensionRequestHandlingP", "loginButtonDidCompleteLogin"]
+- ["So26NSExtensionRequestHandlingP", "loginButtonDidLogOut"]
+- !private ["So26NSExtensionRequestHandlingP", "performSegue"]
+- !private ["So26NSExtensionRequestHandlingP", "view"]
+- !private ["So26NSExtensionRequestHandlingP", "viewDidLoad"]
+- ["So8NSObjectC", "LoginButton"]
+- ["So8NSObjectC", "LoginResult"]
+- !private ["So8NSObjectC", "addSubview"]
+- !private ["So8NSObjectC", "center"]
+- !private ["So8NSObjectC", "delegate"]
+- ["So8NSObjectC", "init"]
+- ["So8NSObjectC", "loginButton"]
+- ["So8NSObjectC", "loginButtonDidCompleteLogin"]
+- ["So8NSObjectC", "loginButtonDidLogOut"]
+- !private ["So8NSObjectC", "performSegue"]
+- !private ["So8NSObjectC", "view"]
+- ["So8NSObjectC", "viewDidLoad"]
+- ["So16NSObjectProtocolP", "LoginButton"]
+- ["So16NSObjectProtocolP", ""]
+- !private ["So16NSObjectProtocolP", "addSubview"]
+- !private ["So16NSObjectProtocolP", "center"]
+- !private ["So16NSObjectProtocolP", "delegate"]
+- ["So16NSObjectProtocolP", "init"]
+- !private ["So16NSObjectProtocolP", "loginButton"]
+- ["So16NSObjectProtocolP", "loginButtonDidCompleteLogin"]
+- ["So16NSObjectProtocolP", "loginButtonDidLogOut"]
+- !private ["So16NSObjectProtocolP", "performSegue"]
+- !private ["So16NSObjectProtocolP", "view"]
+- !private ["So16NSObjectProtocolP", "viewDidLoad"]
+- ["12FacebookCore23PermissionRepresentableP", "email"]
+- ["12FacebookCore23PermissionRepresentableP", "publicProfile"]
+- ["8pInspire21ProfileViewControllerC", "LoginButton"]
+- ["8pInspire21ProfileViewControllerC", "LoginResult"]
+- ["8pInspire21ProfileViewControllerC", "deinit"]
+- ["8pInspire21ProfileViewControllerC", "init"]
+- ["8pInspire21ProfileViewControllerC", "loginButton"]
+- ["8pInspire21ProfileViewControllerC", "loginButtonDidCompleteLogin"]
+- ["8pInspire21ProfileViewControllerC", "loginButtonDidLogOut"]
+- !private ["8pInspire21ProfileViewControllerC", "performSegue"]
+- !private ["8pInspire21ProfileViewControllerC", "view"]
+- ["8pInspire21ProfileViewControllerC", "viewDidLoad"]
+- !private ["s26RangeReplaceableCollectionP", "init"]
+- ["12FacebookCore14ReadPermissionO", "email"]
+- ["12FacebookCore14ReadPermissionO", "publicProfile"]
+- !private ["s8SequenceP", "init"]
+- !private ["SS", "init"]
+- !private ["s14StringProtocolP", "init"]
+- !private ["s16TextOutputStreamP", "init"]
+- !private ["s20TextOutputStreamableP", "init"]
+- !private ["So29UIAccessibilityIdentificationP", "addSubview"]
+- !private ["So29UIAccessibilityIdentificationP", "center"]
+- !private ["So29UIAccessibilityIdentificationP", "delegate"]
+- ["So29UIAccessibilityIdentificationP", "init"]
+- !private ["So12UIAppearanceP", "addSubview"]
+- !private ["So12UIAppearanceP", "center"]
+- !private ["So12UIAppearanceP", "delegate"]
+- ["So12UIAppearanceP", "init"]
+- ["So21UIAppearanceContainerP", "LoginButton"]
+- ["So21UIAppearanceContainerP", ""]
+- !private ["So21UIAppearanceContainerP", "addSubview"]
+- !private ["So21UIAppearanceContainerP", "center"]
+- !private ["So21UIAppearanceContainerP", "delegate"]
+- ["So21UIAppearanceContainerP", "init"]
+- !private ["So21UIAppearanceContainerP", "loginButton"]
+- ["So21UIAppearanceContainerP", "loginButtonDidCompleteLogin"]
+- ["So21UIAppearanceContainerP", "loginButtonDidLogOut"]
+- !private ["So21UIAppearanceContainerP", "performSegue"]
+- !private ["So21UIAppearanceContainerP", "view"]
+- !private ["So21UIAppearanceContainerP", "viewDidLoad"]
+- ["So18UIContentContainerP", "LoginButton"]
+- ["So18UIContentContainerP", ""]
+- !private ["So18UIContentContainerP", "init"]
+- !private ["So18UIContentContainerP", "loginButton"]
+- ["So18UIContentContainerP", "loginButtonDidCompleteLogin"]
+- ["So18UIContentContainerP", "loginButtonDidLogOut"]
+- !private ["So18UIContentContainerP", "performSegue"]
+- !private ["So18UIContentContainerP", "view"]
+- !private ["So18UIContentContainerP", "viewDidLoad"]
+- !private ["So17UICoordinateSpaceP", "addSubview"]
+- !private ["So17UICoordinateSpaceP", "center"]
+- !private ["So17UICoordinateSpaceP", "delegate"]
+- ["So17UICoordinateSpaceP", "init"]
+- !private ["So13UIDynamicItemP", "addSubview"]
+- !private ["So13UIDynamicItemP", "center"]
+- !private ["So13UIDynamicItemP", "delegate"]
+- ["So13UIDynamicItemP", "init"]
+- ["So18UIFocusEnvironmentP", "LoginButton"]
+- ["So18UIFocusEnvironmentP", ""]
+- !private ["So18UIFocusEnvironmentP", "addSubview"]
+- !private ["So18UIFocusEnvironmentP", "center"]
+- !private ["So18UIFocusEnvironmentP", "delegate"]
+- ["So18UIFocusEnvironmentP", "init"]
+- !private ["So18UIFocusEnvironmentP", "loginButton"]
+- ["So18UIFocusEnvironmentP", "loginButtonDidCompleteLogin"]
+- ["So18UIFocusEnvironmentP", "loginButtonDidLogOut"]
+- !private ["So18UIFocusEnvironmentP", "performSegue"]
+- !private ["So18UIFocusEnvironmentP", "view"]
+- !private ["So18UIFocusEnvironmentP", "viewDidLoad"]
+- !private ["So11UIFocusItemP", "addSubview"]
+- !private ["So11UIFocusItemP", "center"]
+- !private ["So11UIFocusItemP", "delegate"]
+- ["So11UIFocusItemP", "init"]
+- ["So30UIPasteConfigurationSupportingP", "LoginButton"]
+- ["So30UIPasteConfigurationSupportingP", ""]
+- !private ["So30UIPasteConfigurationSupportingP", "addSubview"]
+- !private ["So30UIPasteConfigurationSupportingP", "center"]
+- !private ["So30UIPasteConfigurationSupportingP", "delegate"]
+- ["So30UIPasteConfigurationSupportingP", "init"]
+- !private ["So30UIPasteConfigurationSupportingP", "loginButton"]
+- ["So30UIPasteConfigurationSupportingP", "loginButtonDidCompleteLogin"]
+- ["So30UIPasteConfigurationSupportingP", "loginButtonDidLogOut"]
+- !private ["So30UIPasteConfigurationSupportingP", "performSegue"]
+- !private ["So30UIPasteConfigurationSupportingP", "view"]
+- !private ["So30UIPasteConfigurationSupportingP", "viewDidLoad"]
+- ["So11UIResponderC", "LoginButton"]
+- ["So11UIResponderC", "LoginResult"]
+- !private ["So11UIResponderC", "addSubview"]
+- !private ["So11UIResponderC", "center"]
+- !private ["So11UIResponderC", "delegate"]
+- ["So11UIResponderC", "init"]
+- ["So11UIResponderC", "loginButton"]
+- ["So11UIResponderC", "loginButtonDidCompleteLogin"]
+- ["So11UIResponderC", "loginButtonDidLogOut"]
+- !private ["So11UIResponderC", "performSegue"]
+- !private ["So11UIResponderC", "view"]
+- ["So11UIResponderC", "viewDidLoad"]
+- ["So30UIResponderStandardEditActionsP", "LoginButton"]
+- ["So30UIResponderStandardEditActionsP", ""]
+- !private ["So30UIResponderStandardEditActionsP", "addSubview"]
+- !private ["So30UIResponderStandardEditActionsP", "center"]
+- !private ["So30UIResponderStandardEditActionsP", "delegate"]
+- ["So30UIResponderStandardEditActionsP", "init"]
+- !private ["So30UIResponderStandardEditActionsP", "loginButton"]
+- ["So30UIResponderStandardEditActionsP", "loginButtonDidCompleteLogin"]
+- ["So30UIResponderStandardEditActionsP", "loginButtonDidLogOut"]
+- !private ["So30UIResponderStandardEditActionsP", "performSegue"]
+- !private ["So30UIResponderStandardEditActionsP", "view"]
+- !private ["So30UIResponderStandardEditActionsP", "viewDidLoad"]
+- ["So16UIStateRestoringP", "LoginButton"]
+- ["So16UIStateRestoringP", ""]
+- !private ["So16UIStateRestoringP", "init"]
+- !private ["So16UIStateRestoringP", "loginButton"]
+- ["So16UIStateRestoringP", "loginButtonDidCompleteLogin"]
+- ["So16UIStateRestoringP", "loginButtonDidLogOut"]
+- !private ["So16UIStateRestoringP", "performSegue"]
+- !private ["So16UIStateRestoringP", "view"]
+- !private ["So16UIStateRestoringP", "viewDidLoad"]
+- ["So18UITraitEnvironmentP", "LoginButton"]
+- ["So18UITraitEnvironmentP", ""]
+- !private ["So18UITraitEnvironmentP", "addSubview"]
+- !private ["So18UITraitEnvironmentP", "center"]
+- !private ["So18UITraitEnvironmentP", "delegate"]
+- ["So18UITraitEnvironmentP", "init"]
+- !private ["So18UITraitEnvironmentP", "loginButton"]
+- ["So18UITraitEnvironmentP", "loginButtonDidCompleteLogin"]
+- ["So18UITraitEnvironmentP", "loginButtonDidLogOut"]
+- !private ["So18UITraitEnvironmentP", "performSegue"]
+- !private ["So18UITraitEnvironmentP", "view"]
+- !private ["So18UITraitEnvironmentP", "viewDidLoad"]
+- !private ["So6UIViewC", "addSubview"]
+- !private ["So6UIViewC", "center"]
+- !private ["So6UIViewC", "delegate"]
+- ["So16UIViewControllerC", "LoginButton"]
+- ["So16UIViewControllerC", "LoginResult"]
+- ["So16UIViewControllerC", ""]
+- ["So16UIViewControllerC", "init"]
+- ["So16UIViewControllerC", "loginButton"]
+- ["So16UIViewControllerC", "loginButtonDidCompleteLogin"]
+- ["So16UIViewControllerC", "loginButtonDidLogOut"]
+- !private ["So16UIViewControllerC", "performSegue"]
+- !private ["So16UIViewControllerC", "view"]
+- ["So16UIViewControllerC", "viewDidLoad"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "addSubview"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "center"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "delegate"]
+- ["s37_DefaultCustomPlaygroundQuickLookableP", "init"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s33_ExpressibleByStringInterpolationP", "init"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "LoginButton"]
+- ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "addSubview"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "center"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "delegate"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "loginButton"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "loginButtonDidCompleteLogin"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "loginButtonDidLogOut"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "performSegue"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "view"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "viewDidLoad"]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s16_SwiftStringViewP", "init"]
+depends-nominal:
+- !private "12FacebookCore26AppEventParameterValueTypeP"
+- !private "s23BidirectionalCollectionP"
+- "So15CALayerDelegateP"
+- "s7CVarArgP"
+- !private "s10CollectionP"
+- !private "s10ComparableP"
+- "s28CustomDebugStringConvertibleP"
+- !private "s29CustomPlaygroundQuickLookableP"
+- !private "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- !private "s9DecodableP"
+- !private "s9EncodableP"
+- "s9EquatableP"
+- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s26ExpressibleByStringLiteralP"
+- !private "s33ExpressibleByUnicodeScalarLiteralP"
+- "s8HashableP"
+- "13FacebookLogin0B6ButtonC"
+- "13FacebookLogin0B14ButtonDelegateP"
+- !private "s25LosslessStringConvertibleP"
+- !private "s10MirrorPathP"
+- "So8NSCodingP"
+- "So26NSExtensionRequestHandlingP"
+- "So8NSObjectC"
+- "So16NSObjectProtocolP"
+- "12FacebookCore23PermissionRepresentableP"
+- "8pInspire21ProfileViewControllerC"
+- !private "s26RangeReplaceableCollectionP"
+- "12FacebookCore14ReadPermissionO"
+- !private "s8SequenceP"
+- !private "SS"
+- !private "s14StringProtocolP"
+- !private "s16TextOutputStreamP"
+- !private "s20TextOutputStreamableP"
+- "So29UIAccessibilityIdentificationP"
+- "So12UIAppearanceP"
+- "So21UIAppearanceContainerP"
+- "So18UIContentContainerP"
+- "So17UICoordinateSpaceP"
+- "So13UIDynamicItemP"
+- "So18UIFocusEnvironmentP"
+- "So11UIFocusItemP"
+- "So30UIPasteConfigurationSupportingP"
+- "So11UIResponderC"
+- "So30UIResponderStandardEditActionsP"
+- "So16UIStateRestoringP"
+- "So18UITraitEnvironmentP"
+- !private "So6UIViewC"
+- "So16UIViewControllerC"
+- "s37_DefaultCustomPlaygroundQuickLookableP"
+- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s34_ExpressibleByBuiltinStringLiteralP"
+- !private "s39_ExpressibleByBuiltinUTF16StringLiteralP"
+- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- !private "s33_ExpressibleByStringInterpolationP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- !private "s21_ObjectiveCBridgeableP"
+- !private "s16_SwiftStringViewP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/os.apinotesc"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FacebookCore/FacebookCore.framework/Modules/FacebookCore.swiftmodule/x86_64.swiftmodule"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FacebookLogin/FacebookLogin.framework/Modules/FacebookLogin.swiftmodule/x86_64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Metal.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/os.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Headers/FIRInstanceID.h"
+- "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Headers/FirebaseInstanceID.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFURL.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FacebookCore/FacebookCore.framework/Headers/FacebookCore-umbrella.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FacebookLogin/FacebookLogin.framework/Headers/FacebookLogin-umbrella.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/Bolts-umbrella.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKCoreKit-umbrella.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKLoginKit-umbrella.h"
+- "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRMutableData.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFGeneric.h"
+- "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabaseReference.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFCancellationTokenSource.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFTaskCompletionSource.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKProfile.h"
+- "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDataEventType.h"
+- "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FirebaseCore.h"
+- "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabase.h"
+- "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FirebaseDatabase.h"
+- "/Users/jiayao/Desktop/github/pInspire/Pods/Firebase/Core/Sources/Firebase.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKApplicationDelegate.h"
+- "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics+AppDelegate.h"
+- "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRServerValue.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFAppLinkResolving.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKCopying.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKMutableCopying.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFAppLink.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFTask.h"
+- "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRLoggerLevel.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFCancellationToken.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKAccessToken.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFAppLinkNavigation.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFCancellationTokenRegistration.h"
+- "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRConfiguration.h"
+- "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRConfiguration.h"
+- "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRAnalyticsConfiguration.h"
+- "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalyticsConfiguration.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKGraphRequestConnection.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKButton.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKLoginButton.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKDeviceLoginCodeInfo.h"
+- "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRApp.h"
+- "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRApp.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKLoginManager.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKDeviceLoginManager.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKTestUsersManager.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFAppLinkReturnToRefererController.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKAppLinkResolver.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFWebViewAppLinkResolver.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKGraphErrorRecoveryProcessor.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFExecutor.h"
+- "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics.h"
+- "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h"
+- "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRParameterNames.h"
+- "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIREventNames.h"
+- "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRUserPropertyNames.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKSettings.h"
+- "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIROptions.h"
+- "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIROptions.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKMacros.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/Bolts.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKConstants.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKLoginConstants.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKAppEvents.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFAppLinkTarget.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FacebookCore/FacebookCore.framework/Headers/FacebookCore-Swift.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FacebookLogin/FacebookLogin.framework/Headers/FacebookLogin-Swift.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKCoreKit.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKLoginKit.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKLoginManagerLoginResult.h"
+- "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRTransactionResult.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKDeviceLoginManagerResult.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKGraphRequestDataAttachment.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFMeasurementEvent.h"
+- "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDataSnapshot.h"
+- "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalyticsSwiftNameSupport.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKGraphRequest.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKProfilePictureView.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKTooltipView.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKLoginTooltipView.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFAppLinkReturnToRefererView.h"
+- "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabaseQuery.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKUtility.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKAppLinkUtility.h"
+- "/Users/jiayao/Desktop/github/pInspire/Pods/Firebase/Core/Sources/module.modulemap"
+- "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Modules/module.modulemap"
+- "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Modules/module.modulemap"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FacebookCore/FacebookCore.framework/Modules/module.modulemap"
+- "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Modules/module.modulemap"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FacebookLogin/FacebookLogin.framework/Modules/module.modulemap"
+- "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Modules/module.modulemap"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Modules/module.modulemap"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Modules/module.modulemap"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Modules/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/WebKit.framework/Headers/WebKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+interface-hash: "fd02a11f71665cc941d4929b4d345c07"

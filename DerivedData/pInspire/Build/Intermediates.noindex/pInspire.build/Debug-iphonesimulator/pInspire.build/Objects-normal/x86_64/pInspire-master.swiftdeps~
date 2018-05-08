@@ -1,0 +1,22 @@
+version: "Apple Swift version 4.1 (swiftlang-902.0.48 clang-902.0.37.1)"
+options: "25f49da40c3d015db9b1ee49d2100bc6"
+build_time: [1525768053, 67220000]
+inputs:
+  "/Users/jiayao/Desktop/github/pInspire/pInspire/ContactsTableViewCell.swift": [1525758408, 0]
+  "/Users/jiayao/Desktop/github/pInspire/pInspire/CreatePollTableViewCell.swift": [1525580348, 0]
+  "/Users/jiayao/Desktop/github/pInspire/pInspire/GroupInfo.swift": [1525767554, 0]
+  "/Users/jiayao/Desktop/github/pInspire/pInspire/roundedButtonView.swift": [1525367258, 0]
+  "/Users/jiayao/Desktop/github/pInspire/pInspire/CreatePollViewController.swift": [1525578379, 0]
+  "/Users/jiayao/Desktop/github/pInspire/pInspire/DiscussionGroupTableViewController.swift": [1525767247, 0]
+  "/Users/jiayao/Desktop/github/pInspire/pInspire/DiscussionGroupTableViewCell.swift": [1525761178, 0]
+  "/Users/jiayao/Desktop/github/pInspire/pInspire/WebViewController.swift": [1525556462, 0]
+  "/Users/jiayao/Desktop/github/pInspire/pInspire/User.swift": [1525757211, 0]
+  "/Users/jiayao/Desktop/github/pInspire/pInspire/ContactsTableViewController.swift": [1525760267, 0]
+  "/Users/jiayao/Desktop/github/pInspire/pInspire/pInspireTableViewCell.swift": [1525556462, 0]
+  "/Users/jiayao/Desktop/github/pInspire/pInspire/ProfileViewController.swift": [1525574409, 0]
+  "/Users/jiayao/Desktop/github/pInspire/pInspire/Poll.swift": [1525367258, 0]
+  "/Users/jiayao/Desktop/github/pInspire/pInspire/Choice.swift": [1525367258, 0]
+  "/Users/jiayao/Desktop/github/pInspire/pInspire/AppDelegate.swift": [1525574279, 0]
+  "/Users/jiayao/Desktop/github/pInspire/pInspire/pInspireViewController.swift": [1525578341, 0]
+  "/Users/jiayao/Desktop/github/pInspire/pInspire/LoginViewController.swift": [1525765851, 0]
+  "/Users/jiayao/Desktop/github/pInspire/pInspire/DiscussionRoomViewController.swift": [1525768051, 0]

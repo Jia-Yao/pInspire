@@ -8,20 +8,33 @@
 
 import UIKit
 import FacebookCore
+import Firebase
 
 class ContactsTableViewController: UITableViewController {
 
     //MARK: Properties
-    var friends = [User]()
+    var me: User?
+    var users = [User]()
+    var refUser: DatabaseReference!
+    @IBOutlet var contactsTable: UITableView!
+    
+    //MARK: View-related Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        contactsTable.delegate = self
+        contactsTable.dataSource = self
+        refUser = Database.database().reference().child("Users")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         fetchFriends()
     }
     
     func fetchFriends(){
-        let parameters = ["fields": "first_name, last_name, picture.type(large)"]
+        // Check which Facebook friends are using the app (NOT WORKING YET!)
+        let parameters = ["fields": "id, first_name, last_name, picture.type(large)"]
         let req = GraphRequest(graphPath: "/me/friends", parameters: parameters)
         req.start{ (response, result) in
             switch result {
@@ -32,11 +45,23 @@ class ContactsTableViewController: UITableViewController {
                 print(error)
             }
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        // Get all users from database
+        refUser.observeSingleEvent(of: .value, with: { snapshot in
+            self.users.removeAll()
+            for user in snapshot.children.allObjects as! [DataSnapshot] {
+                let uId = user.key
+                if uId != self.me?.userId{
+                    let uInfo = user.value as? [String: AnyObject]
+                    let firstName = uInfo!["FirstName"]
+                    let lastName = uInfo!["LastName"]
+                    let profilePhoto = uInfo!["ProfilePhoto"]
+                    let aUser = User(userId: uId, firstName: firstName as! String, lastName: lastName as! String, profilePhoto: profilePhoto as! String)
+                    self.users.append(aUser)
+                }
+            }
+            self.contactsTable.reloadData()
+        })
     }
 
     // MARK: - Table view data source
@@ -46,19 +71,26 @@ class ContactsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return users.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cellIdentifier = "ContactCellUnit"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ContactsTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of ContactsTableViewCell.")
+        }
+        let user = users[indexPath.row]
+        cell.Name.text = user.firstName + " " + user.lastName
+        DispatchQueue.global(qos:.userInitiated).async {
+            let profilePhotoData = try? Data(contentsOf: URL(string: user.profilePhoto)!)
+            DispatchQueue.main.async {
+                if profilePhotoData != nil{
+                    cell.ProfilePhoto.image = UIImage(data: profilePhotoData!)
+                }
+            }
+        }
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

@@ -11,7 +11,8 @@ import UIKit
 class ContactsTableViewCell: UITableViewCell {
 
     
-    @IBOutlet weak var FriendName: UILabel!
+    @IBOutlet weak var Name: UILabel!
+    @IBOutlet weak var ProfilePhoto: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

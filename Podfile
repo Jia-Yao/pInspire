@@ -11,4 +11,5 @@ target 'pInspire' do
   pod 'FBSDKLoginKit'
   pod 'FacebookCore'
   pod 'FacebookLogin'
+  pod 'JSQMessagesViewController'
 end

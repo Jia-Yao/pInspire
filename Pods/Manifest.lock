@@ -39,6 +39,9 @@ PODS:
   - GoogleToolboxForMac/Defines (2.1.4)
   - "GoogleToolboxForMac/NSData+zlib (2.1.4)":
     - GoogleToolboxForMac/Defines (= 2.1.4)
+  - JSQMessagesViewController (7.3.5):
+    - JSQSystemSoundPlayer (~> 2.0.1)
+  - JSQSystemSoundPlayer (2.0.1)
   - leveldb-library (1.20)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
@@ -49,8 +52,10 @@ PODS:
 DEPENDENCIES:
   - FacebookCore
   - FacebookLogin
+  - FBSDKLoginKit
   - Firebase/Core
   - Firebase/Database
+  - JSQMessagesViewController
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -65,6 +70,8 @@ SPEC REPOS:
     - FirebaseDatabase
     - FirebaseInstanceID
     - GoogleToolboxForMac
+    - JSQMessagesViewController
+    - JSQSystemSoundPlayer
     - leveldb-library
     - nanopb
 
@@ -80,9 +87,11 @@ SPEC CHECKSUMS:
   FirebaseDatabase: 5f0bc6134c5c237cf55f9e1249d406770a75eafd
   FirebaseInstanceID: 8d20d890d65c917f9f7d9950b6e10a760ad34321
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
+  JSQMessagesViewController: 6587f56aedbcb150a8ba1d968e1ef58b1bc758b7
+  JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
 
-PODFILE CHECKSUM: 586cafa6cf557ddc62f30d86de4992417efc0590
+PODFILE CHECKSUM: de9480100d45e6268085a480aaee6a1ad63cea3b
 
 COCOAPODS: 1.5.0
