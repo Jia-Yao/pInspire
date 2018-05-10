@@ -207,9 +207,8 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
             choiceButtonView.setTitle("\(choiceModel.content) (\(numOfVotes))", for: UIControlState.normal)
             choiceButtonView.isEnabled = false
             choiceButtonView.titleLabel?.textAlignment = .center
-            choiceButtonView.titleLabel?.numberOfLines = 2
-            print("reached")
-            choiceButtonView.sizeToFit()
+            // choiceButtonView.titleLabel?.numberOfLines = 2
+            // choiceButtonView.sizeToFit()
         }
         // Hide unnecessary buttons.
         for index in poll.choices.count..<cell.choiceButtonView.count {

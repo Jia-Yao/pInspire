@@ -153,7 +153,8 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     private struct Constants {
-        static let chatMemberUpperLimit = 3
+        static let chatMemberUpperLimit = 2
+        // number of people excluding me.
     }
     
     private func selectDiscussionMembers() -> [String] {
