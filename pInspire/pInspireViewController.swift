@@ -45,7 +45,7 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
         }
 
         // Along with auto layout, these are the keys for enabling variable cell height
-        self.pollTableView.estimatedRowHeight = 150
+        self.pollTableView.estimatedRowHeight = 250
         self.pollTableView.rowHeight = UITableViewAutomaticDimension
     }
     
@@ -66,6 +66,14 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
         writeVoteData(id: poll.Id, choiceContent: choices[choosedButtonIndex!].content, userName: userName!, isAnonymous: sender.voteAnonymously)
     }
     
+    func didTapStats(_ sender: pInspireTableViewCell) {
+        performSegue(withIdentifier: "showStats", sender: sender)
+    }
+    
+    func didTapReadMore(_ sender: pInspireTableViewCell) {
+        performSegue(withIdentifier: "showWeb", sender: sender)
+    }
+
     func writeVoteData(id: String, choiceContent: String, userName: String, isAnonymous: Bool){
         ref.child("Polls/Polls").child(id).child(Constants.PollChoiceFieldName).child(choiceContent).child(userName).setValue(isAnonymous)
     }
@@ -86,6 +94,7 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
                 let pollQuestion  = pollObject![Constants.PollQuestionFieldName]
                 let pollInitiator = pollObject![Constants.PollInitiatorFieldName]
                 let pollAnonymous = pollObject![Constants.PollAnonymousFieldName]
+                let pollUrlString = pollObject![Constants.pollUrlFieldName]
                 var choices = [Choice]()
                 if let choiceObject = pollObject![Constants.PollChoiceFieldName] as? [String: Any] {
                     for (content, votes) in choiceObject {
@@ -95,7 +104,7 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
                     }
                 }
                 //creating poll object with model and fetched values
-                let newPoll = Poll(Id: pollKey, question: (pollQuestion as! String), choices: choices, user: pollInitiator as! String , isAnonymous: pollAnonymous as! Bool)
+                let newPoll = Poll(Id: pollKey, question: (pollQuestion as! String), choices: choices, user: pollInitiator as! String , isAnonymous: pollAnonymous as! Bool, urlString: pollUrlString as? String)
                 
                 //appending it to list
                 self?.pollTimeline.append(newPoll)
@@ -126,6 +135,7 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
 
     private struct Constants {
         static let PollQuestionFieldName:String = "Question"
+        static let pollUrlFieldName: String = "URL"
         static let PollChoiceFieldName: String = "Choices"
         static let PollAnonymousFieldName: String = "Anonymity"
         static let PollInitiatorFieldName: String = "Initiator"
@@ -166,9 +176,11 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
             
             let choiceModel = poll.choices[index]
             choiceButtonView.backgroundColor = Constants.PollOptionColorWhenNotChosen
-            
             choiceButtonView.setTitle("\(choiceModel.content)", for:UIControlState.normal)
             choiceButtonView.isEnabled = true
+            choiceButtonView.titleLabel?.textAlignment = .center
+            choiceButtonView.titleLabel?.numberOfLines = 2
+            // choiceButtonView.sizeToFit()
         }
         // Hide unnecessary buttons.
         for index in poll.choices.count..<cell.choiceButtonView.count {
@@ -194,6 +206,10 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
             let numOfVotes = choiceModel.numOfVotesForUser(for: userName!)
             choiceButtonView.setTitle("\(choiceModel.content) (\(numOfVotes))", for: UIControlState.normal)
             choiceButtonView.isEnabled = false
+            choiceButtonView.titleLabel?.textAlignment = .center
+            choiceButtonView.titleLabel?.numberOfLines = 2
+            print("reached")
+            choiceButtonView.sizeToFit()
         }
         // Hide unnecessary buttons.
         for index in poll.choices.count..<cell.choiceButtonView.count {
@@ -243,6 +259,20 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
             if let createPollController = segue.destination as? CreatePollViewController{
                 createPollController.user = user
                 createPollController.userName = userName
+            }
+        case "showStats":
+            if let statsController = segue.destination as? StatsViewController{
+                let clickedIndexPath = self.pollTableView.indexPath(for: (sender as! UITableViewCell))!
+                let totalCount = self.pollTimeline.count
+                statsController.poll = self.pollTimeline[totalCount - 1 - clickedIndexPath.row]
+                statsController.userName = userName
+                statsController.user = user
+            }
+        case "showWeb":
+            if let stateController = segue.destination as? WebViewController {
+                let clickedIndexPath = self.pollTableView.indexPath(for: (sender as! UITableViewCell))!
+                let totalCount = self.pollTimeline.count
+                stateController.urlString = self.pollTimeline[totalCount - 1 - clickedIndexPath.row].urlString
             }
         default:
             print("pInspire: Unexpected Segue Identifier; \(segue.identifier ?? "")")

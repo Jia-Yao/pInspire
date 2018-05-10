@@ -10,7 +10,8 @@ import UIKit
 
 protocol pInspireTableViewCellDelegate : class {
     func didTapChoice(_ sender: pInspireTableViewCell, button: UIButton)
-    // func didTapStats(_ sender: pInspireTableViewCell)
+    func didTapStats(_ sender: pInspireTableViewCell)
+    func didTapReadMore(_ sender: pInspireTableViewCell)
 }
 
 class pInspireTableViewCell: UITableViewCell {
@@ -72,9 +73,17 @@ class pInspireTableViewCell: UITableViewCell {
         delegate?.didTapChoice(self, button: sender)
     }
     
+    @IBAction func tapStats(_ sender: UIButton) {
+        delegate?.didTapStats(self)
+    }
     @IBAction func tapReport(_ sender: UIButton) {
         // delegate?.didTapReport(self, button: sender)
     }
+    
+    @IBAction func tapReadMore(_ sender: UIButton) {
+        delegate?.didTapReadMore(self)
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

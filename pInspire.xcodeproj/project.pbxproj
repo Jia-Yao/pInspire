@@ -29,6 +29,9 @@
 		BA5987BC20961657009B79DF /* pInspireTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5987BB20961657009B79DF /* pInspireTableViewCell.swift */; };
 		BAA407712095641500453A34 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAA407702095641500453A34 /* GoogleService-Info.plist */; };
 		BAB4949B209AE4A20077B3EB /* roundedButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB4949A209AE4A20077B3EB /* roundedButtonView.swift */; };
+		BADB462220A288890082AC1A /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADB462120A288890082AC1A /* StatsView.swift */; };
+		BADB462420A2A1C70082AC1A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADB462320A2A1C70082AC1A /* Extensions.swift */; };
+		BADB462620A2AFE80082AC1A /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADB462520A2AFE80082AC1A /* StatsViewController.swift */; };
 		BC8430815C1C18F0C72688FB /* Pods_pInspire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25C1CB3A78BAC357D82577D /* Pods_pInspire.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +62,9 @@
 		BA5987BB20961657009B79DF /* pInspireTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pInspireTableViewCell.swift; sourceTree = "<group>"; };
 		BAA407702095641500453A34 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BAB4949A209AE4A20077B3EB /* roundedButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roundedButtonView.swift; sourceTree = "<group>"; };
+		BADB462120A288890082AC1A /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		BADB462320A2A1C70082AC1A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		BADB462520A2AFE80082AC1A /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		E25C1CB3A78BAC357D82577D /* Pods_pInspire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pInspire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -113,6 +119,9 @@
 				189A74DC20A17FAB00E502B0 /* GroupInfo.swift */,
 				BA5987BB20961657009B79DF /* pInspireTableViewCell.swift */,
 				1803781A20952DE5009F214E /* pInspireViewController.swift */,
+				BADB462120A288890082AC1A /* StatsView.swift */,
+				BADB462320A2A1C70082AC1A /* Extensions.swift */,
+				BADB462520A2AFE80082AC1A /* StatsViewController.swift */,
 				1803782E20954A25009F214E /* Poll.swift */,
 				18078581209E72D300317AF3 /* ProfileViewController.swift */,
 				BAB4949A209AE4A20077B3EB /* roundedButtonView.swift */,
@@ -274,6 +283,7 @@
 				1803782120953D14009F214E /* CreatePollTableViewCell.swift in Sources */,
 				189A74DD20A17FAB00E502B0 /* GroupInfo.swift in Sources */,
 				BAB4949B209AE4A20077B3EB /* roundedButtonView.swift in Sources */,
+				BADB462620A2AFE80082AC1A /* StatsViewController.swift in Sources */,
 				1803780B20951710009F214E /* CreatePollViewController.swift in Sources */,
 				189A74D920A17AE400E502B0 /* DiscussionGroupTableViewController.swift in Sources */,
 				189A74DB20A17B6E00E502B0 /* DiscussionGroupTableViewCell.swift in Sources */,
@@ -284,6 +294,8 @@
 				18078582209E72D300317AF3 /* ProfileViewController.swift in Sources */,
 				1803783120954A25009F214E /* Poll.swift in Sources */,
 				1803782F20954A25009F214E /* Choice.swift in Sources */,
+				BADB462220A288890082AC1A /* StatsView.swift in Sources */,
+				BADB462420A2A1C70082AC1A /* Extensions.swift in Sources */,
 				1803780720951710009F214E /* AppDelegate.swift in Sources */,
 				1803781B20952DE5009F214E /* pInspireViewController.swift in Sources */,
 				18078580209E64F200317AF3 /* LoginViewController.swift in Sources */,

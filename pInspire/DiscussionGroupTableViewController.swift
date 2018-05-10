@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class DiscussionGroupTableViewController: UITableViewController {
     
@@ -15,15 +16,15 @@ class DiscussionGroupTableViewController: UITableViewController {
     var me: User?
     @IBOutlet var groupTable: UITableView!
     var discussionGroups = [GroupInfo]()
+    var ref: DatabaseReference!
+    fileprivate var _refHandle: DatabaseHandle?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         groupTable.delegate = self
         groupTable.dataSource = self
         
-        let dummy = GroupInfo(pollQuestion: "a poll question", members: ["personA", "personB", "personC"])
-        discussionGroups.append(dummy)
-        
+        configureDatabase()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -34,6 +35,25 @@ class DiscussionGroupTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController!.tabBar.isHidden = false
+    }
+    
+    private func configureDatabase() {
+        ref = Database.database().reference().child("Discussions")
+        discussionGroups.removeAll()
+        _refHandle = self.ref.observe(.childAdded, with: { [weak self] (snapshot) -> Void in
+            guard let strongSelf = self else { return }
+            let group = snapshot.value as! Dictionary<String, AnyObject>
+            let groupId = snapshot.key
+            let groupMembers = group["Members"] as! [String]
+            let pollQuestion = group["Question"] as? String ?? ""
+            if let _ = groupMembers.index(of: (self?.me?.userName)!) {
+                let newGroup = GroupInfo(pollQuestion: pollQuestion , members: groupMembers, groupId: groupId)
+                strongSelf.discussionGroups.append(newGroup)
+                
+            }
+            strongSelf.groupTable.reloadData()
+            }
+        )
     }
     
     // MARK: - Table view data source

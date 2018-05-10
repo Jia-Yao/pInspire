@@ -28,6 +28,7 @@ class DiscussionRoomViewController: JSQMessagesViewController {
         observeMessages()
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController!.tabBar.isHidden = true
@@ -54,7 +55,7 @@ class DiscussionRoomViewController: JSQMessagesViewController {
         newMessageRefHandle = messageQuery.observe(.childAdded, with: { (snapshot) -> Void in
             // extract the messageData from the snapshot
             let messageData = snapshot.value as! Dictionary<String, String>
-            if let id = messageData["senderId"] as String!, let name = messageData["senderName"] as String!, let text = messageData["text"] as String!, text.characters.count > 0 {
+            if let id = messageData["senderId"] as String?, let name = messageData["senderName"] as String?, let text = messageData["text"] as String?, text.characters.count > 0 {
                 self.addMessage(withId: id, name: name, text: text)
                 self.finishReceivingMessage()
             } else {

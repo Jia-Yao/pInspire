@@ -17,6 +17,10 @@ class GroupInfo {
         self.pollQuestion = pollQuestion
         self.members = members
     }
+    convenience init(pollQuestion: String, members: [String], groupId: String) {
+        self.init(pollQuestion: pollQuestion, members: members)
+        self.groupId = groupId
+    }
     
     func members_list() -> String{
         return members.joined(separator: ", ")

@@ -13,17 +13,23 @@ class Choice {
     
     var numOfVotes: Int {
         get {
-            return votesDict.filter{$0.value == true}.count
+            // exclude dummy user.
+            return votesDict.count - 1 // votesDict.filter{$0.value == true}.count
         }
     }
     
+    func numOfVotesForUser(for user: String) -> Int {
+        return numOfVotes
+    }
+    
+    /*
     func numOfVotesForUser(for user: String) -> Int {
         if invisibleUsers.contains(user) {
             return numOfVotes + 1
         } else {
             return numOfVotes
         }
-    }
+    }*/
     
     func userHasVotedThis(user:String) -> Bool {
         return votesDict.keys.contains(user)
@@ -41,6 +47,7 @@ class Choice {
         return votesDict.keys.contains(user)
     }
     
+    // Note: this invisibleUsers include one "dummy" user.
     private var invisibleUsers: [String] {
         get {
             return [String](votesDict.filter{$0.value == false}.keys)
