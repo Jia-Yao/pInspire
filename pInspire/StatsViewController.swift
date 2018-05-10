@@ -51,7 +51,7 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     private var people: [String]? {
-        return clickedChoice?.visibleUsers
+        return clickedChoice?.visibleUsersForMe(user: user?.userName ?? "")
     }
     
     override func viewDidLoad() {

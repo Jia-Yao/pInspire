@@ -203,7 +203,7 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
             } else {
                 choiceButtonView.backgroundColor = Constants.PollOptionColorWhenNotChosen
             }
-            let numOfVotes = choiceModel.numOfVotesForUser(for: userName!)
+            let numOfVotes = choiceModel.numOfVotesForMe(for: userName!)
             choiceButtonView.setTitle("\(choiceModel.content) (\(numOfVotes))", for: UIControlState.normal)
             choiceButtonView.isEnabled = false
             choiceButtonView.titleLabel?.textAlignment = .center

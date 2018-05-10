@@ -26,6 +26,7 @@ class WebViewController: UIViewController, WKNavigationDelegate {
         
         // 1
         let url: URL = URL(string: (urlString ?? "")) ?? URL(string: "https://google.com")!
+        
         webView.load(URLRequest(url: url))
         // 2
         // let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView.reload))
