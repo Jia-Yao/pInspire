@@ -352,14 +352,50 @@ SWIFT_CLASS("_TtC8pInspire11RoundButton")
 @end
 
 
+SWIFT_CLASS("_TtC8pInspire9StatsView")
+@interface StatsView : UIView
+@property (nonatomic) float ratio;
+@property (nonatomic) BOOL chosen;
+@property (nonatomic) BOOL clicked;
+@property (nonatomic, copy) NSString * _Nonnull context;
+- (void)layoutSubviews;
+- (void)drawRect:(CGRect)rect;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
 
+@class UITapGestureRecognizer;
+
+SWIFT_CLASS("_TtC8pInspire19StatsViewController")
+@interface StatsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified questionLabelView;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified initiateDiscussionButton;
+@property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified nameTableView;
+@property (nonatomic, copy) IBOutletCollection(StatsView) NSArray<StatsView *> * _Null_unspecified choicesView;
+- (IBAction)initiateDiscussion:(UIButton * _Nonnull)sender;
+- (void)viewDidLoad;
+- (void)tapBar:(UITapGestureRecognizer * _Nonnull)sender;
+- (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)tableView:(UITableView * _Nonnull)tableView titleForHeaderInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+@class UISegmentedControl;
 @class WKWebView;
 @class WKNavigation;
 
 SWIFT_CLASS("_TtC8pInspire17WebViewController")
 @interface WebViewController : UIViewController <WKNavigationDelegate>
-@property (nonatomic, weak) IBOutlet WKWebView * _Null_unspecified webView;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified webViewContainer;
+@property (nonatomic, weak) IBOutlet UISegmentedControl * _Null_unspecified segmentedControl;
 - (void)loadView;
+- (IBAction)tabIndexChanged:(UISegmentedControl * _Nonnull)sender;
 - (void)viewDidLoad;
 - (void)webView:(WKWebView * _Nonnull)webView didFinishNavigation:(WKNavigation * _Null_unspecified)navigation;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
@@ -380,7 +416,9 @@ SWIFT_CLASS("_TtC8pInspire21pInspireTableViewCell")
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified statsButtonView;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified voteLabelView;
 - (IBAction)tapChoice:(UIButton * _Nonnull)sender;
+- (IBAction)tapStats:(UIButton * _Nonnull)sender;
 - (IBAction)tapReport:(UIButton * _Nonnull)sender;
+- (IBAction)tapReadMore:(UIButton * _Nonnull)sender;
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated;
 - (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;

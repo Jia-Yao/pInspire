@@ -8,26 +8,84 @@
 
 import UIKit
 import WebKit
+import Firebase
 
-class WebViewController: UIViewController, WKNavigationDelegate {
+class WebViewController: UIViewController, WKNavigationDelegate{
 
-    @IBOutlet weak var webView: WKWebView!
+    //MARK: Properties
+    
+    @IBOutlet weak var webViewContainer: UIView!
+    var actualWebView: WKWebView?
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
+    var sources = [String]()
+    var urls = [String]()
+    var refPoll: DatabaseReference!
     
     override func loadView() {
-        webView = WKWebView()
-        webView.navigationDelegate = self
-        view = webView
-    }
+        super.loadView()
+     }
     
-    var urlString: String?
+    @IBAction func tabIndexChanged(_ sender: UISegmentedControl) {
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            if urls.count > 0{
+                let url: URL = URL(string: urls[0])!
+                self.actualWebView!.load(URLRequest(url: url))
+            } else {
+                let url: URL = URL(string: "https://google.com")!
+                self.actualWebView!.load(URLRequest(url: url))
+            }
+        case 1:
+            if urls.count > 1{
+                let url: URL = URL(string: urls[1])!
+                self.actualWebView!.load(URLRequest(url: url))
+            } else {
+                let url: URL = URL(string: "https://google.com")!
+                self.actualWebView!.load(URLRequest(url: url))
+            }
+        case 2:
+            if urls.count > 2{
+                let url: URL = URL(string: urls[2])!
+                self.actualWebView!.load(URLRequest(url: url))
+            } else {
+                let url: URL = URL(string: "https://google.com")!
+                self.actualWebView!.load(URLRequest(url: url))
+            }
+        default:
+            break;
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 1
-        let url: URL = URL(string: (urlString ?? "")) ?? URL(string: "https://google.com")!
+        title = "Articles"
+        self.actualWebView = WKWebView(frame: webViewContainer.bounds, configuration: WKWebViewConfiguration())
+        self.actualWebView!.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.webViewContainer.addSubview(self.actualWebView!)
         
-        webView.load(URLRequest(url: url))
+        refPoll.observeSingleEvent(of: .value, with: { snapshot in
+            self.sources.removeAll()
+            self.urls.removeAll()
+            for data in snapshot.children.allObjects as! [DataSnapshot] {
+                let source = data.key
+                let url = data.value as? String ?? "https://google.com"
+                self.sources.append(source)
+                self.urls.append(url)
+            }
+            if self.sources.count == 0{
+                self.title = ""
+                self.segmentedControl.isHidden = true
+                self.actualWebView!.load(URLRequest(url: URL(string: "https://google.com")!))
+            } else {
+                self.actualWebView!.load(URLRequest(url: URL(string: self.urls[0])!))
+                for i in 0..<self.sources.count{
+                    self.segmentedControl.setTitle(self.sources[i], forSegmentAt: i)
+                }
+            }
+        })
+        
         // 2
         // let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView.reload))
         // toolbarItems = [refresh]
@@ -35,9 +93,8 @@ class WebViewController: UIViewController, WKNavigationDelegate {
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        title = webView.title
+        //title = webView.title
     }
-
 
     /*
     // MARK: - Navigation

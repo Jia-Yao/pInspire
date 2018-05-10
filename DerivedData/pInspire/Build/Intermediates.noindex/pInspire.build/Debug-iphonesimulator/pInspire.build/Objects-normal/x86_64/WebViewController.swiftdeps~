@@ -7,356 +7,817 @@ provides-member:
 - ["8pInspire17WebViewControllerC", ""]
 provides-dynamic-lookup:
 - "loadView"
+- "segmentedControl"
+- "tabIndexChanged"
 - "viewDidLoad"
 - "webView"
+- "webViewContainer"
 depends-top-level:
+- !private "..<"
+- !private "=="
+- !private ">"
+- !private "??"
+- !private "Array"
 - "AssignmentPrecedence"
+- !private "CastingPrecedence"
+- !private "DataSnapshot"
+- "DatabaseReference"
+- "String"
 - !private "StringLiteralType"
+- "UISegmentedControl"
+- "UIView"
 - "UIViewController"
 - !private "URL"
 - !private "URLRequest"
 - "WKNavigation"
 - "WKNavigationDelegate"
 - "WKWebView"
+- !private "WKWebViewConfiguration"
 - "WebViewController"
+- !private "~="
 depends-member:
 - !private ["12FacebookCore26AppEventParameterValueTypeP", "init"]
-- !private ["s23BidirectionalCollectionP", "init"]
+- !private ["Sa", "append"]
+- !private ["Sa", "count"]
+- ["Sa", "init"]
+- !private ["Sa", "removeAll"]
+- !private ["Sa", "subscript"]
+- !private ["s23BidirectionalCollectionP", "append"]
+- !private ["s23BidirectionalCollectionP", "count"]
+- ["s23BidirectionalCollectionP", "init"]
+- !private ["s23BidirectionalCollectionP", "removeAll"]
+- !private ["s23BidirectionalCollectionP", "subscript"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["So15CALayerDelegateP", "addSubview"]
+- !private ["So15CALayerDelegateP", "autoresizingMask"]
+- !private ["So15CALayerDelegateP", "bounds"]
 - !private ["So15CALayerDelegateP", "init"]
 - !private ["So15CALayerDelegateP", "load"]
-- !private ["So15CALayerDelegateP", "navigationDelegate"]
-- !private ["So15CALayerDelegateP", "title"]
+- !private ["So15CALayerDelegateP", "selectedSegmentIndex"]
+- !private ["So15CALayerDelegateP", "setTitle"]
+- ["s7CVarArgP", "String"]
 - !private ["s7CVarArgP", "URL"]
 - !private ["s7CVarArgP", "URLRequest"]
 - !private ["s7CVarArgP", "WKWebView"]
+- !private ["s7CVarArgP", "WKWebViewConfiguration"]
 - ["s7CVarArgP", ""]
-- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "_getBuiltinLogicValue"]
+- !private ["s7CVarArgP", "actualWebView"]
+- !private ["s7CVarArgP", "addSubview"]
+- !private ["s7CVarArgP", "allObjects"]
+- !private ["s7CVarArgP", "append"]
+- !private ["s7CVarArgP", "autoresizingMask"]
+- !private ["s7CVarArgP", "bounds"]
+- !private ["s7CVarArgP", "children"]
+- !private ["s7CVarArgP", "count"]
+- ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "key"]
 - !private ["s7CVarArgP", "load"]
-- !private ["s7CVarArgP", "navigationDelegate"]
+- !private ["s7CVarArgP", "loadView"]
+- !private ["s7CVarArgP", "observeSingleEvent"]
+- !private ["s7CVarArgP", "refPoll"]
+- !private ["s7CVarArgP", "removeAll"]
+- !private ["s7CVarArgP", "segmentedControl"]
+- !private ["s7CVarArgP", "selectedSegmentIndex"]
+- !private ["s7CVarArgP", "setTitle"]
+- !private ["s7CVarArgP", "sources"]
+- !private ["s7CVarArgP", "subscript"]
 - !private ["s7CVarArgP", "title"]
-- !private ["s7CVarArgP", "view"]
+- !private ["s7CVarArgP", "urls"]
+- !private ["s7CVarArgP", "value"]
 - !private ["s7CVarArgP", "viewDidLoad"]
 - ["s7CVarArgP", "webView"]
+- !private ["s7CVarArgP", "webViewContainer"]
 - ["s7CVarArgP", "webViewWebContentProcessDidTerminate"]
-- !private ["s10CollectionP", "init"]
+- !private ["s10CollectionP", "append"]
+- !private ["s10CollectionP", "count"]
+- ["s10CollectionP", "init"]
+- !private ["s10CollectionP", "removeAll"]
+- !private ["s10CollectionP", "subscript"]
 - !private ["s10ComparableP", "init"]
+- ["s28CustomDebugStringConvertibleP", "String"]
 - !private ["s28CustomDebugStringConvertibleP", "URL"]
 - !private ["s28CustomDebugStringConvertibleP", "URLRequest"]
 - !private ["s28CustomDebugStringConvertibleP", "WKWebView"]
+- !private ["s28CustomDebugStringConvertibleP", "WKWebViewConfiguration"]
 - ["s28CustomDebugStringConvertibleP", ""]
-- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "actualWebView"]
+- !private ["s28CustomDebugStringConvertibleP", "addSubview"]
+- !private ["s28CustomDebugStringConvertibleP", "allObjects"]
+- !private ["s28CustomDebugStringConvertibleP", "append"]
+- !private ["s28CustomDebugStringConvertibleP", "autoresizingMask"]
+- !private ["s28CustomDebugStringConvertibleP", "bounds"]
+- !private ["s28CustomDebugStringConvertibleP", "children"]
+- !private ["s28CustomDebugStringConvertibleP", "count"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "key"]
 - !private ["s28CustomDebugStringConvertibleP", "load"]
-- !private ["s28CustomDebugStringConvertibleP", "navigationDelegate"]
+- !private ["s28CustomDebugStringConvertibleP", "loadView"]
+- !private ["s28CustomDebugStringConvertibleP", "observeSingleEvent"]
+- !private ["s28CustomDebugStringConvertibleP", "refPoll"]
+- !private ["s28CustomDebugStringConvertibleP", "removeAll"]
+- !private ["s28CustomDebugStringConvertibleP", "segmentedControl"]
+- !private ["s28CustomDebugStringConvertibleP", "selectedSegmentIndex"]
+- !private ["s28CustomDebugStringConvertibleP", "setTitle"]
+- !private ["s28CustomDebugStringConvertibleP", "sources"]
+- !private ["s28CustomDebugStringConvertibleP", "subscript"]
 - !private ["s28CustomDebugStringConvertibleP", "title"]
-- !private ["s28CustomDebugStringConvertibleP", "view"]
+- !private ["s28CustomDebugStringConvertibleP", "urls"]
+- !private ["s28CustomDebugStringConvertibleP", "value"]
 - !private ["s28CustomDebugStringConvertibleP", "viewDidLoad"]
 - ["s28CustomDebugStringConvertibleP", "webView"]
+- !private ["s28CustomDebugStringConvertibleP", "webViewContainer"]
 - ["s28CustomDebugStringConvertibleP", "webViewWebContentProcessDidTerminate"]
+- !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
 - !private ["s29CustomPlaygroundQuickLookableP", "init"]
-- !private ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
+- !private ["s17CustomReflectableP", "append"]
+- !private ["s17CustomReflectableP", "count"]
+- ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "removeAll"]
+- !private ["s17CustomReflectableP", "subscript"]
+- ["s23CustomStringConvertibleP", "String"]
 - !private ["s23CustomStringConvertibleP", "URL"]
 - !private ["s23CustomStringConvertibleP", "URLRequest"]
 - !private ["s23CustomStringConvertibleP", "WKWebView"]
+- !private ["s23CustomStringConvertibleP", "WKWebViewConfiguration"]
 - ["s23CustomStringConvertibleP", ""]
-- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s23CustomStringConvertibleP", "actualWebView"]
+- !private ["s23CustomStringConvertibleP", "addSubview"]
+- !private ["s23CustomStringConvertibleP", "allObjects"]
+- !private ["s23CustomStringConvertibleP", "append"]
+- !private ["s23CustomStringConvertibleP", "autoresizingMask"]
+- !private ["s23CustomStringConvertibleP", "bounds"]
+- !private ["s23CustomStringConvertibleP", "children"]
+- !private ["s23CustomStringConvertibleP", "count"]
+- ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "key"]
 - !private ["s23CustomStringConvertibleP", "load"]
-- !private ["s23CustomStringConvertibleP", "navigationDelegate"]
+- !private ["s23CustomStringConvertibleP", "loadView"]
+- !private ["s23CustomStringConvertibleP", "observeSingleEvent"]
+- !private ["s23CustomStringConvertibleP", "refPoll"]
+- !private ["s23CustomStringConvertibleP", "removeAll"]
+- !private ["s23CustomStringConvertibleP", "segmentedControl"]
+- !private ["s23CustomStringConvertibleP", "selectedSegmentIndex"]
+- !private ["s23CustomStringConvertibleP", "setTitle"]
+- !private ["s23CustomStringConvertibleP", "sources"]
+- !private ["s23CustomStringConvertibleP", "subscript"]
 - !private ["s23CustomStringConvertibleP", "title"]
-- !private ["s23CustomStringConvertibleP", "view"]
+- !private ["s23CustomStringConvertibleP", "urls"]
+- !private ["s23CustomStringConvertibleP", "value"]
 - !private ["s23CustomStringConvertibleP", "viewDidLoad"]
 - ["s23CustomStringConvertibleP", "webView"]
+- !private ["s23CustomStringConvertibleP", "webViewContainer"]
 - ["s23CustomStringConvertibleP", "webViewWebContentProcessDidTerminate"]
-- !private ["s9DecodableP", "init"]
-- !private ["s9EncodableP", "init"]
+- !private ["SC13DataEventTypeO", "value"]
+- !private ["So12DataSnapshotC", "children"]
+- !private ["So12DataSnapshotC", "key"]
+- !private ["So12DataSnapshotC", "value"]
+- !private ["So13DatabaseQueryC", "observeSingleEvent"]
+- !private ["So17DatabaseReferenceC", "observeSingleEvent"]
+- !private ["s9DecodableP", "_getBuiltinLogicValue"]
+- !private ["s9DecodableP", "append"]
+- !private ["s9DecodableP", "count"]
+- ["s9DecodableP", "init"]
+- !private ["s9DecodableP", "removeAll"]
+- !private ["s9DecodableP", "subscript"]
+- !private ["s9EncodableP", "_getBuiltinLogicValue"]
+- !private ["s9EncodableP", "append"]
+- !private ["s9EncodableP", "count"]
+- ["s9EncodableP", "init"]
+- !private ["s9EncodableP", "removeAll"]
+- !private ["s9EncodableP", "subscript"]
+- ["s9EquatableP", "String"]
 - !private ["s9EquatableP", "URL"]
 - !private ["s9EquatableP", "URLRequest"]
 - !private ["s9EquatableP", "WKWebView"]
+- !private ["s9EquatableP", "WKWebViewConfiguration"]
 - ["s9EquatableP", ""]
-- !private ["s9EquatableP", "init"]
+- !private ["s9EquatableP", "_getBuiltinLogicValue"]
+- !private ["s9EquatableP", "actualWebView"]
+- !private ["s9EquatableP", "addSubview"]
+- !private ["s9EquatableP", "allObjects"]
+- !private ["s9EquatableP", "append"]
+- !private ["s9EquatableP", "autoresizingMask"]
+- !private ["s9EquatableP", "bounds"]
+- !private ["s9EquatableP", "children"]
+- !private ["s9EquatableP", "count"]
+- !private ["s9EquatableP", "flexibleHeight"]
+- !private ["s9EquatableP", "flexibleWidth"]
+- ["s9EquatableP", "init"]
+- !private ["s9EquatableP", "key"]
 - !private ["s9EquatableP", "load"]
-- !private ["s9EquatableP", "navigationDelegate"]
+- !private ["s9EquatableP", "loadView"]
+- !private ["s9EquatableP", "observeSingleEvent"]
+- !private ["s9EquatableP", "refPoll"]
+- !private ["s9EquatableP", "removeAll"]
+- !private ["s9EquatableP", "segmentedControl"]
+- !private ["s9EquatableP", "selectedSegmentIndex"]
+- !private ["s9EquatableP", "setTitle"]
+- !private ["s9EquatableP", "sources"]
+- !private ["s9EquatableP", "subscript"]
 - !private ["s9EquatableP", "title"]
-- !private ["s9EquatableP", "view"]
+- !private ["s9EquatableP", "urls"]
+- !private ["s9EquatableP", "value"]
 - !private ["s9EquatableP", "viewDidLoad"]
 - ["s9EquatableP", "webView"]
+- !private ["s9EquatableP", "webViewContainer"]
 - ["s9EquatableP", "webViewWebContentProcessDidTerminate"]
+- !private ["s25ExpressibleByArrayLiteralP", "append"]
+- !private ["s25ExpressibleByArrayLiteralP", "count"]
+- !private ["s25ExpressibleByArrayLiteralP", "flexibleHeight"]
+- !private ["s25ExpressibleByArrayLiteralP", "flexibleWidth"]
+- ["s25ExpressibleByArrayLiteralP", "init"]
+- !private ["s25ExpressibleByArrayLiteralP", "removeAll"]
+- !private ["s25ExpressibleByArrayLiteralP", "subscript"]
+- !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
 - !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
 - !private ["s26ExpressibleByStringLiteralP", "init"]
 - !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- ["s8HashableP", "String"]
 - !private ["s8HashableP", "URL"]
 - !private ["s8HashableP", "URLRequest"]
 - !private ["s8HashableP", "WKWebView"]
+- !private ["s8HashableP", "WKWebViewConfiguration"]
 - ["s8HashableP", ""]
+- !private ["s8HashableP", "_getBuiltinLogicValue"]
+- !private ["s8HashableP", "actualWebView"]
+- !private ["s8HashableP", "addSubview"]
+- !private ["s8HashableP", "allObjects"]
+- !private ["s8HashableP", "autoresizingMask"]
+- !private ["s8HashableP", "bounds"]
+- !private ["s8HashableP", "children"]
 - !private ["s8HashableP", "init"]
+- !private ["s8HashableP", "key"]
 - !private ["s8HashableP", "load"]
-- !private ["s8HashableP", "navigationDelegate"]
+- !private ["s8HashableP", "loadView"]
+- !private ["s8HashableP", "observeSingleEvent"]
+- !private ["s8HashableP", "refPoll"]
+- !private ["s8HashableP", "segmentedControl"]
+- !private ["s8HashableP", "selectedSegmentIndex"]
+- !private ["s8HashableP", "setTitle"]
+- !private ["s8HashableP", "sources"]
 - !private ["s8HashableP", "title"]
-- !private ["s8HashableP", "view"]
+- !private ["s8HashableP", "urls"]
+- !private ["s8HashableP", "value"]
 - !private ["s8HashableP", "viewDidLoad"]
 - ["s8HashableP", "webView"]
+- !private ["s8HashableP", "webViewContainer"]
 - ["s8HashableP", "webViewWebContentProcessDidTerminate"]
+- !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
 - !private ["s25LosslessStringConvertibleP", "init"]
 - !private ["s10MirrorPathP", "init"]
+- !private ["s17MutableCollectionP", "append"]
+- !private ["s17MutableCollectionP", "count"]
+- ["s17MutableCollectionP", "init"]
+- !private ["s17MutableCollectionP", "removeAll"]
+- !private ["s17MutableCollectionP", "subscript"]
+- ["So8NSCodingP", "String"]
 - !private ["So8NSCodingP", "URL"]
 - !private ["So8NSCodingP", "URLRequest"]
 - !private ["So8NSCodingP", "WKWebView"]
+- !private ["So8NSCodingP", "WKWebViewConfiguration"]
 - ["So8NSCodingP", ""]
+- !private ["So8NSCodingP", "actualWebView"]
+- !private ["So8NSCodingP", "addSubview"]
+- !private ["So8NSCodingP", "autoresizingMask"]
+- !private ["So8NSCodingP", "bounds"]
 - !private ["So8NSCodingP", "init"]
 - !private ["So8NSCodingP", "load"]
-- !private ["So8NSCodingP", "navigationDelegate"]
+- !private ["So8NSCodingP", "loadView"]
+- !private ["So8NSCodingP", "refPoll"]
+- !private ["So8NSCodingP", "segmentedControl"]
+- !private ["So8NSCodingP", "selectedSegmentIndex"]
+- !private ["So8NSCodingP", "setTitle"]
+- !private ["So8NSCodingP", "sources"]
 - !private ["So8NSCodingP", "title"]
-- !private ["So8NSCodingP", "view"]
+- !private ["So8NSCodingP", "urls"]
 - !private ["So8NSCodingP", "viewDidLoad"]
 - ["So8NSCodingP", "webView"]
+- !private ["So8NSCodingP", "webViewContainer"]
 - ["So8NSCodingP", "webViewWebContentProcessDidTerminate"]
+- !private ["So9NSCopyingP", "init"]
+- !private ["So12NSEnumeratorC", "allObjects"]
+- ["So26NSExtensionRequestHandlingP", "String"]
 - !private ["So26NSExtensionRequestHandlingP", "URL"]
 - !private ["So26NSExtensionRequestHandlingP", "URLRequest"]
 - !private ["So26NSExtensionRequestHandlingP", "WKWebView"]
+- !private ["So26NSExtensionRequestHandlingP", "WKWebViewConfiguration"]
 - ["So26NSExtensionRequestHandlingP", ""]
+- !private ["So26NSExtensionRequestHandlingP", "actualWebView"]
 - !private ["So26NSExtensionRequestHandlingP", "init"]
+- !private ["So26NSExtensionRequestHandlingP", "loadView"]
+- !private ["So26NSExtensionRequestHandlingP", "refPoll"]
+- !private ["So26NSExtensionRequestHandlingP", "segmentedControl"]
+- !private ["So26NSExtensionRequestHandlingP", "sources"]
 - !private ["So26NSExtensionRequestHandlingP", "title"]
-- !private ["So26NSExtensionRequestHandlingP", "view"]
+- !private ["So26NSExtensionRequestHandlingP", "urls"]
 - !private ["So26NSExtensionRequestHandlingP", "viewDidLoad"]
 - ["So26NSExtensionRequestHandlingP", "webView"]
+- !private ["So26NSExtensionRequestHandlingP", "webViewContainer"]
 - ["So26NSExtensionRequestHandlingP", "webViewWebContentProcessDidTerminate"]
+- !private ["So17NSFastEnumerationP", "allObjects"]
+- !private ["So8NSObjectC", "DataSnapshot"]
+- ["So8NSObjectC", "DatabaseReference"]
+- ["So8NSObjectC", "String"]
+- ["So8NSObjectC", "UISegmentedControl"]
+- ["So8NSObjectC", "UIView"]
 - !private ["So8NSObjectC", "URL"]
 - !private ["So8NSObjectC", "URLRequest"]
 - ["So8NSObjectC", "WKNavigation"]
 - ["So8NSObjectC", "WKWebView"]
+- !private ["So8NSObjectC", "WKWebViewConfiguration"]
+- ["So8NSObjectC", "actualWebView"]
+- !private ["So8NSObjectC", "addSubview"]
+- !private ["So8NSObjectC", "allObjects"]
+- !private ["So8NSObjectC", "autoresizingMask"]
+- !private ["So8NSObjectC", "bounds"]
+- !private ["So8NSObjectC", "children"]
 - ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "key"]
 - !private ["So8NSObjectC", "load"]
 - ["So8NSObjectC", "loadView"]
-- !private ["So8NSObjectC", "navigationDelegate"]
+- !private ["So8NSObjectC", "observeSingleEvent"]
+- ["So8NSObjectC", "refPoll"]
+- ["So8NSObjectC", "segmentedControl"]
+- !private ["So8NSObjectC", "selectedSegmentIndex"]
+- !private ["So8NSObjectC", "setTitle"]
+- ["So8NSObjectC", "sources"]
+- ["So8NSObjectC", "tabIndexChanged"]
 - !private ["So8NSObjectC", "title"]
-- !private ["So8NSObjectC", "view"]
+- ["So8NSObjectC", "urls"]
+- !private ["So8NSObjectC", "value"]
 - ["So8NSObjectC", "viewDidLoad"]
 - ["So8NSObjectC", "webView"]
+- ["So8NSObjectC", "webViewContainer"]
 - ["So8NSObjectC", "webViewWebContentProcessDidTerminate"]
+- ["So16NSObjectProtocolP", "String"]
 - !private ["So16NSObjectProtocolP", "URL"]
 - !private ["So16NSObjectProtocolP", "URLRequest"]
 - !private ["So16NSObjectProtocolP", "WKWebView"]
+- !private ["So16NSObjectProtocolP", "WKWebViewConfiguration"]
 - ["So16NSObjectProtocolP", ""]
+- !private ["So16NSObjectProtocolP", "actualWebView"]
+- !private ["So16NSObjectProtocolP", "addSubview"]
+- !private ["So16NSObjectProtocolP", "allObjects"]
+- !private ["So16NSObjectProtocolP", "autoresizingMask"]
+- !private ["So16NSObjectProtocolP", "bounds"]
+- !private ["So16NSObjectProtocolP", "children"]
 - !private ["So16NSObjectProtocolP", "init"]
+- !private ["So16NSObjectProtocolP", "key"]
 - !private ["So16NSObjectProtocolP", "load"]
-- !private ["So16NSObjectProtocolP", "navigationDelegate"]
+- !private ["So16NSObjectProtocolP", "loadView"]
+- !private ["So16NSObjectProtocolP", "observeSingleEvent"]
+- !private ["So16NSObjectProtocolP", "refPoll"]
+- !private ["So16NSObjectProtocolP", "segmentedControl"]
+- !private ["So16NSObjectProtocolP", "selectedSegmentIndex"]
+- !private ["So16NSObjectProtocolP", "setTitle"]
+- !private ["So16NSObjectProtocolP", "sources"]
 - !private ["So16NSObjectProtocolP", "title"]
-- !private ["So16NSObjectProtocolP", "view"]
+- !private ["So16NSObjectProtocolP", "urls"]
+- !private ["So16NSObjectProtocolP", "value"]
 - !private ["So16NSObjectProtocolP", "viewDidLoad"]
 - ["So16NSObjectProtocolP", "webView"]
+- !private ["So16NSObjectProtocolP", "webViewContainer"]
 - ["So16NSObjectProtocolP", "webViewWebContentProcessDidTerminate"]
-- !private ["s26RangeReplaceableCollectionP", "init"]
+- !private ["So14NSSecureCodingP", "init"]
+- !private ["s9OptionSetP", "flexibleHeight"]
+- !private ["s9OptionSetP", "flexibleWidth"]
+- !private ["s22RandomAccessCollectionP", "append"]
+- !private ["s22RandomAccessCollectionP", "count"]
+- ["s22RandomAccessCollectionP", "init"]
+- !private ["s22RandomAccessCollectionP", "removeAll"]
+- !private ["s22RandomAccessCollectionP", "subscript"]
+- !private ["s26RangeReplaceableCollectionP", "append"]
+- !private ["s26RangeReplaceableCollectionP", "count"]
+- ["s26RangeReplaceableCollectionP", "init"]
+- !private ["s26RangeReplaceableCollectionP", "removeAll"]
+- !private ["s26RangeReplaceableCollectionP", "subscript"]
+- !private ["s16RawRepresentableP", "flexibleHeight"]
+- !private ["s16RawRepresentableP", "flexibleWidth"]
+- !private ["s16RawRepresentableP", "value"]
 - !private ["10Foundation20ReferenceConvertibleP", "init"]
-- !private ["s8SequenceP", "init"]
+- !private ["s8SequenceP", "allObjects"]
+- !private ["s8SequenceP", "append"]
+- !private ["s8SequenceP", "count"]
+- ["s8SequenceP", "init"]
+- !private ["s8SequenceP", "removeAll"]
+- !private ["s8SequenceP", "subscript"]
+- !private ["s10SetAlgebraP", "flexibleHeight"]
+- !private ["s10SetAlgebraP", "flexibleWidth"]
 - !private ["SS", "init"]
 - !private ["s14StringProtocolP", "init"]
 - !private ["s16TextOutputStreamP", "init"]
 - !private ["s20TextOutputStreamableP", "init"]
+- !private ["So29UIAccessibilityIdentificationP", "addSubview"]
+- !private ["So29UIAccessibilityIdentificationP", "autoresizingMask"]
+- !private ["So29UIAccessibilityIdentificationP", "bounds"]
 - !private ["So29UIAccessibilityIdentificationP", "init"]
 - !private ["So29UIAccessibilityIdentificationP", "load"]
-- !private ["So29UIAccessibilityIdentificationP", "navigationDelegate"]
-- !private ["So29UIAccessibilityIdentificationP", "title"]
+- !private ["So29UIAccessibilityIdentificationP", "selectedSegmentIndex"]
+- !private ["So29UIAccessibilityIdentificationP", "setTitle"]
+- !private ["So12UIAppearanceP", "addSubview"]
+- !private ["So12UIAppearanceP", "autoresizingMask"]
+- !private ["So12UIAppearanceP", "bounds"]
 - !private ["So12UIAppearanceP", "init"]
 - !private ["So12UIAppearanceP", "load"]
-- !private ["So12UIAppearanceP", "navigationDelegate"]
-- !private ["So12UIAppearanceP", "title"]
+- !private ["So12UIAppearanceP", "selectedSegmentIndex"]
+- !private ["So12UIAppearanceP", "setTitle"]
+- ["So21UIAppearanceContainerP", "String"]
 - !private ["So21UIAppearanceContainerP", "URL"]
 - !private ["So21UIAppearanceContainerP", "URLRequest"]
 - !private ["So21UIAppearanceContainerP", "WKWebView"]
+- !private ["So21UIAppearanceContainerP", "WKWebViewConfiguration"]
 - ["So21UIAppearanceContainerP", ""]
+- !private ["So21UIAppearanceContainerP", "actualWebView"]
+- !private ["So21UIAppearanceContainerP", "addSubview"]
+- !private ["So21UIAppearanceContainerP", "autoresizingMask"]
+- !private ["So21UIAppearanceContainerP", "bounds"]
 - !private ["So21UIAppearanceContainerP", "init"]
 - !private ["So21UIAppearanceContainerP", "load"]
-- !private ["So21UIAppearanceContainerP", "navigationDelegate"]
+- !private ["So21UIAppearanceContainerP", "loadView"]
+- !private ["So21UIAppearanceContainerP", "refPoll"]
+- !private ["So21UIAppearanceContainerP", "segmentedControl"]
+- !private ["So21UIAppearanceContainerP", "selectedSegmentIndex"]
+- !private ["So21UIAppearanceContainerP", "setTitle"]
+- !private ["So21UIAppearanceContainerP", "sources"]
 - !private ["So21UIAppearanceContainerP", "title"]
-- !private ["So21UIAppearanceContainerP", "view"]
+- !private ["So21UIAppearanceContainerP", "urls"]
 - !private ["So21UIAppearanceContainerP", "viewDidLoad"]
 - ["So21UIAppearanceContainerP", "webView"]
+- !private ["So21UIAppearanceContainerP", "webViewContainer"]
 - ["So21UIAppearanceContainerP", "webViewWebContentProcessDidTerminate"]
+- ["So18UIContentContainerP", "String"]
 - !private ["So18UIContentContainerP", "URL"]
 - !private ["So18UIContentContainerP", "URLRequest"]
 - !private ["So18UIContentContainerP", "WKWebView"]
+- !private ["So18UIContentContainerP", "WKWebViewConfiguration"]
 - ["So18UIContentContainerP", ""]
+- !private ["So18UIContentContainerP", "actualWebView"]
 - !private ["So18UIContentContainerP", "init"]
+- !private ["So18UIContentContainerP", "loadView"]
+- !private ["So18UIContentContainerP", "refPoll"]
+- !private ["So18UIContentContainerP", "segmentedControl"]
+- !private ["So18UIContentContainerP", "sources"]
 - !private ["So18UIContentContainerP", "title"]
-- !private ["So18UIContentContainerP", "view"]
+- !private ["So18UIContentContainerP", "urls"]
 - !private ["So18UIContentContainerP", "viewDidLoad"]
 - ["So18UIContentContainerP", "webView"]
+- !private ["So18UIContentContainerP", "webViewContainer"]
 - ["So18UIContentContainerP", "webViewWebContentProcessDidTerminate"]
+- !private ["So9UIControlC", "selectedSegmentIndex"]
+- !private ["So9UIControlC", "setTitle"]
+- !private ["So17UICoordinateSpaceP", "addSubview"]
+- !private ["So17UICoordinateSpaceP", "autoresizingMask"]
+- !private ["So17UICoordinateSpaceP", "bounds"]
 - !private ["So17UICoordinateSpaceP", "init"]
 - !private ["So17UICoordinateSpaceP", "load"]
-- !private ["So17UICoordinateSpaceP", "navigationDelegate"]
-- !private ["So17UICoordinateSpaceP", "title"]
+- !private ["So17UICoordinateSpaceP", "selectedSegmentIndex"]
+- !private ["So17UICoordinateSpaceP", "setTitle"]
+- !private ["So13UIDynamicItemP", "addSubview"]
+- !private ["So13UIDynamicItemP", "autoresizingMask"]
+- !private ["So13UIDynamicItemP", "bounds"]
 - !private ["So13UIDynamicItemP", "init"]
 - !private ["So13UIDynamicItemP", "load"]
-- !private ["So13UIDynamicItemP", "navigationDelegate"]
-- !private ["So13UIDynamicItemP", "title"]
+- !private ["So13UIDynamicItemP", "selectedSegmentIndex"]
+- !private ["So13UIDynamicItemP", "setTitle"]
+- ["So18UIFocusEnvironmentP", "String"]
 - !private ["So18UIFocusEnvironmentP", "URL"]
 - !private ["So18UIFocusEnvironmentP", "URLRequest"]
 - !private ["So18UIFocusEnvironmentP", "WKWebView"]
+- !private ["So18UIFocusEnvironmentP", "WKWebViewConfiguration"]
 - ["So18UIFocusEnvironmentP", ""]
+- !private ["So18UIFocusEnvironmentP", "actualWebView"]
+- !private ["So18UIFocusEnvironmentP", "addSubview"]
+- !private ["So18UIFocusEnvironmentP", "autoresizingMask"]
+- !private ["So18UIFocusEnvironmentP", "bounds"]
 - !private ["So18UIFocusEnvironmentP", "init"]
 - !private ["So18UIFocusEnvironmentP", "load"]
-- !private ["So18UIFocusEnvironmentP", "navigationDelegate"]
+- !private ["So18UIFocusEnvironmentP", "loadView"]
+- !private ["So18UIFocusEnvironmentP", "refPoll"]
+- !private ["So18UIFocusEnvironmentP", "segmentedControl"]
+- !private ["So18UIFocusEnvironmentP", "selectedSegmentIndex"]
+- !private ["So18UIFocusEnvironmentP", "setTitle"]
+- !private ["So18UIFocusEnvironmentP", "sources"]
 - !private ["So18UIFocusEnvironmentP", "title"]
-- !private ["So18UIFocusEnvironmentP", "view"]
+- !private ["So18UIFocusEnvironmentP", "urls"]
 - !private ["So18UIFocusEnvironmentP", "viewDidLoad"]
 - ["So18UIFocusEnvironmentP", "webView"]
+- !private ["So18UIFocusEnvironmentP", "webViewContainer"]
 - ["So18UIFocusEnvironmentP", "webViewWebContentProcessDidTerminate"]
+- !private ["So11UIFocusItemP", "addSubview"]
+- !private ["So11UIFocusItemP", "autoresizingMask"]
+- !private ["So11UIFocusItemP", "bounds"]
 - !private ["So11UIFocusItemP", "init"]
 - !private ["So11UIFocusItemP", "load"]
-- !private ["So11UIFocusItemP", "navigationDelegate"]
-- !private ["So11UIFocusItemP", "title"]
+- !private ["So11UIFocusItemP", "selectedSegmentIndex"]
+- !private ["So11UIFocusItemP", "setTitle"]
+- ["So30UIPasteConfigurationSupportingP", "String"]
 - !private ["So30UIPasteConfigurationSupportingP", "URL"]
 - !private ["So30UIPasteConfigurationSupportingP", "URLRequest"]
 - !private ["So30UIPasteConfigurationSupportingP", "WKWebView"]
+- !private ["So30UIPasteConfigurationSupportingP", "WKWebViewConfiguration"]
 - ["So30UIPasteConfigurationSupportingP", ""]
+- !private ["So30UIPasteConfigurationSupportingP", "actualWebView"]
+- !private ["So30UIPasteConfigurationSupportingP", "addSubview"]
+- !private ["So30UIPasteConfigurationSupportingP", "autoresizingMask"]
+- !private ["So30UIPasteConfigurationSupportingP", "bounds"]
 - !private ["So30UIPasteConfigurationSupportingP", "init"]
 - !private ["So30UIPasteConfigurationSupportingP", "load"]
-- !private ["So30UIPasteConfigurationSupportingP", "navigationDelegate"]
+- !private ["So30UIPasteConfigurationSupportingP", "loadView"]
+- !private ["So30UIPasteConfigurationSupportingP", "refPoll"]
+- !private ["So30UIPasteConfigurationSupportingP", "segmentedControl"]
+- !private ["So30UIPasteConfigurationSupportingP", "selectedSegmentIndex"]
+- !private ["So30UIPasteConfigurationSupportingP", "setTitle"]
+- !private ["So30UIPasteConfigurationSupportingP", "sources"]
 - !private ["So30UIPasteConfigurationSupportingP", "title"]
-- !private ["So30UIPasteConfigurationSupportingP", "view"]
+- !private ["So30UIPasteConfigurationSupportingP", "urls"]
 - !private ["So30UIPasteConfigurationSupportingP", "viewDidLoad"]
 - ["So30UIPasteConfigurationSupportingP", "webView"]
+- !private ["So30UIPasteConfigurationSupportingP", "webViewContainer"]
 - ["So30UIPasteConfigurationSupportingP", "webViewWebContentProcessDidTerminate"]
+- !private ["So11UIResponderC", "DataSnapshot"]
+- ["So11UIResponderC", "DatabaseReference"]
+- ["So11UIResponderC", "String"]
+- ["So11UIResponderC", "UISegmentedControl"]
+- ["So11UIResponderC", "UIView"]
 - !private ["So11UIResponderC", "URL"]
 - !private ["So11UIResponderC", "URLRequest"]
 - ["So11UIResponderC", "WKNavigation"]
 - ["So11UIResponderC", "WKWebView"]
+- !private ["So11UIResponderC", "WKWebViewConfiguration"]
+- ["So11UIResponderC", "actualWebView"]
+- !private ["So11UIResponderC", "addSubview"]
+- !private ["So11UIResponderC", "autoresizingMask"]
+- !private ["So11UIResponderC", "bounds"]
 - ["So11UIResponderC", "init"]
 - !private ["So11UIResponderC", "load"]
 - ["So11UIResponderC", "loadView"]
-- !private ["So11UIResponderC", "navigationDelegate"]
+- ["So11UIResponderC", "refPoll"]
+- ["So11UIResponderC", "segmentedControl"]
+- !private ["So11UIResponderC", "selectedSegmentIndex"]
+- !private ["So11UIResponderC", "setTitle"]
+- ["So11UIResponderC", "sources"]
+- ["So11UIResponderC", "tabIndexChanged"]
 - !private ["So11UIResponderC", "title"]
-- !private ["So11UIResponderC", "view"]
+- ["So11UIResponderC", "urls"]
 - ["So11UIResponderC", "viewDidLoad"]
 - ["So11UIResponderC", "webView"]
+- ["So11UIResponderC", "webViewContainer"]
 - ["So11UIResponderC", "webViewWebContentProcessDidTerminate"]
+- ["So30UIResponderStandardEditActionsP", "String"]
 - !private ["So30UIResponderStandardEditActionsP", "URL"]
 - !private ["So30UIResponderStandardEditActionsP", "URLRequest"]
 - !private ["So30UIResponderStandardEditActionsP", "WKWebView"]
+- !private ["So30UIResponderStandardEditActionsP", "WKWebViewConfiguration"]
 - ["So30UIResponderStandardEditActionsP", ""]
+- !private ["So30UIResponderStandardEditActionsP", "actualWebView"]
+- !private ["So30UIResponderStandardEditActionsP", "addSubview"]
+- !private ["So30UIResponderStandardEditActionsP", "autoresizingMask"]
+- !private ["So30UIResponderStandardEditActionsP", "bounds"]
 - !private ["So30UIResponderStandardEditActionsP", "init"]
 - !private ["So30UIResponderStandardEditActionsP", "load"]
-- !private ["So30UIResponderStandardEditActionsP", "navigationDelegate"]
+- !private ["So30UIResponderStandardEditActionsP", "loadView"]
+- !private ["So30UIResponderStandardEditActionsP", "refPoll"]
+- !private ["So30UIResponderStandardEditActionsP", "segmentedControl"]
+- !private ["So30UIResponderStandardEditActionsP", "selectedSegmentIndex"]
+- !private ["So30UIResponderStandardEditActionsP", "setTitle"]
+- !private ["So30UIResponderStandardEditActionsP", "sources"]
 - !private ["So30UIResponderStandardEditActionsP", "title"]
-- !private ["So30UIResponderStandardEditActionsP", "view"]
+- !private ["So30UIResponderStandardEditActionsP", "urls"]
 - !private ["So30UIResponderStandardEditActionsP", "viewDidLoad"]
 - ["So30UIResponderStandardEditActionsP", "webView"]
+- !private ["So30UIResponderStandardEditActionsP", "webViewContainer"]
 - ["So30UIResponderStandardEditActionsP", "webViewWebContentProcessDidTerminate"]
+- !private ["So18UISegmentedControlC", "selectedSegmentIndex"]
+- !private ["So18UISegmentedControlC", "setTitle"]
+- !private ["So35UISpringLoadedInteractionSupportingP", "selectedSegmentIndex"]
+- !private ["So35UISpringLoadedInteractionSupportingP", "setTitle"]
+- ["So16UIStateRestoringP", "String"]
 - !private ["So16UIStateRestoringP", "URL"]
 - !private ["So16UIStateRestoringP", "URLRequest"]
 - !private ["So16UIStateRestoringP", "WKWebView"]
+- !private ["So16UIStateRestoringP", "WKWebViewConfiguration"]
 - ["So16UIStateRestoringP", ""]
+- !private ["So16UIStateRestoringP", "actualWebView"]
 - !private ["So16UIStateRestoringP", "init"]
+- !private ["So16UIStateRestoringP", "loadView"]
+- !private ["So16UIStateRestoringP", "refPoll"]
+- !private ["So16UIStateRestoringP", "segmentedControl"]
+- !private ["So16UIStateRestoringP", "sources"]
 - !private ["So16UIStateRestoringP", "title"]
-- !private ["So16UIStateRestoringP", "view"]
+- !private ["So16UIStateRestoringP", "urls"]
 - !private ["So16UIStateRestoringP", "viewDidLoad"]
 - ["So16UIStateRestoringP", "webView"]
+- !private ["So16UIStateRestoringP", "webViewContainer"]
 - ["So16UIStateRestoringP", "webViewWebContentProcessDidTerminate"]
+- ["So18UITraitEnvironmentP", "String"]
 - !private ["So18UITraitEnvironmentP", "URL"]
 - !private ["So18UITraitEnvironmentP", "URLRequest"]
 - !private ["So18UITraitEnvironmentP", "WKWebView"]
+- !private ["So18UITraitEnvironmentP", "WKWebViewConfiguration"]
 - ["So18UITraitEnvironmentP", ""]
+- !private ["So18UITraitEnvironmentP", "actualWebView"]
+- !private ["So18UITraitEnvironmentP", "addSubview"]
+- !private ["So18UITraitEnvironmentP", "autoresizingMask"]
+- !private ["So18UITraitEnvironmentP", "bounds"]
 - !private ["So18UITraitEnvironmentP", "init"]
 - !private ["So18UITraitEnvironmentP", "load"]
-- !private ["So18UITraitEnvironmentP", "navigationDelegate"]
+- !private ["So18UITraitEnvironmentP", "loadView"]
+- !private ["So18UITraitEnvironmentP", "refPoll"]
+- !private ["So18UITraitEnvironmentP", "segmentedControl"]
+- !private ["So18UITraitEnvironmentP", "selectedSegmentIndex"]
+- !private ["So18UITraitEnvironmentP", "setTitle"]
+- !private ["So18UITraitEnvironmentP", "sources"]
 - !private ["So18UITraitEnvironmentP", "title"]
-- !private ["So18UITraitEnvironmentP", "view"]
+- !private ["So18UITraitEnvironmentP", "urls"]
 - !private ["So18UITraitEnvironmentP", "viewDidLoad"]
 - ["So18UITraitEnvironmentP", "webView"]
+- !private ["So18UITraitEnvironmentP", "webViewContainer"]
 - ["So18UITraitEnvironmentP", "webViewWebContentProcessDidTerminate"]
+- !private ["So6UIViewC", "addSubview"]
+- !private ["So6UIViewC", "autoresizingMask"]
+- !private ["So6UIViewC", "bounds"]
 - !private ["So6UIViewC", "init"]
 - !private ["So6UIViewC", "load"]
-- !private ["So6UIViewC", "navigationDelegate"]
-- !private ["So6UIViewC", "title"]
+- !private ["So6UIViewC", "selectedSegmentIndex"]
+- !private ["So6UIViewC", "setTitle"]
+- !private ["SC18UIViewAutoresizingV", "flexibleHeight"]
+- !private ["SC18UIViewAutoresizingV", "flexibleWidth"]
+- !private ["So16UIViewControllerC", "DataSnapshot"]
+- ["So16UIViewControllerC", "DatabaseReference"]
+- ["So16UIViewControllerC", "String"]
+- ["So16UIViewControllerC", "UISegmentedControl"]
+- ["So16UIViewControllerC", "UIView"]
 - !private ["So16UIViewControllerC", "URL"]
 - !private ["So16UIViewControllerC", "URLRequest"]
 - ["So16UIViewControllerC", "WKNavigation"]
 - ["So16UIViewControllerC", "WKWebView"]
+- !private ["So16UIViewControllerC", "WKWebViewConfiguration"]
 - ["So16UIViewControllerC", ""]
+- ["So16UIViewControllerC", "actualWebView"]
 - ["So16UIViewControllerC", "init"]
 - ["So16UIViewControllerC", "loadView"]
+- ["So16UIViewControllerC", "refPoll"]
+- ["So16UIViewControllerC", "segmentedControl"]
+- ["So16UIViewControllerC", "sources"]
+- ["So16UIViewControllerC", "tabIndexChanged"]
 - !private ["So16UIViewControllerC", "title"]
-- !private ["So16UIViewControllerC", "view"]
+- ["So16UIViewControllerC", "urls"]
 - ["So16UIViewControllerC", "viewDidLoad"]
 - ["So16UIViewControllerC", "webView"]
+- ["So16UIViewControllerC", "webViewContainer"]
 - ["So16UIViewControllerC", "webViewWebContentProcessDidTerminate"]
 - !private ["10Foundation3URLV", "init"]
 - !private ["10Foundation10URLRequestV", "init"]
+- ["So20WKNavigationDelegateP", "String"]
 - !private ["So20WKNavigationDelegateP", "URL"]
 - !private ["So20WKNavigationDelegateP", "URLRequest"]
 - !private ["So20WKNavigationDelegateP", "WKWebView"]
+- !private ["So20WKNavigationDelegateP", "WKWebViewConfiguration"]
 - ["So20WKNavigationDelegateP", ""]
+- !private ["So20WKNavigationDelegateP", "actualWebView"]
+- !private ["So20WKNavigationDelegateP", "refPoll"]
+- !private ["So20WKNavigationDelegateP", "segmentedControl"]
+- !private ["So20WKNavigationDelegateP", "sources"]
 - !private ["So20WKNavigationDelegateP", "title"]
-- !private ["So20WKNavigationDelegateP", "view"]
+- !private ["So20WKNavigationDelegateP", "urls"]
 - ["So20WKNavigationDelegateP", "webView"]
+- !private ["So20WKNavigationDelegateP", "webViewContainer"]
 - ["So20WKNavigationDelegateP", "webViewWebContentProcessDidTerminate"]
+- !private ["So9WKWebViewC", "autoresizingMask"]
 - !private ["So9WKWebViewC", "init"]
 - !private ["So9WKWebViewC", "load"]
-- !private ["So9WKWebViewC", "navigationDelegate"]
-- !private ["So9WKWebViewC", "title"]
+- !private ["So22WKWebViewConfigurationC", "init"]
+- !private ["8pInspire17WebViewControllerC", "DataSnapshot"]
+- ["8pInspire17WebViewControllerC", "DatabaseReference"]
+- ["8pInspire17WebViewControllerC", "String"]
+- ["8pInspire17WebViewControllerC", "UISegmentedControl"]
+- ["8pInspire17WebViewControllerC", "UIView"]
 - !private ["8pInspire17WebViewControllerC", "URL"]
 - !private ["8pInspire17WebViewControllerC", "URLRequest"]
 - ["8pInspire17WebViewControllerC", "WKNavigation"]
 - ["8pInspire17WebViewControllerC", "WKWebView"]
+- !private ["8pInspire17WebViewControllerC", "WKWebViewConfiguration"]
+- ["8pInspire17WebViewControllerC", "actualWebView"]
 - ["8pInspire17WebViewControllerC", "deinit"]
 - ["8pInspire17WebViewControllerC", "init"]
 - ["8pInspire17WebViewControllerC", "loadView"]
+- ["8pInspire17WebViewControllerC", "refPoll"]
+- ["8pInspire17WebViewControllerC", "segmentedControl"]
+- ["8pInspire17WebViewControllerC", "sources"]
+- ["8pInspire17WebViewControllerC", "tabIndexChanged"]
 - !private ["8pInspire17WebViewControllerC", "title"]
-- !private ["8pInspire17WebViewControllerC", "view"]
+- ["8pInspire17WebViewControllerC", "urls"]
 - ["8pInspire17WebViewControllerC", "viewDidLoad"]
 - ["8pInspire17WebViewControllerC", "webView"]
+- ["8pInspire17WebViewControllerC", "webViewContainer"]
 - ["8pInspire17WebViewControllerC", "webViewWebContentProcessDidTerminate"]
+- !private ["s14_ArrayProtocolP", "append"]
+- !private ["s14_ArrayProtocolP", "count"]
+- ["s14_ArrayProtocolP", "init"]
+- !private ["s14_ArrayProtocolP", "removeAll"]
+- !private ["s14_ArrayProtocolP", "subscript"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "addSubview"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "autoresizingMask"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "bounds"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "init"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "load"]
-- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "navigationDelegate"]
-- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "title"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "selectedSegmentIndex"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "setTitle"]
+- !private ["s24_DestructorSafeContainerP", "append"]
+- !private ["s24_DestructorSafeContainerP", "count"]
+- ["s24_DestructorSafeContainerP", "init"]
+- !private ["s24_DestructorSafeContainerP", "removeAll"]
+- !private ["s24_DestructorSafeContainerP", "subscript"]
+- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
 - !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
 - !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
 - !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
 - !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
 - !private ["s34_ExpressibleByFileReferenceLiteralP", "init"]
 - !private ["s33_ExpressibleByStringInterpolationP", "init"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "String"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "URL"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "URLRequest"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "WKWebView"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "WKWebViewConfiguration"]
 - ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "actualWebView"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "addSubview"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "allObjects"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "autoresizingMask"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "bounds"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "children"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "key"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "load"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "navigationDelegate"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "loadView"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "observeSingleEvent"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "refPoll"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "segmentedControl"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "selectedSegmentIndex"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "setTitle"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "sources"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "title"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "view"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "urls"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "value"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "viewDidLoad"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "webView"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "webViewContainer"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "webViewWebContentProcessDidTerminate"]
-- !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
+- !private ["s21_ObjectiveCBridgeableP", "append"]
+- !private ["s21_ObjectiveCBridgeableP", "count"]
+- ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "removeAll"]
+- !private ["s21_ObjectiveCBridgeableP", "subscript"]
 - !private ["s16_SwiftStringViewP", "init"]
 depends-nominal:
 - !private "12FacebookCore26AppEventParameterValueTypeP"
-- !private "s23BidirectionalCollectionP"
+- "Sa"
+- "s23BidirectionalCollectionP"
+- !private "Sb"
 - !private "So15CALayerDelegateP"
 - "s7CVarArgP"
-- !private "s10CollectionP"
+- "s10CollectionP"
 - !private "s10ComparableP"
 - "s28CustomDebugStringConvertibleP"
 - !private "s29CustomPlaygroundQuickLookableP"
-- !private "s17CustomReflectableP"
+- "s17CustomReflectableP"
 - "s23CustomStringConvertibleP"
-- !private "s9DecodableP"
-- !private "s9EncodableP"
+- !private "SC13DataEventTypeO"
+- !private "So12DataSnapshotC"
+- !private "So13DatabaseQueryC"
+- !private "So17DatabaseReferenceC"
+- "s9DecodableP"
+- "s9EncodableP"
 - "s9EquatableP"
+- "s25ExpressibleByArrayLiteralP"
+- !private "s27ExpressibleByBooleanLiteralP"
 - !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
 - !private "s26ExpressibleByStringLiteralP"
 - !private "s33ExpressibleByUnicodeScalarLiteralP"
 - "s8HashableP"
 - !private "s25LosslessStringConvertibleP"
 - !private "s10MirrorPathP"
+- "s17MutableCollectionP"
 - "So8NSCodingP"
+- !private "So9NSCopyingP"
+- !private "So12NSEnumeratorC"
 - "So26NSExtensionRequestHandlingP"
+- !private "So17NSFastEnumerationP"
 - "So8NSObjectC"
 - "So16NSObjectProtocolP"
-- !private "s26RangeReplaceableCollectionP"
+- !private "So14NSSecureCodingP"
+- !private "s9OptionSetP"
+- "s22RandomAccessCollectionP"
+- "s26RangeReplaceableCollectionP"
+- !private "s16RawRepresentableP"
 - !private "10Foundation20ReferenceConvertibleP"
-- !private "s8SequenceP"
+- "s8SequenceP"
+- !private "s10SetAlgebraP"
 - !private "SS"
 - !private "s14StringProtocolP"
 - !private "s16TextOutputStreamP"
@@ -365,6 +826,7 @@ depends-nominal:
 - !private "So12UIAppearanceP"
 - "So21UIAppearanceContainerP"
 - "So18UIContentContainerP"
+- !private "So9UIControlC"
 - !private "So17UICoordinateSpaceP"
 - !private "So13UIDynamicItemP"
 - "So18UIFocusEnvironmentP"
@@ -372,16 +834,23 @@ depends-nominal:
 - "So30UIPasteConfigurationSupportingP"
 - "So11UIResponderC"
 - "So30UIResponderStandardEditActionsP"
+- !private "So18UISegmentedControlC"
+- !private "So35UISpringLoadedInteractionSupportingP"
 - "So16UIStateRestoringP"
 - "So18UITraitEnvironmentP"
 - !private "So6UIViewC"
+- !private "SC18UIViewAutoresizingV"
 - "So16UIViewControllerC"
 - !private "10Foundation3URLV"
 - !private "10Foundation10URLRequestV"
 - "So20WKNavigationDelegateP"
 - !private "So9WKWebViewC"
+- !private "So22WKWebViewConfigurationC"
 - "8pInspire17WebViewControllerC"
+- "s14_ArrayProtocolP"
 - !private "s37_DefaultCustomPlaygroundQuickLookableP"
+- "s24_DestructorSafeContainerP"
+- !private "s35_ExpressibleByBuiltinBooleanLiteralP"
 - !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
 - !private "s34_ExpressibleByBuiltinStringLiteralP"
 - !private "s39_ExpressibleByBuiltinUTF16StringLiteralP"
@@ -389,7 +858,7 @@ depends-nominal:
 - !private "s34_ExpressibleByFileReferenceLiteralP"
 - !private "s33_ExpressibleByStringInterpolationP"
 - "10Foundation27_KeyValueCodingAndObservingP"
-- !private "s21_ObjectiveCBridgeableP"
+- "s21_ObjectiveCBridgeableP"
 - !private "s16_SwiftStringViewP"
 depends-dynamic-lookup:
 depends-external:
@@ -398,31 +867,47 @@ depends-external:
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FacebookCore/FacebookCore.framework/Modules/FacebookCore.swiftmodule/x86_64.swiftmodule"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FacebookLogin/FacebookLogin.framework/Modules/FacebookLogin.swiftmodule/x86_64.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreMedia.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/simd.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Metal.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/AVFoundation.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreAudio.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/os.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/MapKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Headers/FIRInstanceID.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Headers/FirebaseInstanceID.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFURL.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FacebookCore/FacebookCore.framework/Headers/FacebookCore-umbrella.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FacebookLogin/FacebookLogin.framework/Headers/FacebookLogin-umbrella.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesViewController-umbrella.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework/Headers/JSQSystemSoundPlayer-umbrella.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/Bolts-umbrella.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKCoreKit-umbrella.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKLoginKit-umbrella.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessageMediaData.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessageData.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRMutableData.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFGeneric.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabaseReference.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessageBubbleImageDataSource.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessageAvatarImageDataSource.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesCollectionViewDataSource.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFCancellationTokenSource.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFTaskCompletionSource.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesBubbleImage.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesAvatarImage.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessage.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKProfile.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDataEventType.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FirebaseCore.h"
@@ -432,12 +917,22 @@ depends-external:
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKApplicationDelegate.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics+AppDelegate.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRServerValue.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesCollectionViewCellIncoming.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesCollectionViewCellOutgoing.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesBubbleSizeCalculating.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFAppLinkResolving.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKCopying.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKMutableCopying.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFAppLink.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFTask.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesLabel.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRLoggerLevel.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesCollectionViewCell.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMediaItem.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQLocationMediaItem.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQVideoMediaItem.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQAudioMediaItem.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQPhotoMediaItem.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFCancellationToken.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKAccessToken.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFAppLinkNavigation.h"
@@ -452,19 +947,36 @@ depends-external:
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKDeviceLoginCodeInfo.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRApp.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRApp.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesInputToolbar.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKLoginManager.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKDeviceLoginManager.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKTestUsersManager.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesMediaViewBubbleImageMasker.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesKeyboardController.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFAppLinkReturnToRefererController.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesViewController.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesTimestampFormatter.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKAppLinkResolver.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFWebViewAppLinkResolver.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework/Headers/JSQSystemSoundPlayer.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKGraphErrorRecoveryProcessor.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesBubblesSizeCalculator.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFExecutor.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/UIDevice+JSQMessages.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/UIImage+JSQMessages.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/NSBundle+JSQMessages.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/NSString+JSQMessages.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQSystemSoundPlayer+JSQMessages.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/UIColor+JSQMessages.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/UIView+JSQMessages.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessages.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRParameterNames.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIREventNames.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRUserPropertyNames.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesCollectionViewLayoutAttributes.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQAudioMediaViewAttributes.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKSettings.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIROptions.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIROptions.h"
@@ -486,11 +998,24 @@ depends-external:
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDataSnapshot.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalyticsSwiftNameSupport.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKGraphRequest.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesCollectionViewDelegateFlowLayout.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesCollectionViewFlowLayout.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesCollectionViewFlowLayoutInvalidationContext.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKProfilePictureView.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesCollectionView.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKTooltipView.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKLoginTooltipView.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesLoadEarlierHeaderView.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesMediaPlaceholderView.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFAppLinkReturnToRefererView.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesTypingIndicatorFooterView.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesToolbarContentView.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesCellTextView.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesComposerTextView.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabaseQuery.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesBubbleImageFactory.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesAvatarImageFactory.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesToolbarButtonFactory.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKUtility.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKAppLinkUtility.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/Firebase/Core/Sources/module.modulemap"
@@ -499,6 +1024,8 @@ depends-external:
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FacebookCore/FacebookCore.framework/Modules/module.modulemap"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Modules/module.modulemap"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FacebookLogin/FacebookLogin.framework/Modules/module.modulemap"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Modules/module.modulemap"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework/Modules/module.modulemap"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Modules/module.modulemap"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Modules/module.modulemap"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Modules/module.modulemap"
@@ -509,9 +1036,13 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/WebKit.framework/Headers/WebKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/MapKit.framework/Headers/MapKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
-interface-hash: "9657e27c91f33890b8aa82d55a590c38"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
+interface-hash: "8b75a21a75dfdc2c0ee8b0632afa5dd0"

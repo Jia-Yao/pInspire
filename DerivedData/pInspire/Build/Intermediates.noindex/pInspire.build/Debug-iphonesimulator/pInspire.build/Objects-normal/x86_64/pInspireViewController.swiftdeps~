@@ -35,6 +35,7 @@ depends-top-level:
 - !private "NSAttributedString"
 - !private "NSLocalizedString"
 - "Poll"
+- !private "StatsViewController"
 - "String"
 - "StringLiteralType"
 - "TernaryPrecedence"
@@ -52,6 +53,7 @@ depends-top-level:
 - !private "UnicodeScalarType"
 - "User"
 - !private "Void"
+- !private "WebViewController"
 - "_ColorLiteralType"
 - "pInspireTableViewCell"
 - "pInspireTableViewCellDelegate"
@@ -66,9 +68,11 @@ depends-member:
 - ["Sa", "init"]
 - !private ["Sa", "removeAll"]
 - !private ["Sa", "subscript"]
+- !private ["s10ArraySliceV", "Id"]
 - !private ["s10ArraySliceV", "addUser"]
 - !private ["s10ArraySliceV", "content"]
 - !private ["s10ArraySliceV", "isHidden"]
+- !private ["s23BidirectionalCollectionP", "Id"]
 - !private ["s23BidirectionalCollectionP", "addUser"]
 - !private ["s23BidirectionalCollectionP", "append"]
 - !private ["s23BidirectionalCollectionP", "content"]
@@ -95,6 +99,7 @@ depends-member:
 - !private ["So15CALayerDelegateP", "initiatorLabelView"]
 - !private ["So15CALayerDelegateP", "isEnabled"]
 - !private ["So15CALayerDelegateP", "isHidden"]
+- !private ["So15CALayerDelegateP", "numberOfLines"]
 - !private ["So15CALayerDelegateP", "preferredMaxLayoutWidth"]
 - !private ["So15CALayerDelegateP", "questionLabelView"]
 - !private ["So15CALayerDelegateP", "refreshControl"]
@@ -103,6 +108,8 @@ depends-member:
 - !private ["So15CALayerDelegateP", "setTitle"]
 - !private ["So15CALayerDelegateP", "statsButtonView"]
 - !private ["So15CALayerDelegateP", "text"]
+- !private ["So15CALayerDelegateP", "textAlignment"]
+- !private ["So15CALayerDelegateP", "titleLabel"]
 - !private ["So15CALayerDelegateP", "voteAnonymously"]
 - !private ["So15CALayerDelegateP", "voteAnonymouslySwitch"]
 - !private ["So15CALayerDelegateP", "voteLabelView"]
@@ -136,6 +143,8 @@ depends-member:
 - !private ["s7CVarArgP", "dequeueReusableCell"]
 - !private ["s7CVarArgP", "destination"]
 - ["s7CVarArgP", "didTapChoice"]
+- ["s7CVarArgP", "didTapReadMore"]
+- ["s7CVarArgP", "didTapStats"]
 - !private ["s7CVarArgP", "endRefreshing"]
 - !private ["s7CVarArgP", "estimatedRowHeight"]
 - !private ["s7CVarArgP", "handleRefresh"]
@@ -147,13 +156,17 @@ depends-member:
 - !private ["s7CVarArgP", "isEnabled"]
 - !private ["s7CVarArgP", "isHidden"]
 - !private ["s7CVarArgP", "key"]
+- !private ["s7CVarArgP", "numberOfLines"]
 - !private ["s7CVarArgP", "observe"]
+- !private ["s7CVarArgP", "performSegue"]
+- !private ["s7CVarArgP", "poll"]
 - !private ["s7CVarArgP", "pollTableView"]
 - !private ["s7CVarArgP", "pollTimeline"]
 - !private ["s7CVarArgP", "preferredMaxLayoutWidth"]
 - !private ["s7CVarArgP", "print"]
 - !private ["s7CVarArgP", "questionLabelView"]
 - !private ["s7CVarArgP", "ref"]
+- !private ["s7CVarArgP", "refPoll"]
 - !private ["s7CVarArgP", "reference"]
 - !private ["s7CVarArgP", "refreshControl"]
 - !private ["s7CVarArgP", "reloadData"]
@@ -166,6 +179,8 @@ depends-member:
 - !private ["s7CVarArgP", "subscript"]
 - !private ["s7CVarArgP", "tableView"]
 - !private ["s7CVarArgP", "text"]
+- !private ["s7CVarArgP", "textAlignment"]
+- !private ["s7CVarArgP", "titleLabel"]
 - !private ["s7CVarArgP", "updateViewForNotVote"]
 - !private ["s7CVarArgP", "updateViewForhasVoted"]
 - !private ["s7CVarArgP", "user"]
@@ -181,8 +196,9 @@ depends-member:
 - !private ["8pInspire6ChoiceC", "addUser"]
 - !private ["8pInspire6ChoiceC", "content"]
 - !private ["8pInspire6ChoiceC", "init"]
-- !private ["8pInspire6ChoiceC", "numOfVotesForUser"]
+- !private ["8pInspire6ChoiceC", "numOfVotesForMe"]
 - !private ["8pInspire6ChoiceC", "userHasVotedThis"]
+- !private ["s10CollectionP", "Id"]
 - !private ["s10CollectionP", "addUser"]
 - !private ["s10CollectionP", "append"]
 - !private ["s10CollectionP", "content"]
@@ -200,6 +216,7 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "Choice"]
 - !private ["s28CustomDebugStringConvertibleP", "Constants"]
 - !private ["s28CustomDebugStringConvertibleP", "Database"]
+- !private ["s28CustomDebugStringConvertibleP", "Id"]
 - !private ["s28CustomDebugStringConvertibleP", "NSAttributedString"]
 - !private ["s28CustomDebugStringConvertibleP", "NSLocalizedString"]
 - ["s28CustomDebugStringConvertibleP", "Poll"]
@@ -227,6 +244,8 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "dequeueReusableCell"]
 - !private ["s28CustomDebugStringConvertibleP", "destination"]
 - ["s28CustomDebugStringConvertibleP", "didTapChoice"]
+- ["s28CustomDebugStringConvertibleP", "didTapReadMore"]
+- ["s28CustomDebugStringConvertibleP", "didTapStats"]
 - !private ["s28CustomDebugStringConvertibleP", "endRefreshing"]
 - !private ["s28CustomDebugStringConvertibleP", "estimatedRowHeight"]
 - !private ["s28CustomDebugStringConvertibleP", "handleRefresh"]
@@ -238,13 +257,17 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "isEnabled"]
 - !private ["s28CustomDebugStringConvertibleP", "isHidden"]
 - !private ["s28CustomDebugStringConvertibleP", "key"]
+- !private ["s28CustomDebugStringConvertibleP", "numberOfLines"]
 - !private ["s28CustomDebugStringConvertibleP", "observe"]
+- !private ["s28CustomDebugStringConvertibleP", "performSegue"]
+- !private ["s28CustomDebugStringConvertibleP", "poll"]
 - !private ["s28CustomDebugStringConvertibleP", "pollTableView"]
 - !private ["s28CustomDebugStringConvertibleP", "pollTimeline"]
 - !private ["s28CustomDebugStringConvertibleP", "preferredMaxLayoutWidth"]
 - !private ["s28CustomDebugStringConvertibleP", "print"]
 - !private ["s28CustomDebugStringConvertibleP", "questionLabelView"]
 - !private ["s28CustomDebugStringConvertibleP", "ref"]
+- !private ["s28CustomDebugStringConvertibleP", "refPoll"]
 - !private ["s28CustomDebugStringConvertibleP", "reference"]
 - !private ["s28CustomDebugStringConvertibleP", "refreshControl"]
 - !private ["s28CustomDebugStringConvertibleP", "reloadData"]
@@ -258,6 +281,8 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "subscript"]
 - !private ["s28CustomDebugStringConvertibleP", "tableView"]
 - !private ["s28CustomDebugStringConvertibleP", "text"]
+- !private ["s28CustomDebugStringConvertibleP", "textAlignment"]
+- !private ["s28CustomDebugStringConvertibleP", "titleLabel"]
 - !private ["s28CustomDebugStringConvertibleP", "updateViewForNotVote"]
 - !private ["s28CustomDebugStringConvertibleP", "updateViewForhasVoted"]
 - !private ["s28CustomDebugStringConvertibleP", "user"]
@@ -274,6 +299,7 @@ depends-member:
 - !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
 - ["s29CustomPlaygroundQuickLookableP", "init"]
 - !private ["s29CustomPlaygroundQuickLookableP", "width"]
+- !private ["s17CustomReflectableP", "Id"]
 - !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
 - !private ["s17CustomReflectableP", "addUser"]
 - !private ["s17CustomReflectableP", "append"]
@@ -289,6 +315,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "Choice"]
 - !private ["s23CustomStringConvertibleP", "Constants"]
 - !private ["s23CustomStringConvertibleP", "Database"]
+- !private ["s23CustomStringConvertibleP", "Id"]
 - !private ["s23CustomStringConvertibleP", "NSAttributedString"]
 - !private ["s23CustomStringConvertibleP", "NSLocalizedString"]
 - ["s23CustomStringConvertibleP", "Poll"]
@@ -317,6 +344,8 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "dequeueReusableCell"]
 - !private ["s23CustomStringConvertibleP", "destination"]
 - ["s23CustomStringConvertibleP", "didTapChoice"]
+- ["s23CustomStringConvertibleP", "didTapReadMore"]
+- ["s23CustomStringConvertibleP", "didTapStats"]
 - !private ["s23CustomStringConvertibleP", "endRefreshing"]
 - !private ["s23CustomStringConvertibleP", "estimatedRowHeight"]
 - !private ["s23CustomStringConvertibleP", "handleRefresh"]
@@ -328,13 +357,17 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "isEnabled"]
 - !private ["s23CustomStringConvertibleP", "isHidden"]
 - !private ["s23CustomStringConvertibleP", "key"]
+- !private ["s23CustomStringConvertibleP", "numberOfLines"]
 - !private ["s23CustomStringConvertibleP", "observe"]
+- !private ["s23CustomStringConvertibleP", "performSegue"]
+- !private ["s23CustomStringConvertibleP", "poll"]
 - !private ["s23CustomStringConvertibleP", "pollTableView"]
 - !private ["s23CustomStringConvertibleP", "pollTimeline"]
 - !private ["s23CustomStringConvertibleP", "preferredMaxLayoutWidth"]
 - !private ["s23CustomStringConvertibleP", "print"]
 - !private ["s23CustomStringConvertibleP", "questionLabelView"]
 - !private ["s23CustomStringConvertibleP", "ref"]
+- !private ["s23CustomStringConvertibleP", "refPoll"]
 - !private ["s23CustomStringConvertibleP", "reference"]
 - !private ["s23CustomStringConvertibleP", "refreshControl"]
 - !private ["s23CustomStringConvertibleP", "reloadData"]
@@ -348,6 +381,8 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "subscript"]
 - !private ["s23CustomStringConvertibleP", "tableView"]
 - !private ["s23CustomStringConvertibleP", "text"]
+- !private ["s23CustomStringConvertibleP", "textAlignment"]
+- !private ["s23CustomStringConvertibleP", "titleLabel"]
 - !private ["s23CustomStringConvertibleP", "updateViewForNotVote"]
 - !private ["s23CustomStringConvertibleP", "updateViewForhasVoted"]
 - !private ["s23CustomStringConvertibleP", "user"]
@@ -396,6 +431,7 @@ depends-member:
 - !private ["s9EquatableP", "Choice"]
 - !private ["s9EquatableP", "Constants"]
 - !private ["s9EquatableP", "Database"]
+- !private ["s9EquatableP", "Id"]
 - !private ["s9EquatableP", "NSAttributedString"]
 - !private ["s9EquatableP", "NSLocalizedString"]
 - ["s9EquatableP", "Poll"]
@@ -412,6 +448,7 @@ depends-member:
 - !private ["s9EquatableP", "attributedTitle"]
 - !private ["s9EquatableP", "backgroundColor"]
 - !private ["s9EquatableP", "bounds"]
+- !private ["s9EquatableP", "center"]
 - !private ["s9EquatableP", "child"]
 - !private ["s9EquatableP", "childAdded"]
 - !private ["s9EquatableP", "children"]
@@ -425,6 +462,8 @@ depends-member:
 - !private ["s9EquatableP", "dequeueReusableCell"]
 - !private ["s9EquatableP", "destination"]
 - ["s9EquatableP", "didTapChoice"]
+- ["s9EquatableP", "didTapReadMore"]
+- ["s9EquatableP", "didTapStats"]
 - !private ["s9EquatableP", "endRefreshing"]
 - !private ["s9EquatableP", "estimatedRowHeight"]
 - !private ["s9EquatableP", "handleRefresh"]
@@ -437,13 +476,17 @@ depends-member:
 - !private ["s9EquatableP", "isHidden"]
 - !private ["s9EquatableP", "key"]
 - !private ["s9EquatableP", "normal"]
+- !private ["s9EquatableP", "numberOfLines"]
 - !private ["s9EquatableP", "observe"]
+- !private ["s9EquatableP", "performSegue"]
+- !private ["s9EquatableP", "poll"]
 - !private ["s9EquatableP", "pollTableView"]
 - !private ["s9EquatableP", "pollTimeline"]
 - !private ["s9EquatableP", "preferredMaxLayoutWidth"]
 - !private ["s9EquatableP", "print"]
 - !private ["s9EquatableP", "questionLabelView"]
 - !private ["s9EquatableP", "ref"]
+- !private ["s9EquatableP", "refPoll"]
 - !private ["s9EquatableP", "reference"]
 - !private ["s9EquatableP", "refreshControl"]
 - !private ["s9EquatableP", "reloadData"]
@@ -457,6 +500,8 @@ depends-member:
 - !private ["s9EquatableP", "subscript"]
 - !private ["s9EquatableP", "tableView"]
 - !private ["s9EquatableP", "text"]
+- !private ["s9EquatableP", "textAlignment"]
+- !private ["s9EquatableP", "titleLabel"]
 - !private ["s9EquatableP", "updateViewForNotVote"]
 - !private ["s9EquatableP", "updateViewForhasVoted"]
 - !private ["s9EquatableP", "user"]
@@ -471,6 +516,7 @@ depends-member:
 - !private ["s9EquatableP", "voteLabelView"]
 - !private ["s9EquatableP", "width"]
 - !private ["s9EquatableP", "writeVoteData"]
+- !private ["s25ExpressibleByArrayLiteralP", "Id"]
 - !private ["s25ExpressibleByArrayLiteralP", "addUser"]
 - !private ["s25ExpressibleByArrayLiteralP", "append"]
 - !private ["s25ExpressibleByArrayLiteralP", "content"]
@@ -505,6 +551,7 @@ depends-member:
 - !private ["s8HashableP", "attributedTitle"]
 - !private ["s8HashableP", "backgroundColor"]
 - !private ["s8HashableP", "bounds"]
+- !private ["s8HashableP", "center"]
 - !private ["s8HashableP", "child"]
 - !private ["s8HashableP", "childAdded"]
 - !private ["s8HashableP", "children"]
@@ -516,6 +563,8 @@ depends-member:
 - !private ["s8HashableP", "dequeueReusableCell"]
 - !private ["s8HashableP", "destination"]
 - ["s8HashableP", "didTapChoice"]
+- ["s8HashableP", "didTapReadMore"]
+- ["s8HashableP", "didTapStats"]
 - !private ["s8HashableP", "endRefreshing"]
 - !private ["s8HashableP", "estimatedRowHeight"]
 - !private ["s8HashableP", "handleRefresh"]
@@ -526,13 +575,17 @@ depends-member:
 - !private ["s8HashableP", "isEnabled"]
 - !private ["s8HashableP", "isHidden"]
 - !private ["s8HashableP", "key"]
+- !private ["s8HashableP", "numberOfLines"]
 - !private ["s8HashableP", "observe"]
+- !private ["s8HashableP", "performSegue"]
+- !private ["s8HashableP", "poll"]
 - !private ["s8HashableP", "pollTableView"]
 - !private ["s8HashableP", "pollTimeline"]
 - !private ["s8HashableP", "preferredMaxLayoutWidth"]
 - !private ["s8HashableP", "print"]
 - !private ["s8HashableP", "questionLabelView"]
 - !private ["s8HashableP", "ref"]
+- !private ["s8HashableP", "refPoll"]
 - !private ["s8HashableP", "reference"]
 - !private ["s8HashableP", "refreshControl"]
 - !private ["s8HashableP", "reloadData"]
@@ -544,6 +597,8 @@ depends-member:
 - !private ["s8HashableP", "statsButtonView"]
 - !private ["s8HashableP", "tableView"]
 - !private ["s8HashableP", "text"]
+- !private ["s8HashableP", "textAlignment"]
+- !private ["s8HashableP", "titleLabel"]
 - !private ["s8HashableP", "updateViewForNotVote"]
 - !private ["s8HashableP", "updateViewForhasVoted"]
 - !private ["s8HashableP", "user"]
@@ -560,6 +615,7 @@ depends-member:
 - !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
 - ["s25LosslessStringConvertibleP", "init"]
 - ["s10MirrorPathP", "init"]
+- !private ["s17MutableCollectionP", "Id"]
 - !private ["s17MutableCollectionP", "addUser"]
 - !private ["s17MutableCollectionP", "append"]
 - !private ["s17MutableCollectionP", "content"]
@@ -592,6 +648,8 @@ depends-member:
 - !private ["So8NSCodingP", "delegate"]
 - !private ["So8NSCodingP", "dequeueReusableCell"]
 - ["So8NSCodingP", "didTapChoice"]
+- ["So8NSCodingP", "didTapReadMore"]
+- ["So8NSCodingP", "didTapStats"]
 - !private ["So8NSCodingP", "endRefreshing"]
 - !private ["So8NSCodingP", "estimatedRowHeight"]
 - !private ["So8NSCodingP", "handleRefresh"]
@@ -600,12 +658,16 @@ depends-member:
 - !private ["So8NSCodingP", "initiatorLabelView"]
 - !private ["So8NSCodingP", "isEnabled"]
 - !private ["So8NSCodingP", "isHidden"]
+- !private ["So8NSCodingP", "numberOfLines"]
+- !private ["So8NSCodingP", "performSegue"]
+- !private ["So8NSCodingP", "poll"]
 - !private ["So8NSCodingP", "pollTableView"]
 - !private ["So8NSCodingP", "pollTimeline"]
 - !private ["So8NSCodingP", "preferredMaxLayoutWidth"]
 - !private ["So8NSCodingP", "print"]
 - !private ["So8NSCodingP", "questionLabelView"]
 - !private ["So8NSCodingP", "ref"]
+- !private ["So8NSCodingP", "refPoll"]
 - !private ["So8NSCodingP", "refreshControl"]
 - !private ["So8NSCodingP", "reloadData"]
 - !private ["So8NSCodingP", "rowHeight"]
@@ -613,6 +675,8 @@ depends-member:
 - !private ["So8NSCodingP", "statsButtonView"]
 - !private ["So8NSCodingP", "tableView"]
 - !private ["So8NSCodingP", "text"]
+- !private ["So8NSCodingP", "textAlignment"]
+- !private ["So8NSCodingP", "titleLabel"]
 - !private ["So8NSCodingP", "updateViewForNotVote"]
 - !private ["So8NSCodingP", "updateViewForhasVoted"]
 - !private ["So8NSCodingP", "user"]
@@ -639,12 +703,17 @@ depends-member:
 - !private ["So26NSExtensionRequestHandlingP", "_refHandle"]
 - !private ["So26NSExtensionRequestHandlingP", "configureDatabase"]
 - ["So26NSExtensionRequestHandlingP", "didTapChoice"]
+- ["So26NSExtensionRequestHandlingP", "didTapReadMore"]
+- ["So26NSExtensionRequestHandlingP", "didTapStats"]
 - !private ["So26NSExtensionRequestHandlingP", "handleRefresh"]
 - !private ["So26NSExtensionRequestHandlingP", "init"]
+- !private ["So26NSExtensionRequestHandlingP", "performSegue"]
+- !private ["So26NSExtensionRequestHandlingP", "poll"]
 - !private ["So26NSExtensionRequestHandlingP", "pollTableView"]
 - !private ["So26NSExtensionRequestHandlingP", "pollTimeline"]
 - !private ["So26NSExtensionRequestHandlingP", "print"]
 - !private ["So26NSExtensionRequestHandlingP", "ref"]
+- !private ["So26NSExtensionRequestHandlingP", "refPoll"]
 - !private ["So26NSExtensionRequestHandlingP", "tableView"]
 - !private ["So26NSExtensionRequestHandlingP", "updateViewForNotVote"]
 - !private ["So26NSExtensionRequestHandlingP", "updateViewForhasVoted"]
@@ -672,6 +741,7 @@ depends-member:
 - !private ["So8NSObjectC", "NSAttributedString"]
 - !private ["So8NSObjectC", "NSLocalizedString"]
 - ["So8NSObjectC", "Poll"]
+- !private ["So8NSObjectC", "StatsViewController"]
 - ["So8NSObjectC", "String"]
 - ["So8NSObjectC", "UIButton"]
 - ["So8NSObjectC", "UIColor"]
@@ -685,6 +755,7 @@ depends-member:
 - ["So8NSObjectC", "UIViewController"]
 - ["So8NSObjectC", "User"]
 - !private ["So8NSObjectC", "Void"]
+- !private ["So8NSObjectC", "WebViewController"]
 - ["So8NSObjectC", "_refHandle"]
 - !private ["So8NSObjectC", "addTarget"]
 - !private ["So8NSObjectC", "allObjects"]
@@ -702,6 +773,8 @@ depends-member:
 - !private ["So8NSObjectC", "dequeueReusableCell"]
 - !private ["So8NSObjectC", "destination"]
 - ["So8NSObjectC", "didTapChoice"]
+- ["So8NSObjectC", "didTapReadMore"]
+- ["So8NSObjectC", "didTapStats"]
 - !private ["So8NSObjectC", "endRefreshing"]
 - !private ["So8NSObjectC", "estimatedRowHeight"]
 - ["So8NSObjectC", "handleRefresh"]
@@ -712,9 +785,12 @@ depends-member:
 - !private ["So8NSObjectC", "isEnabled"]
 - !private ["So8NSObjectC", "isHidden"]
 - !private ["So8NSObjectC", "key"]
+- !private ["So8NSObjectC", "numberOfLines"]
 - ["So8NSObjectC", "numberOfSections"]
 - !private ["So8NSObjectC", "observe"]
 - ["So8NSObjectC", "pInspireTableViewCell"]
+- !private ["So8NSObjectC", "performSegue"]
+- !private ["So8NSObjectC", "poll"]
 - ["So8NSObjectC", "pollTableView"]
 - ["So8NSObjectC", "pollTimeline"]
 - !private ["So8NSObjectC", "preferredMaxLayoutWidth"]
@@ -722,6 +798,7 @@ depends-member:
 - !private ["So8NSObjectC", "print"]
 - !private ["So8NSObjectC", "questionLabelView"]
 - ["So8NSObjectC", "ref"]
+- !private ["So8NSObjectC", "refPoll"]
 - !private ["So8NSObjectC", "reference"]
 - !private ["So8NSObjectC", "refreshControl"]
 - !private ["So8NSObjectC", "reloadData"]
@@ -732,6 +809,8 @@ depends-member:
 - !private ["So8NSObjectC", "statsButtonView"]
 - ["So8NSObjectC", "tableView"]
 - !private ["So8NSObjectC", "text"]
+- !private ["So8NSObjectC", "textAlignment"]
+- !private ["So8NSObjectC", "titleLabel"]
 - ["So8NSObjectC", "updateViewForNotVote"]
 - ["So8NSObjectC", "updateViewForhasVoted"]
 - ["So8NSObjectC", "user"]
@@ -770,6 +849,8 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "dequeueReusableCell"]
 - !private ["So16NSObjectProtocolP", "destination"]
 - ["So16NSObjectProtocolP", "didTapChoice"]
+- ["So16NSObjectProtocolP", "didTapReadMore"]
+- ["So16NSObjectProtocolP", "didTapStats"]
 - !private ["So16NSObjectProtocolP", "endRefreshing"]
 - !private ["So16NSObjectProtocolP", "estimatedRowHeight"]
 - !private ["So16NSObjectProtocolP", "handleRefresh"]
@@ -780,13 +861,17 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "isEnabled"]
 - !private ["So16NSObjectProtocolP", "isHidden"]
 - !private ["So16NSObjectProtocolP", "key"]
+- !private ["So16NSObjectProtocolP", "numberOfLines"]
 - !private ["So16NSObjectProtocolP", "observe"]
+- !private ["So16NSObjectProtocolP", "performSegue"]
+- !private ["So16NSObjectProtocolP", "poll"]
 - !private ["So16NSObjectProtocolP", "pollTableView"]
 - !private ["So16NSObjectProtocolP", "pollTimeline"]
 - !private ["So16NSObjectProtocolP", "preferredMaxLayoutWidth"]
 - !private ["So16NSObjectProtocolP", "print"]
 - !private ["So16NSObjectProtocolP", "questionLabelView"]
 - !private ["So16NSObjectProtocolP", "ref"]
+- !private ["So16NSObjectProtocolP", "refPoll"]
 - !private ["So16NSObjectProtocolP", "reference"]
 - !private ["So16NSObjectProtocolP", "refreshControl"]
 - !private ["So16NSObjectProtocolP", "reloadData"]
@@ -797,6 +882,8 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "statsButtonView"]
 - !private ["So16NSObjectProtocolP", "tableView"]
 - !private ["So16NSObjectProtocolP", "text"]
+- !private ["So16NSObjectProtocolP", "textAlignment"]
+- !private ["So16NSObjectProtocolP", "titleLabel"]
 - !private ["So16NSObjectProtocolP", "updateViewForNotVote"]
 - !private ["So16NSObjectProtocolP", "updateViewForhasVoted"]
 - !private ["So16NSObjectProtocolP", "user"]
@@ -810,6 +897,7 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "voteLabelView"]
 - !private ["So16NSObjectProtocolP", "writeVoteData"]
 - !private ["So14NSSecureCodingP", "init"]
+- !private ["SC15NSTextAlignmentO", "center"]
 - !private ["s9OptionSetP", "normal"]
 - !private ["s9OptionSetP", "valueChanged"]
 - !private ["8pInspire4PollC", "Id"]
@@ -819,6 +907,7 @@ depends-member:
 - !private ["8pInspire4PollC", "initiatorAnonymous"]
 - !private ["8pInspire4PollC", "question"]
 - !private ["8pInspire4PollC", "userHasVoted"]
+- !private ["s22RandomAccessCollectionP", "Id"]
 - !private ["s22RandomAccessCollectionP", "addUser"]
 - !private ["s22RandomAccessCollectionP", "append"]
 - !private ["s22RandomAccessCollectionP", "content"]
@@ -829,6 +918,7 @@ depends-member:
 - !private ["s22RandomAccessCollectionP", "removeAll"]
 - !private ["s22RandomAccessCollectionP", "row"]
 - !private ["s22RandomAccessCollectionP", "subscript"]
+- !private ["s26RangeReplaceableCollectionP", "Id"]
 - !private ["s26RangeReplaceableCollectionP", "addUser"]
 - !private ["s26RangeReplaceableCollectionP", "append"]
 - !private ["s26RangeReplaceableCollectionP", "content"]
@@ -838,10 +928,12 @@ depends-member:
 - !private ["s26RangeReplaceableCollectionP", "isHidden"]
 - !private ["s26RangeReplaceableCollectionP", "removeAll"]
 - !private ["s26RangeReplaceableCollectionP", "subscript"]
+- !private ["s16RawRepresentableP", "center"]
 - !private ["s16RawRepresentableP", "childAdded"]
 - !private ["s16RawRepresentableP", "normal"]
 - !private ["s16RawRepresentableP", "valueChanged"]
 - !private ["10Foundation20ReferenceConvertibleP", "row"]
+- !private ["s8SequenceP", "Id"]
 - !private ["s8SequenceP", "addUser"]
 - !private ["s8SequenceP", "allObjects"]
 - !private ["s8SequenceP", "append"]
@@ -855,6 +947,9 @@ depends-member:
 - !private ["s8SequenceP", "subscript"]
 - !private ["s10SetAlgebraP", "normal"]
 - !private ["s10SetAlgebraP", "valueChanged"]
+- !private ["8pInspire19StatsViewControllerC", "poll"]
+- !private ["8pInspire19StatsViewControllerC", "user"]
+- !private ["8pInspire19StatsViewControllerC", "userName"]
 - ["SS", "init"]
 - ["s14StringProtocolP", "init"]
 - ["s16TextOutputStreamP", "init"]
@@ -863,6 +958,7 @@ depends-member:
 - !private ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "isEnabled"]
 - !private ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "isHidden"]
 - !private ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "setTitle"]
+- !private ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "titleLabel"]
 - !private ["So29UIAccessibilityIdentificationP", "addTarget"]
 - !private ["So29UIAccessibilityIdentificationP", "attributedTitle"]
 - !private ["So29UIAccessibilityIdentificationP", "backgroundColor"]
@@ -878,6 +974,7 @@ depends-member:
 - !private ["So29UIAccessibilityIdentificationP", "initiatorLabelView"]
 - !private ["So29UIAccessibilityIdentificationP", "isEnabled"]
 - !private ["So29UIAccessibilityIdentificationP", "isHidden"]
+- !private ["So29UIAccessibilityIdentificationP", "numberOfLines"]
 - !private ["So29UIAccessibilityIdentificationP", "preferredMaxLayoutWidth"]
 - !private ["So29UIAccessibilityIdentificationP", "questionLabelView"]
 - !private ["So29UIAccessibilityIdentificationP", "refreshControl"]
@@ -886,6 +983,8 @@ depends-member:
 - !private ["So29UIAccessibilityIdentificationP", "setTitle"]
 - !private ["So29UIAccessibilityIdentificationP", "statsButtonView"]
 - !private ["So29UIAccessibilityIdentificationP", "text"]
+- !private ["So29UIAccessibilityIdentificationP", "textAlignment"]
+- !private ["So29UIAccessibilityIdentificationP", "titleLabel"]
 - !private ["So29UIAccessibilityIdentificationP", "voteAnonymously"]
 - !private ["So29UIAccessibilityIdentificationP", "voteAnonymouslySwitch"]
 - !private ["So29UIAccessibilityIdentificationP", "voteLabelView"]
@@ -904,6 +1003,7 @@ depends-member:
 - !private ["So12UIAppearanceP", "initiatorLabelView"]
 - !private ["So12UIAppearanceP", "isEnabled"]
 - !private ["So12UIAppearanceP", "isHidden"]
+- !private ["So12UIAppearanceP", "numberOfLines"]
 - !private ["So12UIAppearanceP", "preferredMaxLayoutWidth"]
 - !private ["So12UIAppearanceP", "questionLabelView"]
 - !private ["So12UIAppearanceP", "refreshControl"]
@@ -912,6 +1012,8 @@ depends-member:
 - !private ["So12UIAppearanceP", "setTitle"]
 - !private ["So12UIAppearanceP", "statsButtonView"]
 - !private ["So12UIAppearanceP", "text"]
+- !private ["So12UIAppearanceP", "textAlignment"]
+- !private ["So12UIAppearanceP", "titleLabel"]
 - !private ["So12UIAppearanceP", "voteAnonymously"]
 - !private ["So12UIAppearanceP", "voteAnonymouslySwitch"]
 - !private ["So12UIAppearanceP", "voteLabelView"]
@@ -936,6 +1038,8 @@ depends-member:
 - !private ["So21UIAppearanceContainerP", "delegate"]
 - !private ["So21UIAppearanceContainerP", "dequeueReusableCell"]
 - ["So21UIAppearanceContainerP", "didTapChoice"]
+- ["So21UIAppearanceContainerP", "didTapReadMore"]
+- ["So21UIAppearanceContainerP", "didTapStats"]
 - !private ["So21UIAppearanceContainerP", "endRefreshing"]
 - !private ["So21UIAppearanceContainerP", "estimatedRowHeight"]
 - !private ["So21UIAppearanceContainerP", "handleRefresh"]
@@ -944,12 +1048,16 @@ depends-member:
 - !private ["So21UIAppearanceContainerP", "initiatorLabelView"]
 - !private ["So21UIAppearanceContainerP", "isEnabled"]
 - !private ["So21UIAppearanceContainerP", "isHidden"]
+- !private ["So21UIAppearanceContainerP", "numberOfLines"]
+- !private ["So21UIAppearanceContainerP", "performSegue"]
+- !private ["So21UIAppearanceContainerP", "poll"]
 - !private ["So21UIAppearanceContainerP", "pollTableView"]
 - !private ["So21UIAppearanceContainerP", "pollTimeline"]
 - !private ["So21UIAppearanceContainerP", "preferredMaxLayoutWidth"]
 - !private ["So21UIAppearanceContainerP", "print"]
 - !private ["So21UIAppearanceContainerP", "questionLabelView"]
 - !private ["So21UIAppearanceContainerP", "ref"]
+- !private ["So21UIAppearanceContainerP", "refPoll"]
 - !private ["So21UIAppearanceContainerP", "refreshControl"]
 - !private ["So21UIAppearanceContainerP", "reloadData"]
 - !private ["So21UIAppearanceContainerP", "rowHeight"]
@@ -957,6 +1065,8 @@ depends-member:
 - !private ["So21UIAppearanceContainerP", "statsButtonView"]
 - !private ["So21UIAppearanceContainerP", "tableView"]
 - !private ["So21UIAppearanceContainerP", "text"]
+- !private ["So21UIAppearanceContainerP", "textAlignment"]
+- !private ["So21UIAppearanceContainerP", "titleLabel"]
 - !private ["So21UIAppearanceContainerP", "updateViewForNotVote"]
 - !private ["So21UIAppearanceContainerP", "updateViewForhasVoted"]
 - !private ["So21UIAppearanceContainerP", "user"]
@@ -972,6 +1082,7 @@ depends-member:
 - !private ["So8UIButtonC", "isEnabled"]
 - !private ["So8UIButtonC", "isHidden"]
 - !private ["So8UIButtonC", "setTitle"]
+- !private ["So8UIButtonC", "titleLabel"]
 - !private ["So18UIContentContainerP", "Choice"]
 - !private ["So18UIContentContainerP", "Constants"]
 - !private ["So18UIContentContainerP", "Database"]
@@ -985,12 +1096,17 @@ depends-member:
 - !private ["So18UIContentContainerP", "_refHandle"]
 - !private ["So18UIContentContainerP", "configureDatabase"]
 - ["So18UIContentContainerP", "didTapChoice"]
+- ["So18UIContentContainerP", "didTapReadMore"]
+- ["So18UIContentContainerP", "didTapStats"]
 - !private ["So18UIContentContainerP", "handleRefresh"]
 - !private ["So18UIContentContainerP", "init"]
+- !private ["So18UIContentContainerP", "performSegue"]
+- !private ["So18UIContentContainerP", "poll"]
 - !private ["So18UIContentContainerP", "pollTableView"]
 - !private ["So18UIContentContainerP", "pollTimeline"]
 - !private ["So18UIContentContainerP", "print"]
 - !private ["So18UIContentContainerP", "ref"]
+- !private ["So18UIContentContainerP", "refPoll"]
 - !private ["So18UIContentContainerP", "tableView"]
 - !private ["So18UIContentContainerP", "updateViewForNotVote"]
 - !private ["So18UIContentContainerP", "updateViewForhasVoted"]
@@ -1001,8 +1117,10 @@ depends-member:
 - !private ["So18UIContentContainerP", "visibleViewController"]
 - !private ["So18UIContentContainerP", "writeVoteData"]
 - !private ["So30UIContentSizeCategoryAdjustingP", "isHidden"]
+- !private ["So30UIContentSizeCategoryAdjustingP", "numberOfLines"]
 - !private ["So30UIContentSizeCategoryAdjustingP", "preferredMaxLayoutWidth"]
 - !private ["So30UIContentSizeCategoryAdjustingP", "text"]
+- !private ["So30UIContentSizeCategoryAdjustingP", "textAlignment"]
 - !private ["So9UIControlC", "addTarget"]
 - !private ["So9UIControlC", "attributedTitle"]
 - !private ["So9UIControlC", "backgroundColor"]
@@ -1011,6 +1129,7 @@ depends-member:
 - !private ["So9UIControlC", "isEnabled"]
 - !private ["So9UIControlC", "isHidden"]
 - !private ["So9UIControlC", "setTitle"]
+- !private ["So9UIControlC", "titleLabel"]
 - !private ["SC15UIControlEventsV", "valueChanged"]
 - !private ["SC14UIControlStateV", "normal"]
 - !private ["So17UICoordinateSpaceP", "addTarget"]
@@ -1028,6 +1147,7 @@ depends-member:
 - !private ["So17UICoordinateSpaceP", "initiatorLabelView"]
 - !private ["So17UICoordinateSpaceP", "isEnabled"]
 - !private ["So17UICoordinateSpaceP", "isHidden"]
+- !private ["So17UICoordinateSpaceP", "numberOfLines"]
 - !private ["So17UICoordinateSpaceP", "preferredMaxLayoutWidth"]
 - !private ["So17UICoordinateSpaceP", "questionLabelView"]
 - !private ["So17UICoordinateSpaceP", "refreshControl"]
@@ -1036,6 +1156,8 @@ depends-member:
 - !private ["So17UICoordinateSpaceP", "setTitle"]
 - !private ["So17UICoordinateSpaceP", "statsButtonView"]
 - !private ["So17UICoordinateSpaceP", "text"]
+- !private ["So17UICoordinateSpaceP", "textAlignment"]
+- !private ["So17UICoordinateSpaceP", "titleLabel"]
 - !private ["So17UICoordinateSpaceP", "voteAnonymously"]
 - !private ["So17UICoordinateSpaceP", "voteAnonymouslySwitch"]
 - !private ["So17UICoordinateSpaceP", "voteLabelView"]
@@ -1063,6 +1185,7 @@ depends-member:
 - !private ["So13UIDynamicItemP", "initiatorLabelView"]
 - !private ["So13UIDynamicItemP", "isEnabled"]
 - !private ["So13UIDynamicItemP", "isHidden"]
+- !private ["So13UIDynamicItemP", "numberOfLines"]
 - !private ["So13UIDynamicItemP", "preferredMaxLayoutWidth"]
 - !private ["So13UIDynamicItemP", "questionLabelView"]
 - !private ["So13UIDynamicItemP", "refreshControl"]
@@ -1071,6 +1194,8 @@ depends-member:
 - !private ["So13UIDynamicItemP", "setTitle"]
 - !private ["So13UIDynamicItemP", "statsButtonView"]
 - !private ["So13UIDynamicItemP", "text"]
+- !private ["So13UIDynamicItemP", "textAlignment"]
+- !private ["So13UIDynamicItemP", "titleLabel"]
 - !private ["So13UIDynamicItemP", "voteAnonymously"]
 - !private ["So13UIDynamicItemP", "voteAnonymouslySwitch"]
 - !private ["So13UIDynamicItemP", "voteLabelView"]
@@ -1095,6 +1220,8 @@ depends-member:
 - !private ["So18UIFocusEnvironmentP", "delegate"]
 - !private ["So18UIFocusEnvironmentP", "dequeueReusableCell"]
 - ["So18UIFocusEnvironmentP", "didTapChoice"]
+- ["So18UIFocusEnvironmentP", "didTapReadMore"]
+- ["So18UIFocusEnvironmentP", "didTapStats"]
 - !private ["So18UIFocusEnvironmentP", "endRefreshing"]
 - !private ["So18UIFocusEnvironmentP", "estimatedRowHeight"]
 - !private ["So18UIFocusEnvironmentP", "handleRefresh"]
@@ -1103,12 +1230,16 @@ depends-member:
 - !private ["So18UIFocusEnvironmentP", "initiatorLabelView"]
 - !private ["So18UIFocusEnvironmentP", "isEnabled"]
 - !private ["So18UIFocusEnvironmentP", "isHidden"]
+- !private ["So18UIFocusEnvironmentP", "numberOfLines"]
+- !private ["So18UIFocusEnvironmentP", "performSegue"]
+- !private ["So18UIFocusEnvironmentP", "poll"]
 - !private ["So18UIFocusEnvironmentP", "pollTableView"]
 - !private ["So18UIFocusEnvironmentP", "pollTimeline"]
 - !private ["So18UIFocusEnvironmentP", "preferredMaxLayoutWidth"]
 - !private ["So18UIFocusEnvironmentP", "print"]
 - !private ["So18UIFocusEnvironmentP", "questionLabelView"]
 - !private ["So18UIFocusEnvironmentP", "ref"]
+- !private ["So18UIFocusEnvironmentP", "refPoll"]
 - !private ["So18UIFocusEnvironmentP", "refreshControl"]
 - !private ["So18UIFocusEnvironmentP", "reloadData"]
 - !private ["So18UIFocusEnvironmentP", "rowHeight"]
@@ -1116,6 +1247,8 @@ depends-member:
 - !private ["So18UIFocusEnvironmentP", "statsButtonView"]
 - !private ["So18UIFocusEnvironmentP", "tableView"]
 - !private ["So18UIFocusEnvironmentP", "text"]
+- !private ["So18UIFocusEnvironmentP", "textAlignment"]
+- !private ["So18UIFocusEnvironmentP", "titleLabel"]
 - !private ["So18UIFocusEnvironmentP", "updateViewForNotVote"]
 - !private ["So18UIFocusEnvironmentP", "updateViewForhasVoted"]
 - !private ["So18UIFocusEnvironmentP", "user"]
@@ -1142,6 +1275,7 @@ depends-member:
 - !private ["So11UIFocusItemP", "initiatorLabelView"]
 - !private ["So11UIFocusItemP", "isEnabled"]
 - !private ["So11UIFocusItemP", "isHidden"]
+- !private ["So11UIFocusItemP", "numberOfLines"]
 - !private ["So11UIFocusItemP", "preferredMaxLayoutWidth"]
 - !private ["So11UIFocusItemP", "questionLabelView"]
 - !private ["So11UIFocusItemP", "refreshControl"]
@@ -1150,6 +1284,8 @@ depends-member:
 - !private ["So11UIFocusItemP", "setTitle"]
 - !private ["So11UIFocusItemP", "statsButtonView"]
 - !private ["So11UIFocusItemP", "text"]
+- !private ["So11UIFocusItemP", "textAlignment"]
+- !private ["So11UIFocusItemP", "titleLabel"]
 - !private ["So11UIFocusItemP", "voteAnonymously"]
 - !private ["So11UIFocusItemP", "voteAnonymouslySwitch"]
 - !private ["So11UIFocusItemP", "voteLabelView"]
@@ -1162,8 +1298,10 @@ depends-member:
 - !private ["So27UIGestureRecognizerDelegateP", "voteAnonymouslySwitch"]
 - !private ["So27UIGestureRecognizerDelegateP", "voteLabelView"]
 - !private ["So7UILabelC", "isHidden"]
+- !private ["So7UILabelC", "numberOfLines"]
 - !private ["So7UILabelC", "preferredMaxLayoutWidth"]
 - !private ["So7UILabelC", "text"]
+- !private ["So7UILabelC", "textAlignment"]
 - !private ["So22UINavigationControllerC", "visibleViewController"]
 - !private ["So30UIPasteConfigurationSupportingP", "Choice"]
 - !private ["So30UIPasteConfigurationSupportingP", "Constants"]
@@ -1186,6 +1324,8 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "delegate"]
 - !private ["So30UIPasteConfigurationSupportingP", "dequeueReusableCell"]
 - ["So30UIPasteConfigurationSupportingP", "didTapChoice"]
+- ["So30UIPasteConfigurationSupportingP", "didTapReadMore"]
+- ["So30UIPasteConfigurationSupportingP", "didTapStats"]
 - !private ["So30UIPasteConfigurationSupportingP", "endRefreshing"]
 - !private ["So30UIPasteConfigurationSupportingP", "estimatedRowHeight"]
 - !private ["So30UIPasteConfigurationSupportingP", "handleRefresh"]
@@ -1194,12 +1334,16 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "initiatorLabelView"]
 - !private ["So30UIPasteConfigurationSupportingP", "isEnabled"]
 - !private ["So30UIPasteConfigurationSupportingP", "isHidden"]
+- !private ["So30UIPasteConfigurationSupportingP", "numberOfLines"]
+- !private ["So30UIPasteConfigurationSupportingP", "performSegue"]
+- !private ["So30UIPasteConfigurationSupportingP", "poll"]
 - !private ["So30UIPasteConfigurationSupportingP", "pollTableView"]
 - !private ["So30UIPasteConfigurationSupportingP", "pollTimeline"]
 - !private ["So30UIPasteConfigurationSupportingP", "preferredMaxLayoutWidth"]
 - !private ["So30UIPasteConfigurationSupportingP", "print"]
 - !private ["So30UIPasteConfigurationSupportingP", "questionLabelView"]
 - !private ["So30UIPasteConfigurationSupportingP", "ref"]
+- !private ["So30UIPasteConfigurationSupportingP", "refPoll"]
 - !private ["So30UIPasteConfigurationSupportingP", "refreshControl"]
 - !private ["So30UIPasteConfigurationSupportingP", "reloadData"]
 - !private ["So30UIPasteConfigurationSupportingP", "rowHeight"]
@@ -1207,6 +1351,8 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "statsButtonView"]
 - !private ["So30UIPasteConfigurationSupportingP", "tableView"]
 - !private ["So30UIPasteConfigurationSupportingP", "text"]
+- !private ["So30UIPasteConfigurationSupportingP", "textAlignment"]
+- !private ["So30UIPasteConfigurationSupportingP", "titleLabel"]
 - !private ["So30UIPasteConfigurationSupportingP", "updateViewForNotVote"]
 - !private ["So30UIPasteConfigurationSupportingP", "updateViewForhasVoted"]
 - !private ["So30UIPasteConfigurationSupportingP", "user"]
@@ -1236,6 +1382,7 @@ depends-member:
 - !private ["So11UIResponderC", "NSAttributedString"]
 - !private ["So11UIResponderC", "NSLocalizedString"]
 - ["So11UIResponderC", "Poll"]
+- !private ["So11UIResponderC", "StatsViewController"]
 - ["So11UIResponderC", "String"]
 - ["So11UIResponderC", "UIButton"]
 - ["So11UIResponderC", "UIColor"]
@@ -1249,6 +1396,7 @@ depends-member:
 - ["So11UIResponderC", "UIViewController"]
 - ["So11UIResponderC", "User"]
 - !private ["So11UIResponderC", "Void"]
+- !private ["So11UIResponderC", "WebViewController"]
 - ["So11UIResponderC", "_refHandle"]
 - !private ["So11UIResponderC", "addTarget"]
 - !private ["So11UIResponderC", "attributedTitle"]
@@ -1261,6 +1409,8 @@ depends-member:
 - !private ["So11UIResponderC", "delegate"]
 - !private ["So11UIResponderC", "dequeueReusableCell"]
 - ["So11UIResponderC", "didTapChoice"]
+- ["So11UIResponderC", "didTapReadMore"]
+- ["So11UIResponderC", "didTapStats"]
 - !private ["So11UIResponderC", "endRefreshing"]
 - !private ["So11UIResponderC", "estimatedRowHeight"]
 - ["So11UIResponderC", "handleRefresh"]
@@ -1269,8 +1419,11 @@ depends-member:
 - !private ["So11UIResponderC", "initiatorLabelView"]
 - !private ["So11UIResponderC", "isEnabled"]
 - !private ["So11UIResponderC", "isHidden"]
+- !private ["So11UIResponderC", "numberOfLines"]
 - ["So11UIResponderC", "numberOfSections"]
 - ["So11UIResponderC", "pInspireTableViewCell"]
+- !private ["So11UIResponderC", "performSegue"]
+- !private ["So11UIResponderC", "poll"]
 - ["So11UIResponderC", "pollTableView"]
 - ["So11UIResponderC", "pollTimeline"]
 - !private ["So11UIResponderC", "preferredMaxLayoutWidth"]
@@ -1278,6 +1431,7 @@ depends-member:
 - !private ["So11UIResponderC", "print"]
 - !private ["So11UIResponderC", "questionLabelView"]
 - ["So11UIResponderC", "ref"]
+- !private ["So11UIResponderC", "refPoll"]
 - !private ["So11UIResponderC", "refreshControl"]
 - !private ["So11UIResponderC", "reloadData"]
 - !private ["So11UIResponderC", "rowHeight"]
@@ -1285,6 +1439,8 @@ depends-member:
 - !private ["So11UIResponderC", "statsButtonView"]
 - ["So11UIResponderC", "tableView"]
 - !private ["So11UIResponderC", "text"]
+- !private ["So11UIResponderC", "textAlignment"]
+- !private ["So11UIResponderC", "titleLabel"]
 - ["So11UIResponderC", "updateViewForNotVote"]
 - ["So11UIResponderC", "updateViewForhasVoted"]
 - ["So11UIResponderC", "user"]
@@ -1317,6 +1473,8 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "delegate"]
 - !private ["So30UIResponderStandardEditActionsP", "dequeueReusableCell"]
 - ["So30UIResponderStandardEditActionsP", "didTapChoice"]
+- ["So30UIResponderStandardEditActionsP", "didTapReadMore"]
+- ["So30UIResponderStandardEditActionsP", "didTapStats"]
 - !private ["So30UIResponderStandardEditActionsP", "endRefreshing"]
 - !private ["So30UIResponderStandardEditActionsP", "estimatedRowHeight"]
 - !private ["So30UIResponderStandardEditActionsP", "handleRefresh"]
@@ -1325,12 +1483,16 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "initiatorLabelView"]
 - !private ["So30UIResponderStandardEditActionsP", "isEnabled"]
 - !private ["So30UIResponderStandardEditActionsP", "isHidden"]
+- !private ["So30UIResponderStandardEditActionsP", "numberOfLines"]
+- !private ["So30UIResponderStandardEditActionsP", "performSegue"]
+- !private ["So30UIResponderStandardEditActionsP", "poll"]
 - !private ["So30UIResponderStandardEditActionsP", "pollTableView"]
 - !private ["So30UIResponderStandardEditActionsP", "pollTimeline"]
 - !private ["So30UIResponderStandardEditActionsP", "preferredMaxLayoutWidth"]
 - !private ["So30UIResponderStandardEditActionsP", "print"]
 - !private ["So30UIResponderStandardEditActionsP", "questionLabelView"]
 - !private ["So30UIResponderStandardEditActionsP", "ref"]
+- !private ["So30UIResponderStandardEditActionsP", "refPoll"]
 - !private ["So30UIResponderStandardEditActionsP", "refreshControl"]
 - !private ["So30UIResponderStandardEditActionsP", "reloadData"]
 - !private ["So30UIResponderStandardEditActionsP", "rowHeight"]
@@ -1338,6 +1500,8 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "statsButtonView"]
 - !private ["So30UIResponderStandardEditActionsP", "tableView"]
 - !private ["So30UIResponderStandardEditActionsP", "text"]
+- !private ["So30UIResponderStandardEditActionsP", "textAlignment"]
+- !private ["So30UIResponderStandardEditActionsP", "titleLabel"]
 - !private ["So30UIResponderStandardEditActionsP", "updateViewForNotVote"]
 - !private ["So30UIResponderStandardEditActionsP", "updateViewForhasVoted"]
 - !private ["So30UIResponderStandardEditActionsP", "user"]
@@ -1371,8 +1535,12 @@ depends-member:
 - !private ["So20UIScrollViewDelegateP", "_refHandle"]
 - !private ["So20UIScrollViewDelegateP", "configureDatabase"]
 - ["So20UIScrollViewDelegateP", "didTapChoice"]
+- ["So20UIScrollViewDelegateP", "didTapReadMore"]
+- ["So20UIScrollViewDelegateP", "didTapStats"]
 - !private ["So20UIScrollViewDelegateP", "handleRefresh"]
 - !private ["So20UIScrollViewDelegateP", "init"]
+- !private ["So20UIScrollViewDelegateP", "performSegue"]
+- !private ["So20UIScrollViewDelegateP", "poll"]
 - !private ["So20UIScrollViewDelegateP", "pollTableView"]
 - !private ["So20UIScrollViewDelegateP", "pollTimeline"]
 - !private ["So20UIScrollViewDelegateP", "print"]
@@ -1398,6 +1566,7 @@ depends-member:
 - !private ["So35UISpringLoadedInteractionSupportingP", "reloadData"]
 - !private ["So35UISpringLoadedInteractionSupportingP", "rowHeight"]
 - !private ["So35UISpringLoadedInteractionSupportingP", "setTitle"]
+- !private ["So35UISpringLoadedInteractionSupportingP", "titleLabel"]
 - !private ["So16UIStateRestoringP", "Choice"]
 - !private ["So16UIStateRestoringP", "Constants"]
 - !private ["So16UIStateRestoringP", "Database"]
@@ -1411,12 +1580,17 @@ depends-member:
 - !private ["So16UIStateRestoringP", "_refHandle"]
 - !private ["So16UIStateRestoringP", "configureDatabase"]
 - ["So16UIStateRestoringP", "didTapChoice"]
+- ["So16UIStateRestoringP", "didTapReadMore"]
+- ["So16UIStateRestoringP", "didTapStats"]
 - !private ["So16UIStateRestoringP", "handleRefresh"]
 - !private ["So16UIStateRestoringP", "init"]
+- !private ["So16UIStateRestoringP", "performSegue"]
+- !private ["So16UIStateRestoringP", "poll"]
 - !private ["So16UIStateRestoringP", "pollTableView"]
 - !private ["So16UIStateRestoringP", "pollTimeline"]
 - !private ["So16UIStateRestoringP", "print"]
 - !private ["So16UIStateRestoringP", "ref"]
+- !private ["So16UIStateRestoringP", "refPoll"]
 - !private ["So16UIStateRestoringP", "tableView"]
 - !private ["So16UIStateRestoringP", "updateViewForNotVote"]
 - !private ["So16UIStateRestoringP", "updateViewForhasVoted"]
@@ -1460,6 +1634,7 @@ depends-member:
 - !private ["So21UITableViewControllerC", "NSAttributedString"]
 - !private ["So21UITableViewControllerC", "NSLocalizedString"]
 - ["So21UITableViewControllerC", "Poll"]
+- !private ["So21UITableViewControllerC", "StatsViewController"]
 - ["So21UITableViewControllerC", "String"]
 - ["So21UITableViewControllerC", "UIButton"]
 - ["So21UITableViewControllerC", "UIColor"]
@@ -1471,14 +1646,18 @@ depends-member:
 - ["So21UITableViewControllerC", "UITableViewCell"]
 - ["So21UITableViewControllerC", "User"]
 - !private ["So21UITableViewControllerC", "Void"]
+- !private ["So21UITableViewControllerC", "WebViewController"]
 - ["So21UITableViewControllerC", ""]
 - ["So21UITableViewControllerC", "_refHandle"]
 - ["So21UITableViewControllerC", "configureDatabase"]
 - ["So21UITableViewControllerC", "didTapChoice"]
+- ["So21UITableViewControllerC", "didTapReadMore"]
+- ["So21UITableViewControllerC", "didTapStats"]
 - ["So21UITableViewControllerC", "handleRefresh"]
 - ["So21UITableViewControllerC", "init"]
 - ["So21UITableViewControllerC", "numberOfSections"]
 - ["So21UITableViewControllerC", "pInspireTableViewCell"]
+- !private ["So21UITableViewControllerC", "performSegue"]
 - ["So21UITableViewControllerC", "pollTableView"]
 - ["So21UITableViewControllerC", "pollTimeline"]
 - ["So21UITableViewControllerC", "prepare"]
@@ -1505,8 +1684,12 @@ depends-member:
 - !private ["So21UITableViewDataSourceP", "_refHandle"]
 - !private ["So21UITableViewDataSourceP", "configureDatabase"]
 - ["So21UITableViewDataSourceP", "didTapChoice"]
+- ["So21UITableViewDataSourceP", "didTapReadMore"]
+- ["So21UITableViewDataSourceP", "didTapStats"]
 - !private ["So21UITableViewDataSourceP", "handleRefresh"]
 - !private ["So21UITableViewDataSourceP", "init"]
+- !private ["So21UITableViewDataSourceP", "performSegue"]
+- !private ["So21UITableViewDataSourceP", "poll"]
 - !private ["So21UITableViewDataSourceP", "pollTableView"]
 - !private ["So21UITableViewDataSourceP", "pollTimeline"]
 - !private ["So21UITableViewDataSourceP", "print"]
@@ -1532,8 +1715,12 @@ depends-member:
 - !private ["So19UITableViewDelegateP", "_refHandle"]
 - !private ["So19UITableViewDelegateP", "configureDatabase"]
 - ["So19UITableViewDelegateP", "didTapChoice"]
+- ["So19UITableViewDelegateP", "didTapReadMore"]
+- ["So19UITableViewDelegateP", "didTapStats"]
 - !private ["So19UITableViewDelegateP", "handleRefresh"]
 - !private ["So19UITableViewDelegateP", "init"]
+- !private ["So19UITableViewDelegateP", "performSegue"]
+- !private ["So19UITableViewDelegateP", "poll"]
 - !private ["So19UITableViewDelegateP", "pollTableView"]
 - !private ["So19UITableViewDelegateP", "pollTimeline"]
 - !private ["So19UITableViewDelegateP", "print"]
@@ -1569,6 +1756,8 @@ depends-member:
 - !private ["So18UITraitEnvironmentP", "delegate"]
 - !private ["So18UITraitEnvironmentP", "dequeueReusableCell"]
 - ["So18UITraitEnvironmentP", "didTapChoice"]
+- ["So18UITraitEnvironmentP", "didTapReadMore"]
+- ["So18UITraitEnvironmentP", "didTapStats"]
 - !private ["So18UITraitEnvironmentP", "endRefreshing"]
 - !private ["So18UITraitEnvironmentP", "estimatedRowHeight"]
 - !private ["So18UITraitEnvironmentP", "handleRefresh"]
@@ -1577,12 +1766,16 @@ depends-member:
 - !private ["So18UITraitEnvironmentP", "initiatorLabelView"]
 - !private ["So18UITraitEnvironmentP", "isEnabled"]
 - !private ["So18UITraitEnvironmentP", "isHidden"]
+- !private ["So18UITraitEnvironmentP", "numberOfLines"]
+- !private ["So18UITraitEnvironmentP", "performSegue"]
+- !private ["So18UITraitEnvironmentP", "poll"]
 - !private ["So18UITraitEnvironmentP", "pollTableView"]
 - !private ["So18UITraitEnvironmentP", "pollTimeline"]
 - !private ["So18UITraitEnvironmentP", "preferredMaxLayoutWidth"]
 - !private ["So18UITraitEnvironmentP", "print"]
 - !private ["So18UITraitEnvironmentP", "questionLabelView"]
 - !private ["So18UITraitEnvironmentP", "ref"]
+- !private ["So18UITraitEnvironmentP", "refPoll"]
 - !private ["So18UITraitEnvironmentP", "refreshControl"]
 - !private ["So18UITraitEnvironmentP", "reloadData"]
 - !private ["So18UITraitEnvironmentP", "rowHeight"]
@@ -1590,6 +1783,8 @@ depends-member:
 - !private ["So18UITraitEnvironmentP", "statsButtonView"]
 - !private ["So18UITraitEnvironmentP", "tableView"]
 - !private ["So18UITraitEnvironmentP", "text"]
+- !private ["So18UITraitEnvironmentP", "textAlignment"]
+- !private ["So18UITraitEnvironmentP", "titleLabel"]
 - !private ["So18UITraitEnvironmentP", "updateViewForNotVote"]
 - !private ["So18UITraitEnvironmentP", "updateViewForhasVoted"]
 - !private ["So18UITraitEnvironmentP", "user"]
@@ -1616,6 +1811,7 @@ depends-member:
 - !private ["So6UIViewC", "initiatorLabelView"]
 - !private ["So6UIViewC", "isEnabled"]
 - !private ["So6UIViewC", "isHidden"]
+- !private ["So6UIViewC", "numberOfLines"]
 - !private ["So6UIViewC", "preferredMaxLayoutWidth"]
 - !private ["So6UIViewC", "questionLabelView"]
 - !private ["So6UIViewC", "refreshControl"]
@@ -1624,6 +1820,8 @@ depends-member:
 - !private ["So6UIViewC", "setTitle"]
 - !private ["So6UIViewC", "statsButtonView"]
 - !private ["So6UIViewC", "text"]
+- !private ["So6UIViewC", "textAlignment"]
+- !private ["So6UIViewC", "titleLabel"]
 - !private ["So6UIViewC", "voteAnonymously"]
 - !private ["So6UIViewC", "voteAnonymouslySwitch"]
 - !private ["So6UIViewC", "voteLabelView"]
@@ -1641,6 +1839,7 @@ depends-member:
 - !private ["So16UIViewControllerC", "NSAttributedString"]
 - !private ["So16UIViewControllerC", "NSLocalizedString"]
 - ["So16UIViewControllerC", "Poll"]
+- !private ["So16UIViewControllerC", "StatsViewController"]
 - ["So16UIViewControllerC", "String"]
 - ["So16UIViewControllerC", "UIButton"]
 - ["So16UIViewControllerC", "UIColor"]
@@ -1654,19 +1853,25 @@ depends-member:
 - ["So16UIViewControllerC", "UIViewController"]
 - ["So16UIViewControllerC", "User"]
 - !private ["So16UIViewControllerC", "Void"]
+- !private ["So16UIViewControllerC", "WebViewController"]
 - ["So16UIViewControllerC", "_refHandle"]
 - ["So16UIViewControllerC", "configureDatabase"]
 - ["So16UIViewControllerC", "contents"]
 - ["So16UIViewControllerC", "didTapChoice"]
+- ["So16UIViewControllerC", "didTapReadMore"]
+- ["So16UIViewControllerC", "didTapStats"]
 - ["So16UIViewControllerC", "handleRefresh"]
 - ["So16UIViewControllerC", "init"]
 - ["So16UIViewControllerC", "numberOfSections"]
 - ["So16UIViewControllerC", "pInspireTableViewCell"]
+- !private ["So16UIViewControllerC", "performSegue"]
+- !private ["So16UIViewControllerC", "poll"]
 - ["So16UIViewControllerC", "pollTableView"]
 - ["So16UIViewControllerC", "pollTimeline"]
 - ["So16UIViewControllerC", "prepare"]
 - !private ["So16UIViewControllerC", "print"]
 - ["So16UIViewControllerC", "ref"]
+- !private ["So16UIViewControllerC", "refPoll"]
 - ["So16UIViewControllerC", "tableView"]
 - ["So16UIViewControllerC", "updateViewForNotVote"]
 - ["So16UIViewControllerC", "updateViewForhasVoted"]
@@ -1676,6 +1881,10 @@ depends-member:
 - ["So16UIViewControllerC", "viewDidLoad"]
 - !private ["So16UIViewControllerC", "visibleViewController"]
 - ["So16UIViewControllerC", "writeVoteData"]
+- !private ["So17UIWebViewDelegateP", "refPoll"]
+- !private ["So20WKNavigationDelegateP", "refPoll"]
+- !private ["8pInspire17WebViewControllerC", "refPoll"]
+- !private ["s14_ArrayProtocolP", "Id"]
 - !private ["s14_ArrayProtocolP", "addUser"]
 - !private ["s14_ArrayProtocolP", "append"]
 - !private ["s14_ArrayProtocolP", "content"]
@@ -1700,6 +1909,7 @@ depends-member:
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "initiatorLabelView"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "isEnabled"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "isHidden"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "numberOfLines"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "preferredMaxLayoutWidth"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "questionLabelView"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "refreshControl"]
@@ -1708,9 +1918,12 @@ depends-member:
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "setTitle"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "statsButtonView"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "text"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "textAlignment"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "titleLabel"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "voteAnonymously"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "voteAnonymouslySwitch"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "voteLabelView"]
+- !private ["s24_DestructorSafeContainerP", "Id"]
 - !private ["s24_DestructorSafeContainerP", "addUser"]
 - !private ["s24_DestructorSafeContainerP", "append"]
 - !private ["s24_DestructorSafeContainerP", "content"]
@@ -1752,6 +1965,8 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "dequeueReusableCell"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "destination"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "didTapChoice"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "didTapReadMore"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "didTapStats"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "endRefreshing"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "estimatedRowHeight"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "handleRefresh"]
@@ -1762,13 +1977,17 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "isEnabled"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "isHidden"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "key"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "numberOfLines"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "observe"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "performSegue"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "poll"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "pollTableView"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "pollTimeline"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "preferredMaxLayoutWidth"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "print"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "questionLabelView"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "ref"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "refPoll"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "reference"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "refreshControl"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "reloadData"]
@@ -1779,6 +1998,8 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "statsButtonView"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "tableView"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "text"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "textAlignment"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "titleLabel"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "updateViewForNotVote"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "updateViewForhasVoted"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "user"]
@@ -1822,7 +2043,10 @@ depends-member:
 - !private ["8pInspire01pA21TableViewCellDelegateP", "_refHandle"]
 - !private ["8pInspire01pA21TableViewCellDelegateP", "configureDatabase"]
 - ["8pInspire01pA21TableViewCellDelegateP", "didTapChoice"]
+- ["8pInspire01pA21TableViewCellDelegateP", "didTapReadMore"]
+- ["8pInspire01pA21TableViewCellDelegateP", "didTapStats"]
 - !private ["8pInspire01pA21TableViewCellDelegateP", "handleRefresh"]
+- !private ["8pInspire01pA21TableViewCellDelegateP", "performSegue"]
 - !private ["8pInspire01pA21TableViewCellDelegateP", "pollTableView"]
 - !private ["8pInspire01pA21TableViewCellDelegateP", "pollTimeline"]
 - !private ["8pInspire01pA21TableViewCellDelegateP", "print"]
@@ -1847,6 +2071,7 @@ depends-member:
 - !private ["8pInspire01pA14ViewControllerC", "NSAttributedString"]
 - !private ["8pInspire01pA14ViewControllerC", "NSLocalizedString"]
 - ["8pInspire01pA14ViewControllerC", "Poll"]
+- !private ["8pInspire01pA14ViewControllerC", "StatsViewController"]
 - ["8pInspire01pA14ViewControllerC", "String"]
 - ["8pInspire01pA14ViewControllerC", "UIButton"]
 - ["8pInspire01pA14ViewControllerC", "UIColor"]
@@ -1858,14 +2083,18 @@ depends-member:
 - ["8pInspire01pA14ViewControllerC", "UITableViewCell"]
 - ["8pInspire01pA14ViewControllerC", "User"]
 - !private ["8pInspire01pA14ViewControllerC", "Void"]
+- !private ["8pInspire01pA14ViewControllerC", "WebViewController"]
 - !private ["8pInspire01pA14ViewControllerC", "_refHandle"]
 - ["8pInspire01pA14ViewControllerC", "configureDatabase"]
 - ["8pInspire01pA14ViewControllerC", "deinit"]
 - ["8pInspire01pA14ViewControllerC", "didTapChoice"]
+- ["8pInspire01pA14ViewControllerC", "didTapReadMore"]
+- ["8pInspire01pA14ViewControllerC", "didTapStats"]
 - !private ["8pInspire01pA14ViewControllerC", "handleRefresh"]
 - ["8pInspire01pA14ViewControllerC", "init"]
 - ["8pInspire01pA14ViewControllerC", "numberOfSections"]
 - ["8pInspire01pA14ViewControllerC", "pInspireTableViewCell"]
+- !private ["8pInspire01pA14ViewControllerC", "performSegue"]
 - ["8pInspire01pA14ViewControllerC", "pollTableView"]
 - ["8pInspire01pA14ViewControllerC", "pollTimeline"]
 - ["8pInspire01pA14ViewControllerC", "prepare"]
@@ -1928,6 +2157,7 @@ depends-nominal:
 - "So8NSObjectC"
 - "So16NSObjectProtocolP"
 - !private "So14NSSecureCodingP"
+- !private "SC15NSTextAlignmentO"
 - !private "s9OptionSetP"
 - !private "8pInspire4PollC"
 - "s22RandomAccessCollectionP"
@@ -1936,6 +2166,7 @@ depends-nominal:
 - !private "10Foundation20ReferenceConvertibleP"
 - "s8SequenceP"
 - !private "s10SetAlgebraP"
+- !private "8pInspire19StatsViewControllerC"
 - "SS"
 - "s14StringProtocolP"
 - "s16TextOutputStreamP"
@@ -1977,6 +2208,9 @@ depends-nominal:
 - "So18UITraitEnvironmentP"
 - !private "So6UIViewC"
 - "So16UIViewControllerC"
+- !private "So17UIWebViewDelegateP"
+- !private "So20WKNavigationDelegateP"
+- !private "8pInspire17WebViewControllerC"
 - "s14_ArrayProtocolP"
 - !private "s37_DefaultCustomPlaygroundQuickLookableP"
 - "s24_DestructorSafeContainerP"
@@ -1999,31 +2233,47 @@ depends-external:
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FacebookCore/FacebookCore.framework/Modules/FacebookCore.swiftmodule/x86_64.swiftmodule"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FacebookLogin/FacebookLogin.framework/Modules/FacebookLogin.swiftmodule/x86_64.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreMedia.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/simd.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Metal.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/AVFoundation.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreAudio.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/os.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/MapKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Headers/FIRInstanceID.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Headers/FirebaseInstanceID.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFURL.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FacebookCore/FacebookCore.framework/Headers/FacebookCore-umbrella.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FacebookLogin/FacebookLogin.framework/Headers/FacebookLogin-umbrella.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesViewController-umbrella.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework/Headers/JSQSystemSoundPlayer-umbrella.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/Bolts-umbrella.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKCoreKit-umbrella.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKLoginKit-umbrella.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessageMediaData.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessageData.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRMutableData.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFGeneric.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabaseReference.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessageBubbleImageDataSource.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessageAvatarImageDataSource.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesCollectionViewDataSource.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFCancellationTokenSource.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFTaskCompletionSource.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesBubbleImage.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesAvatarImage.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessage.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKProfile.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDataEventType.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FirebaseCore.h"
@@ -2033,12 +2283,22 @@ depends-external:
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKApplicationDelegate.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics+AppDelegate.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRServerValue.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesCollectionViewCellIncoming.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesCollectionViewCellOutgoing.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesBubbleSizeCalculating.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFAppLinkResolving.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKCopying.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKMutableCopying.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFAppLink.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFTask.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesLabel.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRLoggerLevel.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesCollectionViewCell.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMediaItem.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQLocationMediaItem.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQVideoMediaItem.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQAudioMediaItem.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQPhotoMediaItem.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFCancellationToken.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKAccessToken.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFAppLinkNavigation.h"
@@ -2053,19 +2313,36 @@ depends-external:
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKDeviceLoginCodeInfo.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRApp.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRApp.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesInputToolbar.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKLoginManager.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKDeviceLoginManager.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKTestUsersManager.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesMediaViewBubbleImageMasker.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesKeyboardController.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFAppLinkReturnToRefererController.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesViewController.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesTimestampFormatter.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKAppLinkResolver.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFWebViewAppLinkResolver.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework/Headers/JSQSystemSoundPlayer.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKGraphErrorRecoveryProcessor.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesBubblesSizeCalculator.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFExecutor.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/UIDevice+JSQMessages.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/UIImage+JSQMessages.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/NSBundle+JSQMessages.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/NSString+JSQMessages.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQSystemSoundPlayer+JSQMessages.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/UIColor+JSQMessages.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/UIView+JSQMessages.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessages.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRParameterNames.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIREventNames.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRUserPropertyNames.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesCollectionViewLayoutAttributes.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQAudioMediaViewAttributes.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKSettings.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIROptions.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIROptions.h"
@@ -2087,11 +2364,24 @@ depends-external:
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDataSnapshot.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalyticsSwiftNameSupport.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKGraphRequest.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesCollectionViewDelegateFlowLayout.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesCollectionViewFlowLayout.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesCollectionViewFlowLayoutInvalidationContext.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKProfilePictureView.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesCollectionView.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKTooltipView.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKLoginTooltipView.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesLoadEarlierHeaderView.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesMediaPlaceholderView.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFAppLinkReturnToRefererView.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesTypingIndicatorFooterView.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesToolbarContentView.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesCellTextView.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesComposerTextView.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabaseQuery.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesBubbleImageFactory.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesAvatarImageFactory.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesToolbarButtonFactory.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKUtility.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKAppLinkUtility.h"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/Firebase/Core/Sources/module.modulemap"
@@ -2100,6 +2390,8 @@ depends-external:
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FacebookCore/FacebookCore.framework/Modules/module.modulemap"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Modules/module.modulemap"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FacebookLogin/FacebookLogin.framework/Modules/module.modulemap"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Modules/module.modulemap"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework/Modules/module.modulemap"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Modules/module.modulemap"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Modules/module.modulemap"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Modules/module.modulemap"
@@ -2110,9 +2402,13 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/WebKit.framework/Headers/WebKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/MapKit.framework/Headers/MapKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
-interface-hash: "68fe32a36fe7d822fa238032c2958256"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
+interface-hash: "2d8a34dbb3db9662b85023d9b6b83e47"

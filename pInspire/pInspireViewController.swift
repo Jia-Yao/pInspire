@@ -271,7 +271,8 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
             if let stateController = segue.destination as? WebViewController {
                 let clickedIndexPath = self.pollTableView.indexPath(for: (sender as! UITableViewCell))!
                 let totalCount = self.pollTimeline.count
-                stateController.urlString = self.pollTimeline[totalCount - 1 - clickedIndexPath.row].urlString
+//                stateController.urlString = self.pollTimeline[totalCount - 1 - clickedIndexPath.row].urlString
+                stateController.refPoll = self.ref.child("Polls/Polls").child(self.pollTimeline[totalCount - 1 - clickedIndexPath.row].Id).child(Constants.pollUrlFieldName)
             }
         default:
             print("pInspire: Unexpected Segue Identifier; \(segue.identifier ?? "")")
