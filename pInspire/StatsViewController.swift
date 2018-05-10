@@ -21,7 +21,11 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
-    @IBOutlet weak var initiateDiscussionButton: UIButton!
+    @IBOutlet weak var initiateDiscussionButton: UIButton! {
+        didSet {
+            initiateDiscussionButton.layer.cornerRadius = 10
+        }
+    }
     
     @IBOutlet weak var nameTableView: UITableView!
     
@@ -78,7 +82,8 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             for index in poll.choices.count..<self.choicesView.count {
                 self.choicesView[index].isHidden = true
             }
-            if poll.numOfVisibleVotedUsers < 3 {
+            let hasAnonymouslyVoted: Bool = !poll.visibleVotedUsers.contains(user!.userName)
+            if poll.numOfVisibleVotedUsers < 3 || hasAnonymouslyVoted {
                 initiateDiscussionButton.isEnabled = false
                 initiateDiscussionButton.alpha = 0.5;
             }
@@ -126,7 +131,7 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Users who voted the selected option"
+        return "Users who voted this option"
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

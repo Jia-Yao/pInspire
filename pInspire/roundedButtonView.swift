@@ -14,7 +14,7 @@ import UIKit
 
 class RoundButton: UIButton {
     
-    @IBInspectable var cornerRadius: CGFloat = 0{
+    @IBInspectable var cornerRadius: CGFloat = 10{
         didSet{
             self.layer.cornerRadius = cornerRadius
         }
