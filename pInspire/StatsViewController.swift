@@ -21,22 +21,12 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
-    @IBOutlet weak var initiateDiscussionButton: UIButton! {
-        didSet {
-            initiateDiscussionButton.layer.cornerRadius = 10
-        }
-    }
     
     @IBOutlet weak var nameTableView: UITableView!
     
     @IBOutlet var choicesView: [StatsView]!
     
-    @IBAction func initiateDiscussion(_ sender: UIButton) {
-        // performSegue(withIdentifier: "initiateDiscussions", sender: sender)
-        let members: [String] = selectDiscussionMembers()
-        let _ = createGroupIdToDatabase(for: members)
-        self.tabBarController!.selectedIndex = 3
-    }
+    
     var refDiscussion: DatabaseReference!
     
     var poll: Poll? {
@@ -81,11 +71,6 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
             for index in poll.choices.count..<self.choicesView.count {
                 self.choicesView[index].isHidden = true
-            }
-            let hasAnonymouslyVoted: Bool = !poll.visibleVotedUsers.contains(user!.userName)
-            if poll.numOfVisibleVotedUsers < 3 || hasAnonymouslyVoted {
-                initiateDiscussionButton.isEnabled = false
-                initiateDiscussionButton.alpha = 0.5;
             }
         }
     }
@@ -139,7 +124,6 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cellIdentifier = "NameCellUnit"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         let name = people![indexPath.row]
@@ -155,23 +139,6 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let childUpdates = ["/\(key)": newDiscussion]
         refDiscussion.updateChildValues(childUpdates)
         return itemRef.key
-    }
-    
-    private struct Constants {
-        static let chatMemberUpperLimit = 2
-        // number of people excluding me.
-    }
-    
-    private func selectDiscussionMembers() -> [String] {
-        var members = poll!.visibleVotedUsers
-        members.remove(at: members.index(of: userName!)!)
-        members.shuffle()
-        let selectNumOfMembers = min(Constants.chatMemberUpperLimit, (poll?.numOfVisibleVotedUsers) ?? 0)
-        return Array(members[0..<selectNumOfMembers]) + [userName!]
-        
-        /* while (members.count < Constants.chatMemberUpperLimit) && (members.count < (poll?.numOfVisibleVotedUsers)!) {
-           Can do some smarter way here.
-        }*/
     }
     
     // MARK: - Navigation

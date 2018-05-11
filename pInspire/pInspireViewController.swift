@@ -15,6 +15,7 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
     
     @IBOutlet var pollTableView: UITableView!
     var ref: DatabaseReference!
+    var refDiscussion: DatabaseReference!
     fileprivate var _refHandle: DatabaseHandle?
     var pollTimeline = [Poll]()
     var user: User?
@@ -66,6 +67,15 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
         writeVoteData(id: poll.Id, choiceContent: choices[choosedButtonIndex!].content, userName: userName!, isAnonymous: sender.voteAnonymously)
     }
     
+    func didTapDiscuss(_ sender: pInspireTableViewCell) {
+        let clickedIndexPath = self.pollTableView.indexPath(for: (sender as UITableViewCell))!
+        let totalCount = self.pollTimeline.count
+        let poll = self.pollTimeline[totalCount - 1 - clickedIndexPath.row]
+        let members: [String] = selectDiscussionMembers(from: poll)
+        let _ = createGroupIdToDatabase(for: members, from: poll)
+        self.tabBarController!.selectedIndex = 3
+    }
+    
     func didTapStats(_ sender: pInspireTableViewCell) {
         performSegue(withIdentifier: "showStats", sender: sender)
     }
@@ -73,13 +83,35 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
     func didTapReadMore(_ sender: pInspireTableViewCell) {
         performSegue(withIdentifier: "showWeb", sender: sender)
     }
+    
+    private func selectDiscussionMembers(from poll: Poll) -> [String] {
+        var members = poll.visibleVotedUsers
+        members.remove(at: members.index(of: userName!)!)
+        members.shuffle()
+        let selectNumOfMembers = min(Constants.chatMemberUpperLimit, poll.numOfVisibleVotedUsers)
+        return Array(members[0..<selectNumOfMembers]) + [userName!]
+        
+        /* while (members.count < Constants.chatMemberUpperLimit) && (members.count < (poll?.numOfVisibleVotedUsers)!) {
+         Can do some smarter way here.
+         }*/
+    }
 
+    private func createGroupIdToDatabase(for members: [String], from poll: Poll) -> String {
+        let itemRef: DatabaseReference = refDiscussion.childByAutoId()
+        let key = itemRef.key
+        let newDiscussion = ["Members": members, "Message": [], "Question": poll.question] as [String: Any]
+        let childUpdates = ["/\(key)": newDiscussion]
+        refDiscussion.updateChildValues(childUpdates)
+        return itemRef.key
+    }
+    
     func writeVoteData(id: String, choiceContent: String, userName: String, isAnonymous: Bool){
         ref.child("Polls/Polls").child(id).child(Constants.PollChoiceFieldName).child(choiceContent).child(userName).setValue(isAnonymous)
     }
     
     func configureDatabase() {
         ref = Database.database().reference()
+        refDiscussion = Database.database().reference().child("Discussions")
         // Listen for new messages in the Firebase database
         
         _refHandle = self.ref.child("Polls").observe(.childAdded, with: { [weak self] (snapshot) -> Void in
@@ -134,6 +166,7 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
     }
 
     private struct Constants {
+        static let chatMemberUpperLimit = 2
         static let PollQuestionFieldName:String = "Question"
         static let pollUrlFieldName: String = "URL"
         static let PollChoiceFieldName: String = "Choices"
@@ -168,8 +201,10 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
     func updateViewForNotVote(for cell: pInspireTableViewCell, withPoll poll: Poll) {
 
         cell.statsButtonView.isHidden = true
+        cell.discussButtonView.isHidden = true
         cell.voteAnonymouslySwitch.isHidden = false
         cell.voteLabelView.isHidden = false
+
         for index in 0..<poll.choices.count {
             let choiceButtonView = cell.choiceButtonView[index]
             choiceButtonView.isHidden = false
@@ -190,6 +225,7 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
 
     func updateViewForhasVoted(for cell: pInspireTableViewCell, withPoll poll: Poll) {
         cell.statsButtonView.isHidden = false
+        cell.discussButtonView.isHidden = false
         cell.voteAnonymouslySwitch.isHidden = true
         cell.voteLabelView.isHidden = true
         for index in 0..<poll.choices.count {
@@ -213,6 +249,11 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
         // Hide unnecessary buttons.
         for index in poll.choices.count..<cell.choiceButtonView.count {
             cell.choiceButtonView[index].isHidden = true
+        }
+        let hasAnonymouslyVoted: Bool = !poll.visibleVotedUsers.contains(user!.userName)
+        if poll.numOfVisibleVotedUsers < 3 || hasAnonymouslyVoted {
+            cell.discussButtonView.isHidden = true
+            // cell.discussButtonView.alpha = 0.5;
         }
     }
     /*

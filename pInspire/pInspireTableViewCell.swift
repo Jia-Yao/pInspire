@@ -12,6 +12,7 @@ protocol pInspireTableViewCellDelegate : class {
     func didTapChoice(_ sender: pInspireTableViewCell, button: UIButton)
     func didTapStats(_ sender: pInspireTableViewCell)
     func didTapReadMore(_ sender: pInspireTableViewCell)
+    func didTapDiscuss(_ sender: pInspireTableViewCell)
 }
 
 class pInspireTableViewCell: UITableViewCell {
@@ -33,6 +34,7 @@ class pInspireTableViewCell: UITableViewCell {
     
     @IBOutlet weak var questionLabelView: UILabel!
     
+    @IBOutlet weak var discussButtonView: UIButton!
     
     @IBOutlet var choiceButtonView: [UIButton]! {
         didSet {
@@ -76,6 +78,11 @@ class pInspireTableViewCell: UITableViewCell {
     @IBAction func tapStats(_ sender: UIButton) {
         delegate?.didTapStats(self)
     }
+    
+    @IBAction func tapDiscuss(_ sender: UIButton) {
+        delegate?.didTapDiscuss(self)
+    }
+    
     @IBAction func tapReport(_ sender: UIButton) {
         // delegate?.didTapReport(self, button: sender)
     }

@@ -23,18 +23,18 @@
                         <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PollCellUnit" rowHeight="486" id="77E-lG-uLc" customClass="pInspireTableViewCell" customModule="pInspire" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="486"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PollCellUnit" rowHeight="490" id="77E-lG-uLc" customClass="pInspireTableViewCell" customModule="pInspire" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="490"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="77E-lG-uLc" id="HAR-VI-r29">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="485.66666666666669"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="489.66666666666669"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bym-wt-hey">
-                                            <rect key="frame" x="16" y="16" width="382" height="453.66666666666669"/>
+                                            <rect key="frame" x="16" y="16" width="382" height="457.66666666666669"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ksi-Pq-C3X">
-                                                    <rect key="frame" x="0.0" y="0.0" width="382" height="453.66666666666669"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="382" height="457.66666666666669"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bXl-fR-veu">
                                                             <rect key="frame" x="0.0" y="0.0" width="382" height="20.333333333333332"/>
@@ -117,30 +117,40 @@
                                                             </connections>
                                                         </button>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Fn2-Rn-8IA">
-                                                            <rect key="frame" x="0.0" y="409" width="382" height="6.6666666666666856"/>
+                                                            <rect key="frame" x="0.0" y="409" width="382" height="10.666666666666686"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vote anonymously" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ftt-uo-XEi">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="325" height="6.666666666666667"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="325" height="10.666666666666666"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HVE-iQ-Ove">
-                                                                    <rect key="frame" x="333" y="0.0" width="51" height="6.666666666666667"/>
+                                                                    <rect key="frame" x="333" y="0.0" width="51" height="10.666666666666666"/>
                                                                     <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </switch>
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="hQD-oM-3si">
-                                                            <rect key="frame" x="0.0" y="423.66666666666669" width="382" height="30"/>
+                                                            <rect key="frame" x="0.0" y="427.66666666666669" width="382" height="30"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="left" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNI-lS-1yv">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="86" height="30"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="47" height="30"/>
                                                                     <state key="normal" title="Report">
                                                                         <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     </state>
                                                                     <connections>
                                                                         <action selector="tapReport:" destination="77E-lG-uLc" eventType="touchUpInside" id="VQI-Bz-6xZ"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="left" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdT-MM-YD5">
+                                                                    <rect key="frame" x="169.66666666666666" y="0.0" width="54" height="30"/>
+                                                                    <state key="normal" title="Discuss">
+                                                                        <color key="titleColor" red="0.92156862750000001" green="0.18823529410000001" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </state>
+                                                                    <connections>
+                                                                        <action selector="tapDiscuss:" destination="77E-lG-uLc" eventType="touchUpInside" id="QpW-cM-8k7"/>
+                                                                        <action selector="tapReport:" destination="77E-lG-uLc" eventType="touchUpInside" id="6I9-eO-RGm"/>
                                                                     </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="right" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJC-IT-kub">
@@ -167,7 +177,6 @@
                                     <constraints>
                                         <constraint firstItem="bym-wt-hey" firstAttribute="leading" secondItem="map-rC-ato" secondAttribute="leading" constant="16" id="9mK-PQ-pvo"/>
                                         <constraint firstItem="bym-wt-hey" firstAttribute="top" secondItem="map-rC-ato" secondAttribute="top" constant="16" id="Mt9-4w-eep"/>
-                                        <constraint firstItem="hQD-oM-3si" firstAttribute="trailing" secondItem="cNI-lS-1yv" secondAttribute="trailing" constant="296" id="PiZ-0P-hyH"/>
                                         <constraint firstItem="map-rC-ato" firstAttribute="bottom" secondItem="bym-wt-hey" secondAttribute="bottom" constant="16" id="hJb-o5-3Y2"/>
                                         <constraint firstItem="map-rC-ato" firstAttribute="trailing" secondItem="bym-wt-hey" secondAttribute="trailing" constant="16" id="ncb-W8-hpe"/>
                                     </constraints>
@@ -177,6 +186,7 @@
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="articlesButtonView" destination="ihc-dZ-MHa" id="km7-B6-swn"/>
+                                    <outlet property="discussButtonView" destination="tdT-MM-YD5" id="8di-0v-jGj"/>
                                     <outlet property="initiatorLabelView" destination="4Fw-iw-4vN" id="qBy-ut-4uE"/>
                                     <outlet property="questionLabelView" destination="625-14-mrd" id="4p4-xh-hBy"/>
                                     <outlet property="questionLableView" destination="625-14-mrd" id="Eh6-HX-0br"/>
@@ -212,7 +222,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UAe-sI-hVd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1637.5999999999999" y="-571.18226600985224"/>
+            <point key="canvasLocation" x="1636.2318840579712" y="-571.46739130434787"/>
         </scene>
         <!--Stats View Controller-->
         <scene sceneID="4KW-AL-bqP">
@@ -267,7 +277,7 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Q2E-2d-J6O">
-                                <rect key="frame" x="16" y="444" width="382" height="181"/>
+                                <rect key="frame" x="16" y="452" width="382" height="219"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NameCellUnit" editingAccessoryType="checkmark" textLabel="DGt-72-YuC" style="IBUITableViewCellStyleDefault" id="ltR-nU-gGF">
@@ -290,35 +300,20 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Otb-5z-R56" customClass="RoundButton" customModule="pInspire" customModuleProvider="target">
-                                <rect key="frame" x="100" y="635" width="214" height="36"/>
-                                <color key="backgroundColor" red="0.92156862750000001" green="0.18823529410000001" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Initiate Discussion">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="initiateDiscussion:" destination="uCt-MA-1xr" eventType="touchUpInside" id="K8y-aP-KAU"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="waL-yK-BPj" firstAttribute="trailing" secondItem="Otb-5z-R56" secondAttribute="trailing" constant="100" id="46w-F2-PNO"/>
-                            <constraint firstItem="waL-yK-BPj" firstAttribute="trailing" secondItem="Q2E-2d-J6O" secondAttribute="trailing" constant="16" id="75W-mI-6ju"/>
                             <constraint firstItem="Q2E-2d-J6O" firstAttribute="leading" secondItem="waL-yK-BPj" secondAttribute="leading" constant="16" id="ANy-Nt-OuK"/>
-                            <constraint firstItem="Q2E-2d-J6O" firstAttribute="top" secondItem="lqY-dh-tyG" secondAttribute="bottom" constant="8" id="cK8-Xg-xJP"/>
-                            <constraint firstItem="waL-yK-BPj" firstAttribute="bottom" secondItem="Otb-5z-R56" secondAttribute="bottom" constant="16" id="gi1-ao-i35"/>
+                            <constraint firstItem="waL-yK-BPj" firstAttribute="bottom" secondItem="Q2E-2d-J6O" secondAttribute="bottom" constant="16" id="BWh-e2-X82"/>
+                            <constraint firstItem="Q2E-2d-J6O" firstAttribute="top" secondItem="lqY-dh-tyG" secondAttribute="bottom" constant="16" id="JBo-sd-jRj"/>
+                            <constraint firstItem="waL-yK-BPj" firstAttribute="trailing" secondItem="Q2E-2d-J6O" secondAttribute="trailing" constant="16" id="Nsd-Lj-QCF"/>
                             <constraint firstItem="waL-yK-BPj" firstAttribute="trailing" secondItem="lqY-dh-tyG" secondAttribute="trailing" constant="16" id="qNQ-ES-jD4"/>
-                            <constraint firstItem="Otb-5z-R56" firstAttribute="leading" secondItem="waL-yK-BPj" secondAttribute="leading" constant="100" id="uce-jq-Jzc"/>
                             <constraint firstItem="lqY-dh-tyG" firstAttribute="leading" secondItem="waL-yK-BPj" secondAttribute="leading" constant="16" id="w5r-95-FUo"/>
                             <constraint firstItem="lqY-dh-tyG" firstAttribute="top" secondItem="waL-yK-BPj" secondAttribute="top" constant="16" id="wuI-UW-eP8"/>
-                            <constraint firstItem="Otb-5z-R56" firstAttribute="top" secondItem="Q2E-2d-J6O" secondAttribute="bottom" constant="10" id="zva-Tb-5NU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="waL-yK-BPj"/>
                     </view>
                     <connections>
-                        <outlet property="initiateDiscussionButton" destination="Otb-5z-R56" id="ArB-Os-Iv1"/>
                         <outlet property="nameTableView" destination="Q2E-2d-J6O" id="Ne3-BU-IER"/>
                         <outlet property="questionLabelView" destination="AEL-Oe-reP" id="RFU-oF-xXE"/>
                         <outletCollection property="choicesView" destination="Ick-p0-7Bp" collectionClass="NSMutableArray" id="goS-d2-oHa"/>
@@ -329,7 +324,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lVg-Em-aL3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2485.5999999999999" y="-571.18226600985224"/>
+            <point key="canvasLocation" x="2485.507246376812" y="-571.46739130434787"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="bkg-za-WXF">
@@ -455,7 +450,7 @@
             </objects>
             <point key="canvasLocation" x="470" y="842"/>
         </scene>
-        <!--Notifications-->
+        <!--Invitations-->
         <scene sceneID="0da-lA-qUm">
             <objects>
                 <viewController id="d5p-qF-bFG" sceneMemberID="viewController">
@@ -465,7 +460,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="3TS-tw-ms5"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Notifications" image="bell" selectedImage="bell" id="CYC-j5-Uls"/>
+                    <tabBarItem key="tabBarItem" title="Invitations" image="bell" selectedImage="bell" id="CYC-j5-Uls"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ihh-8T-Dgx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
