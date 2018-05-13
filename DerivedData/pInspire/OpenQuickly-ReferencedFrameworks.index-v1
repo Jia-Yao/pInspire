@@ -22,6 +22,7 @@
 	<string>JSQMessagesViewController</string>
 	<string>FacebookLogin</string>
 	<string>CoreTelephony</string>
+	<string>UserNotifications</string>
 	<string>JSQSystemSoundPlayer</string>
 	<string>StoreKit</string>
 	<string>FirebaseInstanceID</string>
@@ -29,8 +30,8 @@
 	<string>AdSupport</string>
 	<string>Accounts</string>
 	<string>FirebaseDatabase</string>
-	<string>FirebaseRemoteConfig</string>
 	<string>libkern</string>
+	<string>FirebaseRemoteConfig</string>
 	<string>CoreText</string>
 	<string>WebKit</string>
 	<string>Crashlytics</string>
@@ -40,10 +41,11 @@
 	<string>QuartzCore</string>
 	<string>Security</string>
 	<string>Fabric</string>
+	<string>FirebaseAppIndexing</string>
 	<string>os</string>
 	<string>FBSDKLoginKit</string>
-	<string>FirebaseAppIndexing</string>
 	<string>FirebaseInvites</string>
+	<string>IQKeyboardManagerSwift</string>
 	<string>FBSDKCoreKit</string>
 	<string>FirebaseStorage</string>
 	<string>CoreGraphics</string>

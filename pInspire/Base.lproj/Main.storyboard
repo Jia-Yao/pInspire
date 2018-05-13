@@ -586,54 +586,49 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTL-2T-0iX">
                                                 <rect key="frame" x="223.66666666666663" y="0.0" width="158.33333333333337" height="30"/>
-                                                <state key="normal" title="Done">
-                                                    <color key="titleColor" red="0.92156862750000001" green="0.18823529410000001" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
+                                                <state key="normal" title="Done"/>
                                                 <connections>
                                                     <action selector="done:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="hN3-7L-nVn"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Poll Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9p-5T-76G">
-                                        <rect key="frame" x="0.0" y="38" width="90.666666666666671" height="18"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Poll Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9p-5T-76G">
+                                        <rect key="frame" x="0.0" y="38" width="382" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dKo-Wm-qmF">
-                                        <rect key="frame" x="0.0" y="64" width="382" height="100"/>
+                                        <rect key="frame" x="0.0" y="64" width="382" height="70"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="lZt-8b-G0V"/>
+                                            <constraint firstAttribute="height" constant="70" id="lZt-8b-G0V"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="UGB-NQ-Wya">
-                                        <rect key="frame" x="0.0" y="172" width="382" height="31"/>
+                                        <rect key="frame" x="0.0" y="142" width="382" height="21"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ask Anonymously" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBF-aQ-T7o">
-                                                <rect key="frame" x="0.0" y="0.0" width="325" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="325" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qlE-RH-KV8">
-                                                <rect key="frame" x="333" y="0.0" width="51" height="31"/>
+                                                <rect key="frame" x="333" y="0.0" width="51" height="21"/>
                                             </switch>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJM-HJ-g2B">
-                                        <rect key="frame" x="0.0" y="211" width="382" height="86"/>
-                                        <state key="normal" title="Add answer choice">
-                                            <color key="titleColor" red="0.92156862750000001" green="0.18823529410000001" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="addAnswerChoice:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="MbV-Fe-3jJ"/>
-                                        </connections>
-                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer Choices" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IR4-gh-Bo1">
+                                        <rect key="frame" x="0.0" y="171" width="382" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Abn-my-aHd" userLabel="ChoicesTable">
-                                        <rect key="frame" x="0.0" y="305" width="382" height="379"/>
+                                        <rect key="frame" x="0.0" y="197" width="382" height="487"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChoiceCellUnit" id="B0z-JF-lcp" customClass="CreatePollTableViewCell" customModule="pInspire" customModuleProvider="target">
@@ -643,7 +638,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="382" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter answer choice" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YgJ-7w-PVt">
+                                                        <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter answer choice" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YgJ-7w-PVt">
                                                             <rect key="frame" x="0.0" y="7" width="382" height="30"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -660,6 +655,26 @@
                                                     <outlet property="choiceContent" destination="YgJ-7w-PVt" id="b7t-E4-Bbw"/>
                                                 </connections>
                                             </tableViewCell>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddChoiceCellUnit" id="xas-Jm-uFK">
+                                                <rect key="frame" x="0.0" y="72" width="382" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xas-Jm-uFK" id="8xH-0e-bo7">
+                                                    <rect key="frame" x="0.0" y="0.0" width="382" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Lq-y3-s25">
+                                                            <rect key="frame" x="98" y="7" width="187" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <state key="normal" title="Add another answer choice">
+                                                                <color key="titleColor" red="0.91372549020000005" green="0.13725490200000001" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="addAnswerChoice:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="K0U-HA-omY"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
                                         </prototypes>
                                         <connections>
                                             <outlet property="dataSource" destination="8rJ-Kc-sve" id="Et5-nO-aX6"/>
@@ -670,13 +685,15 @@
                                 <constraints>
                                     <constraint firstItem="dKo-Wm-qmF" firstAttribute="leading" secondItem="SlQ-S4-BYH" secondAttribute="leading" id="0iz-ik-kkG"/>
                                     <constraint firstItem="I9y-g4-3P7" firstAttribute="leading" secondItem="SlQ-S4-BYH" secondAttribute="leading" id="9s0-6N-PjK"/>
-                                    <constraint firstItem="ZJM-HJ-g2B" firstAttribute="centerX" secondItem="SlQ-S4-BYH" secondAttribute="centerX" id="Cvt-Q2-YyC"/>
                                     <constraint firstAttribute="trailing" secondItem="I9y-g4-3P7" secondAttribute="trailing" id="EKN-hP-rKq"/>
                                     <constraint firstAttribute="trailing" secondItem="dKo-Wm-qmF" secondAttribute="trailing" id="J3P-Jn-tzn"/>
+                                    <constraint firstItem="l9p-5T-76G" firstAttribute="centerX" secondItem="SlQ-S4-BYH" secondAttribute="centerX" id="Pcn-V6-LOP"/>
                                     <constraint firstAttribute="trailing" secondItem="UGB-NQ-Wya" secondAttribute="trailing" id="TMP-9m-pSm"/>
+                                    <constraint firstItem="IR4-gh-Bo1" firstAttribute="centerX" secondItem="SlQ-S4-BYH" secondAttribute="centerX" id="kg0-Vv-yfu"/>
                                     <constraint firstItem="Abn-my-aHd" firstAttribute="leading" secondItem="SlQ-S4-BYH" secondAttribute="leading" id="la9-bp-8pe"/>
                                     <constraint firstItem="UGB-NQ-Wya" firstAttribute="leading" secondItem="SlQ-S4-BYH" secondAttribute="leading" id="sB3-LL-06f"/>
                                     <constraint firstAttribute="trailing" secondItem="Abn-my-aHd" secondAttribute="trailing" id="yHo-Tc-1nY"/>
+                                    <constraint firstItem="IR4-gh-Bo1" firstAttribute="top" secondItem="UGB-NQ-Wya" secondAttribute="bottom" constant="8" symbolic="YES" id="ziK-CF-Qf8"/>
                                 </constraints>
                             </stackView>
                         </subviews>

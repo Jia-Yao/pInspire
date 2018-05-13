@@ -48,7 +48,10 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
     //MARK: LoginButtonDelegate
     
     func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
-        loginButton.isHidden = true
+        if AccessToken.current != nil{
+            // User is already logged in
+            fetchProfile()
+        }
     }
     
     func loginButtonDidLogOut(_ loginButton: LoginButton) {
@@ -74,13 +77,13 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
                     let url = data["url"] as? String{
                     self.user.profilePhoto = url
                 }
-                // Add user to our database if necessary
+                // Add/update user if necessary
                 self.refUser.observeSingleEvent(of: .value, with: { (snapshot) in
-                    if (!snapshot.hasChild(AccessToken.current!.userId!)){
-                        self.writeNewUser()
-                    } else{
-                        print("pInspire: user already exists")
-                    }
+                    let key = self.refUser.child(AccessToken.current!.userId!)
+                    let newUser = ["FirstName": self.user.firstName,
+                                   "LastName": self.user.lastName,
+                                   "ProfilePhoto": self.user.profilePhoto] as [String : Any]
+                    key.setValue(newUser)
                 })
                 DispatchQueue.main.async() {
                     [unowned self] in
@@ -90,16 +93,6 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
                 print(error)
             }
         }
-    }
-    
-    private func writeNewUser() {
-        print("pInspire: writing new user")
-        // Create new user at /Users/$userId
-        let key = refUser.child(AccessToken.current!.userId!)
-        let newUser = ["FirstName": user.firstName,
-                       "LastName": user.lastName,
-                       "ProfilePhoto": user.profilePhoto] as [String : Any]
-        key.setValue(newUser)
     }
     
     // MARK: - Navigation

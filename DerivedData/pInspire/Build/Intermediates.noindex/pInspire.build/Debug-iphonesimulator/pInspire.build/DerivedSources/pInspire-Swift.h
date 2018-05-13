@@ -192,13 +192,14 @@ SWIFT_CLASS("_TtC8pInspire11AppDelegate")
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 @property (nonatomic, strong) UIWindow * _Nullable window;
 - (BOOL)application:(UIApplication * _Nonnull)application didFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> * _Nullable)launchOptions SWIFT_WARN_UNUSED_RESULT;
-- (BOOL)application:(UIApplication * _Nonnull)application openURL:(NSURL * _Nonnull)url sourceApplication:(NSString * _Nullable)sourceApplication annotation:(id _Nonnull)annotation SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)application:(UIApplication * _Nonnull)application openURL:(NSURL * _Nonnull)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> * _Nonnull)options SWIFT_WARN_UNUSED_RESULT;
 - (void)applicationWillResignActive:(UIApplication * _Nonnull)application;
 - (void)applicationDidEnterBackground:(UIApplication * _Nonnull)application;
 - (void)applicationWillEnterForeground:(UIApplication * _Nonnull)application;
 - (void)applicationDidBecomeActive:(UIApplication * _Nonnull)application;
 - (void)applicationWillTerminate:(UIApplication * _Nonnull)application;
+- (void)application:(UIApplication * _Nonnull)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData * _Nonnull)deviceToken;
+- (void)application:(UIApplication * _Nonnull)application didFailToRegisterForRemoteNotificationsWithError:(NSError * _Nonnull)error;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -235,25 +236,30 @@ SWIFT_CLASS("_TtC8pInspire27ContactsTableViewController")
 @class UITextField;
 
 SWIFT_CLASS("_TtC8pInspire23CreatePollTableViewCell")
-@interface CreatePollTableViewCell : UITableViewCell
+@interface CreatePollTableViewCell : UITableViewCell <UITextFieldDelegate>
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified choiceContent;
 - (void)awakeFromNib;
+- (BOOL)textFieldShouldEndEditing:(UITextField * _Nonnull)textField SWIFT_WARN_UNUSED_RESULT;
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated;
 - (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class NSLayoutConstraint;
 @class UIButton;
 @class UITextView;
 @class UISwitch;
+@class UITapGestureRecognizer;
 
 SWIFT_CLASS("_TtC8pInspire24CreatePollViewController")
 @interface CreatePollViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextViewDelegate>
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified bottomHeight;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified doneButton;
 @property (nonatomic, weak) IBOutlet UITextView * _Null_unspecified pollQuestion;
 @property (nonatomic, weak) IBOutlet UISwitch * _Null_unspecified anonymousSwitch;
 @property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified choicesTable;
 - (void)viewDidLoad;
+- (void)dismissKeyboard:(UITapGestureRecognizer * _Nonnull)sender;
 - (IBAction)addAnswerChoice:(UIButton * _Nonnull)sender;
 - (BOOL)textViewShouldEndEditing:(UITextView * _Nonnull)textView SWIFT_WARN_UNUSED_RESULT;
 - (void)textViewDidEndEditing:(UITextView * _Nonnull)textView;
@@ -318,6 +324,7 @@ SWIFT_CLASS("_TtC8pInspire28DiscussionRoomViewController")
 - (id <JSQMessageAvatarImageDataSource> _Null_unspecified)collectionView:(JSQMessagesCollectionView * _Null_unspecified)collectionView avatarImageDataForItemAtIndexPath:(NSIndexPath * _Null_unspecified)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (CGFloat)collectionView:(JSQMessagesCollectionView * _Null_unspecified)collectionView layout:(JSQMessagesCollectionViewFlowLayout * _Null_unspecified)collectionViewLayout heightForMessageBubbleTopLabelAtIndexPath:(NSIndexPath * _Null_unspecified)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (NSAttributedString * _Nullable)collectionView:(JSQMessagesCollectionView * _Nullable)collectionView attributedTextForMessageBubbleTopLabelAtIndexPath:(NSIndexPath * _Null_unspecified)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (void)didPressAccessoryButton:(UIButton * _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -364,15 +371,12 @@ SWIFT_CLASS("_TtC8pInspire9StatsView")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UITapGestureRecognizer;
 
 SWIFT_CLASS("_TtC8pInspire19StatsViewController")
 @interface StatsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified questionLabelView;
-@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified initiateDiscussionButton;
 @property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified nameTableView;
 @property (nonatomic, copy) IBOutletCollection(StatsView) NSArray<StatsView *> * _Null_unspecified choicesView;
-- (IBAction)initiateDiscussion:(UIButton * _Nonnull)sender;
 - (void)viewDidLoad;
 - (void)tapBar:(UITapGestureRecognizer * _Nonnull)sender;
 - (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView SWIFT_WARN_UNUSED_RESULT;
@@ -383,6 +387,10 @@ SWIFT_CLASS("_TtC8pInspire19StatsViewController")
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
+
+
 
 
 
@@ -410,6 +418,7 @@ SWIFT_CLASS("_TtC8pInspire21pInspireTableViewCell")
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified articlesButtonView;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified initiatorLabelView;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified questionLabelView;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified discussButtonView;
 @property (nonatomic, copy) IBOutletCollection(UIButton) NSArray<UIButton *> * _Null_unspecified choiceButtonView;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified questionLableView;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified reportButtonView;
@@ -417,6 +426,7 @@ SWIFT_CLASS("_TtC8pInspire21pInspireTableViewCell")
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified voteLabelView;
 - (IBAction)tapChoice:(UIButton * _Nonnull)sender;
 - (IBAction)tapStats:(UIButton * _Nonnull)sender;
+- (IBAction)tapDiscuss:(UIButton * _Nonnull)sender;
 - (IBAction)tapReport:(UIButton * _Nonnull)sender;
 - (IBAction)tapReadMore:(UIButton * _Nonnull)sender;
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated;

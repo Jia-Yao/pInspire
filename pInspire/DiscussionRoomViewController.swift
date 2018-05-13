@@ -134,5 +134,9 @@ class DiscussionRoomViewController: JSQMessagesViewController {
             messages.append(message)
         }
     }
+    
+    override func didPressAccessoryButton(_ sender: UIButton) {
+        // 
+    }
 
 }

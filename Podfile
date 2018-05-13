@@ -12,4 +12,5 @@ target 'pInspire' do
   pod 'FacebookCore'
   pod 'FacebookLogin'
   pod 'JSQMessagesViewController'
+  pod 'IQKeyboardManagerSwift'
 end

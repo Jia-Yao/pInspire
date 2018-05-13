@@ -14,11 +14,17 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
 
     //MARK: Properties
     
-    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var bottomHeight: NSLayoutConstraint!
+    @IBOutlet weak var doneButton: UIButton! {
+        didSet{
+            doneButton.tintColor = #colorLiteral(red: 0.9137254902, green: 0.137254902, blue: 0.2196078431, alpha: 1)
+        }
+    }
     @IBOutlet weak var pollQuestion: UITextView!
     @IBOutlet weak var anonymousSwitch: UISwitch! {
         didSet {
             anonymousSwitch.onTintColor = #colorLiteral(red: 0.9568627451, green: 0.4078431373, blue: 0.2235294118, alpha: 1)
+            anonymousSwitch.isOn = false
         }
     }
     @IBOutlet weak var choicesTable: UITableView!
@@ -42,13 +48,26 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
         choices.append(Choice())
         choices.append(Choice())
         refPoll = Database.database().reference().child("Polls")
-        // refUser = Database.database().reference().child("Users")
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
+        self.view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
+        for view in self.view.subviewsRecursive() {
+            if view.isFirstResponder {
+                view.endEditing(true)
+                updateDoneButtonState()
+            }
+        }
     }
     
     @IBAction func addAnswerChoice(_ sender: UIButton) {
         let newIndexPath = IndexPath(row: choices.count, section: 0)
         choices.append(Choice())
         choicesTable.insertRows(at: [newIndexPath], with: .automatic)
+        if choices.count == 4 {
+            
+        }
     }
     
     //MARK: UITextViewDelegate
@@ -83,21 +102,32 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return choices.count
+        return choices.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cellIdentifier = "ChoiceCellUnit"
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? CreatePollTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of CreatePollTableViewCell.")
+        if indexPath.row == choices.count {
+            let cellIdentifier = "AddChoiceCellUnit"
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? UITableViewCell  else {
+                fatalError("The dequeued cell is not an instance of UITableViewCell.")
+            }
+            return cell
+        } else {
+            let cellIdentifier = "ChoiceCellUnit"
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? CreatePollTableViewCell  else {
+                fatalError("The dequeued cell is not an instance of CreatePollTableViewCell.")
+            }
+            let choice = choices[indexPath.row]
+            cell.choiceContent.text = choice.content
+            return cell
         }
-        let choice = choices[indexPath.row]
-        cell.choiceContent.text = choice.content
-        return cell
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if indexPath.row == choices.count {
+            return false
+        }
         return true
     }
     
@@ -105,6 +135,7 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
         if editingStyle == .delete{
             choices.remove(at: indexPath.row)
             choicesTable.deleteRows(at: [indexPath], with: .fade)
+            updateDoneButtonState()
         }
     }
     
@@ -117,7 +148,7 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
     @IBAction func done(_ sender: UIButton) {
         if let question = pollQuestion.text {
             let isAnonymous = anonymousSwitch.isOn
-            for row in 0..<choicesTable.numberOfRows(inSection: 0) {
+            for row in 0..<choices.count {
                 let indexPath = IndexPath(row: row, section: 0)
                 guard let cell = choicesTable.cellForRow(at: indexPath) as? CreatePollTableViewCell else {
                     fatalError("The referenced cell is not an instance of CreatePollTableViewCell.")
@@ -125,12 +156,11 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
                 choices[row].content = cell.choiceContent.text ?? ""
             }
             
-//            print(question + " " + String(isAnonymous))
-//            for row in 0..<choices.count{
-//                print (String(row) + " " + choices[row].content)
-//            }
+            print(question + " " + String(isAnonymous))
+            for row in 0..<choices.count{
+                print (String(row) + " " + choices[row].content)
+            }
             
-            // TODO: Save to Firebase
             writeNewPoll(question: question, choices: choices, user: userName!, isAnonymous: isAnonymous)
         }
         dismiss(animated: true, completion: nil)
@@ -138,16 +168,28 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
     
     //MARK: Private Methods
     
-    private func updateDoneButtonState() {
+    func updateDoneButtonState() {
         let text = pollQuestion.text ?? ""
-        doneButton.isEnabled = !text.isEmpty && choices.count > 1
+        var nonEmptyChoices = 0
+        for row in 0..<choices.count {
+            let indexPath = IndexPath(row: row, section: 0)
+            guard let cell = choicesTable.cellForRow(at: indexPath) as? CreatePollTableViewCell else {
+                fatalError("The referenced cell is not an instance of CreatePollTableViewCell.")
+            }
+            if cell.choiceContent.text != "" {
+                nonEmptyChoices += 1
+            }
+        }
+        doneButton.isEnabled = !text.isEmpty && nonEmptyChoices > 1
     }
     
     func writeNewPoll(question: String, choices: [Choice], user: String, isAnonymous: Bool) {
         // Create new post at /Polls/$key
         var choicesDict = [String: Dictionary<String, Bool>]()
         for choice in choices {
-            choicesDict[choice.content] = ["dummy": false]
+            if choice.content != ""{
+                choicesDict[choice.content] = ["dummy": false]
+            }
         }
         let key = refPoll.child("Polls").childByAutoId().key
         let newPoll = ["Question": question,
@@ -173,4 +215,12 @@ struct PostDictAdvanced {
         self.categories = categories
     }
 }*/
+
+extension UIView {
+    
+    func subviewsRecursive() -> [UIView] {
+        return subviews + subviews.flatMap { $0.subviewsRecursive() }
+    }
+    
+}
 

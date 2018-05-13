@@ -411,6 +411,33 @@
     },
     {
       'type': 'directory',
+      'name': "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "IQKeyboardManagerSwift-Swift.h",
+          'external-contents': "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework/Headers/IQKeyboardManagerSwift-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "IQKeyboardManagerSwift-umbrella.h",
+          'external-contents': "/Users/jiayao/Desktop/github/pInspire/Pods/Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift-umbrella.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/IQKeyboardManagerSwift.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
       'name': "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers",
       'contents': [
         {
