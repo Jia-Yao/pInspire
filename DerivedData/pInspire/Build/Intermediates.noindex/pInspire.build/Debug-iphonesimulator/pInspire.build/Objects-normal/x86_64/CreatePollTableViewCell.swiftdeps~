@@ -11,7 +11,6 @@ provides-dynamic-lookup:
 - "awakeFromNib"
 - "choiceContent"
 - "setSelected"
-- "textFieldShouldBeginEditing"
 - "textFieldShouldEndEditing"
 depends-top-level:
 - "AssignmentPrecedence"
@@ -719,4 +718,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/MapKit.framework/Headers/MapKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
-interface-hash: "dd5a3145802168ebc7903ee466ab13cb"
+interface-hash: "f118e0b3759f67c4f1368539d46ab607"

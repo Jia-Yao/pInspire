@@ -156,10 +156,10 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
                 choices[row].content = cell.choiceContent.text ?? ""
             }
             
-            print(question + " " + String(isAnonymous))
-            for row in 0..<choices.count{
-                print (String(row) + " " + choices[row].content)
-            }
+//            print(question + " " + String(isAnonymous))
+//            for row in 0..<choices.count{
+//                print (String(row) + " " + choices[row].content)
+//            }
             
             writeNewPoll(question: question, choices: choices, user: userName!, isAnonymous: isAnonymous)
         }
@@ -191,14 +191,56 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
                 choicesDict[choice.content] = ["dummy": false]
             }
         }
+        
         let key = refPoll.child("Polls").childByAutoId().key
         let newPoll = ["Question": question,
                        "Choices": choicesDict,
-                    "Anonymity": isAnonymous,
-                    "Initiator": user] as [String : Any]
+                       "Anonymity": isAnonymous,
+                       "Initiator": user] as [String : Any]
         let childUpdates = ["/Polls/\(key)": newPoll]
         refPoll.updateChildValues(childUpdates)
+        
+        // Fetch articles
+        var articlesDict = [String: Any]()
+        let q = question.components(separatedBy: .punctuationCharacters).joined().components(separatedBy: .whitespaces).joined(separator: "%20")
+        let count = 3
+        let endpoint = "http://contextualwebsearch.com/api/Search/NewsSearchAPI?q=\(q)&count=\(count)&autoCorrect=true"
+        let url = URL(string: endpoint)
+        var request = URLRequest(url: url!)
+        request.httpMethod = "GET"
+        let session = URLSession.shared
+        session.dataTask(with: request) {data, response, err in
 
+            if (err != nil) {
+                print(err!)
+            } else {
+                do {
+                    if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary{
+                        if let results = json["value"] as? [NSDictionary]{
+                            var i = 1
+                            for result in results{
+                                var source = "Source"+String(i)
+                                if let provider = result["provider"] as? NSDictionary, let name = provider["name"] as? String{
+                                    source = name.capitalized
+                                }
+                                var url = "https://google.com"
+                                if let link = result["url"] as? String{
+                                    url = link
+                                }
+                                articlesDict[source] = url
+                                i+=1
+                            }
+                            let updaterefpoll = self.refPoll.child("Polls").child(key).child("URL")
+                            updaterefpoll.updateChildValues(articlesDict)
+                        }
+                    }
+                } catch let error as NSError {
+                    print(error.debugDescription)
+                }
+            }
+
+        }.resume()
+        
     }
 }
 /*

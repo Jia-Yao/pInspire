@@ -338,7 +338,10 @@
                                 <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jcJ-lv-YEj">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="37"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="j6O-oo-vkI"/>
+                                        </constraints>
                                         <segments>
                                             <segment title=""/>
                                             <segment title=""/>
@@ -349,7 +352,7 @@
                                         </connections>
                                     </segmentedControl>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8jA-Jx-ODb">
-                                        <rect key="frame" x="0.0" y="36" width="414" height="587"/>
+                                        <rect key="frame" x="0.0" y="40" width="414" height="583"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>

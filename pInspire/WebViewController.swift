@@ -16,7 +16,13 @@ class WebViewController: UIViewController, WKNavigationDelegate{
     
     @IBOutlet weak var webViewContainer: UIView!
     var actualWebView: WKWebView?
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!{
+        didSet{
+            segmentedControl.tintColor = #colorLiteral(red: 0.9568627451, green: 0.4078431373, blue: 0.2235294118, alpha: 1)
+            segmentedControl.layer.borderColor = #colorLiteral(red: 0.9568627451, green: 0.4078431373, blue: 0.2235294118, alpha: 1)
+            segmentedControl.layer.borderWidth = 2
+        }
+    }
     
     var sources = [String]()
     var urls = [String]()

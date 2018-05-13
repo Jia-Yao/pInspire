@@ -108,23 +108,23 @@
 				18078585209EB71D00317AF3 /* ContactsTableViewController.swift */,
 				1803782020953D14009F214E /* CreatePollTableViewCell.swift */,
 				1803780A20951710009F214E /* CreatePollViewController.swift */,
+				189A74DA20A17B6E00E502B0 /* DiscussionGroupTableViewCell.swift */,
+				189A74D820A17AE400E502B0 /* DiscussionGroupTableViewController.swift */,
+				189A74DE20A184C500E502B0 /* DiscussionRoomViewController.swift */,
+				BADB462320A2A1C70082AC1A /* Extensions.swift */,
 				BAA407702095641500453A34 /* GoogleService-Info.plist */,
+				189A74DC20A17FAB00E502B0 /* GroupInfo.swift */,
 				1803781420951712009F214E /* Info.plist */,
 				1803781120951712009F214E /* LaunchScreen.storyboard */,
 				1807857F209E64F200317AF3 /* LoginViewController.swift */,
 				1803780C20951710009F214E /* Main.storyboard */,
-				189A74DE20A184C500E502B0 /* DiscussionRoomViewController.swift */,
-				189A74DA20A17B6E00E502B0 /* DiscussionGroupTableViewCell.swift */,
-				189A74D820A17AE400E502B0 /* DiscussionGroupTableViewController.swift */,
-				189A74DC20A17FAB00E502B0 /* GroupInfo.swift */,
 				BA5987BB20961657009B79DF /* pInspireTableViewCell.swift */,
 				1803781A20952DE5009F214E /* pInspireViewController.swift */,
-				BADB462120A288890082AC1A /* StatsView.swift */,
-				BADB462320A2A1C70082AC1A /* Extensions.swift */,
-				BADB462520A2AFE80082AC1A /* StatsViewController.swift */,
 				1803782E20954A25009F214E /* Poll.swift */,
 				18078581209E72D300317AF3 /* ProfileViewController.swift */,
 				BAB4949A209AE4A20077B3EB /* roundedButtonView.swift */,
+				BADB462120A288890082AC1A /* StatsView.swift */,
+				BADB462520A2AFE80082AC1A /* StatsViewController.swift */,
 				1803782D20954A25009F214E /* User.swift */,
 				BA47C888209BB0880073242E /* WebViewController.swift */,
 			);
@@ -454,7 +454,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9D6F487TRN;
 				INFOPLIST_FILE = pInspire/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = parachute.pInspire;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -470,7 +473,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9D6F487TRN;
 				INFOPLIST_FILE = pInspire/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = parachute.pInspire;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

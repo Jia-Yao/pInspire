@@ -417,6 +417,7 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "voteAnonymouslySwitch"]
 - !private ["So35UISpringLoadedInteractionSupportingP", "layer"]
 - !private ["So8UISwitchC", "isOn"]
+- !private ["So8UISwitchC", "layer"]
 - !private ["So8UISwitchC", "onTintColor"]
 - ["So15UITableViewCellC", "Bool"]
 - ["So15UITableViewCellC", "UIButton"]
