@@ -10,6 +10,7 @@ provides-dynamic-lookup:
 - "viewDidAppear"
 - "viewDidLoad"
 depends-top-level:
+- !private "!"
 - !private "!="
 - !private "+"
 - !private "??"
@@ -73,6 +74,7 @@ depends-member:
 - !private ["s7CVarArgP", "destination"]
 - !private ["s7CVarArgP", "fatalError"]
 - !private ["s7CVarArgP", "fetchProfile"]
+- !private ["s7CVarArgP", "hasChild"]
 - !private ["s7CVarArgP", "identifier"]
 - ["s7CVarArgP", "init"]
 - !private ["s7CVarArgP", "isHidden"]
@@ -99,6 +101,7 @@ depends-member:
 - !private ["s10CollectionP", "subscript"]
 - ["s10ComparableP", "init"]
 - !private ["8pInspire27ContactsTableViewControllerC", "me"]
+- !private ["8pInspire27ContactsTableViewControllerC", "refUser"]
 - !private ["s28CustomDebugStringConvertibleP", "AccessToken"]
 - !private ["s28CustomDebugStringConvertibleP", "Database"]
 - !private ["s28CustomDebugStringConvertibleP", "DispatchQueue"]
@@ -115,6 +118,7 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "destination"]
 - !private ["s28CustomDebugStringConvertibleP", "fatalError"]
 - !private ["s28CustomDebugStringConvertibleP", "fetchProfile"]
+- !private ["s28CustomDebugStringConvertibleP", "hasChild"]
 - !private ["s28CustomDebugStringConvertibleP", "identifier"]
 - ["s28CustomDebugStringConvertibleP", "init"]
 - !private ["s28CustomDebugStringConvertibleP", "isHidden"]
@@ -159,6 +163,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "destination"]
 - !private ["s23CustomStringConvertibleP", "fatalError"]
 - !private ["s23CustomStringConvertibleP", "fetchProfile"]
+- !private ["s23CustomStringConvertibleP", "hasChild"]
 - !private ["s23CustomStringConvertibleP", "identifier"]
 - ["s23CustomStringConvertibleP", "init"]
 - !private ["s23CustomStringConvertibleP", "isHidden"]
@@ -182,6 +187,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "viewDidAppear"]
 - !private ["s23CustomStringConvertibleP", "viewDidLoad"]
 - !private ["SC13DataEventTypeO", "value"]
+- !private ["So12DataSnapshotC", "hasChild"]
 - !private ["So8DatabaseC", "database"]
 - !private ["So8DatabaseC", "reference"]
 - !private ["So13DatabaseQueryC", "child"]
@@ -219,6 +225,7 @@ depends-member:
 - !private ["s9EquatableP", "destination"]
 - !private ["s9EquatableP", "fatalError"]
 - !private ["s9EquatableP", "fetchProfile"]
+- !private ["s9EquatableP", "hasChild"]
 - !private ["s9EquatableP", "identifier"]
 - ["s9EquatableP", "init"]
 - !private ["s9EquatableP", "isHidden"]
@@ -273,6 +280,7 @@ depends-member:
 - !private ["s8HashableP", "destination"]
 - !private ["s8HashableP", "fatalError"]
 - !private ["s8HashableP", "fetchProfile"]
+- !private ["s8HashableP", "hasChild"]
 - !private ["s8HashableP", "identifier"]
 - ["s8HashableP", "init"]
 - !private ["s8HashableP", "isHidden"]
@@ -435,6 +443,7 @@ depends-member:
 - !private ["So8NSObjectC", "destination"]
 - !private ["So8NSObjectC", "fatalError"]
 - ["So8NSObjectC", "fetchProfile"]
+- !private ["So8NSObjectC", "hasChild"]
 - !private ["So8NSObjectC", "identifier"]
 - ["So8NSObjectC", "init"]
 - !private ["So8NSObjectC", "isHidden"]
@@ -475,6 +484,7 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "destination"]
 - !private ["So16NSObjectProtocolP", "fatalError"]
 - !private ["So16NSObjectProtocolP", "fetchProfile"]
+- !private ["So16NSObjectProtocolP", "hasChild"]
 - !private ["So16NSObjectProtocolP", "identifier"]
 - ["So16NSObjectProtocolP", "init"]
 - !private ["So16NSObjectProtocolP", "isHidden"]
@@ -717,6 +727,7 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "viewDidAppear"]
 - !private ["So30UIResponderStandardEditActionsP", "viewDidLoad"]
 - !private ["So20UIScrollViewDelegateP", "me"]
+- !private ["So20UIScrollViewDelegateP", "refUser"]
 - !private ["So20UIScrollViewDelegateP", "user"]
 - !private ["So20UIScrollViewDelegateP", "userName"]
 - !private ["So16UIStateRestoringP", "AccessToken"]
@@ -748,12 +759,15 @@ depends-member:
 - !private ["So18UITabBarControllerC", "viewControllers"]
 - !private ["So16UITabBarDelegateP", "viewControllers"]
 - !private ["So21UITableViewControllerC", "me"]
+- !private ["So21UITableViewControllerC", "refUser"]
 - !private ["So21UITableViewControllerC", "user"]
 - !private ["So21UITableViewControllerC", "userName"]
 - !private ["So21UITableViewDataSourceP", "me"]
+- !private ["So21UITableViewDataSourceP", "refUser"]
 - !private ["So21UITableViewDataSourceP", "user"]
 - !private ["So21UITableViewDataSourceP", "userName"]
 - !private ["So19UITableViewDelegateP", "me"]
+- !private ["So19UITableViewDelegateP", "refUser"]
 - !private ["So19UITableViewDelegateP", "user"]
 - !private ["So19UITableViewDelegateP", "userName"]
 - !private ["So18UITraitEnvironmentP", "AccessToken"]
@@ -858,6 +872,7 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "destination"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "fatalError"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "fetchProfile"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "hasChild"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "identifier"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "init"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "isHidden"]
@@ -904,6 +919,7 @@ depends-nominal:
 - "s17CustomReflectableP"
 - "s23CustomStringConvertibleP"
 - !private "SC13DataEventTypeO"
+- !private "So12DataSnapshotC"
 - !private "So8DatabaseC"
 - !private "So13DatabaseQueryC"
 - !private "So17DatabaseReferenceC"

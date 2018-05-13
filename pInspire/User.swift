@@ -16,6 +16,7 @@ class User {
     var userName: String {
         return firstName + " " + lastName
     }
+    
     init(userId:String, firstName:String, lastName:String, profilePhoto:String){
         self.userId = userId
         self.firstName = firstName

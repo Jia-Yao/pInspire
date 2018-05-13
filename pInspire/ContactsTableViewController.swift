@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FacebookCore
 import Firebase
 
 class ContactsTableViewController: UITableViewController {
@@ -24,7 +23,6 @@ class ContactsTableViewController: UITableViewController {
         super.viewDidLoad()
         contactsTable.delegate = self
         contactsTable.dataSource = self
-        refUser = Database.database().reference().child("Users")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -33,35 +31,33 @@ class ContactsTableViewController: UITableViewController {
     }
     
     func fetchFriends(){
-        // Check which Facebook friends are using the app (NOT WORKING YET!)
-        let parameters = ["fields": "id, first_name, last_name, picture.type(large)"]
-        let req = GraphRequest(graphPath: "/me/friends", parameters: parameters)
-        req.start{ (response, result) in
-            switch result {
-            case .success(let value):
-                print("==================pInspire friends=================")
-                print(value.dictionaryValue)
-            case .failed(let error):
-                print(error)
-            }
-        }
         
-        // Get all users from database
-        refUser.observeSingleEvent(of: .value, with: { snapshot in
-            self.users.removeAll()
-            for user in snapshot.children.allObjects as! [DataSnapshot] {
-                let uId = user.key
-                if uId != self.me?.userId{
-                    let uInfo = user.value as? [String: AnyObject]
-                    let firstName = uInfo!["FirstName"]
-                    let lastName = uInfo!["LastName"]
-                    let profilePhoto = uInfo!["ProfilePhoto"]
-                    let aUser = User(userId: uId, firstName: firstName as! String, lastName: lastName as! String, profilePhoto: profilePhoto as! String)
-                    self.users.append(aUser)
+        // Get friends ids from database
+        refUser.child(me!.userId).child("Friends").observeSingleEvent(of: .value, with: { (snapshot) in
+            var friend_ids = [String]()
+            if (snapshot.exists()){
+                for user in snapshot.children.allObjects as! [DataSnapshot] {
+                    friend_ids.append(user.key)
                 }
             }
-            self.contactsTable.reloadData()
+            // Get friends info from database
+            self.refUser.observeSingleEvent(of: .value, with: { snapshot in
+                self.users.removeAll()
+                for user in snapshot.children.allObjects as! [DataSnapshot] {
+                    let uId = user.key
+                    if friend_ids.contains(uId) {
+                        let uInfo = user.value as? [String: AnyObject]
+                        let firstName = uInfo!["FirstName"]
+                        let lastName = uInfo!["LastName"]
+                        let profilePhoto = uInfo!["ProfilePhoto"]
+                        let aUser = User(userId: uId, firstName: firstName as! String, lastName: lastName as! String, profilePhoto: profilePhoto as! String)
+                        self.users.append(aUser)
+                    }
+                }
+                self.contactsTable.reloadData()
+            })
         })
+        
     }
 
     // MARK: - Table view data source
@@ -71,25 +67,31 @@ class ContactsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count
+        return users.count+1
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "ContactCellUnit"
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ContactsTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of ContactsTableViewCell.")
-        }
-        let user = users[indexPath.row]
-        cell.Name.text = user.firstName + " " + user.lastName
-        DispatchQueue.global(qos:.userInitiated).async {
-            let profilePhotoData = try? Data(contentsOf: URL(string: user.profilePhoto)!)
-            DispatchQueue.main.async {
-                if profilePhotoData != nil{
-                    cell.ProfilePhoto.image = UIImage(data: profilePhotoData!)
+        if indexPath.row == 0{
+            let cellIdentifier = "MessageCellUnit"
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+            return cell
+        } else{
+            let cellIdentifier = "ContactCellUnit"
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ContactsTableViewCell  else {
+                fatalError("The dequeued cell is not an instance of ContactsTableViewCell.")
+            }
+            let user = users[indexPath.row-1]
+            cell.Name.text = user.firstName + " " + user.lastName
+            DispatchQueue.global(qos:.userInitiated).async {
+                let profilePhotoData = try? Data(contentsOf: URL(string: user.profilePhoto)!)
+                DispatchQueue.main.async {
+                    if profilePhotoData != nil{
+                        cell.ProfilePhoto.image = UIImage(data: profilePhotoData!)
+                    }
                 }
             }
+            return cell
         }
-        return cell
     }
 
     /*
@@ -127,14 +129,18 @@ class ContactsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        switch(segue.identifier ?? "") {
+        case "AddContacts":
+            if let addContactsController = segue.destination as? AddContactsTableViewController{
+                addContactsController.me = me
+                addContactsController.refUser = refUser
+            }
+        default:
+            fatalError("Unexpected Segue Identifier; \(segue.identifier ?? "")")
+        }
     }
-    */
 
 }

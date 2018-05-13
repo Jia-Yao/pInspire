@@ -79,11 +79,16 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
                 }
                 // Add/update user if necessary
                 self.refUser.observeSingleEvent(of: .value, with: { (snapshot) in
-                    let key = self.refUser.child(AccessToken.current!.userId!)
-                    let newUser = ["FirstName": self.user.firstName,
-                                   "LastName": self.user.lastName,
-                                   "ProfilePhoto": self.user.profilePhoto] as [String : Any]
-                    key.setValue(newUser)
+                    if (!snapshot.hasChild(AccessToken.current!.userId!)){
+                        let key = self.refUser.child(AccessToken.current!.userId!)
+                        let newUser = ["FirstName": self.user.firstName,
+                                       "LastName": self.user.lastName,
+                                       "ProfilePhoto": self.user.profilePhoto] as [String : Any]
+                        key.setValue(newUser)
+                    } else{
+                        let key = self.refUser.child(AccessToken.current!.userId!).child("ProfilePhoto")
+                        key.setValue(self.user.profilePhoto)
+                    }
                 })
                 DispatchQueue.main.async() {
                     [unowned self] in
@@ -109,6 +114,7 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
                 if let navigationController = tabBarController.viewControllers![1] as? UINavigationController,
                     let contactsController = navigationController.topViewController as? ContactsTableViewController{
                     contactsController.me = user
+                    contactsController.refUser = refUser
                 }
                 if let navigationController = tabBarController.viewControllers![3] as? UINavigationController,
                     let discussionsController = navigationController.topViewController as? DiscussionGroupTableViewController{

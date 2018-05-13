@@ -15,6 +15,7 @@ depends-top-level:
 - "User"
 depends-member:
 - ["12FacebookCore26AppEventParameterValueTypeP", "init"]
+- ["Sa", "init"]
 - ["s23BidirectionalCollectionP", "init"]
 - ["s7CVarArgP", "init"]
 - ["s10CollectionP", "init"]
@@ -26,12 +27,15 @@ depends-member:
 - ["s9DecodableP", "init"]
 - ["s9EncodableP", "init"]
 - ["s9EquatableP", "init"]
+- ["s25ExpressibleByArrayLiteralP", "init"]
 - ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
 - ["s26ExpressibleByStringLiteralP", "init"]
 - ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
 - ["s8HashableP", "init"]
 - ["s25LosslessStringConvertibleP", "init"]
 - ["s10MirrorPathP", "init"]
+- ["s17MutableCollectionP", "init"]
+- ["s22RandomAccessCollectionP", "init"]
 - ["s26RangeReplaceableCollectionP", "init"]
 - ["s8SequenceP", "init"]
 - ["SS", "init"]
@@ -41,11 +45,14 @@ depends-member:
 - ["8pInspire4UserC", "String"]
 - ["8pInspire4UserC", "deinit"]
 - ["8pInspire4UserC", "firstName"]
+- ["8pInspire4UserC", "friends"]
 - ["8pInspire4UserC", "init"]
 - ["8pInspire4UserC", "lastName"]
 - ["8pInspire4UserC", "profilePhoto"]
 - ["8pInspire4UserC", "userId"]
 - ["8pInspire4UserC", "userName"]
+- ["s14_ArrayProtocolP", "init"]
+- ["s24_DestructorSafeContainerP", "init"]
 - ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
 - ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
 - ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
@@ -55,6 +62,7 @@ depends-member:
 - ["s16_SwiftStringViewP", "init"]
 depends-nominal:
 - "12FacebookCore26AppEventParameterValueTypeP"
+- "Sa"
 - "s23BidirectionalCollectionP"
 - "s7CVarArgP"
 - "s10CollectionP"
@@ -66,12 +74,15 @@ depends-nominal:
 - "s9DecodableP"
 - "s9EncodableP"
 - "s9EquatableP"
+- "s25ExpressibleByArrayLiteralP"
 - "s43ExpressibleByExtendedGraphemeClusterLiteralP"
 - "s26ExpressibleByStringLiteralP"
 - "s33ExpressibleByUnicodeScalarLiteralP"
 - "s8HashableP"
 - "s25LosslessStringConvertibleP"
 - "s10MirrorPathP"
+- "s17MutableCollectionP"
+- "s22RandomAccessCollectionP"
 - "s26RangeReplaceableCollectionP"
 - "s8SequenceP"
 - "SS"
@@ -79,6 +90,8 @@ depends-nominal:
 - "s16TextOutputStreamP"
 - "s20TextOutputStreamableP"
 - "8pInspire4UserC"
+- "s14_ArrayProtocolP"
+- "s24_DestructorSafeContainerP"
 - "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
 - "s34_ExpressibleByBuiltinStringLiteralP"
 - "s39_ExpressibleByBuiltinUTF16StringLiteralP"
@@ -92,6 +105,7 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/os.apinotesc"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FacebookCore/FacebookCore.framework/Modules/FacebookCore.swiftmodule/x86_64.swiftmodule"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FacebookLogin/FacebookLogin.framework/Modules/FacebookLogin.swiftmodule/x86_64.swiftmodule"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework/Modules/IQKeyboardManagerSwift.swiftmodule/x86_64.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreMedia.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/simd.swiftmodule"
@@ -119,6 +133,7 @@ depends-external:
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessagesViewController-umbrella.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework/Headers/JSQSystemSoundPlayer-umbrella.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/Bolts-umbrella.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework/Headers/IQKeyboardManagerSwift-umbrella.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKCoreKit-umbrella.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKLoginKit-umbrella.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework/Headers/JSQMessageMediaData.h"
@@ -214,6 +229,7 @@ depends-external:
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFAppLinkTarget.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FacebookCore/FacebookCore.framework/Headers/FacebookCore-Swift.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FacebookLogin/FacebookLogin.framework/Headers/FacebookLogin-Swift.h"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework/Headers/IQKeyboardManagerSwift-Swift.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKCoreKit.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKLoginKit.h"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKLoginManagerLoginResult.h"
@@ -254,6 +270,7 @@ depends-external:
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework/Modules/module.modulemap"
 - "/Users/jiayao/Desktop/github/pInspire/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Modules/module.modulemap"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework/Modules/module.modulemap"
+- "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework/Modules/module.modulemap"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Modules/module.modulemap"
 - "/Users/jiayao/Desktop/github/pInspire/DerivedData/pInspire/Build/Products/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Modules/module.modulemap"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/usr/include/objc/ObjectiveC.apinotes"
@@ -272,4 +289,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/MapKit.framework/Headers/MapKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
-interface-hash: "a450e809d6a44a148b2a7f567682871c"
+interface-hash: "509083588d8d0306393e81603b59cf71"

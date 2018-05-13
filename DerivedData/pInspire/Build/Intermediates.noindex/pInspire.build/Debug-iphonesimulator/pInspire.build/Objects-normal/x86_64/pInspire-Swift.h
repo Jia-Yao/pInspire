@@ -185,6 +185,39 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
+@class UIImageView;
+@class UILabel;
+@class UIButton;
+@class NSCoder;
+
+SWIFT_CLASS("_TtC8pInspire24AddContactsTableViewCell")
+@interface AddContactsTableViewCell : UITableViewCell
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified ProfilePhoto;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified Name;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified Label;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified AddButton;
+- (IBAction)AddContact:(UIButton * _Nonnull)sender;
+- (void)awakeFromNib;
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated;
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UITableView;
+@class NSBundle;
+
+SWIFT_CLASS("_TtC8pInspire30AddContactsTableViewController")
+@interface AddContactsTableViewController : UITableViewController
+@property (nonatomic, strong) IBOutlet UITableView * _Null_unspecified usersTable;
+- (void)viewDidLoad;
+- (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)initWithStyle:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class UIWindow;
 @class UIApplication;
 
@@ -203,9 +236,6 @@ SWIFT_CLASS("_TtC8pInspire11AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UILabel;
-@class UIImageView;
-@class NSCoder;
 
 SWIFT_CLASS("_TtC8pInspire21ContactsTableViewCell")
 @interface ContactsTableViewCell : UITableViewCell
@@ -217,8 +247,7 @@ SWIFT_CLASS("_TtC8pInspire21ContactsTableViewCell")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UITableView;
-@class NSBundle;
+@class UIStoryboardSegue;
 
 SWIFT_CLASS("_TtC8pInspire27ContactsTableViewController")
 @interface ContactsTableViewController : UITableViewController
@@ -228,6 +257,7 @@ SWIFT_CLASS("_TtC8pInspire27ContactsTableViewController")
 - (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView SWIFT_WARN_UNUSED_RESULT;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
 - (nonnull instancetype)initWithStyle:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
@@ -246,7 +276,6 @@ SWIFT_CLASS("_TtC8pInspire23CreatePollTableViewCell")
 @end
 
 @class NSLayoutConstraint;
-@class UIButton;
 @class UITextView;
 @class UISwitch;
 @class UITapGestureRecognizer;
@@ -287,7 +316,6 @@ SWIFT_CLASS("_TtC8pInspire28DiscussionGroupTableViewCell")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UIStoryboardSegue;
 
 SWIFT_CLASS("_TtC8pInspire34DiscussionGroupTableViewController")
 @interface DiscussionGroupTableViewController : UITableViewController

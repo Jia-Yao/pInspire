@@ -109,9 +109,7 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
         
         if indexPath.row == choices.count {
             let cellIdentifier = "AddChoiceCellUnit"
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? UITableViewCell  else {
-                fatalError("The dequeued cell is not an instance of UITableViewCell.")
-            }
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
             return cell
         } else {
             let cellIdentifier = "ChoiceCellUnit"

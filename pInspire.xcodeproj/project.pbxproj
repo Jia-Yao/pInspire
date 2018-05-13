@@ -25,6 +25,8 @@
 		189A74DB20A17B6E00E502B0 /* DiscussionGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189A74DA20A17B6E00E502B0 /* DiscussionGroupTableViewCell.swift */; };
 		189A74DD20A17FAB00E502B0 /* GroupInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189A74DC20A17FAB00E502B0 /* GroupInfo.swift */; };
 		189A74DF20A184C500E502B0 /* DiscussionRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189A74DE20A184C500E502B0 /* DiscussionRoomViewController.swift */; };
+		18DD607E20A823E9000E6121 /* AddContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD607D20A823E9000E6121 /* AddContactsTableViewController.swift */; };
+		18DD608020A824F0000E6121 /* AddContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD607F20A824F0000E6121 /* AddContactsTableViewCell.swift */; };
 		BA47C889209BB0880073242E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47C888209BB0880073242E /* WebViewController.swift */; };
 		BA5987BC20961657009B79DF /* pInspireTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5987BB20961657009B79DF /* pInspireTableViewCell.swift */; };
 		BAA407712095641500453A34 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAA407702095641500453A34 /* GoogleService-Info.plist */; };
@@ -56,6 +58,8 @@
 		189A74DA20A17B6E00E502B0 /* DiscussionGroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionGroupTableViewCell.swift; sourceTree = "<group>"; };
 		189A74DC20A17FAB00E502B0 /* GroupInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInfo.swift; sourceTree = "<group>"; };
 		189A74DE20A184C500E502B0 /* DiscussionRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionRoomViewController.swift; sourceTree = "<group>"; };
+		18DD607D20A823E9000E6121 /* AddContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactsTableViewController.swift; sourceTree = "<group>"; };
+		18DD607F20A824F0000E6121 /* AddContactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactsTableViewCell.swift; sourceTree = "<group>"; };
 		5E060C68B10B5E55EFA9B67F /* Pods-pInspire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pInspire.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pInspire/Pods-pInspire.debug.xcconfig"; sourceTree = "<group>"; };
 		7CAFC73FB83272A2286306FD /* Pods-pInspire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pInspire.release.xcconfig"; path = "Pods/Target Support Files/Pods-pInspire/Pods-pInspire.release.xcconfig"; sourceTree = "<group>"; };
 		BA47C888209BB0880073242E /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 		1803780520951710009F214E /* pInspire */ = {
 			isa = PBXGroup;
 			children = (
+				18DD607F20A824F0000E6121 /* AddContactsTableViewCell.swift */,
+				18DD607D20A823E9000E6121 /* AddContactsTableViewController.swift */,
 				1803780620951710009F214E /* AppDelegate.swift */,
 				1803780F20951712009F214E /* Assets.xcassets */,
 				1803782C20954A25009F214E /* Choice.swift */,
@@ -304,9 +310,11 @@
 				BADB462220A288890082AC1A /* StatsView.swift in Sources */,
 				BADB462420A2A1C70082AC1A /* Extensions.swift in Sources */,
 				1803780720951710009F214E /* AppDelegate.swift in Sources */,
+				18DD607E20A823E9000E6121 /* AddContactsTableViewController.swift in Sources */,
 				1803781B20952DE5009F214E /* pInspireViewController.swift in Sources */,
 				18078580209E64F200317AF3 /* LoginViewController.swift in Sources */,
 				189A74DF20A184C500E502B0 /* DiscussionRoomViewController.swift in Sources */,
+				18DD608020A824F0000E6121 /* AddContactsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
