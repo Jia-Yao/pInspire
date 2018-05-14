@@ -82,48 +82,47 @@ class AddContactsTableViewController: UITableViewController, AddContactsTableVie
         return 1
     }
 
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "People You May Know"
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count+1
+        return users.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0{
-            let cellIdentifier = "MessageCellUnit"
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-            return cell
-        } else{
-            let cellIdentifier = "ContactCellUnit"
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? AddContactsTableViewCell  else {
-                fatalError("The dequeued cell is not an instance of AddContactsTableViewCell.")
-            }
-            let user = users[indexPath.row-1]
-            cell.delegate = self
-            cell.my_id = me!.userId
-            cell.my_name = me!.userName
-            cell.friend_id = user.userId
-            cell.refUser = refUser
-            cell.Name.text = user.firstName + " " + user.lastName
-            if facebook_friends_ids.contains(user.userId){
-                cell.Label.text = "Facebook Friend"
-            } else {
-                cell.Label.text = "pInspire User"
-            }
-            DispatchQueue.global(qos:.userInitiated).async {
-                let profilePhotoData = try? Data(contentsOf: URL(string: user.profilePhoto)!)
-                DispatchQueue.main.async {
-                    if profilePhotoData != nil{
-                        cell.ProfilePhoto.image = UIImage(data: profilePhotoData!)
-                    }
+
+        let cellIdentifier = "ContactCellUnit"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? AddContactsTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of AddContactsTableViewCell.")
+        }
+        let user = users[indexPath.row]
+        cell.delegate = self
+        cell.my_id = me!.userId
+        cell.my_name = me!.userName
+        cell.friend_id = user.userId
+        cell.refUser = refUser
+        cell.Name.text = user.firstName + " " + user.lastName
+        if facebook_friends_ids.contains(user.userId){
+            cell.Label.text = "Facebook Friend"
+        } else {
+            cell.Label.text = "pInspire User"
+        }
+        DispatchQueue.global(qos:.userInitiated).async {
+            let profilePhotoData = try? Data(contentsOf: URL(string: user.profilePhoto)!)
+            DispatchQueue.main.async {
+                if profilePhotoData != nil{
+                    cell.ProfilePhoto.image = UIImage(data: profilePhotoData!)
                 }
             }
-            return cell
         }
+        return cell
     }
     
     func didAddContact(_ sender: AddContactsTableViewCell) {
         if let tappedIndexPath = usersTable.indexPath(for: sender){
-            users.remove(at: tappedIndexPath.row-1)
+            users.remove(at: tappedIndexPath.row)
             usersTable.deleteRows(at: [tappedIndexPath], with: .top)
         }
     }

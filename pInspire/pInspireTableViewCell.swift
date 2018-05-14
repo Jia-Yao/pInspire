@@ -64,9 +64,9 @@ class pInspireTableViewCell: UITableViewCell {
     @IBOutlet weak var statsButtonView: UIButton!
     @IBOutlet weak var voteLabelView: UILabel!
     
-    var voteAnonymously: Bool {
+    var visibleVote: Bool {
         get {
-            return voteAnonymouslySwitch.isOn
+            return !voteAnonymouslySwitch.isOn
         }
     }
     

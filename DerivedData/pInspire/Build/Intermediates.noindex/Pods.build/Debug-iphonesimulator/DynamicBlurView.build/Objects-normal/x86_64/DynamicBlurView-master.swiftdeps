@@ -1,0 +1,11 @@
+version: "Apple Swift version 4.1 (swiftlang-902.0.48 clang-902.0.37.1)"
+options: "9806aaa3757a02aff5dd063256d0ef88"
+build_time: [1526243252, 700795000]
+inputs:
+  "/Users/jiayao/Desktop/github/pInspire/Pods/DynamicBlurView/DynamicBlurView/BlurLayer.swift": [1526243241, 0]
+  "/Users/jiayao/Desktop/github/pInspire/Pods/DynamicBlurView/DynamicBlurView/CaptureQuality.swift": [1526243241, 0]
+  "/Users/jiayao/Desktop/github/pInspire/Pods/DynamicBlurView/DynamicBlurView/CGContext+CGImage.swift": [1526243241, 0]
+  "/Users/jiayao/Desktop/github/pInspire/Pods/DynamicBlurView/DynamicBlurView/CGImage+Accelerate.swift": [1526243241, 0]
+  "/Users/jiayao/Desktop/github/pInspire/Pods/DynamicBlurView/DynamicBlurView/DynamicBlurView.swift": [1526243241, 0]
+  "/Users/jiayao/Desktop/github/pInspire/Pods/DynamicBlurView/DynamicBlurView/TrackingMode.swift": [1526243241, 0]
+  "/Users/jiayao/Desktop/github/pInspire/Pods/DynamicBlurView/DynamicBlurView/UIImage+Blur.swift": [1526243241, 0]

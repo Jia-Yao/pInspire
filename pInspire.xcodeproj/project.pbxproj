@@ -21,6 +21,7 @@
 		18078582209E72D300317AF3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18078581209E72D300317AF3 /* ProfileViewController.swift */; };
 		18078586209EB71D00317AF3 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18078585209EB71D00317AF3 /* ContactsTableViewController.swift */; };
 		18078588209EB8F200317AF3 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18078587209EB8F200317AF3 /* ContactsTableViewCell.swift */; };
+		185A998020A9056B00D05891 /* InvitationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A997F20A9056B00D05891 /* InvitationsTableViewController.swift */; };
 		189A74D920A17AE400E502B0 /* DiscussionGroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189A74D820A17AE400E502B0 /* DiscussionGroupTableViewController.swift */; };
 		189A74DB20A17B6E00E502B0 /* DiscussionGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189A74DA20A17B6E00E502B0 /* DiscussionGroupTableViewCell.swift */; };
 		189A74DD20A17FAB00E502B0 /* GroupInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189A74DC20A17FAB00E502B0 /* GroupInfo.swift */; };
@@ -54,6 +55,7 @@
 		18078581209E72D300317AF3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		18078585209EB71D00317AF3 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		18078587209EB8F200317AF3 /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
+		185A997F20A9056B00D05891 /* InvitationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationsTableViewController.swift; sourceTree = "<group>"; };
 		189A74D820A17AE400E502B0 /* DiscussionGroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionGroupTableViewController.swift; sourceTree = "<group>"; };
 		189A74DA20A17B6E00E502B0 /* DiscussionGroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionGroupTableViewCell.swift; sourceTree = "<group>"; };
 		189A74DC20A17FAB00E502B0 /* GroupInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInfo.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				189A74DA20A17B6E00E502B0 /* DiscussionGroupTableViewCell.swift */,
 				189A74D820A17AE400E502B0 /* DiscussionGroupTableViewController.swift */,
 				189A74DE20A184C500E502B0 /* DiscussionRoomViewController.swift */,
+				185A997F20A9056B00D05891 /* InvitationsTableViewController.swift */,
 				BADB462320A2A1C70082AC1A /* Extensions.swift */,
 				BAA407702095641500453A34 /* GoogleService-Info.plist */,
 				189A74DC20A17FAB00E502B0 /* GroupInfo.swift */,
@@ -298,6 +301,7 @@
 				BAB4949B209AE4A20077B3EB /* roundedButtonView.swift in Sources */,
 				BADB462620A2AFE80082AC1A /* StatsViewController.swift in Sources */,
 				1803780B20951710009F214E /* CreatePollViewController.swift in Sources */,
+				185A998020A9056B00D05891 /* InvitationsTableViewController.swift in Sources */,
 				189A74D920A17AE400E502B0 /* DiscussionGroupTableViewController.swift in Sources */,
 				189A74DB20A17B6E00E502B0 /* DiscussionGroupTableViewCell.swift in Sources */,
 				BA47C889209BB0880073242E /* WebViewController.swift in Sources */,

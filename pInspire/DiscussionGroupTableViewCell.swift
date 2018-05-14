@@ -11,6 +11,7 @@ import UIKit
 class DiscussionGroupTableViewCell: UITableViewCell {
     
     @IBOutlet weak var pollQuestion: UILabel!
+    
     @IBOutlet weak var groupMembers: UILabel!
     
     override func awakeFromNib() {

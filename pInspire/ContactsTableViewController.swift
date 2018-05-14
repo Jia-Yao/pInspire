@@ -38,6 +38,7 @@ class ContactsTableViewController: UITableViewController {
             if (snapshot.exists()){
                 for user in snapshot.children.allObjects as! [DataSnapshot] {
                     friend_ids.append(user.key)
+                    // friend name is stored as user.value
                 }
             }
             // Get friends info from database

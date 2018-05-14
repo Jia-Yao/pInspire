@@ -27,6 +27,7 @@ depends-top-level:
 - !private "DiscussionGroupTableViewController"
 - !private "DispatchQueue"
 - !private "GraphRequest"
+- !private "InvitationsTableViewController"
 - "LoginButton"
 - "LoginButtonDelegate"
 - "LoginResult"
@@ -304,6 +305,7 @@ depends-member:
 - !private ["s8HashableP", "viewControllers"]
 - !private ["s8HashableP", "viewDidAppear"]
 - !private ["s8HashableP", "viewDidLoad"]
+- !private ["8pInspire30InvitationsTableViewControllerC", "me"]
 - !private ["13FacebookLogin0B6ButtonC", "center"]
 - !private ["13FacebookLogin0B6ButtonC", "delegate"]
 - ["13FacebookLogin0B6ButtonC", "init"]
@@ -333,6 +335,7 @@ depends-member:
 - !private ["8pInspire19LoginViewControllerC", "DiscussionGroupTableViewController"]
 - !private ["8pInspire19LoginViewControllerC", "DispatchQueue"]
 - !private ["8pInspire19LoginViewControllerC", "GraphRequest"]
+- !private ["8pInspire19LoginViewControllerC", "InvitationsTableViewController"]
 - ["8pInspire19LoginViewControllerC", "LoginButton"]
 - ["8pInspire19LoginViewControllerC", "LoginResult"]
 - !private ["8pInspire19LoginViewControllerC", "NSDictionary"]
@@ -426,6 +429,7 @@ depends-member:
 - !private ["So8NSObjectC", "DiscussionGroupTableViewController"]
 - !private ["So8NSObjectC", "DispatchQueue"]
 - !private ["So8NSObjectC", "GraphRequest"]
+- !private ["So8NSObjectC", "InvitationsTableViewController"]
 - ["So8NSObjectC", "LoginButton"]
 - ["So8NSObjectC", "LoginResult"]
 - !private ["So8NSObjectC", "NSDictionary"]
@@ -667,6 +671,7 @@ depends-member:
 - !private ["So11UIResponderC", "DiscussionGroupTableViewController"]
 - !private ["So11UIResponderC", "DispatchQueue"]
 - !private ["So11UIResponderC", "GraphRequest"]
+- !private ["So11UIResponderC", "InvitationsTableViewController"]
 - ["So11UIResponderC", "LoginButton"]
 - ["So11UIResponderC", "LoginResult"]
 - !private ["So11UIResponderC", "NSDictionary"]
@@ -810,6 +815,7 @@ depends-member:
 - !private ["So16UIViewControllerC", "DiscussionGroupTableViewController"]
 - !private ["So16UIViewControllerC", "DispatchQueue"]
 - !private ["So16UIViewControllerC", "GraphRequest"]
+- !private ["So16UIViewControllerC", "InvitationsTableViewController"]
 - ["So16UIViewControllerC", "LoginButton"]
 - ["So16UIViewControllerC", "LoginResult"]
 - !private ["So16UIViewControllerC", "NSDictionary"]
@@ -942,6 +948,7 @@ depends-nominal:
 - !private "12FacebookCore13GraphResponseV"
 - !private "12FacebookCore21GraphResponseProtocolP"
 - "s8HashableP"
+- !private "8pInspire30InvitationsTableViewControllerC"
 - "13FacebookLogin0B6ButtonC"
 - "13FacebookLogin0B14ButtonDelegateP"
 - "8pInspire19LoginViewControllerC"

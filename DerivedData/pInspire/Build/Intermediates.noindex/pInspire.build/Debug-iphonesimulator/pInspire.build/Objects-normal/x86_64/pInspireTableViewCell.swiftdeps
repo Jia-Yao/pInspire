@@ -27,6 +27,7 @@ provides-dynamic-lookup:
 - "voteAnonymouslySwitch"
 - "voteLabelView"
 depends-top-level:
+- !private "!"
 - "AnyObject"
 - "AssignmentPrecedence"
 - "Bool"
@@ -210,7 +211,7 @@ depends-member:
 - ["So8NSObjectC", "tapReadMore"]
 - ["So8NSObjectC", "tapReport"]
 - ["So8NSObjectC", "tapStats"]
-- ["So8NSObjectC", "voteAnonymously"]
+- ["So8NSObjectC", "visibleVote"]
 - ["So8NSObjectC", "voteAnonymouslySwitch"]
 - ["So8NSObjectC", "voteLabelView"]
 - !private ["So8NSObjectC", "white"]
@@ -398,7 +399,7 @@ depends-member:
 - ["So11UIResponderC", "tapReadMore"]
 - ["So11UIResponderC", "tapReport"]
 - ["So11UIResponderC", "tapStats"]
-- ["So11UIResponderC", "voteAnonymously"]
+- ["So11UIResponderC", "visibleVote"]
 - ["So11UIResponderC", "voteAnonymouslySwitch"]
 - ["So11UIResponderC", "voteLabelView"]
 - !private ["So30UIResponderStandardEditActionsP", "UIColor"]
@@ -443,7 +444,7 @@ depends-member:
 - ["So15UITableViewCellC", "tapReadMore"]
 - ["So15UITableViewCellC", "tapReport"]
 - ["So15UITableViewCellC", "tapStats"]
-- ["So15UITableViewCellC", "voteAnonymously"]
+- ["So15UITableViewCellC", "visibleVote"]
 - ["So15UITableViewCellC", "voteAnonymouslySwitch"]
 - ["So15UITableViewCellC", "voteLabelView"]
 - !private ["So18UITraitEnvironmentP", "UIColor"]
@@ -487,7 +488,7 @@ depends-member:
 - ["So6UIViewC", "tapReadMore"]
 - ["So6UIViewC", "tapReport"]
 - ["So6UIViewC", "tapStats"]
-- ["So6UIViewC", "voteAnonymously"]
+- ["So6UIViewC", "visibleVote"]
 - ["So6UIViewC", "voteAnonymouslySwitch"]
 - ["So6UIViewC", "voteLabelView"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "UIColor"]
@@ -549,7 +550,7 @@ depends-member:
 - ["8pInspire01pA13TableViewCellC", "tapReadMore"]
 - ["8pInspire01pA13TableViewCellC", "tapReport"]
 - ["8pInspire01pA13TableViewCellC", "tapStats"]
-- ["8pInspire01pA13TableViewCellC", "voteAnonymously"]
+- ["8pInspire01pA13TableViewCellC", "visibleVote"]
 - ["8pInspire01pA13TableViewCellC", "voteAnonymouslySwitch"]
 - ["8pInspire01pA13TableViewCellC", "voteLabelView"]
 - ["8pInspire01pA21TableViewCellDelegateP", "UIButton"]
@@ -791,4 +792,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/MapKit.framework/Headers/MapKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
-interface-hash: "badaf85399ff072ff752f34cee3c7680"
+interface-hash: "1dd06d6187b20a819d5ef017d75fe553"

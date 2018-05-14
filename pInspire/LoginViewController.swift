@@ -116,11 +116,15 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
                     contactsController.me = user
                     contactsController.refUser = refUser
                 }
+                if let navigationController = tabBarController.viewControllers![2] as? UINavigationController,
+                    let invitationsController = navigationController.topViewController as? InvitationsTableViewController{
+                    invitationsController.me = user
+                }
                 if let navigationController = tabBarController.viewControllers![3] as? UINavigationController,
                     let discussionsController = navigationController.topViewController as? DiscussionGroupTableViewController{
                     discussionsController.me = user
                 }
-                // TODO: May need to set user for other tabs as well
+                // TODO: May need to set user for profile tab as well
             }
         default:
             fatalError("Unexpected Segue Identifier; \(segue.identifier ?? "")")

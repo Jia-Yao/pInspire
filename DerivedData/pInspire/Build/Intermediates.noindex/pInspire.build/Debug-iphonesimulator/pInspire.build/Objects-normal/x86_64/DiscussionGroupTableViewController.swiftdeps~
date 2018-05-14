@@ -10,10 +10,10 @@ provides-dynamic-lookup:
 - "numberOfSections"
 - "prepare"
 - "tableView"
+- "viewDidAppear"
 - "viewDidLoad"
 - "viewWillAppear"
 depends-top-level:
-- !private "+"
 - !private "??"
 - !private "AnyObject"
 - "AssignmentPrecedence"
@@ -30,13 +30,12 @@ depends-top-level:
 - "GroupInfo"
 - "IndexPath"
 - "Int"
-- !private "String"
+- "String"
 - !private "StringLiteralType"
 - "UIStoryboardSegue"
 - "UITableView"
 - "UITableViewCell"
 - "UITableViewController"
-- !private "UnicodeScalarType"
 - "User"
 - !private "Void"
 - !private "fatalError"
@@ -105,6 +104,7 @@ depends-member:
 - !private ["s7CVarArgP", "tabBarController"]
 - !private ["s7CVarArgP", "text"]
 - !private ["s7CVarArgP", "value"]
+- !private ["s7CVarArgP", "viewDidAppear"]
 - !private ["s7CVarArgP", "viewDidLoad"]
 - !private ["s7CVarArgP", "viewWillAppear"]
 - !private ["s10CollectionP", "append"]
@@ -155,6 +155,7 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "tabBarController"]
 - !private ["s28CustomDebugStringConvertibleP", "text"]
 - !private ["s28CustomDebugStringConvertibleP", "value"]
+- !private ["s28CustomDebugStringConvertibleP", "viewDidAppear"]
 - !private ["s28CustomDebugStringConvertibleP", "viewDidLoad"]
 - !private ["s28CustomDebugStringConvertibleP", "viewWillAppear"]
 - !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
@@ -207,6 +208,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "tabBarController"]
 - !private ["s23CustomStringConvertibleP", "text"]
 - !private ["s23CustomStringConvertibleP", "value"]
+- !private ["s23CustomStringConvertibleP", "viewDidAppear"]
 - !private ["s23CustomStringConvertibleP", "viewDidLoad"]
 - !private ["s23CustomStringConvertibleP", "viewWillAppear"]
 - !private ["SC13DataEventTypeO", "childAdded"]
@@ -240,7 +242,7 @@ depends-member:
 - ["8pInspire34DiscussionGroupTableViewControllerC", "GroupInfo"]
 - ["8pInspire34DiscussionGroupTableViewControllerC", "IndexPath"]
 - ["8pInspire34DiscussionGroupTableViewControllerC", "Int"]
-- !private ["8pInspire34DiscussionGroupTableViewControllerC", "String"]
+- ["8pInspire34DiscussionGroupTableViewControllerC", "String"]
 - ["8pInspire34DiscussionGroupTableViewControllerC", "UIStoryboardSegue"]
 - ["8pInspire34DiscussionGroupTableViewControllerC", "UITableView"]
 - ["8pInspire34DiscussionGroupTableViewControllerC", "UITableViewCell"]
@@ -259,6 +261,7 @@ depends-member:
 - ["8pInspire34DiscussionGroupTableViewControllerC", "ref"]
 - !private ["8pInspire34DiscussionGroupTableViewControllerC", "tabBarController"]
 - ["8pInspire34DiscussionGroupTableViewControllerC", "tableView"]
+- ["8pInspire34DiscussionGroupTableViewControllerC", "viewDidAppear"]
 - ["8pInspire34DiscussionGroupTableViewControllerC", "viewDidLoad"]
 - ["8pInspire34DiscussionGroupTableViewControllerC", "viewWillAppear"]
 - !private ["8pInspire28DiscussionRoomViewControllerC", "deinit"]
@@ -314,6 +317,7 @@ depends-member:
 - !private ["s9EquatableP", "tabBarController"]
 - !private ["s9EquatableP", "text"]
 - !private ["s9EquatableP", "value"]
+- !private ["s9EquatableP", "viewDidAppear"]
 - !private ["s9EquatableP", "viewDidLoad"]
 - !private ["s9EquatableP", "viewWillAppear"]
 - !private ["s25ExpressibleByArrayLiteralP", "append"]
@@ -367,6 +371,7 @@ depends-member:
 - !private ["s8HashableP", "tabBarController"]
 - !private ["s8HashableP", "text"]
 - !private ["s8HashableP", "value"]
+- !private ["s8HashableP", "viewDidAppear"]
 - !private ["s8HashableP", "viewDidLoad"]
 - !private ["s8HashableP", "viewWillAppear"]
 - !private ["10Foundation9IndexPathV", "row"]
@@ -414,6 +419,7 @@ depends-member:
 - !private ["So8NSCodingP", "tabBar"]
 - !private ["So8NSCodingP", "tabBarController"]
 - !private ["So8NSCodingP", "text"]
+- !private ["So8NSCodingP", "viewDidAppear"]
 - !private ["So8NSCodingP", "viewDidLoad"]
 - !private ["So8NSCodingP", "viewWillAppear"]
 - !private ["So26NSExtensionRequestHandlingP", "Database"]
@@ -432,6 +438,7 @@ depends-member:
 - !private ["So26NSExtensionRequestHandlingP", "senderId"]
 - !private ["So26NSExtensionRequestHandlingP", "tabBar"]
 - !private ["So26NSExtensionRequestHandlingP", "tabBarController"]
+- !private ["So26NSExtensionRequestHandlingP", "viewDidAppear"]
 - !private ["So26NSExtensionRequestHandlingP", "viewDidLoad"]
 - !private ["So26NSExtensionRequestHandlingP", "viewWillAppear"]
 - !private ["So8NSObjectC", "AnyObject"]
@@ -445,7 +452,7 @@ depends-member:
 - ["So8NSObjectC", "GroupInfo"]
 - ["So8NSObjectC", "IndexPath"]
 - ["So8NSObjectC", "Int"]
-- !private ["So8NSObjectC", "String"]
+- ["So8NSObjectC", "String"]
 - ["So8NSObjectC", "UIStoryboardSegue"]
 - ["So8NSObjectC", "UITableView"]
 - ["So8NSObjectC", "UITableViewCell"]
@@ -484,6 +491,7 @@ depends-member:
 - ["So8NSObjectC", "tableView"]
 - !private ["So8NSObjectC", "text"]
 - !private ["So8NSObjectC", "value"]
+- ["So8NSObjectC", "viewDidAppear"]
 - ["So8NSObjectC", "viewDidLoad"]
 - ["So8NSObjectC", "viewWillAppear"]
 - !private ["So16NSObjectProtocolP", "Database"]
@@ -519,6 +527,7 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "tabBarController"]
 - !private ["So16NSObjectProtocolP", "text"]
 - !private ["So16NSObjectProtocolP", "value"]
+- !private ["So16NSObjectProtocolP", "viewDidAppear"]
 - !private ["So16NSObjectProtocolP", "viewDidLoad"]
 - !private ["So16NSObjectProtocolP", "viewWillAppear"]
 - !private ["s22RandomAccessCollectionP", "append"]
@@ -591,6 +600,7 @@ depends-member:
 - !private ["So21UIAppearanceContainerP", "tabBar"]
 - !private ["So21UIAppearanceContainerP", "tabBarController"]
 - !private ["So21UIAppearanceContainerP", "text"]
+- !private ["So21UIAppearanceContainerP", "viewDidAppear"]
 - !private ["So21UIAppearanceContainerP", "viewDidLoad"]
 - !private ["So21UIAppearanceContainerP", "viewWillAppear"]
 - !private ["So26UICollectionViewDataSourceP", "group"]
@@ -618,6 +628,7 @@ depends-member:
 - !private ["So18UIContentContainerP", "senderId"]
 - !private ["So18UIContentContainerP", "tabBar"]
 - !private ["So18UIContentContainerP", "tabBarController"]
+- !private ["So18UIContentContainerP", "viewDidAppear"]
 - !private ["So18UIContentContainerP", "viewDidLoad"]
 - !private ["So18UIContentContainerP", "viewWillAppear"]
 - !private ["So30UIContentSizeCategoryAdjustingP", "text"]
@@ -669,6 +680,7 @@ depends-member:
 - !private ["So18UIFocusEnvironmentP", "tabBar"]
 - !private ["So18UIFocusEnvironmentP", "tabBarController"]
 - !private ["So18UIFocusEnvironmentP", "text"]
+- !private ["So18UIFocusEnvironmentP", "viewDidAppear"]
 - !private ["So18UIFocusEnvironmentP", "viewDidLoad"]
 - !private ["So18UIFocusEnvironmentP", "viewWillAppear"]
 - !private ["So11UIFocusItemP", "dataSource"]
@@ -708,6 +720,7 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "tabBar"]
 - !private ["So30UIPasteConfigurationSupportingP", "tabBarController"]
 - !private ["So30UIPasteConfigurationSupportingP", "text"]
+- !private ["So30UIPasteConfigurationSupportingP", "viewDidAppear"]
 - !private ["So30UIPasteConfigurationSupportingP", "viewDidLoad"]
 - !private ["So30UIPasteConfigurationSupportingP", "viewWillAppear"]
 - !private ["So11UIResponderC", "AnyObject"]
@@ -721,7 +734,7 @@ depends-member:
 - ["So11UIResponderC", "GroupInfo"]
 - ["So11UIResponderC", "IndexPath"]
 - ["So11UIResponderC", "Int"]
-- !private ["So11UIResponderC", "String"]
+- ["So11UIResponderC", "String"]
 - ["So11UIResponderC", "UIStoryboardSegue"]
 - ["So11UIResponderC", "UITableView"]
 - ["So11UIResponderC", "UITableViewCell"]
@@ -752,6 +765,7 @@ depends-member:
 - !private ["So11UIResponderC", "tabBarController"]
 - ["So11UIResponderC", "tableView"]
 - !private ["So11UIResponderC", "text"]
+- ["So11UIResponderC", "viewDidAppear"]
 - ["So11UIResponderC", "viewDidLoad"]
 - ["So11UIResponderC", "viewWillAppear"]
 - !private ["So30UIResponderStandardEditActionsP", "Database"]
@@ -779,6 +793,7 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "tabBar"]
 - !private ["So30UIResponderStandardEditActionsP", "tabBarController"]
 - !private ["So30UIResponderStandardEditActionsP", "text"]
+- !private ["So30UIResponderStandardEditActionsP", "viewDidAppear"]
 - !private ["So30UIResponderStandardEditActionsP", "viewDidLoad"]
 - !private ["So30UIResponderStandardEditActionsP", "viewWillAppear"]
 - !private ["So12UIScrollViewC", "dataSource"]
@@ -801,6 +816,7 @@ depends-member:
 - !private ["So20UIScrollViewDelegateP", "senderDisplayName"]
 - !private ["So20UIScrollViewDelegateP", "senderId"]
 - !private ["So20UIScrollViewDelegateP", "tabBarController"]
+- !private ["So20UIScrollViewDelegateP", "viewDidAppear"]
 - !private ["So20UIScrollViewDelegateP", "viewDidLoad"]
 - !private ["So20UIScrollViewDelegateP", "viewWillAppear"]
 - !private ["So35UISpringLoadedInteractionSupportingP", "dataSource"]
@@ -825,6 +841,7 @@ depends-member:
 - !private ["So16UIStateRestoringP", "senderId"]
 - !private ["So16UIStateRestoringP", "tabBar"]
 - !private ["So16UIStateRestoringP", "tabBarController"]
+- !private ["So16UIStateRestoringP", "viewDidAppear"]
 - !private ["So16UIStateRestoringP", "viewDidLoad"]
 - !private ["So16UIStateRestoringP", "viewWillAppear"]
 - !private ["So17UIStoryboardSegueC", "destination"]
@@ -850,7 +867,7 @@ depends-member:
 - ["So21UITableViewControllerC", "GroupInfo"]
 - ["So21UITableViewControllerC", "IndexPath"]
 - ["So21UITableViewControllerC", "Int"]
-- !private ["So21UITableViewControllerC", "String"]
+- ["So21UITableViewControllerC", "String"]
 - ["So21UITableViewControllerC", "UIStoryboardSegue"]
 - ["So21UITableViewControllerC", "UITableView"]
 - ["So21UITableViewControllerC", "UITableViewCell"]
@@ -869,6 +886,7 @@ depends-member:
 - ["So21UITableViewControllerC", "ref"]
 - !private ["So21UITableViewControllerC", "tabBarController"]
 - ["So21UITableViewControllerC", "tableView"]
+- ["So21UITableViewControllerC", "viewDidAppear"]
 - ["So21UITableViewControllerC", "viewDidLoad"]
 - ["So21UITableViewControllerC", "viewWillAppear"]
 - !private ["So21UITableViewDataSourceP", "Database"]
@@ -883,6 +901,7 @@ depends-member:
 - !private ["So21UITableViewDataSourceP", "me"]
 - !private ["So21UITableViewDataSourceP", "ref"]
 - !private ["So21UITableViewDataSourceP", "tabBarController"]
+- !private ["So21UITableViewDataSourceP", "viewDidAppear"]
 - !private ["So21UITableViewDataSourceP", "viewDidLoad"]
 - !private ["So21UITableViewDataSourceP", "viewWillAppear"]
 - !private ["So19UITableViewDelegateP", "Database"]
@@ -897,6 +916,7 @@ depends-member:
 - !private ["So19UITableViewDelegateP", "me"]
 - !private ["So19UITableViewDelegateP", "ref"]
 - !private ["So19UITableViewDelegateP", "tabBarController"]
+- !private ["So19UITableViewDelegateP", "viewDidAppear"]
 - !private ["So19UITableViewDelegateP", "viewDidLoad"]
 - !private ["So19UITableViewDelegateP", "viewWillAppear"]
 - !private ["So18UITextViewDelegateP", "group"]
@@ -927,6 +947,7 @@ depends-member:
 - !private ["So18UITraitEnvironmentP", "tabBar"]
 - !private ["So18UITraitEnvironmentP", "tabBarController"]
 - !private ["So18UITraitEnvironmentP", "text"]
+- !private ["So18UITraitEnvironmentP", "viewDidAppear"]
 - !private ["So18UITraitEnvironmentP", "viewDidLoad"]
 - !private ["So18UITraitEnvironmentP", "viewWillAppear"]
 - !private ["So6UIViewC", "dataSource"]
@@ -949,7 +970,7 @@ depends-member:
 - ["So16UIViewControllerC", "GroupInfo"]
 - ["So16UIViewControllerC", "IndexPath"]
 - ["So16UIViewControllerC", "Int"]
-- !private ["So16UIViewControllerC", "String"]
+- ["So16UIViewControllerC", "String"]
 - ["So16UIViewControllerC", "UIStoryboardSegue"]
 - ["So16UIViewControllerC", "UITableView"]
 - ["So16UIViewControllerC", "UITableViewCell"]
@@ -971,10 +992,9 @@ depends-member:
 - !private ["So16UIViewControllerC", "tabBar"]
 - !private ["So16UIViewControllerC", "tabBarController"]
 - ["So16UIViewControllerC", "tableView"]
+- ["So16UIViewControllerC", "viewDidAppear"]
 - ["So16UIViewControllerC", "viewDidLoad"]
 - ["So16UIViewControllerC", "viewWillAppear"]
-- !private ["8pInspire4UserC", "firstName"]
-- !private ["8pInspire4UserC", "lastName"]
 - !private ["8pInspire4UserC", "userId"]
 - !private ["8pInspire4UserC", "userName"]
 - !private ["s14_ArrayProtocolP", "append"]
@@ -1037,6 +1057,7 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "tabBarController"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "text"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "value"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "viewDidAppear"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "viewDidLoad"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "viewWillAppear"]
 - !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
@@ -1340,4 +1361,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/MapKit.framework/Headers/MapKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
-interface-hash: "ea9b47718df189c0c9d1e5e0a453c34c"
+interface-hash: "b88226db9eabf1524bab37c4dbd01018"

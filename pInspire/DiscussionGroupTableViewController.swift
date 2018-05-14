@@ -23,18 +23,19 @@ class DiscussionGroupTableViewController: UITableViewController {
         super.viewDidLoad()
         groupTable.delegate = self
         groupTable.dataSource = self
-        
-        configureDatabase()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        groupTable.rowHeight = UITableViewAutomaticDimension;
+        groupTable.estimatedRowHeight = 44;
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController!.tabBar.isHidden = false
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        // catch my View up to date with what went on while I was off-screen
+        self.configureDatabase()
     }
     
     private func configureDatabase() {
@@ -62,6 +63,10 @@ class DiscussionGroupTableViewController: UITableViewController {
         return 1
     }
 
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Online Discussions"
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return discussionGroups.count
     }
@@ -74,7 +79,9 @@ class DiscussionGroupTableViewController: UITableViewController {
         }
         let group = discussionGroups[indexPath.row]
         cell.pollQuestion.text = group.pollQuestion
+        cell.pollQuestion.numberOfLines = 0
         cell.groupMembers.text = group.members_list()
+        cell.groupMembers.numberOfLines = 0
         return cell
     }
 
@@ -124,7 +131,7 @@ class DiscussionGroupTableViewController: UITableViewController {
                 let indexPath = groupTable.indexPath(for: selectedGroupCell){
                     let selectedGroup = discussionGroups[indexPath.row]
                     discussionRoomController.group = selectedGroup
-                    discussionRoomController.senderDisplayName = me!.firstName + " " + me!.lastName
+                    discussionRoomController.senderDisplayName = me!.userName
                     discussionRoomController.senderId = me!.userId
             }
         default:

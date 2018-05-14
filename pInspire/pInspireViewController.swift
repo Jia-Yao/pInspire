@@ -16,6 +16,7 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
     @IBOutlet var pollTableView: UITableView!
     var ref: DatabaseReference!
     var refDiscussion: DatabaseReference!
+    var refInvitation: DatabaseReference!
     fileprivate var _refHandle: DatabaseHandle?
     var pollTimeline = [Poll]()
     var user: User?
@@ -62,9 +63,9 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
         let choices = poll.choices
         let choosedButtonIndex = sender.choiceButtonView.index(of: button)
         
-        choices[choosedButtonIndex!].addUser(user: userName!, isAnonymous: sender.voteAnonymously)
+        choices[choosedButtonIndex!].addUser(user: userName!, isAnonymous: sender.visibleVote)
         updateViewForhasVoted(for: sender, withPoll: poll)
-        writeVoteData(id: poll.Id, choiceContent: choices[choosedButtonIndex!].content, userName: userName!, isAnonymous: sender.voteAnonymously)
+        writeVoteData(id: poll.Id, choiceContent: choices[choosedButtonIndex!].content, userName: userName!, isAnonymous: sender.visibleVote)
     }
     
     func didTapDiscuss(_ sender: pInspireTableViewCell) {
@@ -72,8 +73,50 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
         let totalCount = self.pollTimeline.count
         let poll = self.pollTimeline[totalCount - 1 - clickedIndexPath.row]
         let members: [String] = selectDiscussionMembers(from: poll)
-        let _ = createGroupIdToDatabase(for: members, from: poll)
-        self.tabBarController!.selectedIndex = 3
+        var members_without_self = members
+        members_without_self.remove(at: members_without_self.index(of: userName!)!)
+        
+        // Popup dialog box
+        let alertController = UIAlertController(title: "START A DICUSSION", message: "pInspire recommends you to dicuss with " + members_without_self.joined(separator: ", ") + ". Leave them a message:", preferredStyle: .alert)
+        
+        let onlineAction = UIAlertAction(title: "Let's chat about it ONLINE", style: .default) { (_) in
+            var message = alertController.textFields?[0].text
+            if message == nil || message == "" {
+                message = "The poll \"" + poll.question + "\" is so interesting, let's chat about it ONLINE!"
+            } else {
+                message = message! + " Let's chat about it ONLINE!"
+            }
+            let _ = self.createGroupIdToDatabase(for: members, from: poll, message: message!)
+            self.tabBarController!.selectedIndex = 3
+        }
+        
+        let offlineAction = UIAlertAction(title: "Let's chat about it OFFLINE", style: .default) { (_) in
+            var message = alertController.textFields?[0].text
+            if message == nil || message == "" {
+                message = "The poll \"" + poll.question + "\" is so interesting, let's chat about it OFFLINE!"
+            } else {
+                message = message! + " Let's chat about it OFFLINE!"
+            }
+            self.createInvitationToDatabase(from: self.userName!, to: members_without_self, message: message!)
+            let alert = UIAlertController(title: "Invitations Sent!", message: "", preferredStyle: .alert)
+            self.present(alert, animated: true, completion: nil)
+            // Hide in 2 seconds
+            let when = DispatchTime.now() + 2
+            DispatchQueue.main.asyncAfter(deadline: when){
+                alert.dismiss(animated: true, completion: nil)
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+        
+        alertController.addTextField { (textField) in
+            textField.placeholder = "This poll is so interesting, ..."
+        }
+        alertController.addAction(onlineAction)
+        alertController.addAction(offlineAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion: nil)
     }
     
     func didTapStats(_ sender: pInspireTableViewCell) {
@@ -96,13 +139,24 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
          }*/
     }
 
-    private func createGroupIdToDatabase(for members: [String], from poll: Poll) -> String {
+    private func createGroupIdToDatabase(for members: [String], from poll: Poll, message: String) -> String {
         let itemRef: DatabaseReference = refDiscussion.childByAutoId()
         let key = itemRef.key
-        let newDiscussion = ["Members": members, "Message": [], "Question": poll.question] as [String: Any]
+        let newDiscussion = ["Members": members, "Question": poll.question] as [String: Any]
         let childUpdates = ["/\(key)": newDiscussion]
         refDiscussion.updateChildValues(childUpdates)
+        let messageRef = itemRef.child("Messages").childByAutoId()
+        let messageContent = ["senderId": user!.userId, "senderName": userName!, "text": message]
+        messageRef.setValue(messageContent)
         return itemRef.key
+    }
+    
+    private func createInvitationToDatabase(from sender: String, to receivers: [String], message: String) {
+        for receiver in receivers{
+            let key = refInvitation.child(receiver).childByAutoId()
+            let newMessage = ["senderId": user!.userId, "senderName": userName!, "text": message, "seen": false] as [String : Any]
+            key.setValue(newMessage)
+        }
     }
     
     func writeVoteData(id: String, choiceContent: String, userName: String, isAnonymous: Bool){
@@ -112,6 +166,7 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
     func configureDatabase() {
         ref = Database.database().reference()
         refDiscussion = Database.database().reference().child("Discussions")
+        refInvitation = Database.database().reference().child("Invitations")
         // Listen for new messages in the Firebase database
         
         _refHandle = self.ref.child("Polls").observe(.childAdded, with: { [weak self] (snapshot) -> Void in
