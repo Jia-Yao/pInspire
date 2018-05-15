@@ -36,15 +36,32 @@ class DiscussionRoomViewController: JSQMessagesViewController {
     
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
         let itemRef = refDiscussion.childByAutoId() // create a child reference with a unique key
+        var hasSeenDict = [String: Bool]()
+        
+        for userId in group!.memberIds {
+            if userId != senderId {
+                hasSeenDict[userId] = false
+            } else {
+                hasSeenDict[userId] = true
+            }
+        }
+        
         let messageItem = [ // create a dictionary to represent the message
             "senderId": senderId!,
             "senderName": senderDisplayName!,
             "text": text!,
-            ]
+            "hasSeen": hasSeenDict,
+            ] as [String : Any]
         
         itemRef.setValue(messageItem) // save the value at the new child location
         
         finishSendingMessage() // complete the “send” action and reset the input toolbar to empty
+    }
+    
+    private func setMessageAsRead(for messageId: String) {
+        let groupId = group!.groupId
+        let refGroupChat = Database.database().reference().child("Discussions").child(groupId)
+        refGroupChat.child("Messages").child(messageId).child("hasSeen").child(senderId).setValue(true)
     }
     
     private func observeMessages() {
@@ -54,9 +71,12 @@ class DiscussionRoomViewController: JSQMessagesViewController {
         // listen for new messages being written to the database
         newMessageRefHandle = messageQuery.observe(.childAdded, with: { (snapshot) -> Void in
             // extract the messageData from the snapshot
-            let messageData = snapshot.value as! Dictionary<String, String>
-            if let id = messageData["senderId"] as String?, let name = messageData["senderName"] as String?, let text = messageData["text"] as String?, text.characters.count > 0 {
+            let messageDataKey = snapshot.key
+            let messageData = snapshot.value as! Dictionary<String, AnyObject>
+            if let id = messageData["senderId"] as! String?, let name = messageData["senderName"] as! String?, let text = messageData["text"] as! String?, text.count > 0 {
+                
                 self.addMessage(withId: id, name: name, text: text)
+                self.setMessageAsRead(for: messageDataKey)
                 self.finishReceivingMessage()
             } else {
                 print("Error! Could not decode message data")

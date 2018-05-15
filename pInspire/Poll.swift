@@ -32,13 +32,13 @@ class Poll{
         return self.choices.map({$0.visibleUsers.count}).reduce(0, +)
     }
     
-    var visibleVotedUsers: [String] {
+    var visibleVotedUserIds: [String] {
         return self.choices.map({$0.visibleUsers}).reduce([], +)
     }
     
-    func userHasVoted(user: String) -> Bool {
+    func userHasVoted(userId: String) -> Bool {
         for choice in choices {
-            if choice.containUserVote(user: user) {
+            if choice.containUserVote(userId: userId) {
                 return true
             }
         }

@@ -194,7 +194,8 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
         let newPoll = ["Question": question,
                        "Choices": choicesDict,
                        "Anonymity": isAnonymous,
-                       "Initiator": user] as [String : Any]
+                       "Initiator": user,
+                       "InitiatorId": self.user?.userId as Any] as [String : Any]
         let childUpdates = ["/Polls/\(key)": newPoll]
         refPoll.updateChildValues(childUpdates)
         

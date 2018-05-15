@@ -25,6 +25,22 @@ class DiscussionGroupTableViewController: UITableViewController {
         groupTable.dataSource = self
         groupTable.rowHeight = UITableViewAutomaticDimension;
         groupTable.estimatedRowHeight = 44;
+        
+        // Refresh control
+        if #available(iOS 10.0, *) {
+            let refreshControl = UIRefreshControl()
+            let title = NSLocalizedString("PullToRefresh", comment: "Pull to refresh")
+            refreshControl.attributedTitle = NSAttributedString(string: title)
+            refreshControl.addTarget(self,
+                                     action: #selector(handleRefresh(sender:)),
+                                     for: .valueChanged)
+            self.groupTable.refreshControl = refreshControl
+        }
+    }
+    
+    @objc private func handleRefresh(sender refreshControl: UIRefreshControl) {
+        configureDatabase()
+        refreshControl.endRefreshing()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -43,18 +59,45 @@ class DiscussionGroupTableViewController: UITableViewController {
         discussionGroups.removeAll()
         _refHandle = self.ref.observe(.childAdded, with: { [weak self] (snapshot) -> Void in
             guard let strongSelf = self else { return }
+            
             let group = snapshot.value as! Dictionary<String, AnyObject>
             let groupId = snapshot.key
-            let groupMembers = group["Members"] as! [String]
-            let pollQuestion = group["Question"] as? String ?? ""
-            if let _ = groupMembers.index(of: (self?.me?.userName)!) {
-                let newGroup = GroupInfo(pollQuestion: pollQuestion , members: groupMembers, groupId: groupId)
-                strongSelf.discussionGroups.append(newGroup)
-                
+            let groupMemberDict = group["Members"] as! [String: Bool]
+            
+            let messagesObject = group["Messages"] as! [String: AnyObject]
+            if let chatRoomHasSeen = (groupMemberDict[(strongSelf.me?.userId)!]) {
+                var hasSeen = true
+                if !chatRoomHasSeen {
+                    hasSeen = false
+                } else {
+                    for (_, value) in messagesObject {
+                        if let message = value as? [String: AnyObject] {
+                            if let messageHasSeen = message["hasSeen"] as? [String: Bool]{
+                                if messageHasSeen[(strongSelf.me?.userId)!]! == false {
+                                    hasSeen = false
+                                    break
+                                }
+                            }
+                        }
+                    }
+                }
+                let groupMemberIds = Array<String>(groupMemberDict.keys)
+                let groupMembers = groupMemberIds.map {return (strongSelf.me!.idNameConverter[$0])!}
+                let pollQuestion = group["Question"] as? String ?? ""
+                if let _ = groupMembers.index(of: (strongSelf.me?.userName)!) {
+                    let newGroup = GroupInfo(pollQuestion: pollQuestion , members: groupMembers, memberIds: groupMemberIds, groupId: groupId, hasSeen: hasSeen)
+                    strongSelf.discussionGroups.append(newGroup)
+                }
             }
             strongSelf.groupTable.reloadData()
             }
         )
+    }
+    
+    private func setGroupChatAsRead(for groupChat: GroupInfo) {
+        let groupId = groupChat.groupId
+        let refGroupChat = Database.database().reference().child("Discussions").child(groupId)
+        refGroupChat.child("Members").child((me?.userId)!).setValue(true)
     }
     
     // MARK: - Table view data source
@@ -82,6 +125,7 @@ class DiscussionGroupTableViewController: UITableViewController {
         cell.pollQuestion.numberOfLines = 0
         cell.groupMembers.text = group.members_list()
         cell.groupMembers.numberOfLines = 0
+        cell.backgroundColor = group.hasSeen ? #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) : #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         return cell
     }
 
@@ -130,6 +174,7 @@ class DiscussionGroupTableViewController: UITableViewController {
                 let selectedGroupCell = sender as? DiscussionGroupTableViewCell,
                 let indexPath = groupTable.indexPath(for: selectedGroupCell){
                     let selectedGroup = discussionGroups[indexPath.row]
+                    setGroupChatAsRead(for: selectedGroup)
                     discussionRoomController.group = selectedGroup
                     discussionRoomController.senderDisplayName = me!.userName
                     discussionRoomController.senderId = me!.userId

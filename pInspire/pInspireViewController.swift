@@ -21,6 +21,25 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
     var pollTimeline = [Poll]()
     var user: User?
     var userName: String?
+    var unseenInivitationNum: Int = 0 {
+        didSet {
+            if let tabItems = self.tabBarController?.tabBar.items as NSArray?
+            {
+                let tabItem = tabItems[2] as! UITabBarItem
+                tabItem.badgeValue = unseenInivitationNum > 0 ? String(unseenInivitationNum) : nil
+            }
+        }
+    }
+    
+    var unseenMessageNum: Int = 0 {
+        didSet {
+            if let tabItems = self.tabBarController?.tabBar.items as NSArray?
+            {
+                let tabItem = tabItems[3] as! UITabBarItem
+                tabItem.badgeValue = unseenMessageNum > 0 ? String(unseenMessageNum) : nil
+            }
+        }
+    }
     
     //MARK: View-related Methods
     
@@ -49,6 +68,7 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
         // Along with auto layout, these are the keys for enabling variable cell height
         self.pollTableView.estimatedRowHeight = 250
         self.pollTableView.rowHeight = UITableViewAutomaticDimension
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -63,18 +83,18 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
         let choices = poll.choices
         let choosedButtonIndex = sender.choiceButtonView.index(of: button)
         
-        choices[choosedButtonIndex!].addUser(user: userName!, isAnonymous: sender.visibleVote)
+        choices[choosedButtonIndex!].addUser(userId: user!.userId, isAnonymous: !sender.visibleVote)
         updateViewForhasVoted(for: sender, withPoll: poll)
-        writeVoteData(id: poll.Id, choiceContent: choices[choosedButtonIndex!].content, userName: userName!, isAnonymous: sender.visibleVote)
+        writeVoteData(id: poll.Id, choiceContent: choices[choosedButtonIndex!].content, userId: user!.userId, isAnonymous: !sender.visibleVote)
     }
     
     func didTapDiscuss(_ sender: pInspireTableViewCell) {
         let clickedIndexPath = self.pollTableView.indexPath(for: (sender as UITableViewCell))!
         let totalCount = self.pollTimeline.count
         let poll = self.pollTimeline[totalCount - 1 - clickedIndexPath.row]
-        let members: [String] = selectDiscussionMembers(from: poll)
-        var members_without_self = members
-        members_without_self.remove(at: members_without_self.index(of: userName!)!)
+        let members: [String: Bool] = selectDiscussionMembers(from: poll)
+        var members_without_self = Array<String>(members.keys)
+        members_without_self.remove(at: members_without_self.index(of: user!.userId)!)
         
         // Popup dialog box
         let alertController = UIAlertController(title: "START A DICUSSION", message: "pInspire recommends you to dicuss with " + members_without_self.joined(separator: ", ") + ". Leave them a message:", preferredStyle: .alert)
@@ -97,7 +117,7 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
             } else {
                 message = message! + " Let's chat about it OFFLINE!"
             }
-            self.createInvitationToDatabase(from: self.userName!, to: members_without_self, message: message!)
+            self.createInvitationToDatabase(from: (self.user?.userId)!, to: members_without_self, message: message!)
             let alert = UIAlertController(title: "Invitations Sent!", message: "", preferredStyle: .alert)
             self.present(alert, animated: true, completion: nil)
             // Hide in 2 seconds
@@ -127,26 +147,31 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
         performSegue(withIdentifier: "showWeb", sender: sender)
     }
     
-    private func selectDiscussionMembers(from poll: Poll) -> [String] {
-        var members = poll.visibleVotedUsers
-        members.remove(at: members.index(of: userName!)!)
+    private func selectDiscussionMembers(from poll: Poll) -> [String: Bool] {
+        var members = poll.visibleVotedUserIds
+        members.remove(at: members.index(of: user!.userId)!)
         members.shuffle()
         let selectNumOfMembers = min(Constants.chatMemberUpperLimit, poll.numOfVisibleVotedUsers)
-        return Array(members[0..<selectNumOfMembers]) + [userName!]
+        var selectedDict = [String: Bool]()
+        for memberId in Array(members[0..<selectNumOfMembers]) {
+            selectedDict[memberId] = false
+        }
+        selectedDict.updateValue(true, forKey: user!.userId)
+        return selectedDict
         
         /* while (members.count < Constants.chatMemberUpperLimit) && (members.count < (poll?.numOfVisibleVotedUsers)!) {
          Can do some smarter way here.
          }*/
     }
 
-    private func createGroupIdToDatabase(for members: [String], from poll: Poll, message: String) -> String {
+    private func createGroupIdToDatabase(for members: [String: Bool], from poll: Poll, message: String) -> String {
         let itemRef: DatabaseReference = refDiscussion.childByAutoId()
         let key = itemRef.key
         let newDiscussion = ["Members": members, "Question": poll.question] as [String: Any]
         let childUpdates = ["/\(key)": newDiscussion]
         refDiscussion.updateChildValues(childUpdates)
         let messageRef = itemRef.child("Messages").childByAutoId()
-        let messageContent = ["senderId": user!.userId, "senderName": userName!, "text": message]
+        let messageContent = ["senderId": user!.userId, "senderName": userName!, "text": message, "hasSeen": members] as [String : Any]
         messageRef.setValue(messageContent)
         return itemRef.key
     }
@@ -159,15 +184,77 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
         }
     }
     
-    func writeVoteData(id: String, choiceContent: String, userName: String, isAnonymous: Bool){
-        ref.child("Polls/Polls").child(id).child(Constants.PollChoiceFieldName).child(choiceContent).child(userName).setValue(isAnonymous)
+    private func readDiscussionFromDatabase() {
+        refDiscussion.observe(.value, with: { [weak self] (snapshot) -> Void in
+            var countUnseen = 0
+            for discuss in snapshot.children.allObjects as! [DataSnapshot] {
+                //getting values
+                // print("\(discuss)")
+               
+                if let discussObject = discuss.value as? [String: AnyObject] {
+                
+                    let memberDict = discussObject["Members"]
+                    let messagesObject = discussObject["Messages"]
+                    if let memberHasSeen = memberDict as? [String: Bool], let chatRoomHasSeen = memberHasSeen[(self?.user?.userId)!] {
+                    if !chatRoomHasSeen {
+                        countUnseen += 1
+                        continue
+                    } else {
+                    
+                        for (_, value) in (messagesObject as? [String: AnyObject]) ?? [:] {
+                            if let message = value as? [String: AnyObject] {
+                                if let messageHasSeen = message["hasSeen"] as?  [String: Bool], messageHasSeen[(self?.user?.userId)!]! == false {
+                                    countUnseen += 1
+                                    break
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            }
+            self?.unseenMessageNum = countUnseen
+        })
+    }
+    
+    private func readInvitationFromDatabase() {
+        let query = refInvitation.queryOrderedByKey().queryEqual(toValue: "Jia Yao")//user!.userId)
+        
+        query.observe(.value, with: { (snapshot) in
+            var count: Int = 0
+            for childSnapshot in snapshot.children.allObjects as! [DataSnapshot] {
+                if let invitationObject = childSnapshot.value as? [String: AnyObject]{
+                    for (_, value) in invitationObject {
+                        let seenObject = value as? [String: Any]
+                        let hasSeen = seenObject!["seen"] as? Bool
+                        if hasSeen == false {
+                            count += 1
+                        }
+                    }
+                }
+            }
+            // set Badge value
+            self.unseenInivitationNum = count
+        })
+    }
+    
+    
+    private func writeVoteData(id: String, choiceContent: String, userId: String, isAnonymous: Bool){
+        ref.child("Polls/Polls").child(id).child(Constants.PollChoiceFieldName).child(choiceContent).child(userId).setValue(!isAnonymous)
+    }
+    
+    func selectVisibleVotes(from votes: [String: Bool]) -> [String: Bool]{
+        return votes.filter {user!.visibleUserIds.contains($0.key)}
     }
     
     func configureDatabase() {
         ref = Database.database().reference()
         refDiscussion = Database.database().reference().child("Discussions")
         refInvitation = Database.database().reference().child("Invitations")
+        
         // Listen for new messages in the Firebase database
+        readInvitationFromDatabase()
+        readDiscussionFromDatabase()
         
         _refHandle = self.ref.child("Polls").observe(.childAdded, with: { [weak self] (snapshot) -> Void in
             guard let strongSelf = self else { return }
@@ -180,13 +267,24 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
                 let pollObject = poll.value as? [String: AnyObject]
                 let pollQuestion  = pollObject![Constants.PollQuestionFieldName]
                 let pollInitiator = pollObject![Constants.PollInitiatorFieldName]
+                let pollInitiatorId = pollObject![Constants.PollInitiatorIdFieldName]
                 let pollAnonymous = pollObject![Constants.PollAnonymousFieldName]
                 let pollUrlString = pollObject![Constants.pollUrlFieldName]
+                if let initiatorId = pollInitiatorId as? String {
+                    if !(self?.user?.visibleUserIds.contains(initiatorId))! {
+                        continue
+                    }
+                }
+                // TODO: - uncomment below when done.
+                /*else {
+                    continue
+                }*/
                 var choices = [Choice]()
                 if let choiceObject = pollObject![Constants.PollChoiceFieldName] as? [String: Any] {
                     for (content, votes) in choiceObject {
                         if let votes = votes as? [String:Bool] {
-                            choices.append(Choice(for: content, votes: votes))
+                            let selectedVotes = strongSelf.selectVisibleVotes(from: votes)
+                            choices.append(Choice(for: content, votes: selectedVotes))
                         }
                     }
                 }
@@ -220,13 +318,14 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
         return pollTimeline.count
     }
 
-    private struct Constants {
+    struct Constants {
         static let chatMemberUpperLimit = 2
         static let PollQuestionFieldName:String = "Question"
         static let pollUrlFieldName: String = "URL"
         static let PollChoiceFieldName: String = "Choices"
         static let PollAnonymousFieldName: String = "Anonymity"
         static let PollInitiatorFieldName: String = "Initiator"
+        static let PollInitiatorIdFieldName: String = "InitiatorId"
         static let PollOptionColorWhenChosen: UIColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
         static let PollOptionColorWhenNotChosen: UIColor = #colorLiteral(red: 0.9921568627, green: 0.7333333333, blue: 0.3019607843, alpha: 1)
         static let PollSwitchColor: UIColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
@@ -244,7 +343,7 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
         cell.questionLabelView.preferredMaxLayoutWidth = self.pollTableView.bounds.width
         cell.questionLabelView.text = "\(poll.question)"
         cell.initiatorLabelView.text = poll.initiatorAnonymous ? "Anonymous" : "\(poll.initiator)"
-        let userHasVoted = poll.userHasVoted(user: userName!)
+        let userHasVoted = poll.userHasVoted(userId: user!.userId)
         if userHasVoted {
             updateViewForhasVoted(for: cell, withPoll: poll)
         } else {
@@ -289,7 +388,7 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
             
             let choiceModel = poll.choices[index]
             
-            if choiceModel.userHasVotedThis(user: userName!) {
+            if choiceModel.userHasVotedThis(userId: user!.userId) {
                 choiceButtonView.backgroundColor = Constants.PollOptionColorWhenChosen
             } else {
                 choiceButtonView.backgroundColor = Constants.PollOptionColorWhenNotChosen
@@ -305,7 +404,7 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
         for index in poll.choices.count..<cell.choiceButtonView.count {
             cell.choiceButtonView[index].isHidden = true
         }
-        let hasAnonymouslyVoted: Bool = !poll.visibleVotedUsers.contains(user!.userName)
+        let hasAnonymouslyVoted: Bool = !poll.visibleVotedUserIds.contains(user!.userId)
         if poll.numOfVisibleVotedUsers < 3 || hasAnonymouslyVoted {
             cell.discussButtonView.isHidden = true
             // cell.discussButtonView.alpha = 0.5;

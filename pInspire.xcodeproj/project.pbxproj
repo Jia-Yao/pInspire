@@ -30,11 +30,13 @@
 		18DD608020A824F0000E6121 /* AddContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD607F20A824F0000E6121 /* AddContactsTableViewCell.swift */; };
 		BA47C889209BB0880073242E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47C888209BB0880073242E /* WebViewController.swift */; };
 		BA5987BC20961657009B79DF /* pInspireTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5987BB20961657009B79DF /* pInspireTableViewCell.swift */; };
+		BA89DE5A20A9EA830092CA07 /* Invitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA89DE5920A9EA830092CA07 /* Invitation.swift */; };
 		BAA407712095641500453A34 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAA407702095641500453A34 /* GoogleService-Info.plist */; };
 		BAB4949B209AE4A20077B3EB /* roundedButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB4949A209AE4A20077B3EB /* roundedButtonView.swift */; };
 		BADB462220A288890082AC1A /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADB462120A288890082AC1A /* StatsView.swift */; };
 		BADB462420A2A1C70082AC1A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADB462320A2A1C70082AC1A /* Extensions.swift */; };
 		BADB462620A2AFE80082AC1A /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADB462520A2AFE80082AC1A /* StatsViewController.swift */; };
+		BAFC80A520AA2D02009335C4 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFC80A420AA2D02009335C4 /* ProfileTableViewCell.swift */; };
 		BC8430815C1C18F0C72688FB /* Pods_pInspire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25C1CB3A78BAC357D82577D /* Pods_pInspire.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,11 +68,13 @@
 		7CAFC73FB83272A2286306FD /* Pods-pInspire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pInspire.release.xcconfig"; path = "Pods/Target Support Files/Pods-pInspire/Pods-pInspire.release.xcconfig"; sourceTree = "<group>"; };
 		BA47C888209BB0880073242E /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		BA5987BB20961657009B79DF /* pInspireTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pInspireTableViewCell.swift; sourceTree = "<group>"; };
+		BA89DE5920A9EA830092CA07 /* Invitation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invitation.swift; sourceTree = "<group>"; };
 		BAA407702095641500453A34 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BAB4949A209AE4A20077B3EB /* roundedButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roundedButtonView.swift; sourceTree = "<group>"; };
 		BADB462120A288890082AC1A /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		BADB462320A2A1C70082AC1A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		BADB462520A2AFE80082AC1A /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		BAFC80A420AA2D02009335C4 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		E25C1CB3A78BAC357D82577D /* Pods_pInspire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pInspire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -107,6 +111,8 @@
 		1803780520951710009F214E /* pInspire */ = {
 			isa = PBXGroup;
 			children = (
+				BA89DE5920A9EA830092CA07 /* Invitation.swift */,
+				BAFC80A420AA2D02009335C4 /* ProfileTableViewCell.swift */,
 				18DD607F20A824F0000E6121 /* AddContactsTableViewCell.swift */,
 				18DD607D20A823E9000E6121 /* AddContactsTableViewController.swift */,
 				1803780620951710009F214E /* AppDelegate.swift */,
@@ -304,8 +310,10 @@
 				185A998020A9056B00D05891 /* InvitationsTableViewController.swift in Sources */,
 				189A74D920A17AE400E502B0 /* DiscussionGroupTableViewController.swift in Sources */,
 				189A74DB20A17B6E00E502B0 /* DiscussionGroupTableViewCell.swift in Sources */,
+				BAFC80A520AA2D02009335C4 /* ProfileTableViewCell.swift in Sources */,
 				BA47C889209BB0880073242E /* WebViewController.swift in Sources */,
 				1803783020954A25009F214E /* User.swift in Sources */,
+				BA89DE5A20A9EA830092CA07 /* Invitation.swift in Sources */,
 				18078586209EB71D00317AF3 /* ContactsTableViewController.swift in Sources */,
 				BA5987BC20961657009B79DF /* pInspireTableViewCell.swift in Sources */,
 				18078582209E72D300317AF3 /* ProfileViewController.swift in Sources */,

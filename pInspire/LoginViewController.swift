@@ -88,6 +88,14 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
                     } else{
                         let key = self.refUser.child(AccessToken.current!.userId!).child("ProfilePhoto")
                         key.setValue(self.user.profilePhoto)
+                    self.refUser.child(AccessToken.current!.userId!).child("Friends").observeSingleEvent(of: .value, with: { (snapshot) in
+                        self.user.friendsDict = [String: String]()
+                            if (snapshot.exists()){
+                                for user in snapshot.children.allObjects as! [DataSnapshot] {
+                                    self.user.friendsDict![user.key] = (user.value as! String)
+                                }
+                            }
+                        })
                     }
                 })
                 DispatchQueue.main.async() {
@@ -124,7 +132,10 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
                     let discussionsController = navigationController.topViewController as? DiscussionGroupTableViewController{
                     discussionsController.me = user
                 }
-                // TODO: May need to set user for profile tab as well
+                if let navigationController = tabBarController.viewControllers![4] as? UINavigationController,
+                    let profileController = navigationController.topViewController as? ProfileViewController {
+                    profileController.me = user
+                }
             }
         default:
             fatalError("Unexpected Segue Identifier; \(segue.identifier ?? "")")

@@ -22,7 +22,11 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     
-    @IBOutlet weak var nameTableView: UITableView!
+    @IBOutlet weak var nameTableView: UITableView! {
+        didSet {
+            nameTableView.alwaysBounceVertical = false
+        }
+    }
     
     @IBOutlet var choicesView: [StatsView]!
     
@@ -44,8 +48,8 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
-    private var people: [String]? {
-        return clickedChoice?.visibleUsersForMe(user: user?.userName ?? "")
+    private var peopleIds: [String]? {
+        return clickedChoice?.visibleUsersForMe(userId: user?.userId ?? "")
     }
     
     override func viewDidLoad() {
@@ -54,7 +58,7 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         nameTableView.dataSource = self
         refDiscussion = Database.database().reference().child("Discussions")
         updateView()
-        
+        nameTableView.reloadData()
     }
     
     var totalVotes: Int = 0
@@ -108,7 +112,7 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     private func updateChoiceView(for choiceView: StatsView, model choice: Choice) {
         choiceView.context = choice.content
         choiceView.ratio = Float(choice.numOfVotes) / Float(totalVotes)
-        choiceView.chosen = choice.containUserVote(user: userName!)
+        choiceView.chosen = choice.containUserVote(userId: user!.userId)
     }
     // MARK: - TableView
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -120,13 +124,13 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return people?.count ?? 0
+        return peopleIds?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "NameCellUnit"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-        let name = people![indexPath.row]
+        let name = user?.idNameConverter[peopleIds![indexPath.row]]
         cell.textLabel?.text = name
         return cell
     }

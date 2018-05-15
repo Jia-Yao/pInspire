@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -470,7 +471,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="df5-u6-DfS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="470" y="842"/>
+            <point key="canvasLocation" x="1376.8115942028987" y="841.304347826087"/>
         </scene>
         <!--Add Contacts Table View Controller-->
         <scene sceneID="HQs-gQ-GwF">
@@ -567,7 +568,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Et-uS-wdZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4220.289855072464" y="1019.8369565217392"/>
+            <point key="canvasLocation" x="5127.536231884058" y="1019.8369565217392"/>
         </scene>
         <!--pInspire-->
         <scene sceneID="sq1-nu-jOE">
@@ -620,26 +621,94 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kIY-bB-0dK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4176.811594202899" y="286.14130434782612"/>
+            <point key="canvasLocation" x="5084.057971014493" y="286.14130434782612"/>
         </scene>
-        <!--Profile-->
+        <!--Profile View Controller-->
         <scene sceneID="P2Y-b2-I8s">
             <objects>
                 <viewController id="YHm-qz-Gb0" customClass="ProfileViewController" customModule="pInspire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gns-Fi-u7R">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cI9-53-Bf2">
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pollCell" id="HaD-FI-J2B">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HaD-FI-J2B" id="Gfp-cd-A95">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="imageCell" rowHeight="200" id="h0Z-dn-iC7" customClass="ProfileTableViewCell" customModule="pInspire" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="414" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="h0Z-dn-iC7" id="1f7-F1-GfG">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="199.66666666666666"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tTj-Q7-Wog">
+                                                    <rect key="frame" x="20" y="24.666666666666671" width="150" height="150.33333333333331"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="150" id="dja-CT-oZG"/>
+                                                        <constraint firstAttribute="width" secondItem="tTj-Q7-Wog" secondAttribute="height" multiplier="1:1" id="p59-Xp-qsh"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KID-vD-thp">
+                                                    <rect key="frame" x="220" y="83" width="144" height="33.666666666666657"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="tTj-Q7-Wog" firstAttribute="centerY" secondItem="1f7-F1-GfG" secondAttribute="centerY" id="1hc-Rl-ibX"/>
+                                                <constraint firstItem="tTj-Q7-Wog" firstAttribute="leading" secondItem="1f7-F1-GfG" secondAttribute="leadingMargin" id="Cw3-mp-UAr"/>
+                                                <constraint firstItem="KID-vD-thp" firstAttribute="centerY" secondItem="1f7-F1-GfG" secondAttribute="centerY" id="LcE-4j-NLP"/>
+                                                <constraint firstAttribute="bottom" secondItem="tTj-Q7-Wog" secondAttribute="bottom" constant="24.666666666666657" id="MPT-38-z9G"/>
+                                                <constraint firstItem="KID-vD-thp" firstAttribute="leading" secondItem="tTj-Q7-Wog" secondAttribute="trailing" constant="50" id="hDe-3N-obM"/>
+                                                <constraint firstAttribute="trailing" secondItem="KID-vD-thp" secondAttribute="trailing" constant="50" id="oBx-9d-YKv"/>
+                                                <constraint firstItem="tTj-Q7-Wog" firstAttribute="top" secondItem="1f7-F1-GfG" secondAttribute="top" constant="24.666666666666671" id="yoO-6b-2jI"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="KID-vD-thp" id="ell-3o-5hN"/>
+                                            <outlet property="profilePhoto" destination="tTj-Q7-Wog" id="JxB-U4-quD"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="logoutCell" rowHeight="75" id="jaE-qH-Ktv" customClass="ProfileTableViewCell" customModule="pInspire" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="272" width="414" height="75"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jaE-qH-Ktv" id="B9b-K7-Swx">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="74.666666666666671"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cI9-53-Bf2" firstAttribute="trailing" secondItem="f4x-tH-haT" secondAttribute="trailing" id="9WF-f7-KFz"/>
+                            <constraint firstItem="cI9-53-Bf2" firstAttribute="leading" secondItem="f4x-tH-haT" secondAttribute="leading" id="oci-gP-DcB"/>
+                            <constraint firstItem="cI9-53-Bf2" firstAttribute="top" secondItem="f4x-tH-haT" secondAttribute="top" id="viS-PV-ytQ"/>
+                            <constraint firstItem="cI9-53-Bf2" firstAttribute="bottom" secondItem="f4x-tH-haT" secondAttribute="bottom" id="z0a-Wa-Ck5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="f4x-tH-haT"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="user_male" selectedImage="user_male" id="OSk-sG-BSG"/>
+                    <navigationItem key="navigationItem" id="6Yq-sP-vfM"/>
                     <connections>
+                        <outlet property="profileTableView" destination="cI9-53-Bf2" id="KCR-Ux-7OO"/>
                         <segue destination="8Bs-wi-wDQ" kind="show" identifier="LoggingOut" id="0j5-rL-co7"/>
+                        <segue destination="uCt-MA-1xr" kind="show" identifier="showStatsFromProfile" id="t5X-Ks-Xa9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="46D-ij-0HY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1127" y="842"/>
+            <point key="canvasLocation" x="-220.28985507246378" y="841.304347826087"/>
         </scene>
         <!--CreatePoll-->
         <scene sceneID="wg7-f3-ORb">
@@ -803,7 +872,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5159.420289855073" y="210.32608695652175"/>
+            <point key="canvasLocation" x="6066.666666666667" y="210.32608695652175"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="fgZ-Nw-qez">
@@ -839,7 +908,7 @@
                         <segue destination="fFx-qc-SyV" kind="relationship" relationship="viewControllers" id="adg-Yd-4hk"/>
                         <segue destination="Iza-Kp-6mg" kind="relationship" relationship="viewControllers" id="azc-YC-tUT"/>
                         <segue destination="0KJ-hH-iLn" kind="relationship" relationship="viewControllers" id="SkX-gL-CC0"/>
-                        <segue destination="YHm-qz-Gb0" kind="relationship" relationship="viewControllers" id="tvR-u4-tup"/>
+                        <segue destination="fCx-B7-lT5" kind="relationship" relationship="viewControllers" id="tvR-u4-tup"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -882,7 +951,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N75-IF-CaQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3233.3333333333335" y="286.14130434782612"/>
+            <point key="canvasLocation" x="4140.579710144928" y="286.14130434782612"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nR5-ZC-Gqz">
@@ -901,7 +970,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RNP-3x-q7W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-218.40000000000001" y="841.62561576354688"/>
+            <point key="canvasLocation" x="688.40579710144937" y="841.304347826087"/>
         </scene>
         <!--Invitations-->
         <scene sceneID="Cal-VE-JRC">
@@ -920,7 +989,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SK3-Gy-OpT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1634.7826086956522" y="840.48913043478262"/>
+            <point key="canvasLocation" x="2542.0289855072465" y="840.48913043478262"/>
         </scene>
         <!--pInspire-->
         <scene sceneID="YvN-Sm-XI0">
@@ -940,19 +1009,34 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="POs-aO-CPO" id="0UQ-zd-m60"/>
-                            <outlet property="delegate" destination="POs-aO-CPO" id="pTZ-eR-ZoO"/>
-                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="pInspire" id="bMU-qy-3vY"/>
                     <connections>
-                        <outlet property="invitationsTable" destination="XQg-Ai-XwI" id="Vbj-f1-Wxd"/>
+                        <outlet property="invitationsTable" destination="XQg-Ai-XwI" id="wfL-4D-lvA"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9fT-pp-rqB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2486" y="840"/>
+            <point key="canvasLocation" x="3392.753623188406" y="839.67391304347836"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="apT-dU-VXn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fCx-B7-lT5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="user_male" selectedImage="user_male" id="OSk-sG-BSG"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7UZ-RS-txg">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="YHm-qz-Gb0" kind="relationship" relationship="rootViewController" id="SEv-El-f8I"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o6z-pu-M3b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1127.536231884058" y="841.304347826087"/>
         </scene>
     </scenes>
     <resources>
@@ -962,4 +1046,7 @@
         <image name="typing.png" width="34" height="8"/>
         <image name="user_male" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="t5X-Ks-Xa9"/>
+    </inferredMetricsTieBreakers>
 </document>
