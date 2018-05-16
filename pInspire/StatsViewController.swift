@@ -13,7 +13,7 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     @IBOutlet weak var questionLabelView: UILabel! {
         didSet {
-            questionLabelView.layer.borderWidth = 3.0
+            questionLabelView.layer.borderWidth = 1.0
             questionLabelView.layer.cornerRadius = 8
             questionLabelView.layer.borderColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
             questionLabelView.backgroundColor = UIColor.white
@@ -30,6 +30,7 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet var choicesView: [StatsView]!
     
+    @IBOutlet weak var backButton: UIButton!
     
     var refDiscussion: DatabaseReference!
     
@@ -41,6 +42,11 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     var userName: String?
     var user: User?
+    var hideBackButton = true
+    
+    @IBAction func back(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
     
     private var clickedChoice: Choice? = nil {
         didSet {
@@ -59,6 +65,9 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         refDiscussion = Database.database().reference().child("Discussions")
         updateView()
         nameTableView.reloadData()
+        if hideBackButton{
+            backButton.isHidden = true
+        }
     }
     
     var totalVotes: Int = 0
@@ -111,9 +120,14 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     private func updateChoiceView(for choiceView: StatsView, model choice: Choice) {
         choiceView.context = choice.content
-        choiceView.ratio = Float(choice.numOfVotes) / Float(totalVotes)
+        if (totalVotes == 0){
+            choiceView.ratio = 0
+        } else {
+            choiceView.ratio = Float(choice.numOfVotes) / Float(totalVotes)
+        }
         choiceView.chosen = choice.containUserVote(userId: user!.userId)
     }
+    
     // MARK: - TableView
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

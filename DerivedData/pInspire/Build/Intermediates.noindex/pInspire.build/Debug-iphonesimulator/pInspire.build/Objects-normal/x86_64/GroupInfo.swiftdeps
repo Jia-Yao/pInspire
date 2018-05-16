@@ -8,6 +8,7 @@ provides-member:
 provides-dynamic-lookup:
 depends-top-level:
 - "AssignmentPrecedence"
+- "Bool"
 - "GroupInfo"
 - "String"
 - "StringLiteralType"
@@ -38,10 +39,13 @@ depends-member:
 - ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
 - ["s26ExpressibleByStringLiteralP", "init"]
 - ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- ["8pInspire9GroupInfoC", "Bool"]
 - ["8pInspire9GroupInfoC", "String"]
 - ["8pInspire9GroupInfoC", "deinit"]
 - ["8pInspire9GroupInfoC", "groupId"]
+- ["8pInspire9GroupInfoC", "hasSeen"]
 - ["8pInspire9GroupInfoC", "init"]
+- ["8pInspire9GroupInfoC", "memberIds"]
 - ["8pInspire9GroupInfoC", "members"]
 - ["8pInspire9GroupInfoC", "members_list"]
 - ["8pInspire9GroupInfoC", "pollQuestion"]
@@ -297,4 +301,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/MapKit.framework/Headers/MapKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
-interface-hash: "7ade96d4dbf75659a3f8abc41aa2231e"
+interface-hash: "dba8af0a49cbbef8bee4e59a4289d2c2"

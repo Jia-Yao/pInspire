@@ -15,7 +15,8 @@ class ProfileViewController: UIViewController, LoginButtonDelegate, UITableViewD
     //MARK: Properties
     
     @IBOutlet weak var profileTableView: UITableView!
-    var loginButton = LoginButton(readPermissions: [ .publicProfile, .email ])
+    var loginButton = LoginButton(readPermissions: [ .publicProfile ])
+    //var loginButton = LoginButton(readPermissions: [ .publicProfile, .userFriends ])
     var me: User?
     var postedPolls: [Poll] = [Poll]()
     var ref: DatabaseReference!
@@ -27,8 +28,6 @@ class ProfileViewController: UIViewController, LoginButtonDelegate, UITableViewD
         profileTableView.dataSource = self
         profileTableView.estimatedRowHeight = 250
         profileTableView.rowHeight = UITableViewAutomaticDimension
-        loginButton.center = view.center
-        view.addSubview(loginButton)
         loginButton.delegate = self
     }
 
@@ -85,6 +84,7 @@ class ProfileViewController: UIViewController, LoginButtonDelegate, UITableViewD
             let cell = self.profileTableView.dequeueReusableCell(withIdentifier: "imageCell", for: indexPath) as! ProfileTableViewCell
             // cell.delegate = self
             cell.nameLabel.text = self.me?.userName
+            cell.viewForButton.addSubview(loginButton)
             if let _ = self.me?.profilePhoto, let url = URL(string: (self.me?.profilePhoto)!) {
                 DispatchQueue.global(qos:.userInitiated).async {
                     let profilePhotoData = try? Data(contentsOf: url)
@@ -153,6 +153,7 @@ class ProfileViewController: UIViewController, LoginButtonDelegate, UITableViewD
                 statsController.poll = self.postedPolls[clickedIndexPath.row]
                 statsController.userName = me!.userName
                 statsController.user = me
+                statsController.hideBackButton = false
             }
         default:
             print("pInspire: Unexpected Segue Identifier; \(segue.identifier ?? "")")

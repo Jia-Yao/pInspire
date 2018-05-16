@@ -1,6 +1,6 @@
 version: "Apple Swift version 4.1 (swiftlang-902.0.48 clang-902.0.37.1)"
 options: "0297f434bc54bb0807647a136aa7039f"
-build_time: [1526177080, 598720000]
+build_time: [1526436325, 245294000]
 inputs:
   "/Users/jiayao/Desktop/github/pInspire/Pods/FacebookCore/Sources/Core/Common/AccessToken.swift": [1526177060, 0]
   "/Users/jiayao/Desktop/github/pInspire/Pods/FacebookCore/Sources/Core/AppEvents/AppEvent.Builtin.swift": [1526177060, 0]

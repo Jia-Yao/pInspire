@@ -75,6 +75,7 @@ class ContactsTableViewController: UITableViewController {
         if indexPath.row == 0{
             let cellIdentifier = "MessageCellUnit"
             let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+            cell.selectionStyle = .none
             return cell
         } else{
             let cellIdentifier = "ContactCellUnit"
@@ -91,6 +92,7 @@ class ContactsTableViewController: UITableViewController {
                     }
                 }
             }
+            cell.selectionStyle = .none
             return cell
         }
     }

@@ -22,6 +22,7 @@
 		18078586209EB71D00317AF3 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18078585209EB71D00317AF3 /* ContactsTableViewController.swift */; };
 		18078588209EB8F200317AF3 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18078587209EB8F200317AF3 /* ContactsTableViewCell.swift */; };
 		185A998020A9056B00D05891 /* InvitationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A997F20A9056B00D05891 /* InvitationsTableViewController.swift */; };
+		185C113920ABFE5A003B1507 /* ButtonWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185C113820ABFE5A003B1507 /* ButtonWithImage.swift */; };
 		189A74D920A17AE400E502B0 /* DiscussionGroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189A74D820A17AE400E502B0 /* DiscussionGroupTableViewController.swift */; };
 		189A74DB20A17B6E00E502B0 /* DiscussionGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189A74DA20A17B6E00E502B0 /* DiscussionGroupTableViewCell.swift */; };
 		189A74DD20A17FAB00E502B0 /* GroupInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189A74DC20A17FAB00E502B0 /* GroupInfo.swift */; };
@@ -58,6 +59,7 @@
 		18078585209EB71D00317AF3 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		18078587209EB8F200317AF3 /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
 		185A997F20A9056B00D05891 /* InvitationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationsTableViewController.swift; sourceTree = "<group>"; };
+		185C113820ABFE5A003B1507 /* ButtonWithImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithImage.swift; sourceTree = "<group>"; };
 		189A74D820A17AE400E502B0 /* DiscussionGroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionGroupTableViewController.swift; sourceTree = "<group>"; };
 		189A74DA20A17B6E00E502B0 /* DiscussionGroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionGroupTableViewCell.swift; sourceTree = "<group>"; };
 		189A74DC20A17FAB00E502B0 /* GroupInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInfo.swift; sourceTree = "<group>"; };
@@ -111,8 +113,6 @@
 		1803780520951710009F214E /* pInspire */ = {
 			isa = PBXGroup;
 			children = (
-				BA89DE5920A9EA830092CA07 /* Invitation.swift */,
-				BAFC80A420AA2D02009335C4 /* ProfileTableViewCell.swift */,
 				18DD607F20A824F0000E6121 /* AddContactsTableViewCell.swift */,
 				18DD607D20A823E9000E6121 /* AddContactsTableViewController.swift */,
 				1803780620951710009F214E /* AppDelegate.swift */,
@@ -125,17 +125,20 @@
 				189A74DA20A17B6E00E502B0 /* DiscussionGroupTableViewCell.swift */,
 				189A74D820A17AE400E502B0 /* DiscussionGroupTableViewController.swift */,
 				189A74DE20A184C500E502B0 /* DiscussionRoomViewController.swift */,
-				185A997F20A9056B00D05891 /* InvitationsTableViewController.swift */,
 				BADB462320A2A1C70082AC1A /* Extensions.swift */,
 				BAA407702095641500453A34 /* GoogleService-Info.plist */,
 				189A74DC20A17FAB00E502B0 /* GroupInfo.swift */,
 				1803781420951712009F214E /* Info.plist */,
+				BA89DE5920A9EA830092CA07 /* Invitation.swift */,
+				185A997F20A9056B00D05891 /* InvitationsTableViewController.swift */,
 				1803781120951712009F214E /* LaunchScreen.storyboard */,
 				1807857F209E64F200317AF3 /* LoginViewController.swift */,
 				1803780C20951710009F214E /* Main.storyboard */,
+				185C113820ABFE5A003B1507 /* ButtonWithImage.swift */,
 				BA5987BB20961657009B79DF /* pInspireTableViewCell.swift */,
 				1803781A20952DE5009F214E /* pInspireViewController.swift */,
 				1803782E20954A25009F214E /* Poll.swift */,
+				BAFC80A420AA2D02009335C4 /* ProfileTableViewCell.swift */,
 				18078581209E72D300317AF3 /* ProfileViewController.swift */,
 				BAB4949A209AE4A20077B3EB /* roundedButtonView.swift */,
 				BADB462120A288890082AC1A /* StatsView.swift */,
@@ -320,6 +323,7 @@
 				1803783120954A25009F214E /* Poll.swift in Sources */,
 				1803782F20954A25009F214E /* Choice.swift in Sources */,
 				BADB462220A288890082AC1A /* StatsView.swift in Sources */,
+				185C113920ABFE5A003B1507 /* ButtonWithImage.swift in Sources */,
 				BADB462420A2A1C70082AC1A /* Extensions.swift in Sources */,
 				1803780720951710009F214E /* AppDelegate.swift in Sources */,
 				18DD607E20A823E9000E6121 /* AddContactsTableViewController.swift in Sources */,
@@ -472,13 +476,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9D6F487TRN;
+				DEVELOPMENT_TEAM = NJ7R23LT9W;
 				INFOPLIST_FILE = pInspire/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = parachute.pInspire;
+				PRODUCT_BUNDLE_IDENTIFIER = parachute.pInspire.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -491,13 +495,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9D6F487TRN;
+				DEVELOPMENT_TEAM = NJ7R23LT9W;
 				INFOPLIST_FILE = pInspire/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = parachute.pInspire;
+				PRODUCT_BUNDLE_IDENTIFIER = parachute.pInspire.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

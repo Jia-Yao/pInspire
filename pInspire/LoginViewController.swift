@@ -15,7 +15,8 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
     
     //MARK: Properties
     
-    var loginButton = LoginButton(readPermissions: [ .publicProfile, .userFriends ])
+    var loginButton = LoginButton(readPermissions: [ .publicProfile ])
+    //var loginButton = LoginButton(readPermissions: [ .publicProfile, .userFriends ])
     var user = User(userId: "", firstName: "", lastName: "", profilePhoto: "")
     var refUser: DatabaseReference!
     
@@ -50,6 +51,7 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
     func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
         if AccessToken.current != nil{
             // User is already logged in
+            loginButton.isHidden = true
             fetchProfile()
         }
     }
@@ -132,8 +134,7 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
                     let discussionsController = navigationController.topViewController as? DiscussionGroupTableViewController{
                     discussionsController.me = user
                 }
-                if let navigationController = tabBarController.viewControllers![4] as? UINavigationController,
-                    let profileController = navigationController.topViewController as? ProfileViewController {
+                if let profileController = tabBarController.viewControllers![4] as? ProfileViewController {
                     profileController.me = user
                 }
             }

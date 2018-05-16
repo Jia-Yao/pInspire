@@ -77,12 +77,12 @@ class StatsView: UIView {
     
     private struct Constants {
         static let rectBackgroundColor: UIColor = UIColor(cgColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
-        static let innerRectBackgroundColor: UIColor = UIColor(cgColor: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1))
+        static let innerRectBackgroundColor: UIColor = UIColor(cgColor: #colorLiteral(red: 0.8588235294, green: 0.8666666667, blue: 0.9176470588, alpha: 1))
         // static let innerRectClickedBackgroundColor: UIColor = UIColor(cgColor: #colorLiteral(red: 0.9568627451, green: 0.4078431373, blue: 0.2235294118, alpha: 1))
-        static let choiceStrokeColor: UIColor = UIColor(cgColor: #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1))
-        static let chosenChoiceStrokeColor: UIColor = UIColor(cgColor: #colorLiteral(red: 0.9215686275, green: 0.1882352941, blue: 0.2941176471, alpha: 1))
-        static let strokeWidth: CGFloat = 5.0
-        static let chosenStrokeWidth: CGFloat = 10.0
+        static let choiceStrokeColor: UIColor = UIColor(cgColor: #colorLiteral(red: 0.8588235294, green: 0.8666666667, blue: 0.9176470588, alpha: 1))
+        static let chosenChoiceStrokeColor: UIColor = UIColor(cgColor: #colorLiteral(red: 0.3098039216, green: 0.3411764706, blue: 0.6588235294, alpha: 1))
+        static let strokeWidth: CGFloat = 3.0
+        static let chosenStrokeWidth: CGFloat = 6.0
     }
     
     private var rectStrokeColor: UIColor {

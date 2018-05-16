@@ -24,7 +24,7 @@ class InvitationsTableViewController: UITableViewController {
         invitationsTable.rowHeight = UITableViewAutomaticDimension;
         invitationsTable.estimatedRowHeight = 44;
         // TODO: - change
-        refInvitation = Database.database().reference().child("Invitations").child(me!.userName)
+        refInvitation = Database.database().reference().child("Invitations").child(me!.userId)
     }
 
     override func viewDidAppear(_ animated: Bool) {

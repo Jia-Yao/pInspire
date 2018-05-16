@@ -8,7 +8,9 @@ provides-member:
 provides-dynamic-lookup:
 depends-top-level:
 - !private "+"
+- !private "Array"
 - "AssignmentPrecedence"
+- !private "Dictionary"
 - "String"
 - "StringLiteralType"
 - !private "UnicodeScalarType"
@@ -17,15 +19,35 @@ depends-member:
 - ["12FacebookCore26AppEventParameterValueTypeP", "init"]
 - ["s23BidirectionalCollectionP", "init"]
 - ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "keys"]
+- !private ["s7CVarArgP", "merging"]
 - ["s10CollectionP", "init"]
+- !private ["s10CollectionP", "keys"]
+- !private ["s10CollectionP", "merging"]
 - ["s10ComparableP", "init"]
 - ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "keys"]
+- !private ["s28CustomDebugStringConvertibleP", "merging"]
 - ["s29CustomPlaygroundQuickLookableP", "init"]
 - ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "keys"]
+- !private ["s17CustomReflectableP", "merging"]
 - ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "keys"]
+- !private ["s23CustomStringConvertibleP", "merging"]
 - ["s9DecodableP", "init"]
+- !private ["s9DecodableP", "keys"]
+- !private ["s9DecodableP", "merging"]
+- !private ["s10DictionaryV", "keys"]
+- !private ["s10DictionaryV", "merging"]
 - ["s9EncodableP", "init"]
+- !private ["s9EncodableP", "keys"]
+- !private ["s9EncodableP", "merging"]
 - ["s9EquatableP", "init"]
+- !private ["s9EquatableP", "keys"]
+- !private ["s9EquatableP", "merging"]
+- !private ["s30ExpressibleByDictionaryLiteralP", "keys"]
+- !private ["s30ExpressibleByDictionaryLiteralP", "merging"]
 - ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
 - ["s26ExpressibleByStringLiteralP", "init"]
 - ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
@@ -34,6 +56,8 @@ depends-member:
 - ["s10MirrorPathP", "init"]
 - ["s26RangeReplaceableCollectionP", "init"]
 - ["s8SequenceP", "init"]
+- !private ["s8SequenceP", "keys"]
+- !private ["s8SequenceP", "merging"]
 - ["SS", "init"]
 - ["s14StringProtocolP", "init"]
 - ["s16TextOutputStreamP", "init"]
@@ -41,17 +65,22 @@ depends-member:
 - ["8pInspire4UserC", "String"]
 - ["8pInspire4UserC", "deinit"]
 - ["8pInspire4UserC", "firstName"]
+- ["8pInspire4UserC", "friendsDict"]
+- ["8pInspire4UserC", "idNameConverter"]
 - ["8pInspire4UserC", "init"]
 - ["8pInspire4UserC", "lastName"]
 - ["8pInspire4UserC", "profilePhoto"]
 - ["8pInspire4UserC", "userId"]
 - ["8pInspire4UserC", "userName"]
+- ["8pInspire4UserC", "visibleUserIds"]
 - ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
 - ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
 - ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
 - ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
 - ["s33_ExpressibleByStringInterpolationP", "init"]
 - ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "keys"]
+- !private ["s21_ObjectiveCBridgeableP", "merging"]
 - ["s16_SwiftStringViewP", "init"]
 depends-nominal:
 - "12FacebookCore26AppEventParameterValueTypeP"
@@ -64,8 +93,10 @@ depends-nominal:
 - "s17CustomReflectableP"
 - "s23CustomStringConvertibleP"
 - "s9DecodableP"
+- !private "s10DictionaryV"
 - "s9EncodableP"
 - "s9EquatableP"
+- !private "s30ExpressibleByDictionaryLiteralP"
 - "s43ExpressibleByExtendedGraphemeClusterLiteralP"
 - "s26ExpressibleByStringLiteralP"
 - "s33ExpressibleByUnicodeScalarLiteralP"
@@ -276,4 +307,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/MapKit.framework/Headers/MapKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
-interface-hash: "a450e809d6a44a148b2a7f567682871c"
+interface-hash: "68661d3358c9dacf2f1c63bdcd6d7548"

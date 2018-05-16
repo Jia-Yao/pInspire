@@ -17,6 +17,7 @@ class DiscussionGroupTableViewController: UITableViewController {
     @IBOutlet var groupTable: UITableView!
     var discussionGroups = [GroupInfo]()
     var ref: DatabaseReference!
+    var refUser: DatabaseReference!
     fileprivate var _refHandle: DatabaseHandle?
     
     override func viewDidLoad() {
@@ -56,42 +57,56 @@ class DiscussionGroupTableViewController: UITableViewController {
     
     private func configureDatabase() {
         ref = Database.database().reference().child("Discussions")
-        discussionGroups.removeAll()
-        _refHandle = self.ref.observe(.childAdded, with: { [weak self] (snapshot) -> Void in
-            guard let strongSelf = self else { return }
+        refUser = Database.database().reference().child("Users")
+        refUser.observeSingleEvent(of: .value, with: { snapshot in
+            var allUsersDict = [String: String]()
+            for user in snapshot.children.allObjects as! [DataSnapshot] {
+                let uId = user.key
+                let uInfo = user.value as? [String: AnyObject]
+                let firstName = uInfo!["FirstName"] as! String
+                let lastName = uInfo!["LastName"] as! String
+                allUsersDict[uId] = firstName + " " + lastName
+            }
             
-            let group = snapshot.value as! Dictionary<String, AnyObject>
-            let groupId = snapshot.key
-            let groupMemberDict = group["Members"] as! [String: Bool]
-            
-            let messagesObject = group["Messages"] as! [String: AnyObject]
-            if let chatRoomHasSeen = (groupMemberDict[(strongSelf.me?.userId)!]) {
-                var hasSeen = true
-                if !chatRoomHasSeen {
-                    hasSeen = false
-                } else {
-                    for (_, value) in messagesObject {
-                        if let message = value as? [String: AnyObject] {
-                            if let messageHasSeen = message["hasSeen"] as? [String: Bool]{
-                                if messageHasSeen[(strongSelf.me?.userId)!]! == false {
-                                    hasSeen = false
-                                    break
+            self.discussionGroups.removeAll()
+            self._refHandle = self.ref.observe(.childAdded, with: { [weak self] (snapshot) -> Void in
+                guard let strongSelf = self else { return }
+                
+                let group = snapshot.value as! Dictionary<String, AnyObject>
+                let groupId = snapshot.key
+                let groupMemberDict = group["Members"] as! [String: Bool]
+                
+                if let messagesObject = group["Messages"] as? [String: AnyObject]{
+                    if let chatRoomHasSeen = (groupMemberDict[(strongSelf.me?.userId)!]) {
+                        var hasSeen = true
+                        if !chatRoomHasSeen {
+                            hasSeen = false
+                        } else {
+                            for (_, value) in messagesObject {
+                                if let message = value as? [String: AnyObject] {
+                                    if let messageHasSeen = message["hasSeen"] as? [String: Bool]{
+                                        if messageHasSeen[(strongSelf.me?.userId)!]! == false {
+                                            hasSeen = false
+                                            break
+                                        }
+                                    }
                                 }
                             }
                         }
+                        let groupMemberIds = Array<String>(groupMemberDict.keys)
+                        let groupMembers = groupMemberIds.map {return (allUsersDict[$0])!}
+                        let pollQuestion = group["Question"] as? String ?? ""
+                        if let _ = groupMembers.index(of: (strongSelf.me?.userName)!) {
+                            let newGroup = GroupInfo(pollQuestion: pollQuestion , members: groupMembers, memberIds: groupMemberIds, groupId: groupId, hasSeen: hasSeen)
+                            strongSelf.discussionGroups.append(newGroup)
+                        }
                     }
                 }
-                let groupMemberIds = Array<String>(groupMemberDict.keys)
-                let groupMembers = groupMemberIds.map {return (strongSelf.me!.idNameConverter[$0])!}
-                let pollQuestion = group["Question"] as? String ?? ""
-                if let _ = groupMembers.index(of: (strongSelf.me?.userName)!) {
-                    let newGroup = GroupInfo(pollQuestion: pollQuestion , members: groupMembers, memberIds: groupMemberIds, groupId: groupId, hasSeen: hasSeen)
-                    strongSelf.discussionGroups.append(newGroup)
+                strongSelf.groupTable.reloadData()
                 }
-            }
-            strongSelf.groupTable.reloadData()
-            }
-        )
+            )
+        })
+        
     }
     
     private func setGroupChatAsRead(for groupChat: GroupInfo) {

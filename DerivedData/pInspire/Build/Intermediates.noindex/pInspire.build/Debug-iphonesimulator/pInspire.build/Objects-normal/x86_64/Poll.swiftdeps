@@ -104,7 +104,7 @@ depends-member:
 - ["8pInspire4PollC", "question"]
 - ["8pInspire4PollC", "urlString"]
 - ["8pInspire4PollC", "userHasVoted"]
-- ["8pInspire4PollC", "visibleVotedUsers"]
+- ["8pInspire4PollC", "visibleVotedUserIds"]
 - !private ["s22RandomAccessCollectionP", "count"]
 - ["s22RandomAccessCollectionP", "init"]
 - !private ["s22RandomAccessCollectionP", "map"]
@@ -374,4 +374,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/MapKit.framework/Headers/MapKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
-interface-hash: "ca1e326294671bb7ade039f2b5bce3e6"
+interface-hash: "05d9c4e2a64ebf4edcc581e0ae2b952c"

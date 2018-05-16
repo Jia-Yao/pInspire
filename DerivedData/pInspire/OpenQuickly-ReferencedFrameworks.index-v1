@@ -7,8 +7,8 @@
 	<string>CommonCrypto</string>
 	<string>FirebasePerformance</string>
 	<string>CoreLocation</string>
-	<string>SafariServices</string>
 	<string>FirebaseDynamicLinks</string>
+	<string>SafariServices</string>
 	<string>AudioToolbox</string>
 	<string>objc</string>
 	<string>FacebookCore</string>
@@ -19,19 +19,19 @@
 	<string>MobileCoreServices</string>
 	<string>Bolts</string>
 	<string>sys</string>
-	<string>FacebookLogin</string>
 	<string>JSQMessagesViewController</string>
-	<string>UserNotifications</string>
+	<string>FacebookLogin</string>
 	<string>CoreTelephony</string>
+	<string>UserNotifications</string>
 	<string>JSQSystemSoundPlayer</string>
 	<string>StoreKit</string>
 	<string>FirebaseInstanceID</string>
 	<string>FirebaseFirestore</string>
 	<string>AdSupport</string>
-	<string>FirebaseDatabase</string>
 	<string>Accounts</string>
-	<string>FirebaseRemoteConfig</string>
+	<string>FirebaseDatabase</string>
 	<string>libkern</string>
+	<string>FirebaseRemoteConfig</string>
 	<string>CoreText</string>
 	<string>WebKit</string>
 	<string>Crashlytics</string>
@@ -41,9 +41,9 @@
 	<string>QuartzCore</string>
 	<string>Security</string>
 	<string>Fabric</string>
-	<string>FirebaseAppIndexing</string>
 	<string>os</string>
 	<string>FBSDKLoginKit</string>
+	<string>FirebaseAppIndexing</string>
 	<string>FirebaseInvites</string>
 	<string>IQKeyboardManagerSwift</string>
 	<string>FBSDKCoreKit</string>

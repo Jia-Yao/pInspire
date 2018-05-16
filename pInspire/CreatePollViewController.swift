@@ -17,13 +17,13 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
     @IBOutlet weak var bottomHeight: NSLayoutConstraint!
     @IBOutlet weak var doneButton: UIButton! {
         didSet{
-            doneButton.tintColor = #colorLiteral(red: 0.9137254902, green: 0.137254902, blue: 0.2196078431, alpha: 1)
+            doneButton.tintColor = #colorLiteral(red: 0.9215686275, green: 0.1882352941, blue: 0.2823529412, alpha: 1)
         }
     }
     @IBOutlet weak var pollQuestion: UITextView!
     @IBOutlet weak var anonymousSwitch: UISwitch! {
         didSet {
-            anonymousSwitch.onTintColor = #colorLiteral(red: 0.9568627451, green: 0.4078431373, blue: 0.2235294118, alpha: 1)
+            anonymousSwitch.onTintColor = #colorLiteral(red: 0.3098039216, green: 0.3411764706, blue: 0.6588235294, alpha: 1)
             anonymousSwitch.isOn = false
         }
     }
@@ -32,6 +32,7 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
     var choices = [Choice]()
     var user: User?
     var userName: String?
+    var hideAddButton = false
     
     // Database configuration
     var refPoll: DatabaseReference!
@@ -40,6 +41,7 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Analytics.logEvent("press_create_poll", parameters: ["user": user!.userId])
         pollQuestion.delegate = self
         pollQuestion.becomeFirstResponder()
         pollQuestion.layer.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
@@ -62,12 +64,15 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
     }
     
     @IBAction func addAnswerChoice(_ sender: UIButton) {
+        
         let newIndexPath = IndexPath(row: choices.count, section: 0)
         choices.append(Choice())
-        choicesTable.insertRows(at: [newIndexPath], with: .automatic)
-        if choices.count == 4 {
-            
+        if choices.count >= 4 {
+            hideAddButton = true
         }
+        choicesTable.beginUpdates()
+        choicesTable.insertRows(at: [newIndexPath], with: .automatic)
+        choicesTable.endUpdates()
     }
     
     //MARK: UITextViewDelegate
@@ -105,6 +110,13 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
         return choices.count + 1
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == choices.count && hideAddButton{
+            return 0;
+        } else {
+            return 44;
+        }
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == choices.count {
@@ -132,6 +144,9 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
             choices.remove(at: indexPath.row)
+            if choices.count < 4 {
+                hideAddButton = false
+            }
             choicesTable.deleteRows(at: [indexPath], with: .fade)
             updateDoneButtonState()
         }
@@ -140,12 +155,18 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
     //MARK: Navigation
     
     @IBAction func cancel(_ sender: UIButton) {
+        Analytics.logEvent("create_poll_cancel", parameters: ["user": user!.userId])
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func done(_ sender: UIButton) {
         if let question = pollQuestion.text {
             let isAnonymous = anonymousSwitch.isOn
+            if isAnonymous{
+                Analytics.logEvent("create_poll_post_anonymous", parameters: ["user": user!.userId])
+            } else {
+                Analytics.logEvent("create_poll_post_public", parameters: ["user": user!.userId])
+            }
             for row in 0..<choices.count {
                 let indexPath = IndexPath(row: row, section: 0)
                 guard let cell = choicesTable.cellForRow(at: indexPath) as? CreatePollTableViewCell else {
@@ -171,11 +192,10 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
         var nonEmptyChoices = 0
         for row in 0..<choices.count {
             let indexPath = IndexPath(row: row, section: 0)
-            guard let cell = choicesTable.cellForRow(at: indexPath) as? CreatePollTableViewCell else {
-                fatalError("The referenced cell is not an instance of CreatePollTableViewCell.")
-            }
-            if cell.choiceContent.text != "" {
-                nonEmptyChoices += 1
+            if let cell = choicesTable.cellForRow(at: indexPath) as? CreatePollTableViewCell {
+                if cell.choiceContent.text != "" {
+                    nonEmptyChoices += 1
+                }
             }
         }
         doneButton.isEnabled = !text.isEmpty && nonEmptyChoices > 1

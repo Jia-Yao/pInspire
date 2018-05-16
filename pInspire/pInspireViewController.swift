@@ -76,6 +76,7 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         // catch my View up to date with what went on while I was off-screen
+        configureDatabase()
     }
     
     func didTapChoice(_ sender: pInspireTableViewCell, button: UIButton) {
@@ -84,12 +85,18 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
         let choices = poll.choices
         let choosedButtonIndex = sender.choiceButtonView.index(of: button)
         
+        if (!sender.visibleVote){
+            Analytics.logEvent("vote_anonymous", parameters: ["user": user!.userId])
+        } else {
+            Analytics.logEvent("vote_public", parameters: ["user": user!.userId])
+        }
         choices[choosedButtonIndex!].addUser(userId: user!.userId, isAnonymous: !sender.visibleVote)
         updateViewForhasVoted(for: sender, withPoll: poll)
         writeVoteData(id: poll.Id, choiceContent: choices[choosedButtonIndex!].content, userId: user!.userId, isAnonymous: !sender.visibleVote)
     }
     
     func didTapDiscuss(_ sender: pInspireTableViewCell) {
+        Analytics.logEvent("press_discuss", parameters: ["user": user!.userId])
         let clickedIndexPath = self.pollTableView.indexPath(for: (sender as UITableViewCell))!
         let totalCount = self.pollTimeline.count
         let poll = self.pollTimeline[totalCount - 1 - clickedIndexPath.row]
@@ -102,6 +109,7 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
         let alertController = UIAlertController(title: "START A DICUSSION", message: "pInspire recommends you to dicuss with " + members_without_self_name.joined(separator: ", ") + ". Leave them a message:", preferredStyle: .alert)
         
         let onlineAction = UIAlertAction(title: "Let's chat about it ONLINE", style: .default) { (_) in
+            Analytics.logEvent("press_chat_online", parameters: ["user": self.user!.userId])
             var message = alertController.textFields?[0].text
             if message == nil || message == "" {
                 message = "The poll \"" + poll.question + "\" is so interesting, let's chat about it ONLINE!"
@@ -113,6 +121,7 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
         }
         
         let offlineAction = UIAlertAction(title: "Let's chat about it OFFLINE", style: .default) { (_) in
+            Analytics.logEvent("press_chat_offline", parameters: ["user": self.user!.userId])
             var message = alertController.textFields?[0].text
             if message == nil || message == "" {
                 message = "The poll \"" + poll.question + "\" is so interesting, let's chat about it OFFLINE!"
@@ -129,7 +138,7 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
             }
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in Analytics.logEvent("press_discuss_cancel", parameters: ["user": self.user!.userId])}
         
         alertController.addTextField { (textField) in
             textField.placeholder = "This poll is so interesting, ..."
@@ -142,10 +151,12 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
     }
     
     func didTapStats(_ sender: pInspireTableViewCell) {
+        Analytics.logEvent("press_stats", parameters: ["user": user!.userId])
         performSegue(withIdentifier: "showStats", sender: sender)
     }
     
     func didTapReadMore(_ sender: pInspireTableViewCell) {
+        Analytics.logEvent("press_read", parameters: ["user": user!.userId])
         performSegue(withIdentifier: "showWeb", sender: sender)
     }
     
@@ -220,7 +231,7 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
     }
     
     private func readInvitationFromDatabase() {
-        let query = refInvitation.queryOrderedByKey().queryEqual(toValue: "Jia Yao")//user!.userId)
+        let query = refInvitation.queryOrderedByKey().queryEqual(toValue: user!.userId)
         
         query.observe(.value, with: { (snapshot) in
             var count: Int = 0
@@ -298,6 +309,14 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
                             }
                         }
                     }
+//                    else if let choiceObject = pollObject![Constants.PollChoiceFieldName] as? [Int: Any] {
+//                        for (content, votes) in choiceObject {
+//                            if let votes = votes as? [String:Bool] {
+//                                let selectedVotes = strongSelf.selectVisibleVotes(from: votes)
+//                                choices.append(Choice(for: String(content), votes: selectedVotes))
+//                            }
+//                        }
+//                    }
                     //creating poll object with model and fetched values
                     let newPoll = Poll(Id: pollKey, question: (pollQuestion as! String), choices: choices, user: pollInitiator as! String , isAnonymous: pollAnonymous as! Bool, urlString: pollUrlString as? String)
                     
@@ -337,8 +356,8 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
         static let PollAnonymousFieldName: String = "Anonymity"
         static let PollInitiatorFieldName: String = "Initiator"
         static let PollInitiatorIdFieldName: String = "InitiatorId"
-        static let PollOptionColorWhenChosen: UIColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
-        static let PollOptionColorWhenNotChosen: UIColor = #colorLiteral(red: 0.9921568627, green: 0.7333333333, blue: 0.3019607843, alpha: 1)
+        static let PollOptionColorWhenChosen: UIColor = #colorLiteral(red: 0.3098039216, green: 0.3411764706, blue: 0.6588235294, alpha: 1)
+        static let PollOptionColorWhenNotChosen: UIColor = #colorLiteral(red: 0.3098039216, green: 0.3411764706, blue: 0.6588235294, alpha: 1)
         static let PollSwitchColor: UIColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         static let TabBarBackgroundColor: UIColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
     }
@@ -393,6 +412,7 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
         cell.discussButtonView.isHidden = false
         cell.voteAnonymouslySwitch.isHidden = true
         cell.voteLabelView.isHidden = true
+        let hasAnonymouslyVoted = !poll.visibleVotedUserIds.contains(user!.userId)
         for index in 0..<poll.choices.count {
             let choiceButtonView = cell.choiceButtonView[index]
             choiceButtonView.isHidden = false
@@ -401,6 +421,13 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
             
             if choiceModel.userHasVotedThis(userId: user!.userId) {
                 choiceButtonView.backgroundColor = Constants.PollOptionColorWhenChosen
+                if (hasAnonymouslyVoted){
+                    let img = UIImage(named: "anonymous")
+                    choiceButtonView.setImage(img , for: .normal)
+                } else {
+                    let img = UIImage(named: "checkmark")
+                    choiceButtonView.setImage(img , for: .normal)
+                }
             } else {
                 choiceButtonView.backgroundColor = Constants.PollOptionColorWhenNotChosen
             }
@@ -415,7 +442,6 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
         for index in poll.choices.count..<cell.choiceButtonView.count {
             cell.choiceButtonView[index].isHidden = true
         }
-        let hasAnonymouslyVoted: Bool = !poll.visibleVotedUserIds.contains(user!.userId)
         if poll.numOfVisibleVotedUsers < 3 || hasAnonymouslyVoted {
             cell.discussButtonView.isHidden = true
             // cell.discussButtonView.alpha = 0.5;

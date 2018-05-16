@@ -9,7 +9,6 @@ provides-dynamic-lookup:
 depends-top-level:
 - !private "!"
 - !private "+"
-- !private "-"
 - !private "=="
 - !private "Array"
 - "AssignmentPrecedence"
@@ -399,4 +398,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/MapKit.framework/Headers/MapKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
-interface-hash: "1a8dbc61e3b4fc6d7e9b43176996222f"
+interface-hash: "51842c8c6eb96f04b45fcb41910318da"

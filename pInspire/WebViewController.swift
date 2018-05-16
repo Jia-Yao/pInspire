@@ -18,8 +18,8 @@ class WebViewController: UIViewController, WKNavigationDelegate{
     var actualWebView: WKWebView?
     @IBOutlet weak var segmentedControl: UISegmentedControl!{
         didSet{
-            segmentedControl.tintColor = #colorLiteral(red: 0.9568627451, green: 0.4078431373, blue: 0.2235294118, alpha: 1)
-            segmentedControl.layer.borderColor = #colorLiteral(red: 0.9568627451, green: 0.4078431373, blue: 0.2235294118, alpha: 1)
+            segmentedControl.tintColor = #colorLiteral(red: 0.3098039216, green: 0.3411764706, blue: 0.6588235294, alpha: 1)
+            segmentedControl.layer.borderColor = #colorLiteral(red: 0.3098039216, green: 0.3411764706, blue: 0.6588235294, alpha: 1)
             segmentedControl.layer.borderWidth = 2
         }
     }

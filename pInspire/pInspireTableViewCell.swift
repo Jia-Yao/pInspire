@@ -24,7 +24,7 @@ class pInspireTableViewCell: UITableViewCell {
     
     @IBOutlet weak var voteAnonymouslySwitch: UISwitch!{
         didSet {
-            voteAnonymouslySwitch.onTintColor = #colorLiteral(red: 0.9568627451, green: 0.4078431373, blue: 0.2235294118, alpha: 1)
+            voteAnonymouslySwitch.onTintColor = #colorLiteral(red: 0.3098039216, green: 0.3411764706, blue: 0.6588235294, alpha: 1)
             voteAnonymouslySwitch.isOn = false
         }
     }
@@ -41,9 +41,9 @@ class pInspireTableViewCell: UITableViewCell {
         didSet {
             // Button UI
             for button in self.choiceButtonView {
-                // button.layer.borderWidth = 1.0
+                //button.layer.borderWidth = 1.0
                 button.layer.cornerRadius = 8
-                // button.layer.borderColor = UIColor.blue.cgColor
+                //button.layer.borderColor = #colorLiteral(red: 0.3098039216, green: 0.3411764706, blue: 0.6588235294, alpha: 1)
                 // button.layer.backgroundColor = #colorLiteral(red: 1, green: 0.5980699052, blue: 0.1727632673, alpha: 1)
                 // button.layer.masksToBounds = true
             }

@@ -117,6 +117,7 @@ class AddContactsTableViewController: UITableViewController, AddContactsTableVie
                 }
             }
         }
+        cell.selectionStyle = .none
         return cell
     }
     
