@@ -140,7 +140,12 @@ class DiscussionGroupTableViewController: UITableViewController {
         cell.pollQuestion.numberOfLines = 0
         cell.groupMembers.text = group.members_list()
         cell.groupMembers.numberOfLines = 0
-        cell.backgroundColor = group.hasSeen ? #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) : #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        //cell.backgroundColor = group.hasSeen ? #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) : #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        if group.hasSeen {
+            cell.redDot.isHidden = true
+        } else {
+            cell.redDot.isHidden = false
+        }
         return cell
     }
 

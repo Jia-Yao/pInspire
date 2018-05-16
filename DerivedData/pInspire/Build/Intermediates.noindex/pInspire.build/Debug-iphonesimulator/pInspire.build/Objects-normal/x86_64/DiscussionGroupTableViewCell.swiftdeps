@@ -9,10 +9,12 @@ provides-dynamic-lookup:
 - "awakeFromNib"
 - "groupMembers"
 - "pollQuestion"
+- "redDot"
 - "setSelected"
 depends-top-level:
 - "Bool"
 - "DiscussionGroupTableViewCell"
+- "UIImageView"
 - "UILabel"
 - "UITableViewCell"
 depends-member:
@@ -33,12 +35,14 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "init"]
 - !private ["s23CustomStringConvertibleP", "setSelected"]
 - ["8pInspire28DiscussionGroupTableViewCellC", "Bool"]
+- ["8pInspire28DiscussionGroupTableViewCellC", "UIImageView"]
 - ["8pInspire28DiscussionGroupTableViewCellC", "UILabel"]
 - ["8pInspire28DiscussionGroupTableViewCellC", "awakeFromNib"]
 - ["8pInspire28DiscussionGroupTableViewCellC", "deinit"]
 - ["8pInspire28DiscussionGroupTableViewCellC", "groupMembers"]
 - ["8pInspire28DiscussionGroupTableViewCellC", "init"]
 - ["8pInspire28DiscussionGroupTableViewCellC", "pollQuestion"]
+- ["8pInspire28DiscussionGroupTableViewCellC", "redDot"]
 - ["8pInspire28DiscussionGroupTableViewCellC", "setSelected"]
 - ["s9EquatableP", ""]
 - !private ["s9EquatableP", "awakeFromNib"]
@@ -53,11 +57,13 @@ depends-member:
 - !private ["So8NSCodingP", "init"]
 - !private ["So8NSCodingP", "setSelected"]
 - ["So8NSObjectC", "Bool"]
+- ["So8NSObjectC", "UIImageView"]
 - ["So8NSObjectC", "UILabel"]
 - ["So8NSObjectC", "awakeFromNib"]
 - ["So8NSObjectC", "groupMembers"]
 - ["So8NSObjectC", "init"]
 - ["So8NSObjectC", "pollQuestion"]
+- ["So8NSObjectC", "redDot"]
 - ["So8NSObjectC", "setSelected"]
 - ["So16NSObjectProtocolP", ""]
 - !private ["So16NSObjectProtocolP", "awakeFromNib"]
@@ -100,34 +106,40 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "init"]
 - !private ["So30UIPasteConfigurationSupportingP", "setSelected"]
 - ["So11UIResponderC", "Bool"]
+- ["So11UIResponderC", "UIImageView"]
 - ["So11UIResponderC", "UILabel"]
 - ["So11UIResponderC", "awakeFromNib"]
 - ["So11UIResponderC", "groupMembers"]
 - ["So11UIResponderC", "init"]
 - ["So11UIResponderC", "pollQuestion"]
+- ["So11UIResponderC", "redDot"]
 - ["So11UIResponderC", "setSelected"]
 - ["So30UIResponderStandardEditActionsP", ""]
 - !private ["So30UIResponderStandardEditActionsP", "awakeFromNib"]
 - !private ["So30UIResponderStandardEditActionsP", "init"]
 - !private ["So30UIResponderStandardEditActionsP", "setSelected"]
 - ["So15UITableViewCellC", "Bool"]
+- ["So15UITableViewCellC", "UIImageView"]
 - ["So15UITableViewCellC", "UILabel"]
 - ["So15UITableViewCellC", ""]
 - ["So15UITableViewCellC", "awakeFromNib"]
 - ["So15UITableViewCellC", "groupMembers"]
 - ["So15UITableViewCellC", "init"]
 - ["So15UITableViewCellC", "pollQuestion"]
+- ["So15UITableViewCellC", "redDot"]
 - ["So15UITableViewCellC", "setSelected"]
 - ["So18UITraitEnvironmentP", ""]
 - !private ["So18UITraitEnvironmentP", "awakeFromNib"]
 - !private ["So18UITraitEnvironmentP", "init"]
 - !private ["So18UITraitEnvironmentP", "setSelected"]
 - ["So6UIViewC", "Bool"]
+- ["So6UIViewC", "UIImageView"]
 - ["So6UIViewC", "UILabel"]
 - ["So6UIViewC", "awakeFromNib"]
 - ["So6UIViewC", "groupMembers"]
 - ["So6UIViewC", "init"]
 - ["So6UIViewC", "pollQuestion"]
+- ["So6UIViewC", "redDot"]
 - ["So6UIViewC", "setSelected"]
 - ["s37_DefaultCustomPlaygroundQuickLookableP", ""]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "awakeFromNib"]
@@ -354,4 +366,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/MapKit.framework/Headers/MapKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
-interface-hash: "1ad22ccc243b2968e3505313e51f232e"
+interface-hash: "08f69bf70df829da5181d0d43eb70647"

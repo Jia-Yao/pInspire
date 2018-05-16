@@ -309,14 +309,6 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
                             }
                         }
                     }
-//                    else if let choiceObject = pollObject![Constants.PollChoiceFieldName] as? [Int: Any] {
-//                        for (content, votes) in choiceObject {
-//                            if let votes = votes as? [String:Bool] {
-//                                let selectedVotes = strongSelf.selectVisibleVotes(from: votes)
-//                                choices.append(Choice(for: String(content), votes: selectedVotes))
-//                            }
-//                        }
-//                    }
                     //creating poll object with model and fetched values
                     let newPoll = Poll(Id: pollKey, question: (pollQuestion as! String), choices: choices, user: pollInitiator as! String , isAnonymous: pollAnonymous as! Bool, urlString: pollUrlString as? String)
                     

@@ -320,6 +320,7 @@ SWIFT_CLASS("_TtC8pInspire28DiscussionGroupTableViewCell")
 @interface DiscussionGroupTableViewCell : UITableViewCell
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified pollQuestion;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified groupMembers;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified redDot;
 - (void)awakeFromNib;
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated;
 - (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
@@ -367,6 +368,16 @@ SWIFT_CLASS("_TtC8pInspire28DiscussionRoomViewController")
 - (NSAttributedString * _Nullable)collectionView:(JSQMessagesCollectionView * _Nullable)collectionView attributedTextForMessageBubbleTopLabelAtIndexPath:(NSIndexPath * _Null_unspecified)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (void)didPressAccessoryButton:(UIButton * _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC8pInspire24InvitationsTableViewCell")
+@interface InvitationsTableViewCell : UITableViewCell
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified redDot;
+- (void)awakeFromNib;
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated;
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 

@@ -92,8 +92,9 @@ class InvitationsTableViewController: UITableViewController {
             writeSeenInvitationInDatabase(for: invitationMessages[indexPath.row])
             
             //getting the current cell view from the index path
-            let currentCell = tableView.cellForRow(at: indexPath)! as UITableViewCell
+            let currentCell = tableView.cellForRow(at: indexPath)! as! InvitationsTableViewCell
             currentCell.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            currentCell.redDot.isHidden = true
             updateBadge()
         }
         
@@ -101,11 +102,18 @@ class InvitationsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "InvitationMessage", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "InvitationMessage", for: indexPath) as? InvitationsTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of InvitationsTableViewCell.")
+        }
         let row = indexPath.row
         cell.textLabel?.text = invitationMessages[row].textMessage
-        cell.backgroundColor = invitationMessages[row].hasSeen ? #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) : #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        //cell.backgroundColor = invitationMessages[row].hasSeen ? #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) : #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         cell.textLabel?.numberOfLines = 0
+        if invitationMessages[row].hasSeen {
+            cell.redDot.isHidden = true
+        } else {
+            cell.redDot.isHidden = false
+        }
         return cell
     }
     

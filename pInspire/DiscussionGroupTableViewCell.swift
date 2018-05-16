@@ -14,6 +14,8 @@ class DiscussionGroupTableViewCell: UITableViewCell {
     
     @IBOutlet weak var groupMembers: UILabel!
     
+    @IBOutlet weak var redDot: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
