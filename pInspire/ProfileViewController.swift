@@ -61,6 +61,7 @@ class ProfileViewController: UIViewController, LoginButtonDelegate, UITableViewD
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 1 {
             return "Posted Polls"
@@ -68,6 +69,7 @@ class ProfileViewController: UIViewController, LoginButtonDelegate, UITableViewD
             return "Profile"
         }
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //getting the index path of selected row
         if let indexPath = tableView.indexPathForSelectedRow {

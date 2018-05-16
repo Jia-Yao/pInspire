@@ -17,6 +17,8 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
     var ref: DatabaseReference!
     var refDiscussion: DatabaseReference!
     var refInvitation: DatabaseReference!
+    var refUser: DatabaseReference!
+    
     fileprivate var _refHandle: DatabaseHandle?
     var pollTimeline = [Poll]()
     var user: User?
@@ -68,13 +70,12 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
         // Along with auto layout, these are the keys for enabling variable cell height
         self.pollTableView.estimatedRowHeight = 250
         self.pollTableView.rowHeight = UITableViewAutomaticDimension
-        
+        self.configureDatabase()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         // catch my View up to date with what went on while I was off-screen
-        self.configureDatabase()
     }
     
     func didTapChoice(_ sender: pInspireTableViewCell, button: UIButton) {
@@ -95,9 +96,10 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
         let members: [String: Bool] = selectDiscussionMembers(from: poll)
         var members_without_self = Array<String>(members.keys)
         members_without_self.remove(at: members_without_self.index(of: user!.userId)!)
+        let members_without_self_name: [String] = members_without_self.map {return self.user!.idNameConverter[$0]!}
         
         // Popup dialog box
-        let alertController = UIAlertController(title: "START A DICUSSION", message: "pInspire recommends you to dicuss with " + members_without_self.joined(separator: ", ") + ". Leave them a message:", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "START A DICUSSION", message: "pInspire recommends you to dicuss with " + members_without_self_name.joined(separator: ", ") + ". Leave them a message:", preferredStyle: .alert)
         
         let onlineAction = UIAlertAction(title: "Let's chat about it ONLINE", style: .default) { (_) in
             var message = alertController.textFields?[0].text
@@ -251,55 +253,64 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
         ref = Database.database().reference()
         refDiscussion = Database.database().reference().child("Discussions")
         refInvitation = Database.database().reference().child("Invitations")
+        refUser = Database.database().reference().child("Users")
         
         // Listen for new messages in the Firebase database
         readInvitationFromDatabase()
         readDiscussionFromDatabase()
         
-        _refHandle = self.ref.child("Polls").observe(.childAdded, with: { [weak self] (snapshot) -> Void in
-            guard let strongSelf = self else { return }
-            
-            //iterating through all the values
-            strongSelf.pollTimeline.removeAll()
-            for poll in snapshot.children.allObjects as! [DataSnapshot] {
-                //getting values
-                let pollKey = poll.key
-                let pollObject = poll.value as? [String: AnyObject]
-                let pollQuestion  = pollObject![Constants.PollQuestionFieldName]
-                let pollInitiator = pollObject![Constants.PollInitiatorFieldName]
-                let pollInitiatorId = pollObject![Constants.PollInitiatorIdFieldName]
-                let pollAnonymous = pollObject![Constants.PollAnonymousFieldName]
-                let pollUrlString = pollObject![Constants.pollUrlFieldName]
-                if let initiatorId = pollInitiatorId as? String {
-                    if !(self?.user?.visibleUserIds.contains(initiatorId))! {
-                        continue
-                    }
+        refUser.child(self.user!.userId).child("Friends").observeSingleEvent(of: .value, with: { (snapshot) in
+            self.user!.friendsDict = [String: String]()
+            if (snapshot.exists()){
+                for user in snapshot.children.allObjects as! [DataSnapshot] {
+                    self.user!.friendsDict![user.key] = (user.value as! String)
                 }
-                // TODO: - uncomment below when done.
-                /*else {
-                    continue
-                }*/
-                var choices = [Choice]()
-                if let choiceObject = pollObject![Constants.PollChoiceFieldName] as? [String: Any] {
-                    for (content, votes) in choiceObject {
-                        if let votes = votes as? [String:Bool] {
-                            let selectedVotes = strongSelf.selectVisibleVotes(from: votes)
-                            choices.append(Choice(for: content, votes: selectedVotes))
+            }
+                
+            self._refHandle = self.ref.child("Polls").observe(.childAdded, with: { [weak self] (snapshot) -> Void in
+                guard let strongSelf = self else { return }
+                //iterating through all the values
+                strongSelf.pollTimeline.removeAll()
+                for poll in snapshot.children.allObjects as! [DataSnapshot] {
+                    //getting values
+                    let pollKey = poll.key
+                    let pollObject = poll.value as? [String: AnyObject]
+                    let pollQuestion  = pollObject![Constants.PollQuestionFieldName]
+                    let pollInitiator = pollObject![Constants.PollInitiatorFieldName]
+                    let pollInitiatorId = pollObject![Constants.PollInitiatorIdFieldName]
+                    let pollAnonymous = pollObject![Constants.PollAnonymousFieldName]
+                    let pollUrlString = pollObject![Constants.pollUrlFieldName]
+                    if let initiatorId = pollInitiatorId as? String {
+                        if !(self?.user?.visibleUserIds.contains(initiatorId))! {
+                            continue
                         }
                     }
+                    // TODO: - uncomment below when done.
+                    /*else {
+                        continue
+                    }*/
+                    var choices = [Choice]()
+                    if let choiceObject = pollObject![Constants.PollChoiceFieldName] as? [String: Any] {
+                        for (content, votes) in choiceObject {
+                            if let votes = votes as? [String:Bool] {
+                                let selectedVotes = strongSelf.selectVisibleVotes(from: votes)
+                                choices.append(Choice(for: content, votes: selectedVotes))
+                            }
+                        }
+                    }
+                    //creating poll object with model and fetched values
+                    let newPoll = Poll(Id: pollKey, question: (pollQuestion as! String), choices: choices, user: pollInitiator as! String , isAnonymous: pollAnonymous as! Bool, urlString: pollUrlString as? String)
+                    
+                    //appending it to list
+                    self?.pollTimeline.append(newPoll)
                 }
-                //creating poll object with model and fetched values
-                let newPoll = Poll(Id: pollKey, question: (pollQuestion as! String), choices: choices, user: pollInitiator as! String , isAnonymous: pollAnonymous as! Bool, urlString: pollUrlString as? String)
-                
-                //appending it to list
-                self?.pollTimeline.append(newPoll)
-            }
 
-            // strongSelf.pollTableView.insertRows(at: [IndexPath(row: strongSelf.pollTimeline.count-1, section: 0)], with: .automatic)
-            //reloading the tableview
-            strongSelf.pollTableView.reloadData()
+                // strongSelf.pollTableView.insertRows(at: [IndexPath(row: strongSelf.pollTimeline.count-1, section: 0)], with: .automatic)
+                //reloading the tableview
+                strongSelf.pollTableView.reloadData()
+            })
         })
-        
+            
     }
     
     deinit {

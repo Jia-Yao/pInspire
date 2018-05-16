@@ -34,6 +34,18 @@ class DiscussionRoomViewController: JSQMessagesViewController {
         self.tabBarController!.tabBar.isHidden = true
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let refHandle = newMessageRefHandle {
+            refDiscussion.removeObserver(withHandle: refHandle)
+        }
+    }
+    deinit {
+        if let refHandle = newMessageRefHandle {
+            refDiscussion.removeObserver(withHandle: refHandle)
+        }
+    }
+    
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
         let itemRef = refDiscussion.childByAutoId() // create a child reference with a unique key
         var hasSeenDict = [String: Bool]()
