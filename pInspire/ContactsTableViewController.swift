@@ -31,7 +31,7 @@ class ContactsTableViewController: UITableViewController {
     }
     
     func fetchFriends(){
-        
+        refUser = Database.database().reference().child("Users")
         // Get friends ids from database
         refUser.child(me!.userId).child("Friends").observeSingleEvent(of: .value, with: { (snapshot) in
             var friend_ids = [String]()
