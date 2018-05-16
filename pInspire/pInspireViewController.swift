@@ -399,6 +399,7 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
             choiceButtonView.isEnabled = true
             choiceButtonView.titleLabel?.textAlignment = .center
             choiceButtonView.titleLabel?.numberOfLines = 2
+            choiceButtonView.setImage(nil , for: .normal)
             // choiceButtonView.sizeToFit()
         }
         // Hide unnecessary buttons.
@@ -430,6 +431,7 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
                 }
             } else {
                 choiceButtonView.backgroundColor = Constants.PollOptionColorWhenNotChosen
+                choiceButtonView.setImage(nil , for: .normal)
             }
             let numOfVotes = choiceModel.numOfVotesForMe(for: userName!)
             choiceButtonView.setTitle("\(choiceModel.content) (\(numOfVotes))", for: UIControlState.normal)
