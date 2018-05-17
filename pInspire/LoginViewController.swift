@@ -66,11 +66,15 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
     //MARK: LoginButtonDelegate
     
     func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
-        firstLogin = true
+        //firstLogin = true
         if AccessToken.current != nil{
             // User is already logged in
             loginButton.isHidden = true
-            firstLogin = true
+            // User is logged in for the first time
+            self.refUser.observeSingleEvent(of: .value, with: { (snapshot) in
+                if (!snapshot.hasChild(AccessToken.current!.userId!)){
+                    self.firstLogin = true
+                }})
             // addGestureToImage(for: loginImage)
             //z fetchProfile()
         }

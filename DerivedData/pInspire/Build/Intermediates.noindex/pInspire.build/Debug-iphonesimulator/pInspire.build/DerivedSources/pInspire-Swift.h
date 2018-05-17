@@ -398,11 +398,14 @@ SWIFT_CLASS("_TtC8pInspire30InvitationsTableViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UISwipeGestureRecognizer;
 
 SWIFT_CLASS("_TtC8pInspire19LoginViewController")
 @interface LoginViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified loginImage;
 - (void)viewDidLoad;
 - (void)viewDidAppear:(BOOL)animated;
+- (void)swipeCard:(UISwipeGestureRecognizer * _Nonnull)sender;
 - (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;

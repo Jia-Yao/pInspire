@@ -386,6 +386,7 @@ depends-member:
 - !private ["8pInspire10InvitationC", "init"]
 - !private ["8pInspire10InvitationC", "invitationId"]
 - !private ["8pInspire10InvitationC", "textMessage"]
+- !private ["8pInspire24InvitationsTableViewCellC", "backgroundColor"]
 - !private ["8pInspire24InvitationsTableViewCellC", "redDot"]
 - !private ["8pInspire24InvitationsTableViewCellC", "textLabel"]
 - !private ["8pInspire30InvitationsTableViewControllerC", "AnyObject"]

@@ -4,11 +4,11 @@
 <array>
 	<string>GoogleMobileAds</string>
 	<string>AVFoundation</string>
-	<string>FirebasePerformance</string>
 	<string>CommonCrypto</string>
+	<string>FirebasePerformance</string>
 	<string>CoreLocation</string>
-	<string>FirebaseDynamicLinks</string>
 	<string>SafariServices</string>
+	<string>FirebaseDynamicLinks</string>
 	<string>AudioToolbox</string>
 	<string>objc</string>
 	<string>FacebookCore</string>
@@ -16,22 +16,22 @@
 	<string>Firebase</string>
 	<string>FirebaseCore</string>
 	<string>FirebaseMessaging</string>
-	<string>MobileCoreServices</string>
 	<string>Bolts</string>
-	<string>sys</string>
 	<string>FacebookLogin</string>
+	<string>sys</string>
 	<string>JSQMessagesViewController</string>
+	<string>MobileCoreServices</string>
 	<string>UserNotifications</string>
 	<string>CoreTelephony</string>
 	<string>JSQSystemSoundPlayer</string>
-	<string>FirebaseInstanceID</string>
 	<string>StoreKit</string>
+	<string>FirebaseInstanceID</string>
 	<string>FirebaseFirestore</string>
 	<string>AdSupport</string>
 	<string>FirebaseDatabase</string>
 	<string>Accounts</string>
-	<string>libkern</string>
 	<string>FirebaseRemoteConfig</string>
+	<string>libkern</string>
 	<string>CoreText</string>
 	<string>WebKit</string>
 	<string>Crashlytics</string>
@@ -39,18 +39,18 @@
 	<string>FirebaseCrash</string>
 	<string>Foundation</string>
 	<string>QuartzCore</string>
-	<string>Security</string>
 	<string>Fabric</string>
 	<string>os</string>
-	<string>FBSDKLoginKit</string>
 	<string>FirebaseAppIndexing</string>
+	<string>FBSDKLoginKit</string>
+	<string>Security</string>
 	<string>FirebaseInvites</string>
 	<string>IQKeyboardManagerSwift</string>
 	<string>FBSDKCoreKit</string>
 	<string>FirebaseStorage</string>
-	<string>FirebaseFunctions</string>
-	<string>FirebaseAnalytics</string>
 	<string>CoreGraphics</string>
+	<string>FirebaseAnalytics</string>
+	<string>FirebaseFunctions</string>
 	<string>UIKit</string>
 </array>
 </plist>
