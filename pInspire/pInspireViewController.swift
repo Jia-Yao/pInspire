@@ -155,6 +155,44 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
         performSegue(withIdentifier: "showStats", sender: sender)
     }
     
+    func didTapReport(_ sender: pInspireTableViewCell) {
+        Analytics.logEvent("press_report", parameters: ["user": user!.userId, "time": getCurrentTime()])
+        let clickedIndexPath = self.pollTableView.indexPath(for: (sender as UITableViewCell))!
+        let totalCount = self.pollTimeline.count
+        let poll = self.pollTimeline[totalCount - 1 - clickedIndexPath.row]
+        let administrators = [String(1339514259482645), String(1789135704727464), String(1821686504550696)]
+        // Popup dialog box
+        let alertController = UIAlertController(title: "REPORT", message: "If you think the content of this poll is inappropriate, please send pInspire administrators a message:", preferredStyle: .alert)
+        
+        let sendAction = UIAlertAction(title: "Send", style: .default) { (_) in
+            Analytics.logEvent("press_report_send", parameters: ["user": self.user!.userId, "time": getCurrentTime()])
+            var message = alertController.textFields?[0].text
+            if message == nil || message == "" {
+                message = "Reporting poll " + poll.Id + " " + poll.question + " because \" \""
+            } else {
+                message = "Reporting poll " + poll.Id + " " + poll.question + " because \"" + message! + "\""
+            }
+            self.createInvitationToDatabase(from: (self.user?.userId)!, to: administrators, message: message!)
+            let alert = UIAlertController(title: "Report Message Sent!", message: "", preferredStyle: .alert)
+            self.present(alert, animated: true, completion: nil)
+            // Hide in 2 seconds
+            let when = DispatchTime.now() + 2
+            DispatchQueue.main.asyncAfter(deadline: when){
+                alert.dismiss(animated: true, completion: nil)
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in Analytics.logEvent("press_report_cancel", parameters: ["user": self.user!.userId, "time": getCurrentTime()])}
+        
+        alertController.addTextField { (textField) in
+            textField.placeholder = "This poll is inappropriate because ..."
+        }
+        alertController.addAction(sendAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     func didTapReadMore(_ sender: pInspireTableViewCell) {
         Analytics.logEvent("press_read", parameters: ["user": user!.userId, "time": getCurrentTime()])
         performSegue(withIdentifier: "showWeb", sender: sender)

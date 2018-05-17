@@ -146,6 +146,7 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         let name = user?.idNameConverter[peopleIds![indexPath.row]]
         cell.textLabel?.text = name
+        cell.selectionStyle = .none
         return cell
     }
     

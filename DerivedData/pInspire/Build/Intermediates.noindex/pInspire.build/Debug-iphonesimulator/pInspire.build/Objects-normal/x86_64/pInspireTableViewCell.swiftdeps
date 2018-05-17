@@ -557,6 +557,7 @@ depends-member:
 - ["8pInspire01pA21TableViewCellDelegateP", "didTapChoice"]
 - ["8pInspire01pA21TableViewCellDelegateP", "didTapDiscuss"]
 - ["8pInspire01pA21TableViewCellDelegateP", "didTapReadMore"]
+- ["8pInspire01pA21TableViewCellDelegateP", "didTapReport"]
 - ["8pInspire01pA21TableViewCellDelegateP", "didTapStats"]
 - ["8pInspire01pA21TableViewCellDelegateP", "pInspireTableViewCell"]
 depends-nominal:
@@ -792,4 +793,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/MapKit.framework/Headers/MapKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
-interface-hash: "1dd06d6187b20a819d5ef017d75fe553"
+interface-hash: "9f166ac4cbb61faec0227a303dee2b37"

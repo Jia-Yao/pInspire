@@ -13,6 +13,7 @@ protocol pInspireTableViewCellDelegate : class {
     func didTapStats(_ sender: pInspireTableViewCell)
     func didTapReadMore(_ sender: pInspireTableViewCell)
     func didTapDiscuss(_ sender: pInspireTableViewCell)
+    func didTapReport(_ sender: pInspireTableViewCell)
 }
 
 class pInspireTableViewCell: UITableViewCell {
@@ -85,12 +86,13 @@ class pInspireTableViewCell: UITableViewCell {
     }
     
     @IBAction func tapReport(_ sender: UIButton) {
-        // delegate?.didTapReport(self, button: sender)
+        delegate?.didTapReport(self)
     }
     
     @IBAction func tapReadMore(_ sender: UIButton) {
         delegate?.didTapReadMore(self)
     }
+    
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

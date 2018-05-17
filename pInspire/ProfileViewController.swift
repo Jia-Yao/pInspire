@@ -73,7 +73,8 @@ class ProfileViewController: UIViewController, LoginButtonDelegate, UITableViewD
         //getting the index path of selected row
         if let indexPath = tableView.indexPathForSelectedRow {
             if indexPath.section == 1 {
-               performSegue(withIdentifier: "showStatsFromProfile", sender: indexPath)
+                Analytics.logEvent("press_stats_from_profile", parameters: ["user": me!.userId, "time": getCurrentTime()])
+                performSegue(withIdentifier: "showStatsFromProfile", sender: indexPath)
             }
         }
         
@@ -99,6 +100,7 @@ class ProfileViewController: UIViewController, LoginButtonDelegate, UITableViewD
         } else {
             let cell = self.profileTableView.dequeueReusableCell(withIdentifier: "pollCell", for: indexPath)
             cell.textLabel?.text = postedPolls[indexPath.row].question
+            cell.selectionStyle = .default
             return cell
         }
     }
