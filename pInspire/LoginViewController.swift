@@ -29,8 +29,9 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         loginImage.isUserInteractionEnabled = true
+        
+        pictureIndex = 1
         loginImage.image = UIImage(named: "login-screen")
-        pictureIndex = 0
         
         loginButton.center = CGPoint(x: view.bounds.width / 2, y: view.bounds.height * 5 / 6)
         view.addSubview(loginButton)
@@ -49,9 +50,12 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
         
         if AccessToken.current != nil{
             if firstLogin {
+                loginImage.image = UIImage(named: "pinspire_poll")
+                pictureIndex = 1
                 addGestureToImage(for: loginImage)
             } else {
                 // User is already logged in
+                loginImage.image = UIImage(named: "login-screen")
                 Timer.scheduledTimer(withTimeInterval: 2, repeats: false) {_ in
                     self.fetchProfile()
                 }
@@ -82,7 +86,7 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
         if sender.direction == .left {
             if pictureIndex == 3 {
                 fetchProfile()
-                pictureIndex = 0
+                pictureIndex = 1
             } else {
                 loginImage.image = UIImage(named: imageNameString[pictureIndex])
                 pictureIndex += 1
