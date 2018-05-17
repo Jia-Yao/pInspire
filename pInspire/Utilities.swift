@@ -18,3 +18,14 @@ func getCurrentTime() -> String {
     
     return dateString
 }
+
+func modifyChoiceContentForDisplay(for content: String) -> String {
+    if content == "1&&&&&&&&" {
+        return "1"
+    } else if content == "0&&&&&&&&" {
+        return "0"
+    } else if content == "2&&&&&&&&" {
+        return "2"
+    }
+    return content
+}

@@ -119,7 +119,7 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     private func updateChoiceView(for choiceView: StatsView, model choice: Choice) {
-        choiceView.context = choice.content
+        choiceView.context = modifyChoiceContentForDisplay(for: choice.content)
         if (totalVotes == 0){
             choiceView.ratio = 0
         } else {

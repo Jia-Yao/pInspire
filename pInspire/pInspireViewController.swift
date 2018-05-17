@@ -412,17 +412,6 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
         }
         return cell
     }
-
-    func modifyChoiceContentForDisplay(for content: String) -> String {
-        if content == "1&&&&&&&&" {
-            return "1"
-        } else if content == "0&&&&&&&&" {
-            return "0"
-        } else if content == "2&&&&&&&&" {
-            return "2"
-        }
-        return content
-    }
     
     func updateViewForNotVote(for cell: pInspireTableViewCell, withPoll poll: Poll) {
 
@@ -442,10 +431,10 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
             
             choiceButtonView.setTitle("\(buttonTitle)", for:UIControlState.normal)
             choiceButtonView.isEnabled = true
+            choiceButtonView.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
             choiceButtonView.titleLabel?.textAlignment = .center
             choiceButtonView.titleLabel?.numberOfLines = 2
             choiceButtonView.setImage(nil , for: .normal)
-            // choiceButtonView.sizeToFit()
         }
         // Hide unnecessary buttons.
         for index in poll.choices.count..<cell.choiceButtonView.count {
@@ -476,6 +465,7 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
                 }
             } else {
                 choiceButtonView.backgroundColor = Constants.PollOptionColorWhenNotChosen
+                // choiceButtonView.imageView?.alpha = 0
                 choiceButtonView.setImage(nil , for: .normal)
             }
             let numOfVotes = choiceModel.numOfVotesForMe(for: userName!)
