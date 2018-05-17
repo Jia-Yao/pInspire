@@ -47,7 +47,7 @@ class DiscussionRoomViewController: JSQMessagesViewController {
     }
     
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
-        Analytics.logEvent("send_message", parameters: ["user": senderId])
+        Analytics.logEvent("send_message", parameters: ["user": senderId, "time": getCurrentTime()])
         let itemRef = refDiscussion.childByAutoId() // create a child reference with a unique key
         var hasSeenDict = [String: Bool]()
         

@@ -30,6 +30,7 @@
 		189A74DF20A184C500E502B0 /* DiscussionRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189A74DE20A184C500E502B0 /* DiscussionRoomViewController.swift */; };
 		18DD607E20A823E9000E6121 /* AddContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD607D20A823E9000E6121 /* AddContactsTableViewController.swift */; };
 		18DD608020A824F0000E6121 /* AddContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD607F20A824F0000E6121 /* AddContactsTableViewCell.swift */; };
+		BA26391A20AD3D82008DF870 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA26391920AD3D82008DF870 /* Utilities.swift */; };
 		BA47C889209BB0880073242E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47C888209BB0880073242E /* WebViewController.swift */; };
 		BA5987BC20961657009B79DF /* pInspireTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5987BB20961657009B79DF /* pInspireTableViewCell.swift */; };
 		BA89DE5A20A9EA830092CA07 /* Invitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA89DE5920A9EA830092CA07 /* Invitation.swift */; };
@@ -70,6 +71,7 @@
 		18DD607F20A824F0000E6121 /* AddContactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactsTableViewCell.swift; sourceTree = "<group>"; };
 		5E060C68B10B5E55EFA9B67F /* Pods-pInspire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pInspire.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pInspire/Pods-pInspire.debug.xcconfig"; sourceTree = "<group>"; };
 		7CAFC73FB83272A2286306FD /* Pods-pInspire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pInspire.release.xcconfig"; path = "Pods/Target Support Files/Pods-pInspire/Pods-pInspire.release.xcconfig"; sourceTree = "<group>"; };
+		BA26391920AD3D82008DF870 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		BA47C888209BB0880073242E /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		BA5987BB20961657009B79DF /* pInspireTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pInspireTableViewCell.swift; sourceTree = "<group>"; };
 		BA89DE5920A9EA830092CA07 /* Invitation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invitation.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 		1803780520951710009F214E /* pInspire */ = {
 			isa = PBXGroup;
 			children = (
+				BA26391920AD3D82008DF870 /* Utilities.swift */,
 				18DD607F20A824F0000E6121 /* AddContactsTableViewCell.swift */,
 				18DD607D20A823E9000E6121 /* AddContactsTableViewController.swift */,
 				1803780620951710009F214E /* AppDelegate.swift */,
@@ -320,6 +323,7 @@
 				BA47C889209BB0880073242E /* WebViewController.swift in Sources */,
 				1803783020954A25009F214E /* User.swift in Sources */,
 				BA89DE5A20A9EA830092CA07 /* Invitation.swift in Sources */,
+				BA26391A20AD3D82008DF870 /* Utilities.swift in Sources */,
 				18078586209EB71D00317AF3 /* ContactsTableViewController.swift in Sources */,
 				BA5987BC20961657009B79DF /* pInspireTableViewCell.swift in Sources */,
 				18078582209E72D300317AF3 /* ProfileViewController.swift in Sources */,

@@ -86,9 +86,9 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
         let choosedButtonIndex = sender.choiceButtonView.index(of: button)
         
         if (!sender.visibleVote){
-            Analytics.logEvent("vote_anonymous", parameters: ["user": user!.userId])
+            Analytics.logEvent("vote_anonymous", parameters: ["user": user!.userId, "time": getCurrentTime()])
         } else {
-            Analytics.logEvent("vote_public", parameters: ["user": user!.userId])
+            Analytics.logEvent("vote_public", parameters: ["user": user!.userId, "time": getCurrentTime()])
         }
         choices[choosedButtonIndex!].addUser(userId: user!.userId, isAnonymous: !sender.visibleVote)
         updateViewForhasVoted(for: sender, withPoll: poll)
@@ -96,7 +96,7 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
     }
     
     func didTapDiscuss(_ sender: pInspireTableViewCell) {
-        Analytics.logEvent("press_discuss", parameters: ["user": user!.userId])
+        Analytics.logEvent("press_discuss", parameters: ["user": user!.userId, "time": getCurrentTime()])
         let clickedIndexPath = self.pollTableView.indexPath(for: (sender as UITableViewCell))!
         let totalCount = self.pollTimeline.count
         let poll = self.pollTimeline[totalCount - 1 - clickedIndexPath.row]
@@ -109,7 +109,7 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
         let alertController = UIAlertController(title: "START A DICUSSION", message: "pInspire recommends you to dicuss with " + members_without_self_name.joined(separator: ", ") + ". Leave them a message:", preferredStyle: .alert)
         
         let onlineAction = UIAlertAction(title: "Let's chat about it ONLINE", style: .default) { (_) in
-            Analytics.logEvent("press_chat_online", parameters: ["user": self.user!.userId])
+            Analytics.logEvent("press_chat_online", parameters: ["user": self.user!.userId, "time": getCurrentTime()])
             var message = alertController.textFields?[0].text
             if message == nil || message == "" {
                 message = "The poll \"" + poll.question + "\" is so interesting, let's chat about it ONLINE!"
@@ -121,7 +121,7 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
         }
         
         let offlineAction = UIAlertAction(title: "Let's chat about it OFFLINE", style: .default) { (_) in
-            Analytics.logEvent("press_chat_offline", parameters: ["user": self.user!.userId])
+            Analytics.logEvent("press_chat_offline", parameters: ["user": self.user!.userId, "time": getCurrentTime()])
             var message = alertController.textFields?[0].text
             if message == nil || message == "" {
                 message = "The poll \"" + poll.question + "\" is so interesting, let's chat about it OFFLINE!"
@@ -138,7 +138,7 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
             }
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in Analytics.logEvent("press_discuss_cancel", parameters: ["user": self.user!.userId])}
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in Analytics.logEvent("press_discuss_cancel", parameters: ["user": self.user!.userId, "time": getCurrentTime()])}
         
         alertController.addTextField { (textField) in
             textField.placeholder = "This poll is so interesting, ..."
@@ -151,12 +151,12 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
     }
     
     func didTapStats(_ sender: pInspireTableViewCell) {
-        Analytics.logEvent("press_stats", parameters: ["user": user!.userId])
+        Analytics.logEvent("press_stats", parameters: ["user": user!.userId, "time": getCurrentTime()])
         performSegue(withIdentifier: "showStats", sender: sender)
     }
     
     func didTapReadMore(_ sender: pInspireTableViewCell) {
-        Analytics.logEvent("press_read", parameters: ["user": user!.userId])
+        Analytics.logEvent("press_read", parameters: ["user": user!.userId, "time": getCurrentTime()])
         performSegue(withIdentifier: "showWeb", sender: sender)
     }
     
@@ -309,6 +309,7 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
                             }
                         }
                     }
+                    
                     //creating poll object with model and fetched values
                     let newPoll = Poll(Id: pollKey, question: (pollQuestion as! String), choices: choices, user: pollInitiator as! String , isAnonymous: pollAnonymous as! Bool, urlString: pollUrlString as? String)
                     
@@ -374,6 +375,17 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
         return cell
     }
 
+    func modifyChoiceContentForDisplay(for content: String) -> String {
+        if content == "1&&&&&&&&" {
+            return "1"
+        } else if content == "0&&&&&&&&" {
+            return "0"
+        } else if content == "2&&&&&&&&" {
+            return "2"
+        }
+        return content
+    }
+    
     func updateViewForNotVote(for cell: pInspireTableViewCell, withPoll poll: Poll) {
 
         cell.statsButtonView.isHidden = true
@@ -387,7 +399,10 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
             
             let choiceModel = poll.choices[index]
             choiceButtonView.backgroundColor = Constants.PollOptionColorWhenNotChosen
-            choiceButtonView.setTitle("\(choiceModel.content)", for:UIControlState.normal)
+            
+            let buttonTitle = modifyChoiceContentForDisplay(for: choiceModel.content)
+            
+            choiceButtonView.setTitle("\(buttonTitle)", for:UIControlState.normal)
             choiceButtonView.isEnabled = true
             choiceButtonView.titleLabel?.textAlignment = .center
             choiceButtonView.titleLabel?.numberOfLines = 2
@@ -426,7 +441,8 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
                 choiceButtonView.setImage(nil , for: .normal)
             }
             let numOfVotes = choiceModel.numOfVotesForMe(for: userName!)
-            choiceButtonView.setTitle("\(choiceModel.content) (\(numOfVotes))", for: UIControlState.normal)
+            let buttonTitle = modifyChoiceContentForDisplay(for: choiceModel.content)
+            choiceButtonView.setTitle("\(buttonTitle) (\(numOfVotes))", for: UIControlState.normal)
             choiceButtonView.isEnabled = false
             choiceButtonView.titleLabel?.textAlignment = .center
             // choiceButtonView.titleLabel?.numberOfLines = 2

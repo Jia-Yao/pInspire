@@ -35,7 +35,7 @@ class AddContactsTableViewCell: UITableViewCell {
     weak var delegate: AddContactsTableViewCellDelegate?
     
     @IBAction func AddContact(_ sender: UIButton) {
-        Analytics.logEvent("press_add_contact", parameters: ["user": my_id])
+        Analytics.logEvent("press_add_contact", parameters: ["user": my_id, "time": getCurrentTime()])
         refUser.child(my_id).child("Friends").child(friend_id).setValue(Name.text)
         refUser.child(friend_id).child("Friends").child(my_id).setValue(my_name)
         delegate?.didAddContact(self)

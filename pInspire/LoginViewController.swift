@@ -19,13 +19,20 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
     //var loginButton = LoginButton(readPermissions: [ .publicProfile, .userFriends ])
     var user = User(userId: "", firstName: "", lastName: "", profilePhoto: "")
     var refUser: DatabaseReference!
+    var imageNameString = ["pinspire_poll", "pinspire_read", "pinspire_discuss"]
+    var pictureIndex: Int = 0
+    var firstLogin = false
     
+    @IBOutlet weak var loginImage: UIImageView!
     //MARK: View-related Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loginImage.isUserInteractionEnabled = true
+        loginImage.image = UIImage(named: "login-screen")
+        pictureIndex = 0
         
-        loginButton.center = view.center
+        loginButton.center = CGPoint(x: view.bounds.width / 2, y: view.bounds.height * 5 / 6)
         view.addSubview(loginButton)
         loginButton.delegate = self
         
@@ -41,18 +48,45 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
         super.viewDidAppear(animated)
         
         if AccessToken.current != nil{
-            // User is already logged in
-            fetchProfile()
+            if firstLogin {
+                addGestureToImage(for: loginImage)
+            } else {
+                // User is already logged in
+                Timer.scheduledTimer(withTimeInterval: 2, repeats: false) {_ in
+                    self.fetchProfile()
+                }
+            }
         }
     }
     
     //MARK: LoginButtonDelegate
     
     func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
+        firstLogin = true
         if AccessToken.current != nil{
             // User is already logged in
             loginButton.isHidden = true
-            fetchProfile()
+            firstLogin = true
+            // addGestureToImage(for: loginImage)
+            //z fetchProfile()
+        }
+    }
+    
+    private func addGestureToImage(for loginImage: UIImageView) {
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeCard(_:)))
+        swipe.direction = UISwipeGestureRecognizerDirection.left
+        loginImage.addGestureRecognizer(swipe)
+    }
+    
+    @objc func swipeCard(_ sender: UISwipeGestureRecognizer) {
+        if sender.direction == .left {
+            if pictureIndex == 3 {
+                fetchProfile()
+                pictureIndex = 0
+            } else {
+                loginImage.image = UIImage(named: imageNameString[pictureIndex])
+                pictureIndex += 1
+            }
         }
     }
     

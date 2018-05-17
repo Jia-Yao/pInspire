@@ -41,7 +41,7 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Analytics.logEvent("press_create_poll", parameters: ["user": user!.userId])
+        Analytics.logEvent("press_create_poll", parameters: ["user": user!.userId, "time": getCurrentTime()])
         pollQuestion.delegate = self
         pollQuestion.becomeFirstResponder()
         pollQuestion.layer.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
@@ -155,7 +155,7 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
     //MARK: Navigation
     
     @IBAction func cancel(_ sender: UIButton) {
-        Analytics.logEvent("create_poll_cancel", parameters: ["user": user!.userId])
+        Analytics.logEvent("create_poll_cancel", parameters: ["user": user!.userId, "time": getCurrentTime()])
         dismiss(animated: true, completion: nil)
     }
     
@@ -163,9 +163,9 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
         if let question = pollQuestion.text {
             let isAnonymous = anonymousSwitch.isOn
             if isAnonymous{
-                Analytics.logEvent("create_poll_post_anonymous", parameters: ["user": user!.userId])
+                Analytics.logEvent("create_poll_post_anonymous", parameters: ["user": user!.userId, "time": getCurrentTime()])
             } else {
-                Analytics.logEvent("create_poll_post_public", parameters: ["user": user!.userId])
+                Analytics.logEvent("create_poll_post_public", parameters: ["user": user!.userId, "time": getCurrentTime()])
             }
             for row in 0..<choices.count {
                 let indexPath = IndexPath(row: row, section: 0)
@@ -206,7 +206,11 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
         var choicesDict = [String: Dictionary<String, Bool>]()
         for choice in choices {
             if choice.content != ""{
-                choicesDict[choice.content] = ["dummy": false]
+                if ["0", "1", "2"].contains(choice.content) {
+                    choicesDict[choice.content + "&&&&&&&&"] = ["dummy": false]
+                } else {
+                    choicesDict[choice.content] = ["dummy": false]
+                }
             }
         }
         
@@ -218,7 +222,7 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
                        "InitiatorId": self.user?.userId as Any] as [String : Any]
         let childUpdates = ["/Polls/\(key)": newPoll]
         refPoll.updateChildValues(childUpdates)
-        
+
         // Fetch articles
         var articlesDict = [String: Any]()
         let q = question.components(separatedBy: .punctuationCharacters).joined().components(separatedBy: .whitespaces).joined(separator: "%20")
