@@ -14,7 +14,11 @@ class DiscussionGroupTableViewCell: UITableViewCell {
     
     @IBOutlet weak var groupMembers: UILabel!
     
-    @IBOutlet weak var redDot: UIImageView!
+    @IBOutlet weak var redDot: UIImageView! {
+        didSet {
+            redDot.tintColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
