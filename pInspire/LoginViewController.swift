@@ -28,11 +28,13 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         loginImage.isUserInteractionEnabled = true
         
-        pictureIndex = 1
+        pictureIndex = 0
         loginImage.image = UIImage(named: "login-screen")
         
+        // Position the login button
         loginButton.center = CGPoint(x: view.bounds.width / 2, y: view.bounds.height * 5 / 6)
         view.addSubview(loginButton)
         loginButton.delegate = self
@@ -51,7 +53,7 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
         if AccessToken.current != nil{
             if firstLogin {
                 loginImage.image = UIImage(named: "pinspire_poll")
-                pictureIndex = 1
+                pictureIndex = 0
                 addGestureToImage(for: loginImage)
             } else {
                 // User is already logged in
@@ -81,19 +83,30 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
     }
     
     private func addGestureToImage(for loginImage: UIImageView) {
-        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeCard(_:)))
-        swipe.direction = UISwipeGestureRecognizerDirection.left
-        loginImage.addGestureRecognizer(swipe)
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeCard(_:)))
+        leftSwipe.direction = UISwipeGestureRecognizerDirection.left
+        loginImage.addGestureRecognizer(leftSwipe)
+        
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeCard(_:)))
+        rightSwipe.direction = UISwipeGestureRecognizerDirection.right
+        loginImage.addGestureRecognizer(rightSwipe)
     }
     
     @objc func swipeCard(_ sender: UISwipeGestureRecognizer) {
         if sender.direction == .left {
-            if pictureIndex == 3 {
+            if pictureIndex == 2 {
                 fetchProfile()
-                pictureIndex = 1
+                pictureIndex = 0
             } else {
-                loginImage.image = UIImage(named: imageNameString[pictureIndex])
                 pictureIndex += 1
+                loginImage.image = UIImage(named: imageNameString[pictureIndex])
+            }
+        } else if sender.direction == .right {
+            if pictureIndex == 0 {
+                return
+            } else {
+                pictureIndex -= 1
+                loginImage.image = UIImage(named: imageNameString[pictureIndex])
             }
         }
     }
