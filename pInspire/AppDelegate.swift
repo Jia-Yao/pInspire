@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Color of Tab bar items
         UITabBar.appearance().barTintColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         UITabBar.appearance().tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        registerForPushNotifications()
+        // registerForPushNotifications()
         return true
     }
     
@@ -60,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let request = UNNotificationRequest(identifier: "textNotification", content: content, trigger: trigger)
         
-        UNUserNotificationCenter.current().delegate = self as! UNUserNotificationCenterDelegate
+        UNUserNotificationCenter.current().delegate = self as? UNUserNotificationCenterDelegate
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         UNUserNotificationCenter.current().add(request) {(error) in
             if let error = error {
@@ -141,20 +141,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
-func registerForPushNotifications() {
-    UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) {
-        (granted, error) in
-        print("Permission granted: \(granted)")
-        
-        guard granted else { return }
-        getNotificationSettings()
-    }
-}
-
-func getNotificationSettings() {
-    UNUserNotificationCenter.current().getNotificationSettings { (settings) in
-        print("Notification settings: \(settings)")
-        guard settings.authorizationStatus == .authorized else { return }
-        UIApplication.shared.registerForRemoteNotifications()
-    }
-}
