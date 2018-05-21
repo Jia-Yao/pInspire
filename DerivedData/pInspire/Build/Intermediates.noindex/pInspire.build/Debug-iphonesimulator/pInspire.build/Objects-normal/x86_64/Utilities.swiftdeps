@@ -1,19 +1,25 @@
 ### Swift dependencies file v0 ###
 provides-top-level:
 - "getCurrentTime"
+- "modifyChoiceContentForDisplay"
 provides-nominal:
 provides-member:
 provides-dynamic-lookup:
 depends-top-level:
+- !private "=="
 - "AssignmentPrecedence"
 - !private "Date"
 - !private "DateFormatter"
 - "String"
 - !private "StringLiteralType"
+- !private "UnicodeScalarType"
 - "getCurrentTime"
+- "modifyChoiceContentForDisplay"
 depends-member:
 - !private ["12FacebookCore26AppEventParameterValueTypeP", "init"]
 - !private ["s23BidirectionalCollectionP", "init"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["s7CVarArgP", "_getBuiltinLogicValue"]
 - !private ["s7CVarArgP", "dateFormat"]
 - !private ["s7CVarArgP", "init"]
 - !private ["s7CVarArgP", "string"]
@@ -22,8 +28,11 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "dateFormat"]
 - !private ["s28CustomDebugStringConvertibleP", "init"]
 - !private ["s28CustomDebugStringConvertibleP", "string"]
+- !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
 - !private ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
 - !private ["s17CustomReflectableP", "init"]
+- !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
 - !private ["s23CustomStringConvertibleP", "dateFormat"]
 - !private ["s23CustomStringConvertibleP", "init"]
 - !private ["s23CustomStringConvertibleP", "string"]
@@ -31,20 +40,26 @@ depends-member:
 - !private ["So13DateFormatterC", "dateFormat"]
 - !private ["So13DateFormatterC", "init"]
 - !private ["So13DateFormatterC", "string"]
+- !private ["s9DecodableP", "_getBuiltinLogicValue"]
 - !private ["s9DecodableP", "init"]
+- !private ["s9EncodableP", "_getBuiltinLogicValue"]
 - !private ["s9EncodableP", "init"]
+- !private ["s9EquatableP", "_getBuiltinLogicValue"]
 - !private ["s9EquatableP", "dateFormat"]
 - !private ["s9EquatableP", "init"]
 - !private ["s9EquatableP", "string"]
+- !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
 - !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
 - !private ["s26ExpressibleByStringLiteralP", "init"]
 - !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
 - !private ["So9FormatterC", "dateFormat"]
 - !private ["So9FormatterC", "init"]
 - !private ["So9FormatterC", "string"]
+- !private ["s8HashableP", "_getBuiltinLogicValue"]
 - !private ["s8HashableP", "dateFormat"]
 - !private ["s8HashableP", "init"]
 - !private ["s8HashableP", "string"]
+- !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
 - !private ["s25LosslessStringConvertibleP", "init"]
 - !private ["s10MirrorPathP", "init"]
 - !private ["So8NSCodingP", "dateFormat"]
@@ -66,6 +81,7 @@ depends-member:
 - !private ["s14StringProtocolP", "init"]
 - !private ["s16TextOutputStreamP", "init"]
 - !private ["s20TextOutputStreamableP", "init"]
+- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
 - !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
 - !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
 - !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
@@ -74,11 +90,13 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "dateFormat"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "string"]
+- !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
 - !private ["s21_ObjectiveCBridgeableP", "init"]
 - !private ["s16_SwiftStringViewP", "init"]
 depends-nominal:
 - !private "12FacebookCore26AppEventParameterValueTypeP"
 - !private "s23BidirectionalCollectionP"
+- !private "Sb"
 - !private "s7CVarArgP"
 - !private "s10CollectionP"
 - !private "s10ComparableP"
@@ -91,6 +109,7 @@ depends-nominal:
 - !private "s9DecodableP"
 - !private "s9EncodableP"
 - !private "s9EquatableP"
+- !private "s27ExpressibleByBooleanLiteralP"
 - !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
 - !private "s26ExpressibleByStringLiteralP"
 - !private "s33ExpressibleByUnicodeScalarLiteralP"
@@ -109,6 +128,7 @@ depends-nominal:
 - !private "s14StringProtocolP"
 - !private "s16TextOutputStreamP"
 - !private "s20TextOutputStreamableP"
+- !private "s35_ExpressibleByBuiltinBooleanLiteralP"
 - !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
 - !private "s34_ExpressibleByBuiltinStringLiteralP"
 - !private "s39_ExpressibleByBuiltinUTF16StringLiteralP"
@@ -307,4 +327,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/MapKit.framework/Headers/MapKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
-interface-hash: "78960f2cf87b4c7a31acfa147743f740"
+interface-hash: "f4f3041d77a71d0616f9b8a1358bf37c"

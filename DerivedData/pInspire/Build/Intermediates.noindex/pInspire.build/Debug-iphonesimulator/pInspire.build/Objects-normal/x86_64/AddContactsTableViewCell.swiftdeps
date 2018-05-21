@@ -57,9 +57,11 @@ depends-member:
 - ["8pInspire24AddContactsTableViewCellC", "setSelected"]
 - ["8pInspire32AddContactsTableViewCellDelegateP", "AddContactsTableViewCell"]
 - ["8pInspire32AddContactsTableViewCellDelegateP", "didAddContact"]
+- ["8pInspire32AddContactsTableViewCellDelegateP", "triedAddContactWasBlocked"]
 - !private ["So9AnalyticsC", "logEvent"]
 - ["12FacebookCore26AppEventParameterValueTypeP", "init"]
 - ["s23BidirectionalCollectionP", "init"]
+- !private ["Sb", "_getBuiltinLogicValue"]
 - !private ["So15CALayerDelegateP", "AddButton"]
 - !private ["So15CALayerDelegateP", "Analytics"]
 - !private ["So15CALayerDelegateP", "Name"]
@@ -79,15 +81,18 @@ depends-member:
 - !private ["s7CVarArgP", "Analytics"]
 - !private ["s7CVarArgP", "Name"]
 - ["s7CVarArgP", ""]
+- !private ["s7CVarArgP", "_getBuiltinLogicValue"]
 - !private ["s7CVarArgP", "awakeFromNib"]
 - !private ["s7CVarArgP", "child"]
 - !private ["s7CVarArgP", "delegate"]
 - !private ["s7CVarArgP", "friend_id"]
 - !private ["s7CVarArgP", "getCurrentTime"]
+- !private ["s7CVarArgP", "hasChild"]
 - ["s7CVarArgP", "init"]
 - !private ["s7CVarArgP", "logEvent"]
 - !private ["s7CVarArgP", "my_id"]
 - !private ["s7CVarArgP", "my_name"]
+- !private ["s7CVarArgP", "observeSingleEvent"]
 - !private ["s7CVarArgP", "refUser"]
 - !private ["s7CVarArgP", "setSelected"]
 - !private ["s7CVarArgP", "setValue"]
@@ -104,59 +109,77 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "delegate"]
 - !private ["s28CustomDebugStringConvertibleP", "friend_id"]
 - !private ["s28CustomDebugStringConvertibleP", "getCurrentTime"]
+- !private ["s28CustomDebugStringConvertibleP", "hasChild"]
 - ["s28CustomDebugStringConvertibleP", "init"]
 - !private ["s28CustomDebugStringConvertibleP", "logEvent"]
 - !private ["s28CustomDebugStringConvertibleP", "my_id"]
 - !private ["s28CustomDebugStringConvertibleP", "my_name"]
+- !private ["s28CustomDebugStringConvertibleP", "observeSingleEvent"]
 - !private ["s28CustomDebugStringConvertibleP", "refUser"]
 - !private ["s28CustomDebugStringConvertibleP", "setSelected"]
 - !private ["s28CustomDebugStringConvertibleP", "setValue"]
 - !private ["s28CustomDebugStringConvertibleP", "text"]
 - !private ["s28CustomDebugStringConvertibleP", "tintColor"]
+- !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
 - ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
 - ["s17CustomReflectableP", "init"]
 - !private ["s23CustomStringConvertibleP", "AddButton"]
 - !private ["s23CustomStringConvertibleP", "Analytics"]
 - !private ["s23CustomStringConvertibleP", "Name"]
 - ["s23CustomStringConvertibleP", ""]
+- !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
 - !private ["s23CustomStringConvertibleP", "awakeFromNib"]
 - !private ["s23CustomStringConvertibleP", "child"]
 - !private ["s23CustomStringConvertibleP", "delegate"]
 - !private ["s23CustomStringConvertibleP", "friend_id"]
 - !private ["s23CustomStringConvertibleP", "getCurrentTime"]
+- !private ["s23CustomStringConvertibleP", "hasChild"]
 - ["s23CustomStringConvertibleP", "init"]
 - !private ["s23CustomStringConvertibleP", "logEvent"]
 - !private ["s23CustomStringConvertibleP", "my_id"]
 - !private ["s23CustomStringConvertibleP", "my_name"]
+- !private ["s23CustomStringConvertibleP", "observeSingleEvent"]
 - !private ["s23CustomStringConvertibleP", "refUser"]
 - !private ["s23CustomStringConvertibleP", "setSelected"]
 - !private ["s23CustomStringConvertibleP", "setValue"]
 - !private ["s23CustomStringConvertibleP", "text"]
 - !private ["s23CustomStringConvertibleP", "tintColor"]
+- !private ["SC13DataEventTypeO", "value"]
+- !private ["So12DataSnapshotC", "hasChild"]
 - !private ["So13DatabaseQueryC", "child"]
+- !private ["So13DatabaseQueryC", "observeSingleEvent"]
 - !private ["So13DatabaseQueryC", "setValue"]
 - !private ["So17DatabaseReferenceC", "child"]
+- !private ["So17DatabaseReferenceC", "observeSingleEvent"]
 - !private ["So17DatabaseReferenceC", "setValue"]
+- !private ["s9DecodableP", "_getBuiltinLogicValue"]
 - ["s9DecodableP", "init"]
+- !private ["s9EncodableP", "_getBuiltinLogicValue"]
 - ["s9EncodableP", "init"]
 - !private ["s9EquatableP", "AddButton"]
 - !private ["s9EquatableP", "Analytics"]
 - !private ["s9EquatableP", "Name"]
 - ["s9EquatableP", ""]
+- !private ["s9EquatableP", "_getBuiltinLogicValue"]
 - !private ["s9EquatableP", "awakeFromNib"]
 - !private ["s9EquatableP", "child"]
 - !private ["s9EquatableP", "delegate"]
 - !private ["s9EquatableP", "friend_id"]
 - !private ["s9EquatableP", "getCurrentTime"]
+- !private ["s9EquatableP", "hasChild"]
 - ["s9EquatableP", "init"]
 - !private ["s9EquatableP", "logEvent"]
 - !private ["s9EquatableP", "my_id"]
 - !private ["s9EquatableP", "my_name"]
+- !private ["s9EquatableP", "observeSingleEvent"]
 - !private ["s9EquatableP", "refUser"]
 - !private ["s9EquatableP", "setSelected"]
 - !private ["s9EquatableP", "setValue"]
 - !private ["s9EquatableP", "text"]
 - !private ["s9EquatableP", "tintColor"]
+- !private ["s9EquatableP", "value"]
+- !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
 - ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
 - ["s26ExpressibleByStringLiteralP", "init"]
 - ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
@@ -164,20 +187,25 @@ depends-member:
 - !private ["s8HashableP", "Analytics"]
 - !private ["s8HashableP", "Name"]
 - ["s8HashableP", ""]
+- !private ["s8HashableP", "_getBuiltinLogicValue"]
 - !private ["s8HashableP", "awakeFromNib"]
 - !private ["s8HashableP", "child"]
 - !private ["s8HashableP", "delegate"]
 - !private ["s8HashableP", "friend_id"]
 - !private ["s8HashableP", "getCurrentTime"]
+- !private ["s8HashableP", "hasChild"]
 - ["s8HashableP", "init"]
 - !private ["s8HashableP", "logEvent"]
 - !private ["s8HashableP", "my_id"]
 - !private ["s8HashableP", "my_name"]
+- !private ["s8HashableP", "observeSingleEvent"]
 - !private ["s8HashableP", "refUser"]
 - !private ["s8HashableP", "setSelected"]
 - !private ["s8HashableP", "setValue"]
 - !private ["s8HashableP", "text"]
 - !private ["s8HashableP", "tintColor"]
+- !private ["s8HashableP", "value"]
+- !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
 - ["s25LosslessStringConvertibleP", "init"]
 - ["s10MirrorPathP", "init"]
 - !private ["So8NSCodingP", "AddButton"]
@@ -212,10 +240,12 @@ depends-member:
 - ["So8NSObjectC", "delegate"]
 - ["So8NSObjectC", "friend_id"]
 - !private ["So8NSObjectC", "getCurrentTime"]
+- !private ["So8NSObjectC", "hasChild"]
 - ["So8NSObjectC", "init"]
 - !private ["So8NSObjectC", "logEvent"]
 - ["So8NSObjectC", "my_id"]
 - ["So8NSObjectC", "my_name"]
+- !private ["So8NSObjectC", "observeSingleEvent"]
 - ["So8NSObjectC", "refUser"]
 - ["So8NSObjectC", "setSelected"]
 - !private ["So8NSObjectC", "setValue"]
@@ -230,16 +260,19 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "delegate"]
 - !private ["So16NSObjectProtocolP", "friend_id"]
 - !private ["So16NSObjectProtocolP", "getCurrentTime"]
+- !private ["So16NSObjectProtocolP", "hasChild"]
 - !private ["So16NSObjectProtocolP", "init"]
 - !private ["So16NSObjectProtocolP", "logEvent"]
 - !private ["So16NSObjectProtocolP", "my_id"]
 - !private ["So16NSObjectProtocolP", "my_name"]
+- !private ["So16NSObjectProtocolP", "observeSingleEvent"]
 - !private ["So16NSObjectProtocolP", "refUser"]
 - !private ["So16NSObjectProtocolP", "setSelected"]
 - !private ["So16NSObjectProtocolP", "setValue"]
 - !private ["So16NSObjectProtocolP", "text"]
 - !private ["So16NSObjectProtocolP", "tintColor"]
 - ["s26RangeReplaceableCollectionP", "init"]
+- !private ["s16RawRepresentableP", "value"]
 - ["s8SequenceP", "init"]
 - ["SS", "init"]
 - ["s14StringProtocolP", "init"]
@@ -497,6 +530,7 @@ depends-member:
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "setSelected"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "text"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "tintColor"]
+- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
 - ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
 - ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
 - ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
@@ -511,15 +545,18 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "delegate"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "friend_id"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "getCurrentTime"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "hasChild"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "logEvent"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "my_id"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "my_name"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "observeSingleEvent"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "refUser"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "setSelected"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "setValue"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "text"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "tintColor"]
+- !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
 - ["s21_ObjectiveCBridgeableP", "init"]
 - ["s16_SwiftStringViewP", "init"]
 depends-nominal:
@@ -528,6 +565,7 @@ depends-nominal:
 - !private "So9AnalyticsC"
 - "12FacebookCore26AppEventParameterValueTypeP"
 - "s23BidirectionalCollectionP"
+- !private "Sb"
 - "So15CALayerDelegateP"
 - "s7CVarArgP"
 - "s10CollectionP"
@@ -536,11 +574,14 @@ depends-nominal:
 - "s29CustomPlaygroundQuickLookableP"
 - "s17CustomReflectableP"
 - "s23CustomStringConvertibleP"
+- !private "SC13DataEventTypeO"
+- !private "So12DataSnapshotC"
 - !private "So13DatabaseQueryC"
 - !private "So17DatabaseReferenceC"
 - "s9DecodableP"
 - "s9EncodableP"
 - "s9EquatableP"
+- !private "s27ExpressibleByBooleanLiteralP"
 - "s43ExpressibleByExtendedGraphemeClusterLiteralP"
 - "s26ExpressibleByStringLiteralP"
 - "s33ExpressibleByUnicodeScalarLiteralP"
@@ -551,6 +592,7 @@ depends-nominal:
 - "So8NSObjectC"
 - "So16NSObjectProtocolP"
 - "s26RangeReplaceableCollectionP"
+- !private "s16RawRepresentableP"
 - "s8SequenceP"
 - "SS"
 - "s14StringProtocolP"
@@ -577,6 +619,7 @@ depends-nominal:
 - "So18UITraitEnvironmentP"
 - "So6UIViewC"
 - "s37_DefaultCustomPlaygroundQuickLookableP"
+- !private "s35_ExpressibleByBuiltinBooleanLiteralP"
 - "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
 - "s34_ExpressibleByBuiltinStringLiteralP"
 - "s39_ExpressibleByBuiltinUTF16StringLiteralP"
@@ -775,4 +818,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/MapKit.framework/Headers/MapKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
-interface-hash: "abf7c7eed9e35d8f02af92f223584745"
+interface-hash: "0d1246a3a5a67946518a379931553d28"

@@ -7,27 +7,30 @@ provides-member:
 - ["8pInspire15ButtonWithImageC", ""]
 provides-dynamic-lookup:
 - "layoutSubviews"
+- "setImage"
 depends-top-level:
-- !private "!="
 - !private "-"
+- !private "=="
 - "AssignmentPrecedence"
+- !private "BooleanLiteralType"
 - "ButtonWithImage"
-- !private "StringLiteralType"
 - "UIButton"
+- "UIControlState"
 - !private "UIEdgeInsets"
-- !private "print"
+- "UIImage"
 depends-member:
-- !private ["12FacebookCore26AppEventParameterValueTypeP", "init"]
-- !private ["s23BidirectionalCollectionP", "init"]
 - !private ["Sb", "_getBuiltinLogicValue"]
+- ["8pInspire15ButtonWithImageC", "UIControlState"]
 - !private ["8pInspire15ButtonWithImageC", "UIEdgeInsets"]
+- ["8pInspire15ButtonWithImageC", "UIImage"]
 - !private ["8pInspire15ButtonWithImageC", "bounds"]
 - ["8pInspire15ButtonWithImageC", "deinit"]
 - !private ["8pInspire15ButtonWithImageC", "imageEdgeInsets"]
 - !private ["8pInspire15ButtonWithImageC", "imageView"]
 - ["8pInspire15ButtonWithImageC", "init"]
+- !private ["8pInspire15ButtonWithImageC", "layoutIfNeeded"]
 - ["8pInspire15ButtonWithImageC", "layoutSubviews"]
-- !private ["8pInspire15ButtonWithImageC", "print"]
+- ["8pInspire15ButtonWithImageC", "setImage"]
 - !private ["8pInspire15ButtonWithImageC", "titleEdgeInsets"]
 - !private ["So15CALayerDelegateP", "UIEdgeInsets"]
 - ["So15CALayerDelegateP", ""]
@@ -36,8 +39,10 @@ depends-member:
 - !private ["So15CALayerDelegateP", "imageEdgeInsets"]
 - !private ["So15CALayerDelegateP", "imageView"]
 - !private ["So15CALayerDelegateP", "init"]
+- !private ["So15CALayerDelegateP", "isHidden"]
+- !private ["So15CALayerDelegateP", "layoutIfNeeded"]
 - !private ["So15CALayerDelegateP", "layoutSubviews"]
-- !private ["So15CALayerDelegateP", "print"]
+- !private ["So15CALayerDelegateP", "setImage"]
 - !private ["So15CALayerDelegateP", "titleEdgeInsets"]
 - !private ["SC6CGRectV", "width"]
 - !private ["s7CVarArgP", "UIEdgeInsets"]
@@ -48,11 +53,11 @@ depends-member:
 - !private ["s7CVarArgP", "imageEdgeInsets"]
 - !private ["s7CVarArgP", "imageView"]
 - !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "isHidden"]
+- !private ["s7CVarArgP", "layoutIfNeeded"]
 - !private ["s7CVarArgP", "layoutSubviews"]
-- !private ["s7CVarArgP", "print"]
+- !private ["s7CVarArgP", "setImage"]
 - !private ["s7CVarArgP", "titleEdgeInsets"]
-- !private ["s10CollectionP", "init"]
-- !private ["s10ComparableP", "init"]
 - !private ["s28CustomDebugStringConvertibleP", "UIEdgeInsets"]
 - ["s28CustomDebugStringConvertibleP", ""]
 - !private ["s28CustomDebugStringConvertibleP", "bounds"]
@@ -60,15 +65,15 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "imageEdgeInsets"]
 - !private ["s28CustomDebugStringConvertibleP", "imageView"]
 - !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "isHidden"]
+- !private ["s28CustomDebugStringConvertibleP", "layoutIfNeeded"]
 - !private ["s28CustomDebugStringConvertibleP", "layoutSubviews"]
-- !private ["s28CustomDebugStringConvertibleP", "print"]
+- !private ["s28CustomDebugStringConvertibleP", "setImage"]
 - !private ["s28CustomDebugStringConvertibleP", "titleEdgeInsets"]
 - !private ["s28CustomDebugStringConvertibleP", "width"]
 - !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
-- !private ["s29CustomPlaygroundQuickLookableP", "init"]
 - !private ["s29CustomPlaygroundQuickLookableP", "width"]
 - !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
-- !private ["s17CustomReflectableP", "init"]
 - !private ["s17CustomReflectableP", "width"]
 - !private ["s23CustomStringConvertibleP", "UIEdgeInsets"]
 - ["s23CustomStringConvertibleP", ""]
@@ -78,14 +83,14 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "imageEdgeInsets"]
 - !private ["s23CustomStringConvertibleP", "imageView"]
 - !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "isHidden"]
+- !private ["s23CustomStringConvertibleP", "layoutIfNeeded"]
 - !private ["s23CustomStringConvertibleP", "layoutSubviews"]
-- !private ["s23CustomStringConvertibleP", "print"]
+- !private ["s23CustomStringConvertibleP", "setImage"]
 - !private ["s23CustomStringConvertibleP", "titleEdgeInsets"]
 - !private ["s9DecodableP", "_getBuiltinLogicValue"]
-- !private ["s9DecodableP", "init"]
 - !private ["s9DecodableP", "width"]
 - !private ["s9EncodableP", "_getBuiltinLogicValue"]
-- !private ["s9EncodableP", "init"]
 - !private ["s9EncodableP", "width"]
 - !private ["s9EquatableP", "UIEdgeInsets"]
 - ["s9EquatableP", ""]
@@ -95,14 +100,13 @@ depends-member:
 - !private ["s9EquatableP", "imageEdgeInsets"]
 - !private ["s9EquatableP", "imageView"]
 - !private ["s9EquatableP", "init"]
+- !private ["s9EquatableP", "isHidden"]
+- !private ["s9EquatableP", "layoutIfNeeded"]
 - !private ["s9EquatableP", "layoutSubviews"]
-- !private ["s9EquatableP", "print"]
+- !private ["s9EquatableP", "setImage"]
 - !private ["s9EquatableP", "titleEdgeInsets"]
 - !private ["s9EquatableP", "width"]
 - !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
-- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
-- !private ["s26ExpressibleByStringLiteralP", "init"]
-- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
 - !private ["s8HashableP", "UIEdgeInsets"]
 - ["s8HashableP", ""]
 - !private ["s8HashableP", "_getBuiltinLogicValue"]
@@ -111,12 +115,12 @@ depends-member:
 - !private ["s8HashableP", "imageEdgeInsets"]
 - !private ["s8HashableP", "imageView"]
 - !private ["s8HashableP", "init"]
+- !private ["s8HashableP", "isHidden"]
+- !private ["s8HashableP", "layoutIfNeeded"]
 - !private ["s8HashableP", "layoutSubviews"]
-- !private ["s8HashableP", "print"]
+- !private ["s8HashableP", "setImage"]
 - !private ["s8HashableP", "titleEdgeInsets"]
 - !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
-- !private ["s25LosslessStringConvertibleP", "init"]
-- !private ["s10MirrorPathP", "init"]
 - !private ["So8NSCodingP", "UIEdgeInsets"]
 - ["So8NSCodingP", ""]
 - !private ["So8NSCodingP", "bounds"]
@@ -124,17 +128,23 @@ depends-member:
 - !private ["So8NSCodingP", "imageEdgeInsets"]
 - !private ["So8NSCodingP", "imageView"]
 - !private ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "isHidden"]
+- !private ["So8NSCodingP", "layoutIfNeeded"]
 - !private ["So8NSCodingP", "layoutSubviews"]
-- !private ["So8NSCodingP", "print"]
+- !private ["So8NSCodingP", "setImage"]
 - !private ["So8NSCodingP", "titleEdgeInsets"]
+- ["So8NSObjectC", "UIControlState"]
 - !private ["So8NSObjectC", "UIEdgeInsets"]
+- ["So8NSObjectC", "UIImage"]
 - !private ["So8NSObjectC", "bounds"]
 - !private ["So8NSObjectC", "frame"]
 - !private ["So8NSObjectC", "imageEdgeInsets"]
 - !private ["So8NSObjectC", "imageView"]
 - ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "isHidden"]
+- !private ["So8NSObjectC", "layoutIfNeeded"]
 - ["So8NSObjectC", "layoutSubviews"]
-- !private ["So8NSObjectC", "print"]
+- ["So8NSObjectC", "setImage"]
 - !private ["So8NSObjectC", "titleEdgeInsets"]
 - !private ["So16NSObjectProtocolP", "UIEdgeInsets"]
 - ["So16NSObjectProtocolP", ""]
@@ -143,15 +153,11 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "imageEdgeInsets"]
 - !private ["So16NSObjectProtocolP", "imageView"]
 - !private ["So16NSObjectProtocolP", "init"]
+- !private ["So16NSObjectProtocolP", "isHidden"]
+- !private ["So16NSObjectProtocolP", "layoutIfNeeded"]
 - !private ["So16NSObjectProtocolP", "layoutSubviews"]
-- !private ["So16NSObjectProtocolP", "print"]
+- !private ["So16NSObjectProtocolP", "setImage"]
 - !private ["So16NSObjectProtocolP", "titleEdgeInsets"]
-- !private ["s26RangeReplaceableCollectionP", "init"]
-- !private ["s8SequenceP", "init"]
-- !private ["SS", "init"]
-- !private ["s14StringProtocolP", "init"]
-- !private ["s16TextOutputStreamP", "init"]
-- !private ["s20TextOutputStreamableP", "init"]
 - !private ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "UIEdgeInsets"]
 - ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", ""]
 - !private ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "bounds"]
@@ -159,8 +165,10 @@ depends-member:
 - !private ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "imageEdgeInsets"]
 - !private ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "imageView"]
 - !private ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "init"]
+- !private ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "isHidden"]
+- !private ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "layoutIfNeeded"]
 - !private ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "layoutSubviews"]
-- !private ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "print"]
+- !private ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "setImage"]
 - !private ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "titleEdgeInsets"]
 - !private ["So29UIAccessibilityIdentificationP", "UIEdgeInsets"]
 - ["So29UIAccessibilityIdentificationP", ""]
@@ -169,8 +177,10 @@ depends-member:
 - !private ["So29UIAccessibilityIdentificationP", "imageEdgeInsets"]
 - !private ["So29UIAccessibilityIdentificationP", "imageView"]
 - !private ["So29UIAccessibilityIdentificationP", "init"]
+- !private ["So29UIAccessibilityIdentificationP", "isHidden"]
+- !private ["So29UIAccessibilityIdentificationP", "layoutIfNeeded"]
 - !private ["So29UIAccessibilityIdentificationP", "layoutSubviews"]
-- !private ["So29UIAccessibilityIdentificationP", "print"]
+- !private ["So29UIAccessibilityIdentificationP", "setImage"]
 - !private ["So29UIAccessibilityIdentificationP", "titleEdgeInsets"]
 - !private ["So12UIAppearanceP", "UIEdgeInsets"]
 - ["So12UIAppearanceP", ""]
@@ -179,8 +189,10 @@ depends-member:
 - !private ["So12UIAppearanceP", "imageEdgeInsets"]
 - !private ["So12UIAppearanceP", "imageView"]
 - !private ["So12UIAppearanceP", "init"]
+- !private ["So12UIAppearanceP", "isHidden"]
+- !private ["So12UIAppearanceP", "layoutIfNeeded"]
 - !private ["So12UIAppearanceP", "layoutSubviews"]
-- !private ["So12UIAppearanceP", "print"]
+- !private ["So12UIAppearanceP", "setImage"]
 - !private ["So12UIAppearanceP", "titleEdgeInsets"]
 - !private ["So21UIAppearanceContainerP", "UIEdgeInsets"]
 - ["So21UIAppearanceContainerP", ""]
@@ -189,25 +201,33 @@ depends-member:
 - !private ["So21UIAppearanceContainerP", "imageEdgeInsets"]
 - !private ["So21UIAppearanceContainerP", "imageView"]
 - !private ["So21UIAppearanceContainerP", "init"]
+- !private ["So21UIAppearanceContainerP", "isHidden"]
+- !private ["So21UIAppearanceContainerP", "layoutIfNeeded"]
 - !private ["So21UIAppearanceContainerP", "layoutSubviews"]
-- !private ["So21UIAppearanceContainerP", "print"]
+- !private ["So21UIAppearanceContainerP", "setImage"]
 - !private ["So21UIAppearanceContainerP", "titleEdgeInsets"]
+- ["So8UIButtonC", "UIControlState"]
 - !private ["So8UIButtonC", "UIEdgeInsets"]
+- ["So8UIButtonC", "UIImage"]
 - ["So8UIButtonC", ""]
 - !private ["So8UIButtonC", "bounds"]
 - !private ["So8UIButtonC", "imageEdgeInsets"]
 - !private ["So8UIButtonC", "imageView"]
 - ["So8UIButtonC", "init"]
+- !private ["So8UIButtonC", "layoutIfNeeded"]
 - ["So8UIButtonC", "layoutSubviews"]
-- !private ["So8UIButtonC", "print"]
+- ["So8UIButtonC", "setImage"]
 - !private ["So8UIButtonC", "titleEdgeInsets"]
+- ["So9UIControlC", "UIControlState"]
 - !private ["So9UIControlC", "UIEdgeInsets"]
+- ["So9UIControlC", "UIImage"]
 - !private ["So9UIControlC", "bounds"]
 - !private ["So9UIControlC", "imageEdgeInsets"]
 - !private ["So9UIControlC", "imageView"]
 - ["So9UIControlC", "init"]
+- !private ["So9UIControlC", "layoutIfNeeded"]
 - ["So9UIControlC", "layoutSubviews"]
-- !private ["So9UIControlC", "print"]
+- ["So9UIControlC", "setImage"]
 - !private ["So9UIControlC", "titleEdgeInsets"]
 - !private ["So17UICoordinateSpaceP", "UIEdgeInsets"]
 - ["So17UICoordinateSpaceP", ""]
@@ -216,8 +236,10 @@ depends-member:
 - !private ["So17UICoordinateSpaceP", "imageEdgeInsets"]
 - !private ["So17UICoordinateSpaceP", "imageView"]
 - !private ["So17UICoordinateSpaceP", "init"]
+- !private ["So17UICoordinateSpaceP", "isHidden"]
+- !private ["So17UICoordinateSpaceP", "layoutIfNeeded"]
 - !private ["So17UICoordinateSpaceP", "layoutSubviews"]
-- !private ["So17UICoordinateSpaceP", "print"]
+- !private ["So17UICoordinateSpaceP", "setImage"]
 - !private ["So17UICoordinateSpaceP", "titleEdgeInsets"]
 - !private ["So13UIDynamicItemP", "UIEdgeInsets"]
 - ["So13UIDynamicItemP", ""]
@@ -226,8 +248,10 @@ depends-member:
 - !private ["So13UIDynamicItemP", "imageEdgeInsets"]
 - !private ["So13UIDynamicItemP", "imageView"]
 - !private ["So13UIDynamicItemP", "init"]
+- !private ["So13UIDynamicItemP", "isHidden"]
+- !private ["So13UIDynamicItemP", "layoutIfNeeded"]
 - !private ["So13UIDynamicItemP", "layoutSubviews"]
-- !private ["So13UIDynamicItemP", "print"]
+- !private ["So13UIDynamicItemP", "setImage"]
 - !private ["So13UIDynamicItemP", "titleEdgeInsets"]
 - !private ["SC12UIEdgeInsetsV", "init"]
 - !private ["So18UIFocusEnvironmentP", "UIEdgeInsets"]
@@ -237,8 +261,10 @@ depends-member:
 - !private ["So18UIFocusEnvironmentP", "imageEdgeInsets"]
 - !private ["So18UIFocusEnvironmentP", "imageView"]
 - !private ["So18UIFocusEnvironmentP", "init"]
+- !private ["So18UIFocusEnvironmentP", "isHidden"]
+- !private ["So18UIFocusEnvironmentP", "layoutIfNeeded"]
 - !private ["So18UIFocusEnvironmentP", "layoutSubviews"]
-- !private ["So18UIFocusEnvironmentP", "print"]
+- !private ["So18UIFocusEnvironmentP", "setImage"]
 - !private ["So18UIFocusEnvironmentP", "titleEdgeInsets"]
 - !private ["So11UIFocusItemP", "UIEdgeInsets"]
 - ["So11UIFocusItemP", ""]
@@ -247,10 +273,13 @@ depends-member:
 - !private ["So11UIFocusItemP", "imageEdgeInsets"]
 - !private ["So11UIFocusItemP", "imageView"]
 - !private ["So11UIFocusItemP", "init"]
+- !private ["So11UIFocusItemP", "isHidden"]
+- !private ["So11UIFocusItemP", "layoutIfNeeded"]
 - !private ["So11UIFocusItemP", "layoutSubviews"]
-- !private ["So11UIFocusItemP", "print"]
+- !private ["So11UIFocusItemP", "setImage"]
 - !private ["So11UIFocusItemP", "titleEdgeInsets"]
 - !private ["So11UIImageViewC", "frame"]
+- !private ["So11UIImageViewC", "isHidden"]
 - !private ["So30UIPasteConfigurationSupportingP", "UIEdgeInsets"]
 - ["So30UIPasteConfigurationSupportingP", ""]
 - !private ["So30UIPasteConfigurationSupportingP", "bounds"]
@@ -258,17 +287,23 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "imageEdgeInsets"]
 - !private ["So30UIPasteConfigurationSupportingP", "imageView"]
 - !private ["So30UIPasteConfigurationSupportingP", "init"]
+- !private ["So30UIPasteConfigurationSupportingP", "isHidden"]
+- !private ["So30UIPasteConfigurationSupportingP", "layoutIfNeeded"]
 - !private ["So30UIPasteConfigurationSupportingP", "layoutSubviews"]
-- !private ["So30UIPasteConfigurationSupportingP", "print"]
+- !private ["So30UIPasteConfigurationSupportingP", "setImage"]
 - !private ["So30UIPasteConfigurationSupportingP", "titleEdgeInsets"]
+- ["So11UIResponderC", "UIControlState"]
 - !private ["So11UIResponderC", "UIEdgeInsets"]
+- ["So11UIResponderC", "UIImage"]
 - !private ["So11UIResponderC", "bounds"]
 - !private ["So11UIResponderC", "frame"]
 - !private ["So11UIResponderC", "imageEdgeInsets"]
 - !private ["So11UIResponderC", "imageView"]
 - ["So11UIResponderC", "init"]
+- !private ["So11UIResponderC", "isHidden"]
+- !private ["So11UIResponderC", "layoutIfNeeded"]
 - ["So11UIResponderC", "layoutSubviews"]
-- !private ["So11UIResponderC", "print"]
+- ["So11UIResponderC", "setImage"]
 - !private ["So11UIResponderC", "titleEdgeInsets"]
 - !private ["So30UIResponderStandardEditActionsP", "UIEdgeInsets"]
 - ["So30UIResponderStandardEditActionsP", ""]
@@ -277,8 +312,10 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "imageEdgeInsets"]
 - !private ["So30UIResponderStandardEditActionsP", "imageView"]
 - !private ["So30UIResponderStandardEditActionsP", "init"]
+- !private ["So30UIResponderStandardEditActionsP", "isHidden"]
+- !private ["So30UIResponderStandardEditActionsP", "layoutIfNeeded"]
 - !private ["So30UIResponderStandardEditActionsP", "layoutSubviews"]
-- !private ["So30UIResponderStandardEditActionsP", "print"]
+- !private ["So30UIResponderStandardEditActionsP", "setImage"]
 - !private ["So30UIResponderStandardEditActionsP", "titleEdgeInsets"]
 - !private ["So35UISpringLoadedInteractionSupportingP", "UIEdgeInsets"]
 - ["So35UISpringLoadedInteractionSupportingP", ""]
@@ -286,8 +323,9 @@ depends-member:
 - !private ["So35UISpringLoadedInteractionSupportingP", "imageEdgeInsets"]
 - !private ["So35UISpringLoadedInteractionSupportingP", "imageView"]
 - !private ["So35UISpringLoadedInteractionSupportingP", "init"]
+- !private ["So35UISpringLoadedInteractionSupportingP", "layoutIfNeeded"]
 - !private ["So35UISpringLoadedInteractionSupportingP", "layoutSubviews"]
-- !private ["So35UISpringLoadedInteractionSupportingP", "print"]
+- !private ["So35UISpringLoadedInteractionSupportingP", "setImage"]
 - !private ["So35UISpringLoadedInteractionSupportingP", "titleEdgeInsets"]
 - !private ["So18UITraitEnvironmentP", "UIEdgeInsets"]
 - ["So18UITraitEnvironmentP", ""]
@@ -296,17 +334,23 @@ depends-member:
 - !private ["So18UITraitEnvironmentP", "imageEdgeInsets"]
 - !private ["So18UITraitEnvironmentP", "imageView"]
 - !private ["So18UITraitEnvironmentP", "init"]
+- !private ["So18UITraitEnvironmentP", "isHidden"]
+- !private ["So18UITraitEnvironmentP", "layoutIfNeeded"]
 - !private ["So18UITraitEnvironmentP", "layoutSubviews"]
-- !private ["So18UITraitEnvironmentP", "print"]
+- !private ["So18UITraitEnvironmentP", "setImage"]
 - !private ["So18UITraitEnvironmentP", "titleEdgeInsets"]
+- ["So6UIViewC", "UIControlState"]
 - !private ["So6UIViewC", "UIEdgeInsets"]
+- ["So6UIViewC", "UIImage"]
 - !private ["So6UIViewC", "bounds"]
 - !private ["So6UIViewC", "frame"]
 - !private ["So6UIViewC", "imageEdgeInsets"]
 - !private ["So6UIViewC", "imageView"]
 - ["So6UIViewC", "init"]
+- !private ["So6UIViewC", "isHidden"]
+- !private ["So6UIViewC", "layoutIfNeeded"]
 - ["So6UIViewC", "layoutSubviews"]
-- !private ["So6UIViewC", "print"]
+- ["So6UIViewC", "setImage"]
 - !private ["So6UIViewC", "titleEdgeInsets"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "UIEdgeInsets"]
 - ["s37_DefaultCustomPlaygroundQuickLookableP", ""]
@@ -315,15 +359,12 @@ depends-member:
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "imageEdgeInsets"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "imageView"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "init"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "isHidden"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "layoutIfNeeded"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "layoutSubviews"]
-- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "print"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "setImage"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "titleEdgeInsets"]
 - !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
-- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
-- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
-- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
-- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
-- !private ["s33_ExpressibleByStringInterpolationP", "init"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "UIEdgeInsets"]
 - ["10Foundation27_KeyValueCodingAndObservingP", ""]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "bounds"]
@@ -331,23 +372,20 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "imageEdgeInsets"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "imageView"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "isHidden"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "layoutIfNeeded"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "layoutSubviews"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "print"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "setImage"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "titleEdgeInsets"]
 - !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
 - !private ["s21_ObjectiveCBridgeableP", "init"]
 - !private ["s21_ObjectiveCBridgeableP", "width"]
-- !private ["s16_SwiftStringViewP", "init"]
 depends-nominal:
-- !private "12FacebookCore26AppEventParameterValueTypeP"
-- !private "s23BidirectionalCollectionP"
 - !private "Sb"
 - "8pInspire15ButtonWithImageC"
 - "So15CALayerDelegateP"
 - !private "SC6CGRectV"
 - "s7CVarArgP"
-- !private "s10CollectionP"
-- !private "s10ComparableP"
 - "s28CustomDebugStringConvertibleP"
 - !private "s29CustomPlaygroundQuickLookableP"
 - !private "s17CustomReflectableP"
@@ -356,21 +394,11 @@ depends-nominal:
 - !private "s9EncodableP"
 - "s9EquatableP"
 - !private "s27ExpressibleByBooleanLiteralP"
-- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
-- !private "s26ExpressibleByStringLiteralP"
-- !private "s33ExpressibleByUnicodeScalarLiteralP"
 - "s8HashableP"
 - !private "s25LosslessStringConvertibleP"
-- !private "s10MirrorPathP"
 - "So8NSCodingP"
 - "So8NSObjectC"
 - "So16NSObjectProtocolP"
-- !private "s26RangeReplaceableCollectionP"
-- !private "s8SequenceP"
-- !private "SS"
-- !private "s14StringProtocolP"
-- !private "s16TextOutputStreamP"
-- !private "s20TextOutputStreamableP"
 - "So48UIAccessibilityContentSizeCategoryImageAdjustingP"
 - "So29UIAccessibilityIdentificationP"
 - "So12UIAppearanceP"
@@ -391,14 +419,8 @@ depends-nominal:
 - "So6UIViewC"
 - "s37_DefaultCustomPlaygroundQuickLookableP"
 - !private "s35_ExpressibleByBuiltinBooleanLiteralP"
-- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
-- !private "s34_ExpressibleByBuiltinStringLiteralP"
-- !private "s39_ExpressibleByBuiltinUTF16StringLiteralP"
-- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
-- !private "s33_ExpressibleByStringInterpolationP"
 - "10Foundation27_KeyValueCodingAndObservingP"
 - !private "s21_ObjectiveCBridgeableP"
-- !private "s16_SwiftStringViewP"
 depends-dynamic-lookup:
 depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotesc"
@@ -589,4 +611,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/MapKit.framework/Headers/MapKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
-interface-hash: "1958103df926da12b020d2b6f8ed94bb"
+interface-hash: "c259f6571399f4afedda71e4274b5d6a"

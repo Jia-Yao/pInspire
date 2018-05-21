@@ -14,6 +14,10 @@ import Firebase
 class LoginViewController: UIViewController, LoginButtonDelegate {
     
     //MARK: Properties
+    @IBOutlet weak var EULAView: UIView!
+    @IBAction func acceptEULA(_ sender: UIButton) {
+        EULAView.isHidden = true
+    }
     
     var loginButton = LoginButton(readPermissions: [ .publicProfile ])
     //var loginButton = LoginButton(readPermissions: [ .publicProfile, .userFriends ])
@@ -30,7 +34,7 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
         super.viewDidLoad()
         
         loginImage.isUserInteractionEnabled = true
-        
+        EULAView.isHidden = true
         pictureIndex = 0
         loginImage.image = UIImage(named: "login-screen")
         
@@ -52,6 +56,7 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
         
         if AccessToken.current != nil{
             if firstLogin {
+                EULAView.isHidden = false
                 loginImage.image = UIImage(named: "pinspire_poll")
                 pictureIndex = 0
                 addGestureToImage(for: loginImage)

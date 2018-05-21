@@ -18,6 +18,7 @@ class AddContactsTableViewController: UITableViewController, AddContactsTableVie
     var refUser: DatabaseReference!
     @IBOutlet var usersTable: UITableView!
     var facebook_friends_ids = [String]()
+    var blacklist_ids = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,19 +29,26 @@ class AddContactsTableViewController: UITableViewController, AddContactsTableVie
     
     func fetchUsers(){
         // Get Facebook friends ids
-        let parameters = ["fields": "id, first_name, last_name, picture.type(large)"]
-        let req = GraphRequest(graphPath: "/me/friends", parameters: parameters)
-        req.start{ (response, result) in
-            switch result {
-            case .success(let value):
-                if value.dictionaryValue != nil, let fb_friends = value.dictionaryValue!["data"] as? [NSDictionary]{
-                    for fb_friend in fb_friends{
-                        self.facebook_friends_ids.append(fb_friend.value(forKey: "id") as! String)
-                    }
+//        let parameters = ["fields": "id, first_name, last_name, picture.type(large)"]
+//        let req = GraphRequest(graphPath: "/me/friends", parameters: parameters)
+//        req.start{ (response, result) in
+//            switch result {
+//            case .success(let value):
+//                if value.dictionaryValue != nil, let fb_friends = value.dictionaryValue!["data"] as? [NSDictionary]{
+//                    for fb_friend in fb_friends{
+//                        self.facebook_friends_ids.append(fb_friend.value(forKey: "id") as! String)
+//                    }
+//                }
+//
+//            case .failed(let error):
+//                print(error)
+//            }
+        // Get blacklist from database
+        self.refUser.child(self.me!.userId).child("Blacklist").observeSingleEvent(of: .value, with: { (snapshot) in
+            if (snapshot.exists()){
+                for user in snapshot.children.allObjects as! [DataSnapshot] {
+                    self.blacklist_ids.append(user.key)
                 }
-                
-            case .failed(let error):
-                print(error)
             }
             
             // Get friends ids from database
@@ -73,8 +81,7 @@ class AddContactsTableViewController: UITableViewController, AddContactsTableVie
                     self.usersTable.reloadData()
                 })
             })
-        }
-        
+        })
     }
     // MARK: - Table view data source
 
@@ -106,6 +113,8 @@ class AddContactsTableViewController: UITableViewController, AddContactsTableVie
         cell.Name.text = user.firstName + " " + user.lastName
         if facebook_friends_ids.contains(user.userId){
             cell.Label.text = "Facebook Friend"
+        } else if blacklist_ids.contains(user.userId){
+            cell.Label.text = "Blacklisted by you"
         } else {
             cell.Label.text = "pInspire User"
         }
@@ -125,6 +134,16 @@ class AddContactsTableViewController: UITableViewController, AddContactsTableVie
         if let tappedIndexPath = usersTable.indexPath(for: sender){
             users.remove(at: tappedIndexPath.row)
             usersTable.deleteRows(at: [tappedIndexPath], with: .top)
+        }
+    }
+    
+    func triedAddContactWasBlocked(_ sender: AddContactsTableViewCell) {
+        let alert = UIAlertController(title: "You have been blocked by this user", message: "", preferredStyle: .alert)
+        self.present(alert, animated: true, completion: nil)
+        // Hide in 2 seconds
+        let when = DispatchTime.now() + 2
+        DispatchQueue.main.asyncAfter(deadline: when){
+            alert.dismiss(animated: true, completion: nil)
         }
     }
 

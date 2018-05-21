@@ -1,12 +1,12 @@
 ### Swift dependencies file v0 ###
 provides-top-level:
 - "AppDelegate"
-- "registerForPushNotifications"
-- "getNotificationSettings"
 provides-nominal:
 - "8pInspire11AppDelegateC"
+- "8pInspire11AppDelegateC28TypeInterfaceOrientationMaskO"
 provides-member:
 - ["8pInspire11AppDelegateC", ""]
+- ["8pInspire11AppDelegateC28TypeInterfaceOrientationMaskO", ""]
 provides-dynamic-lookup:
 - "application"
 - "applicationDidBecomeActive"
@@ -16,10 +16,9 @@ provides-dynamic-lookup:
 - "applicationWillTerminate"
 - "window"
 depends-top-level:
-- !private "=="
+- "=="
 - "AppDelegate"
 - !private "AppEventsLogger"
-- !private "Array"
 - "AssignmentPrecedence"
 - "Bool"
 - !private "BooleanLiteralType"
@@ -42,6 +41,7 @@ depends-top-level:
 - "UIApplicationOpenURLOptionsKey"
 - !private "UIColor"
 - !private "UIFont"
+- "UIInterfaceOrientationMask"
 - !private "UINavigationBar"
 - "UIResponder"
 - !private "UITabBar"
@@ -54,9 +54,7 @@ depends-top-level:
 - !private "UNUserNotificationCenterDelegate"
 - "URL"
 - !private "_ColorLiteralType"
-- "getNotificationSettings"
 - !private "print"
-- "registerForPushNotifications"
 depends-member:
 - !private ["8pInspire11AppDelegateC", "AppEventsLogger"]
 - ["8pInspire11AppDelegateC", "Bool"]
@@ -70,11 +68,13 @@ depends-member:
 - !private ["8pInspire11AppDelegateC", "NSAttributedStringKey"]
 - !private ["8pInspire11AppDelegateC", "SDKApplicationDelegate"]
 - !private ["8pInspire11AppDelegateC", "String"]
+- ["8pInspire11AppDelegateC", "TypeInterfaceOrientationMask"]
 - ["8pInspire11AppDelegateC", "UIApplication"]
 - ["8pInspire11AppDelegateC", "UIApplicationLaunchOptionsKey"]
 - ["8pInspire11AppDelegateC", "UIApplicationOpenURLOptionsKey"]
 - !private ["8pInspire11AppDelegateC", "UIColor"]
 - !private ["8pInspire11AppDelegateC", "UIFont"]
+- ["8pInspire11AppDelegateC", "UIInterfaceOrientationMask"]
 - !private ["8pInspire11AppDelegateC", "UINavigationBar"]
 - !private ["8pInspire11AppDelegateC", "UITabBar"]
 - ["8pInspire11AppDelegateC", "UIWindow"]
@@ -100,7 +100,7 @@ depends-member:
 - ["8pInspire11AppDelegateC", "deinit"]
 - ["8pInspire11AppDelegateC", "init"]
 - !private ["8pInspire11AppDelegateC", "print"]
-- !private ["8pInspire11AppDelegateC", "registerForPushNotifications"]
+- ["8pInspire11AppDelegateC", "restrictRotation"]
 - ["8pInspire11AppDelegateC", "scheduleNotification"]
 - ["8pInspire11AppDelegateC", "window"]
 - !private ["12FacebookCore26AppEventParameterValueTypeP", "init"]
@@ -109,7 +109,6 @@ depends-member:
 - !private ["s23BidirectionalCollectionP", "init"]
 - !private ["s23BidirectionalCollectionP", "joined"]
 - !private ["s23BidirectionalCollectionP", "map"]
-- !private ["Sb", "_getBuiltinLogicValue"]
 - !private ["So15CALayerDelegateP", "appearance"]
 - !private ["So15CALayerDelegateP", "barTintColor"]
 - !private ["So15CALayerDelegateP", "tintColor"]
@@ -124,6 +123,7 @@ depends-member:
 - !private ["s7CVarArgP", "String"]
 - !private ["s7CVarArgP", "UIColor"]
 - !private ["s7CVarArgP", "UIFont"]
+- !private ["s7CVarArgP", "UIInterfaceOrientationMask"]
 - !private ["s7CVarArgP", "UINavigationBar"]
 - !private ["s7CVarArgP", "UITabBar"]
 - !private ["s7CVarArgP", "UNCalendarNotificationTrigger"]
@@ -132,7 +132,6 @@ depends-member:
 - !private ["s7CVarArgP", "UNNotificationSound"]
 - !private ["s7CVarArgP", "UNUserNotificationCenter"]
 - ["s7CVarArgP", ""]
-- !private ["s7CVarArgP", "_getBuiltinLogicValue"]
 - !private ["s7CVarArgP", "add"]
 - !private ["s7CVarArgP", "appearance"]
 - ["s7CVarArgP", "application"]
@@ -147,7 +146,6 @@ depends-member:
 - ["s7CVarArgP", "applicationWillEnterForeground"]
 - ["s7CVarArgP", "applicationWillResignActive"]
 - ["s7CVarArgP", "applicationWillTerminate"]
-- !private ["s7CVarArgP", "authorizationStatus"]
 - !private ["s7CVarArgP", "barTintColor"]
 - !private ["s7CVarArgP", "body"]
 - !private ["s7CVarArgP", "categoryIdentifier"]
@@ -156,14 +154,11 @@ depends-member:
 - !private ["s7CVarArgP", "default"]
 - !private ["s7CVarArgP", "delegate"]
 - !private ["s7CVarArgP", "enable"]
-- !private ["s7CVarArgP", "getNotificationSettings"]
 - !private ["s7CVarArgP", "init"]
 - !private ["s7CVarArgP", "joined"]
 - !private ["s7CVarArgP", "print"]
-- !private ["s7CVarArgP", "registerForPushNotifications"]
-- !private ["s7CVarArgP", "registerForRemoteNotifications"]
 - !private ["s7CVarArgP", "removeAllPendingNotificationRequests"]
-- !private ["s7CVarArgP", "requestAuthorization"]
+- !private ["s7CVarArgP", "restrictRotation"]
 - !private ["s7CVarArgP", "shared"]
 - !private ["s7CVarArgP", "sound"]
 - !private ["s7CVarArgP", "tintColor"]
@@ -187,6 +182,7 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "String"]
 - !private ["s28CustomDebugStringConvertibleP", "UIColor"]
 - !private ["s28CustomDebugStringConvertibleP", "UIFont"]
+- !private ["s28CustomDebugStringConvertibleP", "UIInterfaceOrientationMask"]
 - !private ["s28CustomDebugStringConvertibleP", "UINavigationBar"]
 - !private ["s28CustomDebugStringConvertibleP", "UITabBar"]
 - !private ["s28CustomDebugStringConvertibleP", "UNCalendarNotificationTrigger"]
@@ -209,7 +205,6 @@ depends-member:
 - ["s28CustomDebugStringConvertibleP", "applicationWillEnterForeground"]
 - ["s28CustomDebugStringConvertibleP", "applicationWillResignActive"]
 - ["s28CustomDebugStringConvertibleP", "applicationWillTerminate"]
-- !private ["s28CustomDebugStringConvertibleP", "authorizationStatus"]
 - !private ["s28CustomDebugStringConvertibleP", "barTintColor"]
 - !private ["s28CustomDebugStringConvertibleP", "body"]
 - !private ["s28CustomDebugStringConvertibleP", "categoryIdentifier"]
@@ -220,7 +215,6 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "default"]
 - !private ["s28CustomDebugStringConvertibleP", "delegate"]
 - !private ["s28CustomDebugStringConvertibleP", "enable"]
-- !private ["s28CustomDebugStringConvertibleP", "getNotificationSettings"]
 - !private ["s28CustomDebugStringConvertibleP", "hour"]
 - !private ["s28CustomDebugStringConvertibleP", "init"]
 - !private ["s28CustomDebugStringConvertibleP", "joined"]
@@ -228,10 +222,8 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "minute"]
 - !private ["s28CustomDebugStringConvertibleP", "month"]
 - !private ["s28CustomDebugStringConvertibleP", "print"]
-- !private ["s28CustomDebugStringConvertibleP", "registerForPushNotifications"]
-- !private ["s28CustomDebugStringConvertibleP", "registerForRemoteNotifications"]
 - !private ["s28CustomDebugStringConvertibleP", "removeAllPendingNotificationRequests"]
-- !private ["s28CustomDebugStringConvertibleP", "requestAuthorization"]
+- !private ["s28CustomDebugStringConvertibleP", "restrictRotation"]
 - !private ["s28CustomDebugStringConvertibleP", "shared"]
 - !private ["s28CustomDebugStringConvertibleP", "sound"]
 - !private ["s28CustomDebugStringConvertibleP", "tintColor"]
@@ -239,9 +231,7 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "titleTextAttributes"]
 - !private ["s28CustomDebugStringConvertibleP", "white"]
 - ["s28CustomDebugStringConvertibleP", "window"]
-- !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
 - !private ["s29CustomPlaygroundQuickLookableP", "init"]
-- !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
 - !private ["s17CustomReflectableP", "current"]
 - !private ["s17CustomReflectableP", "dateComponents"]
 - !private ["s17CustomReflectableP", "day"]
@@ -261,6 +251,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "String"]
 - !private ["s23CustomStringConvertibleP", "UIColor"]
 - !private ["s23CustomStringConvertibleP", "UIFont"]
+- !private ["s23CustomStringConvertibleP", "UIInterfaceOrientationMask"]
 - !private ["s23CustomStringConvertibleP", "UINavigationBar"]
 - !private ["s23CustomStringConvertibleP", "UITabBar"]
 - !private ["s23CustomStringConvertibleP", "UNCalendarNotificationTrigger"]
@@ -269,7 +260,6 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "UNNotificationSound"]
 - !private ["s23CustomStringConvertibleP", "UNUserNotificationCenter"]
 - ["s23CustomStringConvertibleP", ""]
-- !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
 - !private ["s23CustomStringConvertibleP", "add"]
 - !private ["s23CustomStringConvertibleP", "appearance"]
 - ["s23CustomStringConvertibleP", "application"]
@@ -284,7 +274,6 @@ depends-member:
 - ["s23CustomStringConvertibleP", "applicationWillEnterForeground"]
 - ["s23CustomStringConvertibleP", "applicationWillResignActive"]
 - ["s23CustomStringConvertibleP", "applicationWillTerminate"]
-- !private ["s23CustomStringConvertibleP", "authorizationStatus"]
 - !private ["s23CustomStringConvertibleP", "barTintColor"]
 - !private ["s23CustomStringConvertibleP", "body"]
 - !private ["s23CustomStringConvertibleP", "categoryIdentifier"]
@@ -295,7 +284,6 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "default"]
 - !private ["s23CustomStringConvertibleP", "delegate"]
 - !private ["s23CustomStringConvertibleP", "enable"]
-- !private ["s23CustomStringConvertibleP", "getNotificationSettings"]
 - !private ["s23CustomStringConvertibleP", "hour"]
 - !private ["s23CustomStringConvertibleP", "init"]
 - !private ["s23CustomStringConvertibleP", "joined"]
@@ -303,10 +291,8 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "minute"]
 - !private ["s23CustomStringConvertibleP", "month"]
 - !private ["s23CustomStringConvertibleP", "print"]
-- !private ["s23CustomStringConvertibleP", "registerForPushNotifications"]
-- !private ["s23CustomStringConvertibleP", "registerForRemoteNotifications"]
 - !private ["s23CustomStringConvertibleP", "removeAllPendingNotificationRequests"]
-- !private ["s23CustomStringConvertibleP", "requestAuthorization"]
+- !private ["s23CustomStringConvertibleP", "restrictRotation"]
 - !private ["s23CustomStringConvertibleP", "shared"]
 - !private ["s23CustomStringConvertibleP", "sound"]
 - !private ["s23CustomStringConvertibleP", "tintColor"]
@@ -320,7 +306,6 @@ depends-member:
 - !private ["10Foundation14DateComponentsV", "init"]
 - !private ["10Foundation14DateComponentsV", "minute"]
 - !private ["10Foundation14DateComponentsV", "month"]
-- !private ["s9DecodableP", "_getBuiltinLogicValue"]
 - !private ["s9DecodableP", "current"]
 - !private ["s9DecodableP", "dateComponents"]
 - !private ["s9DecodableP", "day"]
@@ -330,7 +315,6 @@ depends-member:
 - !private ["s9DecodableP", "map"]
 - !private ["s9DecodableP", "minute"]
 - !private ["s9DecodableP", "month"]
-- !private ["s9EncodableP", "_getBuiltinLogicValue"]
 - !private ["s9EncodableP", "current"]
 - !private ["s9EncodableP", "dateComponents"]
 - !private ["s9EncodableP", "day"]
@@ -350,6 +334,7 @@ depends-member:
 - !private ["s9EquatableP", "String"]
 - !private ["s9EquatableP", "UIColor"]
 - !private ["s9EquatableP", "UIFont"]
+- !private ["s9EquatableP", "UIInterfaceOrientationMask"]
 - !private ["s9EquatableP", "UINavigationBar"]
 - !private ["s9EquatableP", "UITabBar"]
 - !private ["s9EquatableP", "UNCalendarNotificationTrigger"]
@@ -358,9 +343,8 @@ depends-member:
 - !private ["s9EquatableP", "UNNotificationSound"]
 - !private ["s9EquatableP", "UNUserNotificationCenter"]
 - ["s9EquatableP", ""]
-- !private ["s9EquatableP", "_getBuiltinLogicValue"]
 - !private ["s9EquatableP", "add"]
-- !private ["s9EquatableP", "alert"]
+- ["s9EquatableP", "all"]
 - !private ["s9EquatableP", "appearance"]
 - ["s9EquatableP", "application"]
 - ["s9EquatableP", "applicationDidBecomeActive"]
@@ -374,9 +358,6 @@ depends-member:
 - ["s9EquatableP", "applicationWillEnterForeground"]
 - ["s9EquatableP", "applicationWillResignActive"]
 - ["s9EquatableP", "applicationWillTerminate"]
-- !private ["s9EquatableP", "authorizationStatus"]
-- !private ["s9EquatableP", "authorized"]
-- !private ["s9EquatableP", "badge"]
 - !private ["s9EquatableP", "barTintColor"]
 - !private ["s9EquatableP", "body"]
 - !private ["s9EquatableP", "categoryIdentifier"]
@@ -389,19 +370,19 @@ depends-member:
 - !private ["s9EquatableP", "enable"]
 - !private ["s9EquatableP", "font"]
 - !private ["s9EquatableP", "foregroundColor"]
-- !private ["s9EquatableP", "getNotificationSettings"]
 - !private ["s9EquatableP", "gregorian"]
+- ["s9EquatableP", "hashValue"]
 - !private ["s9EquatableP", "hour"]
 - !private ["s9EquatableP", "init"]
 - !private ["s9EquatableP", "joined"]
+- ["s9EquatableP", "landscape"]
 - !private ["s9EquatableP", "map"]
 - !private ["s9EquatableP", "minute"]
 - !private ["s9EquatableP", "month"]
+- ["s9EquatableP", "portrait"]
 - !private ["s9EquatableP", "print"]
-- !private ["s9EquatableP", "registerForPushNotifications"]
-- !private ["s9EquatableP", "registerForRemoteNotifications"]
 - !private ["s9EquatableP", "removeAllPendingNotificationRequests"]
-- !private ["s9EquatableP", "requestAuthorization"]
+- !private ["s9EquatableP", "restrictRotation"]
 - !private ["s9EquatableP", "shared"]
 - !private ["s9EquatableP", "sound"]
 - !private ["s9EquatableP", "tintColor"]
@@ -409,11 +390,10 @@ depends-member:
 - !private ["s9EquatableP", "titleTextAttributes"]
 - !private ["s9EquatableP", "white"]
 - ["s9EquatableP", "window"]
-- !private ["s25ExpressibleByArrayLiteralP", "alert"]
-- !private ["s25ExpressibleByArrayLiteralP", "badge"]
+- !private ["s25ExpressibleByArrayLiteralP", "all"]
 - !private ["s25ExpressibleByArrayLiteralP", "joined"]
-- !private ["s25ExpressibleByArrayLiteralP", "sound"]
-- !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s25ExpressibleByArrayLiteralP", "landscape"]
+- !private ["s25ExpressibleByArrayLiteralP", "portrait"]
 - !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
 - !private ["s23ExpressibleByNilLiteralP", "current"]
 - !private ["s26ExpressibleByStringLiteralP", "init"]
@@ -429,6 +409,7 @@ depends-member:
 - !private ["s8HashableP", "String"]
 - !private ["s8HashableP", "UIColor"]
 - !private ["s8HashableP", "UIFont"]
+- !private ["s8HashableP", "UIInterfaceOrientationMask"]
 - !private ["s8HashableP", "UINavigationBar"]
 - !private ["s8HashableP", "UITabBar"]
 - !private ["s8HashableP", "UNCalendarNotificationTrigger"]
@@ -437,8 +418,8 @@ depends-member:
 - !private ["s8HashableP", "UNNotificationSound"]
 - !private ["s8HashableP", "UNUserNotificationCenter"]
 - ["s8HashableP", ""]
-- !private ["s8HashableP", "_getBuiltinLogicValue"]
 - !private ["s8HashableP", "add"]
+- ["s8HashableP", "all"]
 - !private ["s8HashableP", "appearance"]
 - ["s8HashableP", "application"]
 - ["s8HashableP", "applicationDidBecomeActive"]
@@ -452,8 +433,6 @@ depends-member:
 - ["s8HashableP", "applicationWillEnterForeground"]
 - ["s8HashableP", "applicationWillResignActive"]
 - ["s8HashableP", "applicationWillTerminate"]
-- !private ["s8HashableP", "authorizationStatus"]
-- !private ["s8HashableP", "authorized"]
 - !private ["s8HashableP", "barTintColor"]
 - !private ["s8HashableP", "body"]
 - !private ["s8HashableP", "categoryIdentifier"]
@@ -466,18 +445,18 @@ depends-member:
 - !private ["s8HashableP", "enable"]
 - !private ["s8HashableP", "font"]
 - !private ["s8HashableP", "foregroundColor"]
-- !private ["s8HashableP", "getNotificationSettings"]
 - !private ["s8HashableP", "gregorian"]
+- ["s8HashableP", "hashValue"]
 - !private ["s8HashableP", "hour"]
 - !private ["s8HashableP", "init"]
+- ["s8HashableP", "landscape"]
 - !private ["s8HashableP", "map"]
 - !private ["s8HashableP", "minute"]
 - !private ["s8HashableP", "month"]
+- ["s8HashableP", "portrait"]
 - !private ["s8HashableP", "print"]
-- !private ["s8HashableP", "registerForPushNotifications"]
-- !private ["s8HashableP", "registerForRemoteNotifications"]
 - !private ["s8HashableP", "removeAllPendingNotificationRequests"]
-- !private ["s8HashableP", "requestAuthorization"]
+- !private ["s8HashableP", "restrictRotation"]
 - !private ["s8HashableP", "shared"]
 - !private ["s8HashableP", "sound"]
 - !private ["s8HashableP", "tintColor"]
@@ -488,7 +467,6 @@ depends-member:
 - !private ["22IQKeyboardManagerSwift0aB0C", "enable"]
 - !private ["22IQKeyboardManagerSwift0aB0C", "shared"]
 - !private ["10Foundation8CalendarV10IdentifierO", "gregorian"]
-- !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
 - !private ["s25LosslessStringConvertibleP", "init"]
 - !private ["s10MirrorPathP", "init"]
 - !private ["s17MutableCollectionP", "joined"]
@@ -496,7 +474,6 @@ depends-member:
 - !private ["SC21NSAttributedStringKeyV", "font"]
 - !private ["SC21NSAttributedStringKeyV", "foregroundColor"]
 - !private ["So8NSCodingP", "appearance"]
-- !private ["So8NSCodingP", "authorizationStatus"]
 - !private ["So8NSCodingP", "barTintColor"]
 - !private ["So8NSCodingP", "body"]
 - !private ["So8NSCodingP", "categoryIdentifier"]
@@ -507,7 +484,6 @@ depends-member:
 - !private ["So8NSCodingP", "title"]
 - !private ["So8NSCodingP", "titleTextAttributes"]
 - !private ["So8NSCodingP", "white"]
-- !private ["So9NSCopyingP", "authorizationStatus"]
 - !private ["So9NSCopyingP", "body"]
 - !private ["So9NSCopyingP", "categoryIdentifier"]
 - !private ["So9NSCopyingP", "default"]
@@ -534,11 +510,13 @@ depends-member:
 - !private ["So8NSObjectC", "NSAttributedStringKey"]
 - !private ["So8NSObjectC", "SDKApplicationDelegate"]
 - !private ["So8NSObjectC", "String"]
+- ["So8NSObjectC", "TypeInterfaceOrientationMask"]
 - ["So8NSObjectC", "UIApplication"]
 - ["So8NSObjectC", "UIApplicationLaunchOptionsKey"]
 - ["So8NSObjectC", "UIApplicationOpenURLOptionsKey"]
 - !private ["So8NSObjectC", "UIColor"]
 - !private ["So8NSObjectC", "UIFont"]
+- ["So8NSObjectC", "UIInterfaceOrientationMask"]
 - !private ["So8NSObjectC", "UINavigationBar"]
 - !private ["So8NSObjectC", "UITabBar"]
 - ["So8NSObjectC", "UIWindow"]
@@ -563,7 +541,6 @@ depends-member:
 - ["So8NSObjectC", "applicationWillEnterForeground"]
 - ["So8NSObjectC", "applicationWillResignActive"]
 - ["So8NSObjectC", "applicationWillTerminate"]
-- !private ["So8NSObjectC", "authorizationStatus"]
 - !private ["So8NSObjectC", "barTintColor"]
 - !private ["So8NSObjectC", "body"]
 - !private ["So8NSObjectC", "categoryIdentifier"]
@@ -572,13 +549,10 @@ depends-member:
 - !private ["So8NSObjectC", "default"]
 - !private ["So8NSObjectC", "delegate"]
 - !private ["So8NSObjectC", "enable"]
-- !private ["So8NSObjectC", "getNotificationSettings"]
 - ["So8NSObjectC", "init"]
 - !private ["So8NSObjectC", "print"]
-- !private ["So8NSObjectC", "registerForPushNotifications"]
-- !private ["So8NSObjectC", "registerForRemoteNotifications"]
 - !private ["So8NSObjectC", "removeAllPendingNotificationRequests"]
-- !private ["So8NSObjectC", "requestAuthorization"]
+- ["So8NSObjectC", "restrictRotation"]
 - ["So8NSObjectC", "scheduleNotification"]
 - !private ["So8NSObjectC", "shared"]
 - !private ["So8NSObjectC", "sound"]
@@ -597,6 +571,7 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "String"]
 - !private ["So16NSObjectProtocolP", "UIColor"]
 - !private ["So16NSObjectProtocolP", "UIFont"]
+- !private ["So16NSObjectProtocolP", "UIInterfaceOrientationMask"]
 - !private ["So16NSObjectProtocolP", "UINavigationBar"]
 - !private ["So16NSObjectProtocolP", "UITabBar"]
 - !private ["So16NSObjectProtocolP", "UNCalendarNotificationTrigger"]
@@ -619,7 +594,6 @@ depends-member:
 - ["So16NSObjectProtocolP", "applicationWillEnterForeground"]
 - ["So16NSObjectProtocolP", "applicationWillResignActive"]
 - ["So16NSObjectProtocolP", "applicationWillTerminate"]
-- !private ["So16NSObjectProtocolP", "authorizationStatus"]
 - !private ["So16NSObjectProtocolP", "barTintColor"]
 - !private ["So16NSObjectProtocolP", "body"]
 - !private ["So16NSObjectProtocolP", "categoryIdentifier"]
@@ -628,13 +602,10 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "default"]
 - !private ["So16NSObjectProtocolP", "delegate"]
 - !private ["So16NSObjectProtocolP", "enable"]
-- !private ["So16NSObjectProtocolP", "getNotificationSettings"]
 - !private ["So16NSObjectProtocolP", "init"]
 - !private ["So16NSObjectProtocolP", "print"]
-- !private ["So16NSObjectProtocolP", "registerForPushNotifications"]
-- !private ["So16NSObjectProtocolP", "registerForRemoteNotifications"]
 - !private ["So16NSObjectProtocolP", "removeAllPendingNotificationRequests"]
-- !private ["So16NSObjectProtocolP", "requestAuthorization"]
+- !private ["So16NSObjectProtocolP", "restrictRotation"]
 - !private ["So16NSObjectProtocolP", "shared"]
 - !private ["So16NSObjectProtocolP", "sound"]
 - !private ["So16NSObjectProtocolP", "tintColor"]
@@ -642,7 +613,6 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "titleTextAttributes"]
 - !private ["So16NSObjectProtocolP", "white"]
 - ["So16NSObjectProtocolP", "window"]
-- !private ["So14NSSecureCodingP", "authorizationStatus"]
 - !private ["So14NSSecureCodingP", "body"]
 - !private ["So14NSSecureCodingP", "categoryIdentifier"]
 - !private ["So14NSSecureCodingP", "default"]
@@ -650,21 +620,20 @@ depends-member:
 - !private ["So14NSSecureCodingP", "sound"]
 - !private ["So14NSSecureCodingP", "title"]
 - !private ["So14NSSecureCodingP", "white"]
-- !private ["s9OptionSetP", "alert"]
-- !private ["s9OptionSetP", "badge"]
-- !private ["s9OptionSetP", "sound"]
+- !private ["s9OptionSetP", "all"]
+- !private ["s9OptionSetP", "landscape"]
+- !private ["s9OptionSetP", "portrait"]
 - !private ["Sq", "current"]
 - !private ["s22RandomAccessCollectionP", "joined"]
 - !private ["s22RandomAccessCollectionP", "map"]
 - !private ["s26RangeReplaceableCollectionP", "init"]
 - !private ["s26RangeReplaceableCollectionP", "joined"]
 - !private ["s26RangeReplaceableCollectionP", "map"]
-- !private ["s16RawRepresentableP", "alert"]
-- !private ["s16RawRepresentableP", "authorized"]
-- !private ["s16RawRepresentableP", "badge"]
+- !private ["s16RawRepresentableP", "all"]
 - !private ["s16RawRepresentableP", "font"]
 - !private ["s16RawRepresentableP", "foregroundColor"]
-- !private ["s16RawRepresentableP", "sound"]
+- !private ["s16RawRepresentableP", "landscape"]
+- !private ["s16RawRepresentableP", "portrait"]
 - !private ["10Foundation20ReferenceConvertibleP", "current"]
 - !private ["10Foundation20ReferenceConvertibleP", "dateComponents"]
 - !private ["10Foundation20ReferenceConvertibleP", "day"]
@@ -678,14 +647,20 @@ depends-member:
 - !private ["s8SequenceP", "init"]
 - !private ["s8SequenceP", "joined"]
 - !private ["s8SequenceP", "map"]
-- !private ["s10SetAlgebraP", "alert"]
-- !private ["s10SetAlgebraP", "badge"]
-- !private ["s10SetAlgebraP", "sound"]
+- !private ["s10SetAlgebraP", "all"]
+- !private ["s10SetAlgebraP", "landscape"]
+- !private ["s10SetAlgebraP", "portrait"]
 - !private ["SS", "init"]
 - !private ["s14StringProtocolP", "init"]
 - !private ["s16TextOutputStreamP", "init"]
 - !private ["s20TextOutputStreamableP", "init"]
 - !private ["10Foundation8TimeZoneV", "current"]
+- ["8pInspire11AppDelegateC28TypeInterfaceOrientationMaskO", "__derived_enum_equals"]
+- ["8pInspire11AppDelegateC28TypeInterfaceOrientationMaskO", "all"]
+- ["8pInspire11AppDelegateC28TypeInterfaceOrientationMaskO", "deinit"]
+- ["8pInspire11AppDelegateC28TypeInterfaceOrientationMaskO", "hashValue"]
+- ["8pInspire11AppDelegateC28TypeInterfaceOrientationMaskO", "landscape"]
+- ["8pInspire11AppDelegateC28TypeInterfaceOrientationMaskO", "portrait"]
 - !private ["So29UIAccessibilityIdentificationP", "appearance"]
 - !private ["So29UIAccessibilityIdentificationP", "barTintColor"]
 - !private ["So29UIAccessibilityIdentificationP", "tintColor"]
@@ -698,8 +673,6 @@ depends-member:
 - !private ["So21UIAppearanceContainerP", "barTintColor"]
 - !private ["So21UIAppearanceContainerP", "tintColor"]
 - !private ["So21UIAppearanceContainerP", "titleTextAttributes"]
-- !private ["So13UIApplicationC", "registerForRemoteNotifications"]
-- !private ["So13UIApplicationC", "shared"]
 - !private ["So21UIApplicationDelegateP", "AppEventsLogger"]
 - !private ["So21UIApplicationDelegateP", "Calendar"]
 - !private ["So21UIApplicationDelegateP", "DateComponents"]
@@ -710,6 +683,7 @@ depends-member:
 - !private ["So21UIApplicationDelegateP", "String"]
 - !private ["So21UIApplicationDelegateP", "UIColor"]
 - !private ["So21UIApplicationDelegateP", "UIFont"]
+- !private ["So21UIApplicationDelegateP", "UIInterfaceOrientationMask"]
 - !private ["So21UIApplicationDelegateP", "UINavigationBar"]
 - !private ["So21UIApplicationDelegateP", "UITabBar"]
 - !private ["So21UIApplicationDelegateP", "UNCalendarNotificationTrigger"]
@@ -731,7 +705,7 @@ depends-member:
 - ["So21UIApplicationDelegateP", "applicationWillResignActive"]
 - ["So21UIApplicationDelegateP", "applicationWillTerminate"]
 - !private ["So21UIApplicationDelegateP", "print"]
-- !private ["So21UIApplicationDelegateP", "registerForPushNotifications"]
+- !private ["So21UIApplicationDelegateP", "restrictRotation"]
 - ["So21UIApplicationDelegateP", "window"]
 - !private ["So16UIBarPositioningP", "appearance"]
 - !private ["So16UIBarPositioningP", "barTintColor"]
@@ -757,6 +731,9 @@ depends-member:
 - !private ["So6UIFontC", "init"]
 - !private ["So27UIGestureRecognizerDelegateP", "enable"]
 - !private ["So27UIGestureRecognizerDelegateP", "shared"]
+- !private ["SC26UIInterfaceOrientationMaskV", "all"]
+- !private ["SC26UIInterfaceOrientationMaskV", "landscape"]
+- !private ["SC26UIInterfaceOrientationMaskV", "portrait"]
 - !private ["So15UINavigationBarC", "appearance"]
 - !private ["So15UINavigationBarC", "barTintColor"]
 - !private ["So15UINavigationBarC", "tintColor"]
@@ -771,6 +748,7 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "String"]
 - !private ["So30UIPasteConfigurationSupportingP", "UIColor"]
 - !private ["So30UIPasteConfigurationSupportingP", "UIFont"]
+- !private ["So30UIPasteConfigurationSupportingP", "UIInterfaceOrientationMask"]
 - !private ["So30UIPasteConfigurationSupportingP", "UINavigationBar"]
 - !private ["So30UIPasteConfigurationSupportingP", "UITabBar"]
 - !private ["So30UIPasteConfigurationSupportingP", "UNCalendarNotificationTrigger"]
@@ -795,9 +773,7 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "barTintColor"]
 - !private ["So30UIPasteConfigurationSupportingP", "init"]
 - !private ["So30UIPasteConfigurationSupportingP", "print"]
-- !private ["So30UIPasteConfigurationSupportingP", "registerForPushNotifications"]
-- !private ["So30UIPasteConfigurationSupportingP", "registerForRemoteNotifications"]
-- !private ["So30UIPasteConfigurationSupportingP", "shared"]
+- !private ["So30UIPasteConfigurationSupportingP", "restrictRotation"]
 - !private ["So30UIPasteConfigurationSupportingP", "tintColor"]
 - !private ["So30UIPasteConfigurationSupportingP", "titleTextAttributes"]
 - ["So30UIPasteConfigurationSupportingP", "window"]
@@ -813,11 +789,13 @@ depends-member:
 - !private ["So11UIResponderC", "NSAttributedStringKey"]
 - !private ["So11UIResponderC", "SDKApplicationDelegate"]
 - !private ["So11UIResponderC", "String"]
+- ["So11UIResponderC", "TypeInterfaceOrientationMask"]
 - ["So11UIResponderC", "UIApplication"]
 - ["So11UIResponderC", "UIApplicationLaunchOptionsKey"]
 - ["So11UIResponderC", "UIApplicationOpenURLOptionsKey"]
 - !private ["So11UIResponderC", "UIColor"]
 - !private ["So11UIResponderC", "UIFont"]
+- ["So11UIResponderC", "UIInterfaceOrientationMask"]
 - !private ["So11UIResponderC", "UINavigationBar"]
 - !private ["So11UIResponderC", "UITabBar"]
 - ["So11UIResponderC", "UIWindow"]
@@ -845,10 +823,8 @@ depends-member:
 - !private ["So11UIResponderC", "barTintColor"]
 - ["So11UIResponderC", "init"]
 - !private ["So11UIResponderC", "print"]
-- !private ["So11UIResponderC", "registerForPushNotifications"]
-- !private ["So11UIResponderC", "registerForRemoteNotifications"]
+- ["So11UIResponderC", "restrictRotation"]
 - ["So11UIResponderC", "scheduleNotification"]
-- !private ["So11UIResponderC", "shared"]
 - !private ["So11UIResponderC", "tintColor"]
 - !private ["So11UIResponderC", "titleTextAttributes"]
 - ["So11UIResponderC", "window"]
@@ -862,6 +838,7 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "String"]
 - !private ["So30UIResponderStandardEditActionsP", "UIColor"]
 - !private ["So30UIResponderStandardEditActionsP", "UIFont"]
+- !private ["So30UIResponderStandardEditActionsP", "UIInterfaceOrientationMask"]
 - !private ["So30UIResponderStandardEditActionsP", "UINavigationBar"]
 - !private ["So30UIResponderStandardEditActionsP", "UITabBar"]
 - !private ["So30UIResponderStandardEditActionsP", "UNCalendarNotificationTrigger"]
@@ -886,9 +863,7 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "barTintColor"]
 - !private ["So30UIResponderStandardEditActionsP", "init"]
 - !private ["So30UIResponderStandardEditActionsP", "print"]
-- !private ["So30UIResponderStandardEditActionsP", "registerForPushNotifications"]
-- !private ["So30UIResponderStandardEditActionsP", "registerForRemoteNotifications"]
-- !private ["So30UIResponderStandardEditActionsP", "shared"]
+- !private ["So30UIResponderStandardEditActionsP", "restrictRotation"]
 - !private ["So30UIResponderStandardEditActionsP", "tintColor"]
 - !private ["So30UIResponderStandardEditActionsP", "titleTextAttributes"]
 - ["So30UIResponderStandardEditActionsP", "window"]
@@ -906,10 +881,6 @@ depends-member:
 - !private ["So6UIViewC", "barTintColor"]
 - !private ["So6UIViewC", "tintColor"]
 - !private ["So6UIViewC", "titleTextAttributes"]
-- !private ["SC22UNAuthorizationOptionsV", "alert"]
-- !private ["SC22UNAuthorizationOptionsV", "badge"]
-- !private ["SC22UNAuthorizationOptionsV", "sound"]
-- !private ["SC21UNAuthorizationStatusO", "authorized"]
 - !private ["So29UNCalendarNotificationTriggerC", "init"]
 - !private ["So28UNMutableNotificationContentC", "body"]
 - !private ["So28UNMutableNotificationContentC", "categoryIdentifier"]
@@ -922,22 +893,18 @@ depends-member:
 - !private ["So21UNNotificationContentC", "sound"]
 - !private ["So21UNNotificationContentC", "title"]
 - !private ["So21UNNotificationRequestC", "init"]
-- !private ["So22UNNotificationSettingsC", "authorizationStatus"]
 - !private ["So19UNNotificationSoundC", "default"]
 - !private ["So21UNNotificationTriggerC", "init"]
 - !private ["So24UNUserNotificationCenterC", "add"]
 - !private ["So24UNUserNotificationCenterC", "current"]
 - !private ["So24UNUserNotificationCenterC", "delegate"]
-- !private ["So24UNUserNotificationCenterC", "getNotificationSettings"]
 - !private ["So24UNUserNotificationCenterC", "removeAllPendingNotificationRequests"]
-- !private ["So24UNUserNotificationCenterC", "requestAuthorization"]
 - !private ["s14_ArrayProtocolP", "joined"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "appearance"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "barTintColor"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "tintColor"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "titleTextAttributes"]
 - !private ["s24_DestructorSafeContainerP", "joined"]
-- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
 - !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
 - !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
 - !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
@@ -954,6 +921,7 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "String"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "UIColor"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "UIFont"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "UIInterfaceOrientationMask"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "UINavigationBar"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "UITabBar"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "UNCalendarNotificationTrigger"]
@@ -976,7 +944,6 @@ depends-member:
 - ["10Foundation27_KeyValueCodingAndObservingP", "applicationWillEnterForeground"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "applicationWillResignActive"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "applicationWillTerminate"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "authorizationStatus"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "barTintColor"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "body"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "categoryIdentifier"]
@@ -985,13 +952,10 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "default"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "delegate"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "enable"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "getNotificationSettings"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "print"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "registerForPushNotifications"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "registerForRemoteNotifications"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "removeAllPendingNotificationRequests"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "requestAuthorization"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "restrictRotation"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "shared"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "sound"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "tintColor"]
@@ -1005,7 +969,6 @@ depends-member:
 - !private ["10Foundation14_MutableBoxingP", "init"]
 - !private ["10Foundation14_MutableBoxingP", "minute"]
 - !private ["10Foundation14_MutableBoxingP", "month"]
-- !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
 - !private ["s21_ObjectiveCBridgeableP", "current"]
 - !private ["s21_ObjectiveCBridgeableP", "dateComponents"]
 - !private ["s21_ObjectiveCBridgeableP", "day"]
@@ -1026,7 +989,6 @@ depends-nominal:
 - !private "12FacebookCore15AppEventsLoggerC"
 - !private "Sa"
 - !private "s23BidirectionalCollectionP"
-- !private "Sb"
 - !private "So15CALayerDelegateP"
 - "s7CVarArgP"
 - !private "10Foundation8CalendarV"
@@ -1042,7 +1004,6 @@ depends-nominal:
 - !private "s9EncodableP"
 - "s9EquatableP"
 - !private "s25ExpressibleByArrayLiteralP"
-- !private "s27ExpressibleByBooleanLiteralP"
 - !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
 - !private "s23ExpressibleByNilLiteralP"
 - !private "s26ExpressibleByStringLiteralP"
@@ -1077,10 +1038,10 @@ depends-nominal:
 - !private "s16TextOutputStreamP"
 - !private "s20TextOutputStreamableP"
 - !private "10Foundation8TimeZoneV"
+- "8pInspire11AppDelegateC28TypeInterfaceOrientationMaskO"
 - !private "So29UIAccessibilityIdentificationP"
 - !private "So12UIAppearanceP"
 - !private "So21UIAppearanceContainerP"
-- !private "So13UIApplicationC"
 - "So21UIApplicationDelegateP"
 - !private "So16UIBarPositioningP"
 - !private "So7UIColorC"
@@ -1090,6 +1051,7 @@ depends-nominal:
 - !private "So11UIFocusItemP"
 - !private "So6UIFontC"
 - !private "So27UIGestureRecognizerDelegateP"
+- !private "SC26UIInterfaceOrientationMaskV"
 - !private "So15UINavigationBarC"
 - "So30UIPasteConfigurationSupportingP"
 - "So11UIResponderC"
@@ -1098,20 +1060,16 @@ depends-nominal:
 - !private "So8UITabBarC"
 - !private "So18UITraitEnvironmentP"
 - !private "So6UIViewC"
-- !private "SC22UNAuthorizationOptionsV"
-- !private "SC21UNAuthorizationStatusO"
 - !private "So29UNCalendarNotificationTriggerC"
 - !private "So28UNMutableNotificationContentC"
 - !private "So21UNNotificationContentC"
 - !private "So21UNNotificationRequestC"
-- !private "So22UNNotificationSettingsC"
 - !private "So19UNNotificationSoundC"
 - !private "So21UNNotificationTriggerC"
 - !private "So24UNUserNotificationCenterC"
 - !private "s14_ArrayProtocolP"
 - !private "s37_DefaultCustomPlaygroundQuickLookableP"
 - !private "s24_DestructorSafeContainerP"
-- !private "s35_ExpressibleByBuiltinBooleanLiteralP"
 - !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
 - !private "s34_ExpressibleByBuiltinStringLiteralP"
 - !private "s39_ExpressibleByBuiltinUTF16StringLiteralP"
@@ -1313,4 +1271,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/MapKit.framework/Headers/MapKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
-interface-hash: "81af262fa64fbeabba430f34e6477c09"
+interface-hash: "6e42c5dc6e6100e58bfd5b826cf9b734"

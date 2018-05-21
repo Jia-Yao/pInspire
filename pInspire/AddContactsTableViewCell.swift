@@ -11,6 +11,7 @@ import Firebase
 
 protocol AddContactsTableViewCellDelegate : class {
     func didAddContact(_ sender: AddContactsTableViewCell)
+    func triedAddContactWasBlocked(_ sender: AddContactsTableViewCell)
 }
 
 class AddContactsTableViewCell: UITableViewCell {
@@ -36,9 +37,15 @@ class AddContactsTableViewCell: UITableViewCell {
     
     @IBAction func AddContact(_ sender: UIButton) {
         Analytics.logEvent("press_add_contact", parameters: ["user": my_id, "time": getCurrentTime()])
-        refUser.child(my_id).child("Friends").child(friend_id).setValue(Name.text)
-        refUser.child(friend_id).child("Friends").child(my_id).setValue(my_name)
-        delegate?.didAddContact(self)
+        refUser.child(friend_id).child("Blacklist").observeSingleEvent(of: .value, with: { (snapshot) in
+            if (snapshot.hasChild(self.my_id)){
+                self.delegate?.triedAddContactWasBlocked(self)
+            } else {
+                self.refUser.child(self.my_id).child("Friends").child(self.friend_id).setValue(self.Name.text)
+                self.refUser.child(self.friend_id).child("Friends").child(self.my_id).setValue(self.my_name)
+                self.delegate?.didAddContact(self)
+            }
+        })
     }
     
     override func awakeFromNib() {

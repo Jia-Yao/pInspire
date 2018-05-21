@@ -234,13 +234,16 @@ SWIFT_CLASS("_TtC8pInspire11AppDelegate")
 - (void)applicationWillTerminate:(UIApplication * _Nonnull)application;
 - (void)application:(UIApplication * _Nonnull)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData * _Nonnull)deviceToken;
 - (void)application:(UIApplication * _Nonnull)application didFailToRegisterForRemoteNotificationsWithError:(NSError * _Nonnull)error;
+- (UIInterfaceOrientationMask)application:(UIApplication * _Nonnull)application supportedInterfaceOrientationsForWindow:(UIWindow * _Nullable)window SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UIImage;
 
 SWIFT_CLASS("_TtC8pInspire15ButtonWithImage")
 @interface ButtonWithImage : UIButton
 - (void)layoutSubviews;
+- (void)setImage:(UIImage * _Nullable)image forState:(UIControlState)state;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -250,6 +253,7 @@ SWIFT_CLASS("_TtC8pInspire21ContactsTableViewCell")
 @interface ContactsTableViewCell : UITableViewCell
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified Name;
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified ProfilePhoto;
+- (IBAction)block:(UIButton * _Nonnull)sender;
 - (void)awakeFromNib;
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated;
 - (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
@@ -398,10 +402,13 @@ SWIFT_CLASS("_TtC8pInspire30InvitationsTableViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UIView;
 @class UISwipeGestureRecognizer;
 
 SWIFT_CLASS("_TtC8pInspire19LoginViewController")
 @interface LoginViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified EULAView;
+- (IBAction)acceptEULA:(UIButton * _Nonnull)sender;
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified loginImage;
 - (void)viewDidLoad;
 - (void)viewDidAppear:(BOOL)animated;
@@ -411,7 +418,6 @@ SWIFT_CLASS("_TtC8pInspire19LoginViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UIView;
 
 SWIFT_CLASS("_TtC8pInspire20ProfileTableViewCell")
 @interface ProfileTableViewCell : UITableViewCell

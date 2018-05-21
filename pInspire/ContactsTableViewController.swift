@@ -9,7 +9,8 @@
 import UIKit
 import Firebase
 
-class ContactsTableViewController: UITableViewController {
+class ContactsTableViewController: UITableViewController, ContactsTableViewCellDelegate {
+    
 
     //MARK: Properties
     var me: User?
@@ -83,7 +84,11 @@ class ContactsTableViewController: UITableViewController {
                 fatalError("The dequeued cell is not an instance of ContactsTableViewCell.")
             }
             let user = users[indexPath.row-1]
+            cell.delegate = self
+            cell.my_id = me!.userId
+            cell.friend_id = user.userId
             cell.Name.text = user.firstName + " " + user.lastName
+            cell.refUser = refUser
             DispatchQueue.global(qos:.userInitiated).async {
                 let profilePhotoData = try? Data(contentsOf: URL(string: user.profilePhoto)!)
                 DispatchQueue.main.async {
@@ -94,6 +99,13 @@ class ContactsTableViewController: UITableViewController {
             }
             cell.selectionStyle = .none
             return cell
+        }
+    }
+    
+    func didBlockContact(_ sender: ContactsTableViewCell) {
+        if let tappedIndexPath = contactsTable.indexPath(for: sender){
+            users.remove(at: tappedIndexPath.row)
+            contactsTable.deleteRows(at: [tappedIndexPath], with: .top)
         }
     }
 

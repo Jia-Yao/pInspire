@@ -6,6 +6,8 @@ provides-nominal:
 provides-member:
 - ["8pInspire19LoginViewControllerC", ""]
 provides-dynamic-lookup:
+- "EULAView"
+- "acceptEULA"
 - "loginImage"
 - "prepare"
 - "swipeCard"
@@ -17,6 +19,7 @@ depends-top-level:
 - !private "*"
 - !private "+"
 - !private "+="
+- !private "-="
 - !private "/"
 - !private "=="
 - !private "??"
@@ -46,6 +49,7 @@ depends-top-level:
 - !private "String"
 - "StringLiteralType"
 - !private "Timer"
+- "UIButton"
 - !private "UIImage"
 - "UIImageView"
 - !private "UINavigationController"
@@ -53,6 +57,7 @@ depends-top-level:
 - "UISwipeGestureRecognizer"
 - !private "UISwipeGestureRecognizerDirection"
 - !private "UITabBarController"
+- "UIView"
 - "UIViewController"
 - !private "UnicodeScalarType"
 - "User"
@@ -84,6 +89,7 @@ depends-member:
 - !private ["s7CVarArgP", "CGPoint"]
 - !private ["s7CVarArgP", "Database"]
 - !private ["s7CVarArgP", "DispatchQueue"]
+- !private ["s7CVarArgP", "EULAView"]
 - !private ["s7CVarArgP", "GraphRequest"]
 - ["s7CVarArgP", "LoginButton"]
 - !private ["s7CVarArgP", "String"]
@@ -152,6 +158,7 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "CGPoint"]
 - !private ["s28CustomDebugStringConvertibleP", "Database"]
 - !private ["s28CustomDebugStringConvertibleP", "DispatchQueue"]
+- !private ["s28CustomDebugStringConvertibleP", "EULAView"]
 - !private ["s28CustomDebugStringConvertibleP", "GraphRequest"]
 - ["s28CustomDebugStringConvertibleP", "LoginButton"]
 - !private ["s28CustomDebugStringConvertibleP", "String"]
@@ -225,6 +232,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "CGPoint"]
 - !private ["s23CustomStringConvertibleP", "Database"]
 - !private ["s23CustomStringConvertibleP", "DispatchQueue"]
+- !private ["s23CustomStringConvertibleP", "EULAView"]
 - !private ["s23CustomStringConvertibleP", "GraphRequest"]
 - ["s23CustomStringConvertibleP", "LoginButton"]
 - !private ["s23CustomStringConvertibleP", "String"]
@@ -319,6 +327,7 @@ depends-member:
 - !private ["s9EquatableP", "CGPoint"]
 - !private ["s9EquatableP", "Database"]
 - !private ["s9EquatableP", "DispatchQueue"]
+- !private ["s9EquatableP", "EULAView"]
 - !private ["s9EquatableP", "GraphRequest"]
 - ["s9EquatableP", "LoginButton"]
 - !private ["s9EquatableP", "String"]
@@ -368,6 +377,7 @@ depends-member:
 - !private ["s9EquatableP", "print"]
 - !private ["s9EquatableP", "refUser"]
 - !private ["s9EquatableP", "reference"]
+- !private ["s9EquatableP", "right"]
 - !private ["s9EquatableP", "scheduledTimer"]
 - !private ["s9EquatableP", "setValue"]
 - !private ["s9EquatableP", "subscript"]
@@ -382,6 +392,7 @@ depends-member:
 - !private ["s9EquatableP", "viewDidLoad"]
 - !private ["s9EquatableP", "width"]
 - !private ["s25ExpressibleByArrayLiteralP", "left"]
+- !private ["s25ExpressibleByArrayLiteralP", "right"]
 - !private ["s25ExpressibleByArrayLiteralP", "subscript"]
 - !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
 - !private ["s30ExpressibleByDictionaryLiteralP", "init"]
@@ -401,6 +412,7 @@ depends-member:
 - !private ["s8HashableP", "CGPoint"]
 - !private ["s8HashableP", "Database"]
 - !private ["s8HashableP", "DispatchQueue"]
+- !private ["s8HashableP", "EULAView"]
 - !private ["s8HashableP", "GraphRequest"]
 - ["s8HashableP", "LoginButton"]
 - !private ["s8HashableP", "String"]
@@ -469,6 +481,7 @@ depends-member:
 - !private ["13FacebookLogin0B14ButtonDelegateP", "CGPoint"]
 - !private ["13FacebookLogin0B14ButtonDelegateP", "Database"]
 - !private ["13FacebookLogin0B14ButtonDelegateP", "DispatchQueue"]
+- !private ["13FacebookLogin0B14ButtonDelegateP", "EULAView"]
 - !private ["13FacebookLogin0B14ButtonDelegateP", "GraphRequest"]
 - ["13FacebookLogin0B14ButtonDelegateP", "LoginButton"]
 - !private ["13FacebookLogin0B14ButtonDelegateP", "String"]
@@ -504,6 +517,7 @@ depends-member:
 - ["8pInspire19LoginViewControllerC", "DatabaseReference"]
 - !private ["8pInspire19LoginViewControllerC", "DiscussionGroupTableViewController"]
 - !private ["8pInspire19LoginViewControllerC", "DispatchQueue"]
+- ["8pInspire19LoginViewControllerC", "EULAView"]
 - !private ["8pInspire19LoginViewControllerC", "GraphRequest"]
 - ["8pInspire19LoginViewControllerC", "Int"]
 - !private ["8pInspire19LoginViewControllerC", "InvitationsTableViewController"]
@@ -513,6 +527,7 @@ depends-member:
 - !private ["8pInspire19LoginViewControllerC", "ProfileViewController"]
 - !private ["8pInspire19LoginViewControllerC", "String"]
 - !private ["8pInspire19LoginViewControllerC", "Timer"]
+- ["8pInspire19LoginViewControllerC", "UIButton"]
 - !private ["8pInspire19LoginViewControllerC", "UIImage"]
 - ["8pInspire19LoginViewControllerC", "UIImageView"]
 - !private ["8pInspire19LoginViewControllerC", "UINavigationController"]
@@ -520,7 +535,9 @@ depends-member:
 - ["8pInspire19LoginViewControllerC", "UISwipeGestureRecognizer"]
 - !private ["8pInspire19LoginViewControllerC", "UISwipeGestureRecognizerDirection"]
 - !private ["8pInspire19LoginViewControllerC", "UITabBarController"]
+- ["8pInspire19LoginViewControllerC", "UIView"]
 - ["8pInspire19LoginViewControllerC", "User"]
+- ["8pInspire19LoginViewControllerC", "acceptEULA"]
 - !private ["8pInspire19LoginViewControllerC", "addGestureToImage"]
 - ["8pInspire19LoginViewControllerC", "deinit"]
 - !private ["8pInspire19LoginViewControllerC", "fatalError"]
@@ -551,6 +568,7 @@ depends-member:
 - !private ["So8NSCodingP", "CGPoint"]
 - !private ["So8NSCodingP", "Database"]
 - !private ["So8NSCodingP", "DispatchQueue"]
+- !private ["So8NSCodingP", "EULAView"]
 - !private ["So8NSCodingP", "GraphRequest"]
 - ["So8NSCodingP", "LoginButton"]
 - !private ["So8NSCodingP", "String"]
@@ -599,6 +617,7 @@ depends-member:
 - !private ["So26NSExtensionRequestHandlingP", "CGPoint"]
 - !private ["So26NSExtensionRequestHandlingP", "Database"]
 - !private ["So26NSExtensionRequestHandlingP", "DispatchQueue"]
+- !private ["So26NSExtensionRequestHandlingP", "EULAView"]
 - !private ["So26NSExtensionRequestHandlingP", "GraphRequest"]
 - ["So26NSExtensionRequestHandlingP", "LoginButton"]
 - !private ["So26NSExtensionRequestHandlingP", "String"]
@@ -645,6 +664,7 @@ depends-member:
 - ["So8NSObjectC", "DatabaseReference"]
 - !private ["So8NSObjectC", "DiscussionGroupTableViewController"]
 - !private ["So8NSObjectC", "DispatchQueue"]
+- ["So8NSObjectC", "EULAView"]
 - !private ["So8NSObjectC", "GraphRequest"]
 - ["So8NSObjectC", "Int"]
 - !private ["So8NSObjectC", "InvitationsTableViewController"]
@@ -654,6 +674,7 @@ depends-member:
 - !private ["So8NSObjectC", "ProfileViewController"]
 - !private ["So8NSObjectC", "String"]
 - !private ["So8NSObjectC", "Timer"]
+- ["So8NSObjectC", "UIButton"]
 - !private ["So8NSObjectC", "UIImage"]
 - ["So8NSObjectC", "UIImageView"]
 - !private ["So8NSObjectC", "UINavigationController"]
@@ -661,7 +682,9 @@ depends-member:
 - ["So8NSObjectC", "UISwipeGestureRecognizer"]
 - !private ["So8NSObjectC", "UISwipeGestureRecognizerDirection"]
 - !private ["So8NSObjectC", "UITabBarController"]
+- ["So8NSObjectC", "UIView"]
 - ["So8NSObjectC", "User"]
+- ["So8NSObjectC", "acceptEULA"]
 - !private ["So8NSObjectC", "addGestureRecognizer"]
 - ["So8NSObjectC", "addGestureToImage"]
 - !private ["So8NSObjectC", "addSubview"]
@@ -717,6 +740,7 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "CGPoint"]
 - !private ["So16NSObjectProtocolP", "Database"]
 - !private ["So16NSObjectProtocolP", "DispatchQueue"]
+- !private ["So16NSObjectProtocolP", "EULAView"]
 - !private ["So16NSObjectProtocolP", "GraphRequest"]
 - ["So16NSObjectProtocolP", "LoginButton"]
 - !private ["So16NSObjectProtocolP", "String"]
@@ -780,18 +804,21 @@ depends-member:
 - !private ["So9OS_objectC", "async"]
 - !private ["So9OS_objectC", "main"]
 - !private ["s9OptionSetP", "left"]
+- !private ["s9OptionSetP", "right"]
 - ["12FacebookCore23PermissionRepresentableP", "publicProfile"]
 - !private ["8pInspire21ProfileViewControllerC", "me"]
 - !private ["s22RandomAccessCollectionP", "subscript"]
 - ["s26RangeReplaceableCollectionP", "init"]
 - !private ["s26RangeReplaceableCollectionP", "subscript"]
 - !private ["s16RawRepresentableP", "left"]
+- !private ["s16RawRepresentableP", "right"]
 - !private ["s16RawRepresentableP", "value"]
 - ["12FacebookCore14ReadPermissionO", "publicProfile"]
 - !private ["s8SequenceP", "allObjects"]
 - ["s8SequenceP", "init"]
 - !private ["s8SequenceP", "subscript"]
 - !private ["s10SetAlgebraP", "left"]
+- !private ["s10SetAlgebraP", "right"]
 - !private ["s12StaticStringV", "init"]
 - ["SS", "init"]
 - ["s14StringProtocolP", "init"]
@@ -823,6 +850,7 @@ depends-member:
 - !private ["So21UIAppearanceContainerP", "CGPoint"]
 - !private ["So21UIAppearanceContainerP", "Database"]
 - !private ["So21UIAppearanceContainerP", "DispatchQueue"]
+- !private ["So21UIAppearanceContainerP", "EULAView"]
 - !private ["So21UIAppearanceContainerP", "GraphRequest"]
 - ["So21UIAppearanceContainerP", "LoginButton"]
 - !private ["So21UIAppearanceContainerP", "String"]
@@ -867,6 +895,7 @@ depends-member:
 - !private ["So18UIContentContainerP", "CGPoint"]
 - !private ["So18UIContentContainerP", "Database"]
 - !private ["So18UIContentContainerP", "DispatchQueue"]
+- !private ["So18UIContentContainerP", "EULAView"]
 - !private ["So18UIContentContainerP", "GraphRequest"]
 - ["So18UIContentContainerP", "LoginButton"]
 - !private ["So18UIContentContainerP", "String"]
@@ -921,6 +950,7 @@ depends-member:
 - !private ["So18UIFocusEnvironmentP", "CGPoint"]
 - !private ["So18UIFocusEnvironmentP", "Database"]
 - !private ["So18UIFocusEnvironmentP", "DispatchQueue"]
+- !private ["So18UIFocusEnvironmentP", "EULAView"]
 - !private ["So18UIFocusEnvironmentP", "GraphRequest"]
 - ["So18UIFocusEnvironmentP", "LoginButton"]
 - !private ["So18UIFocusEnvironmentP", "String"]
@@ -982,6 +1012,7 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "CGPoint"]
 - !private ["So30UIPasteConfigurationSupportingP", "Database"]
 - !private ["So30UIPasteConfigurationSupportingP", "DispatchQueue"]
+- !private ["So30UIPasteConfigurationSupportingP", "EULAView"]
 - !private ["So30UIPasteConfigurationSupportingP", "GraphRequest"]
 - ["So30UIPasteConfigurationSupportingP", "LoginButton"]
 - !private ["So30UIPasteConfigurationSupportingP", "String"]
@@ -1031,6 +1062,7 @@ depends-member:
 - ["So11UIResponderC", "DatabaseReference"]
 - !private ["So11UIResponderC", "DiscussionGroupTableViewController"]
 - !private ["So11UIResponderC", "DispatchQueue"]
+- ["So11UIResponderC", "EULAView"]
 - !private ["So11UIResponderC", "GraphRequest"]
 - ["So11UIResponderC", "Int"]
 - !private ["So11UIResponderC", "InvitationsTableViewController"]
@@ -1040,6 +1072,7 @@ depends-member:
 - !private ["So11UIResponderC", "ProfileViewController"]
 - !private ["So11UIResponderC", "String"]
 - !private ["So11UIResponderC", "Timer"]
+- ["So11UIResponderC", "UIButton"]
 - !private ["So11UIResponderC", "UIImage"]
 - ["So11UIResponderC", "UIImageView"]
 - !private ["So11UIResponderC", "UINavigationController"]
@@ -1047,7 +1080,9 @@ depends-member:
 - ["So11UIResponderC", "UISwipeGestureRecognizer"]
 - !private ["So11UIResponderC", "UISwipeGestureRecognizerDirection"]
 - !private ["So11UIResponderC", "UITabBarController"]
+- ["So11UIResponderC", "UIView"]
 - ["So11UIResponderC", "User"]
+- ["So11UIResponderC", "acceptEULA"]
 - !private ["So11UIResponderC", "addGestureRecognizer"]
 - ["So11UIResponderC", "addGestureToImage"]
 - !private ["So11UIResponderC", "addSubview"]
@@ -1085,6 +1120,7 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "CGPoint"]
 - !private ["So30UIResponderStandardEditActionsP", "Database"]
 - !private ["So30UIResponderStandardEditActionsP", "DispatchQueue"]
+- !private ["So30UIResponderStandardEditActionsP", "EULAView"]
 - !private ["So30UIResponderStandardEditActionsP", "GraphRequest"]
 - ["So30UIResponderStandardEditActionsP", "LoginButton"]
 - !private ["So30UIResponderStandardEditActionsP", "String"]
@@ -1133,6 +1169,7 @@ depends-member:
 - !private ["So16UIStateRestoringP", "CGPoint"]
 - !private ["So16UIStateRestoringP", "Database"]
 - !private ["So16UIStateRestoringP", "DispatchQueue"]
+- !private ["So16UIStateRestoringP", "EULAView"]
 - !private ["So16UIStateRestoringP", "GraphRequest"]
 - ["So16UIStateRestoringP", "LoginButton"]
 - !private ["So16UIStateRestoringP", "String"]
@@ -1170,6 +1207,7 @@ depends-member:
 - !private ["So24UISwipeGestureRecognizerC", "direction"]
 - !private ["So24UISwipeGestureRecognizerC", "init"]
 - !private ["SC33UISwipeGestureRecognizerDirectionV", "left"]
+- !private ["SC33UISwipeGestureRecognizerDirectionV", "right"]
 - !private ["So18UITabBarControllerC", "viewControllers"]
 - !private ["So16UITabBarDelegateP", "viewControllers"]
 - !private ["So21UITableViewControllerC", "me"]
@@ -1188,6 +1226,7 @@ depends-member:
 - !private ["So18UITraitEnvironmentP", "CGPoint"]
 - !private ["So18UITraitEnvironmentP", "Database"]
 - !private ["So18UITraitEnvironmentP", "DispatchQueue"]
+- !private ["So18UITraitEnvironmentP", "EULAView"]
 - !private ["So18UITraitEnvironmentP", "GraphRequest"]
 - ["So18UITraitEnvironmentP", "LoginButton"]
 - !private ["So18UITraitEnvironmentP", "String"]
@@ -1245,6 +1284,7 @@ depends-member:
 - ["So16UIViewControllerC", "DatabaseReference"]
 - !private ["So16UIViewControllerC", "DiscussionGroupTableViewController"]
 - !private ["So16UIViewControllerC", "DispatchQueue"]
+- ["So16UIViewControllerC", "EULAView"]
 - !private ["So16UIViewControllerC", "GraphRequest"]
 - ["So16UIViewControllerC", "Int"]
 - !private ["So16UIViewControllerC", "InvitationsTableViewController"]
@@ -1254,6 +1294,7 @@ depends-member:
 - !private ["So16UIViewControllerC", "ProfileViewController"]
 - !private ["So16UIViewControllerC", "String"]
 - !private ["So16UIViewControllerC", "Timer"]
+- ["So16UIViewControllerC", "UIButton"]
 - !private ["So16UIViewControllerC", "UIImage"]
 - ["So16UIViewControllerC", "UIImageView"]
 - !private ["So16UIViewControllerC", "UINavigationController"]
@@ -1261,8 +1302,10 @@ depends-member:
 - ["So16UIViewControllerC", "UISwipeGestureRecognizer"]
 - !private ["So16UIViewControllerC", "UISwipeGestureRecognizerDirection"]
 - !private ["So16UIViewControllerC", "UITabBarController"]
+- ["So16UIViewControllerC", "UIView"]
 - ["So16UIViewControllerC", "User"]
 - ["So16UIViewControllerC", ""]
+- ["So16UIViewControllerC", "acceptEULA"]
 - ["So16UIViewControllerC", "addGestureToImage"]
 - !private ["So16UIViewControllerC", "fatalError"]
 - ["So16UIViewControllerC", "fetchProfile"]
@@ -1316,6 +1359,7 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "CGPoint"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "Database"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "DispatchQueue"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "EULAView"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "GraphRequest"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "LoginButton"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "String"]
@@ -1696,4 +1740,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/MapKit.framework/Headers/MapKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
-interface-hash: "d074a7ff8e3ae14ffb17e6b4ca42e822"
+interface-hash: "91664a195335fb395c551950cf745fd3"
