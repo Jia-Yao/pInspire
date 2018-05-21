@@ -292,7 +292,7 @@
                                 <rect key="frame" x="16" y="522" width="382" height="149"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NameCellUnit" editingAccessoryType="checkmark" textLabel="DGt-72-YuC" style="IBUITableViewCellStyleDefault" id="ltR-nU-gGF">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NameCellUnit" editingAccessoryType="checkmark" textLabel="DGt-72-YuC" style="IBUITableViewCellStyleDefault" id="ltR-nU-gGF">
                                         <rect key="frame" x="0.0" y="28" width="382" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ltR-nU-gGF" id="D1G-6j-rrK">
@@ -350,7 +350,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fqn-3t-6mM">
                                 <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">End-User License Agreement (EULA) of pInspire  This End-User License Agreement ("EULA") is a legal agreement between you and Parachute and governs your use of Parachute's pInspire app. Please read this EULA agreement carefully before completing the registration process. The terms also apply to any updates, supplements, Internet-based services, and support services for Parachute's pInspire app. By clicking "accept" you are confirming your acceptance to become bound by the terms of this EULA agreement. If you do not agree with the terms and conditions of this EULA agreement, you must exit pInspire, and you must not click "accept".  
+                                <mutableString key="text">End-User License Agreement (EULA) of pInspire  This End-User License Agreement ("EULA") is a legal agreement between you and Parachute and governs your use of Parachute's pInspire app. The terms also apply to any updates, supplements, Internet-based services, and support services for Parachute's pInspire app.  
 License Grant
 Parachute hereby grants you a personal, non-transferable, non-exclusive licence to use the pInspire app on your devices in accordance with the terms of this EULA agreement.
  You are not permitted to:
@@ -657,7 +657,7 @@ This EULA was created by eulatemplate.com for pInspire.
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Fxw-Uf-upV">
-                                            <rect key="frame" x="19.999999999999996" y="4.6666666666666679" width="41.666666666666657" height="34.666666666666657"/>
+                                            <rect key="frame" x="20" y="4.6666666666666679" width="41.666666666666657" height="34.666666666666657"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5Z-F7-YzX">
                                                     <rect key="frame" x="0.0" y="0.0" width="41.666666666666664" height="20.333333333333332"/>
@@ -723,7 +723,7 @@ This EULA was created by eulatemplate.com for pInspire.
                                 <rect key="frame" x="0.0" y="20" width="414" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pollCell" id="HaD-FI-J2B">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pollCell" id="HaD-FI-J2B">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HaD-FI-J2B" id="Gfp-cd-A95">
@@ -731,7 +731,7 @@ This EULA was created by eulatemplate.com for pInspire.
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="imageCell" rowHeight="200" id="h0Z-dn-iC7" customClass="ProfileTableViewCell" customModule="pInspire" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="imageCell" rowHeight="200" id="h0Z-dn-iC7" customClass="ProfileTableViewCell" customModule="pInspire" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="h0Z-dn-iC7" id="1f7-F1-GfG">
@@ -786,7 +786,7 @@ This EULA was created by eulatemplate.com for pInspire.
                                             <outlet property="viewForButton" destination="yvb-FK-ygK" id="Xxl-bZ-vZ3"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="logoutCell" rowHeight="75" id="jaE-qH-Ktv" customClass="ProfileTableViewCell" customModule="pInspire" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="logoutCell" rowHeight="75" id="jaE-qH-Ktv" customClass="ProfileTableViewCell" customModule="pInspire" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="272" width="414" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jaE-qH-Ktv" id="B9b-K7-Swx">
@@ -897,7 +897,7 @@ This EULA was created by eulatemplate.com for pInspire.
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter answer choice" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YgJ-7w-PVt">
-                                                            <rect key="frame" x="0.0" y="7" width="802" height="30"/>
+                                                            <rect key="frame" x="0.0" y="7" width="382" height="30"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits"/>
@@ -1007,7 +1007,7 @@ This EULA was created by eulatemplate.com for pInspire.
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hd6-5B-eAj">
                                         <rect key="frame" x="20" y="20" width="374" height="638"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <mutableString key="text">End-User License Agreement (EULA) of pInspire  This End-User License Agreement ("EULA") is a legal agreement between you and Parachute and governs your use of Parachute's pInspire app. Please read this EULA agreement carefully before completing the registration process. The terms also apply to any updates, supplements, Internet-based services, and support services for Parachute's pInspire app. By clicking "accept" you are confirming your acceptance to become bound by the terms of this EULA agreement. If you do not agree with the terms and conditions of this EULA agreement, you must exit pInspire, and you must not click "accept".  
+                                        <string key="text">End-User License Agreement (EULA) of pInspire  This End-User License Agreement ("EULA") is a legal agreement between you and Parachute and governs your use of Parachute's pInspire app. Please read this EULA agreement carefully before completing the registration process. The terms also apply to any updates, supplements, Internet-based services, and support services for Parachute's pInspire app. By clicking "accept" you are confirming your acceptance to become bound by the terms of this EULA agreement. If you do not agree with the terms and conditions of this EULA agreement, you must exit pInspire, and you must not click "accept".  
 License Grant
 Parachute hereby grants you a personal, non-transferable, non-exclusive licence to use the pInspire app on your devices in accordance with the terms of this EULA agreement.
  You are not permitted to:
@@ -1021,7 +1021,7 @@ Termination
 This EULA agreement is effective from the date you first use Parachute's pInspire app and shall continue until the app is terminated.
 This EULA agreement will also terminate immediately if you fail to comply with any term of this EULA agreement. Upon such termination, the licenses granted by this EULA agreement will immediately terminate and you agree to stop all access and use of the app.  
 This EULA was created by eulatemplate.com for pInspire.
-</mutableString>
+</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
