@@ -17,7 +17,6 @@ provides-dynamic-lookup:
 - "awakeFromNib"
 - "setSelected"
 depends-top-level:
-- !private "!"
 - "AddContactsTableViewCell"
 - "AddContactsTableViewCellDelegate"
 - !private "Analytics"

@@ -16,6 +16,7 @@ class AddContactsTableViewController: UITableViewController, AddContactsTableVie
     var me: User?
     var users = [User]()
     var refUser: DatabaseReference!
+    var refInvitation: DatabaseReference!
     @IBOutlet var usersTable: UITableView!
     var facebook_friends_ids = [String]()
     var blacklist_ids = [String]()
@@ -24,6 +25,7 @@ class AddContactsTableViewController: UITableViewController, AddContactsTableVie
         super.viewDidLoad()
         usersTable.delegate = self
         usersTable.delegate = self
+        refInvitation = Database.database().reference().child("Invitations")
         fetchUsers()
     }
     
@@ -110,6 +112,7 @@ class AddContactsTableViewController: UITableViewController, AddContactsTableVie
         cell.my_name = me!.userName
         cell.friend_id = user.userId
         cell.refUser = refUser
+        cell.refInvitation = refInvitation
         cell.Name.text = user.firstName + " " + user.lastName
         if facebook_friends_ids.contains(user.userId){
             cell.Label.text = "Facebook Friend"

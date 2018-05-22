@@ -15,6 +15,7 @@ depends-top-level:
 - !private "!"
 - !private "+"
 - !private "+="
+- !private "=="
 - !private ">"
 - !private "AnyObject"
 - "AssignmentPrecedence"
@@ -30,7 +31,7 @@ depends-top-level:
 - !private "InvitationsTableViewCell"
 - "InvitationsTableViewController"
 - !private "NSArray"
-- "String"
+- !private "String"
 - !private "StringLiteralType"
 - "TernaryPrecedence"
 - !private "UITabBarItem"
@@ -399,7 +400,7 @@ depends-member:
 - ["8pInspire30InvitationsTableViewControllerC", "Invitation"]
 - !private ["8pInspire30InvitationsTableViewControllerC", "InvitationsTableViewCell"]
 - !private ["8pInspire30InvitationsTableViewControllerC", "NSArray"]
-- ["8pInspire30InvitationsTableViewControllerC", "String"]
+- !private ["8pInspire30InvitationsTableViewControllerC", "String"]
 - !private ["8pInspire30InvitationsTableViewControllerC", "UITabBarItem"]
 - ["8pInspire30InvitationsTableViewControllerC", "UITableView"]
 - !private ["8pInspire30InvitationsTableViewControllerC", "UITableViewAutomaticDimension"]
@@ -500,7 +501,7 @@ depends-member:
 - ["So8NSObjectC", "Invitation"]
 - !private ["So8NSObjectC", "InvitationsTableViewCell"]
 - !private ["So8NSObjectC", "NSArray"]
-- ["So8NSObjectC", "String"]
+- !private ["So8NSObjectC", "String"]
 - !private ["So8NSObjectC", "UITabBarItem"]
 - ["So8NSObjectC", "UITableView"]
 - !private ["So8NSObjectC", "UITableViewAutomaticDimension"]
@@ -845,7 +846,7 @@ depends-member:
 - ["So11UIResponderC", "Invitation"]
 - !private ["So11UIResponderC", "InvitationsTableViewCell"]
 - !private ["So11UIResponderC", "NSArray"]
-- ["So11UIResponderC", "String"]
+- !private ["So11UIResponderC", "String"]
 - !private ["So11UIResponderC", "UITabBarItem"]
 - ["So11UIResponderC", "UITableView"]
 - !private ["So11UIResponderC", "UITableViewAutomaticDimension"]
@@ -992,7 +993,7 @@ depends-member:
 - ["So21UITableViewControllerC", "Invitation"]
 - !private ["So21UITableViewControllerC", "InvitationsTableViewCell"]
 - !private ["So21UITableViewControllerC", "NSArray"]
-- ["So21UITableViewControllerC", "String"]
+- !private ["So21UITableViewControllerC", "String"]
 - !private ["So21UITableViewControllerC", "UITabBarItem"]
 - ["So21UITableViewControllerC", "UITableView"]
 - !private ["So21UITableViewControllerC", "UITableViewAutomaticDimension"]
@@ -1105,7 +1106,7 @@ depends-member:
 - ["So16UIViewControllerC", "Invitation"]
 - !private ["So16UIViewControllerC", "InvitationsTableViewCell"]
 - !private ["So16UIViewControllerC", "NSArray"]
-- ["So16UIViewControllerC", "String"]
+- !private ["So16UIViewControllerC", "String"]
 - !private ["So16UIViewControllerC", "UITabBarItem"]
 - ["So16UIViewControllerC", "UITableView"]
 - !private ["So16UIViewControllerC", "UITableViewAutomaticDimension"]
@@ -1508,4 +1509,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/MapKit.framework/Headers/MapKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
-interface-hash: "13e0bca22cdc4aaf96dc68a5e828294b"
+interface-hash: "29e63a20d6527b6232ec5f1cd8a95d26"

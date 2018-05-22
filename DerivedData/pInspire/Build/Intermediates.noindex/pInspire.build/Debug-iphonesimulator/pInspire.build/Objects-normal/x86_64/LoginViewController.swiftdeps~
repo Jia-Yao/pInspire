@@ -152,6 +152,8 @@ depends-member:
 - ["s10CollectionP", "init"]
 - !private ["s10CollectionP", "subscript"]
 - ["s10ComparableP", "init"]
+- !private ["8pInspire29ContactsTableViewCellDelegateP", "me"]
+- !private ["8pInspire29ContactsTableViewCellDelegateP", "refUser"]
 - !private ["8pInspire27ContactsTableViewControllerC", "me"]
 - !private ["8pInspire27ContactsTableViewControllerC", "refUser"]
 - !private ["s28CustomDebugStringConvertibleP", "AccessToken"]
@@ -1440,6 +1442,7 @@ depends-nominal:
 - "s7CVarArgP"
 - "s10CollectionP"
 - "s10ComparableP"
+- !private "8pInspire29ContactsTableViewCellDelegateP"
 - !private "8pInspire27ContactsTableViewControllerC"
 - "s28CustomDebugStringConvertibleP"
 - "s29CustomPlaygroundQuickLookableP"

@@ -19,6 +19,7 @@ provides-dynamic-lookup:
 depends-top-level:
 - !private "!"
 - !private "!="
+- !private "+"
 - !private "..<"
 - !private "/"
 - !private "=="
@@ -179,6 +180,7 @@ depends-member:
 - !private ["s7CVarArgP", "white"]
 - !private ["8pInspire6ChoiceC", "containUserVote"]
 - !private ["8pInspire6ChoiceC", "content"]
+- !private ["8pInspire6ChoiceC", "invisibleUsersForMe"]
 - !private ["8pInspire6ChoiceC", "numOfVotes"]
 - !private ["8pInspire6ChoiceC", "visibleUsersForMe"]
 - !private ["s10CollectionP", "count"]

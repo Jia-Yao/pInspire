@@ -55,6 +55,7 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
         super.viewDidAppear(animated)
         
         if AccessToken.current != nil{
+            print(AccessToken.current)
             if firstLogin {
                 EULAView.isHidden = false
                 loginImage.image = UIImage(named: "pinspire_poll")

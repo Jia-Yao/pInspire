@@ -19,6 +19,8 @@ provides-dynamic-lookup:
 - "viewDidLoad"
 depends-top-level:
 - !private "!"
+- !private "!="
+- !private "&&"
 - !private "+"
 - !private "+="
 - !private "-"
@@ -226,6 +228,7 @@ depends-member:
 - !private ["s7CVarArgP", "logEvent"]
 - !private ["s7CVarArgP", "main"]
 - !private ["s7CVarArgP", "map"]
+- !private ["s7CVarArgP", "message"]
 - !private ["s7CVarArgP", "min"]
 - !private ["s7CVarArgP", "modifyChoiceContentForDisplay"]
 - !private ["s7CVarArgP", "numberOfLines"]
@@ -407,6 +410,7 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "logEvent"]
 - !private ["s28CustomDebugStringConvertibleP", "main"]
 - !private ["s28CustomDebugStringConvertibleP", "map"]
+- !private ["s28CustomDebugStringConvertibleP", "message"]
 - !private ["s28CustomDebugStringConvertibleP", "min"]
 - !private ["s28CustomDebugStringConvertibleP", "modifyChoiceContentForDisplay"]
 - !private ["s28CustomDebugStringConvertibleP", "numberOfLines"]
@@ -572,6 +576,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "logEvent"]
 - !private ["s23CustomStringConvertibleP", "main"]
 - !private ["s23CustomStringConvertibleP", "map"]
+- !private ["s23CustomStringConvertibleP", "message"]
 - !private ["s23CustomStringConvertibleP", "min"]
 - !private ["s23CustomStringConvertibleP", "modifyChoiceContentForDisplay"]
 - !private ["s23CustomStringConvertibleP", "numberOfLines"]
@@ -788,6 +793,7 @@ depends-member:
 - !private ["s9EquatableP", "logEvent"]
 - !private ["s9EquatableP", "main"]
 - !private ["s9EquatableP", "map"]
+- !private ["s9EquatableP", "message"]
 - !private ["s9EquatableP", "min"]
 - !private ["s9EquatableP", "modifyChoiceContentForDisplay"]
 - !private ["s9EquatableP", "normal"]
@@ -953,6 +959,7 @@ depends-member:
 - !private ["s8HashableP", "key"]
 - !private ["s8HashableP", "logEvent"]
 - !private ["s8HashableP", "main"]
+- !private ["s8HashableP", "message"]
 - !private ["s8HashableP", "min"]
 - !private ["s8HashableP", "modifyChoiceContentForDisplay"]
 - !private ["s8HashableP", "numberOfLines"]
@@ -1087,6 +1094,7 @@ depends-member:
 - !private ["So8NSCodingP", "isEnabled"]
 - !private ["So8NSCodingP", "isHidden"]
 - !private ["So8NSCodingP", "items"]
+- !private ["So8NSCodingP", "message"]
 - !private ["So8NSCodingP", "min"]
 - !private ["So8NSCodingP", "modifyChoiceContentForDisplay"]
 - !private ["So8NSCodingP", "numberOfLines"]
@@ -1175,6 +1183,7 @@ depends-member:
 - !private ["So26NSExtensionRequestHandlingP", "getCurrentTime"]
 - !private ["So26NSExtensionRequestHandlingP", "handleRefresh"]
 - !private ["So26NSExtensionRequestHandlingP", "init"]
+- !private ["So26NSExtensionRequestHandlingP", "message"]
 - !private ["So26NSExtensionRequestHandlingP", "min"]
 - !private ["So26NSExtensionRequestHandlingP", "modifyChoiceContentForDisplay"]
 - !private ["So26NSExtensionRequestHandlingP", "performSegue"]
@@ -1297,6 +1306,7 @@ depends-member:
 - !private ["So8NSObjectC", "key"]
 - !private ["So8NSObjectC", "logEvent"]
 - !private ["So8NSObjectC", "main"]
+- !private ["So8NSObjectC", "message"]
 - !private ["So8NSObjectC", "min"]
 - !private ["So8NSObjectC", "modifyChoiceContentForDisplay"]
 - !private ["So8NSObjectC", "numberOfLines"]
@@ -1423,6 +1433,7 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "key"]
 - !private ["So16NSObjectProtocolP", "logEvent"]
 - !private ["So16NSObjectProtocolP", "main"]
+- !private ["So16NSObjectProtocolP", "message"]
 - !private ["So16NSObjectProtocolP", "min"]
 - !private ["So16NSObjectProtocolP", "modifyChoiceContentForDisplay"]
 - !private ["So16NSObjectProtocolP", "numberOfLines"]
@@ -1616,6 +1627,7 @@ depends-member:
 - !private ["So17UIAlertControllerC", "addTextField"]
 - !private ["So17UIAlertControllerC", "dismiss"]
 - !private ["So17UIAlertControllerC", "init"]
+- !private ["So17UIAlertControllerC", "message"]
 - !private ["So17UIAlertControllerC", "textFields"]
 - !private ["SC22UIAlertControllerStyleO", "alert"]
 - !private ["So12UIAppearanceP", "addTarget"]
@@ -1704,6 +1716,7 @@ depends-member:
 - !private ["So21UIAppearanceContainerP", "isEnabled"]
 - !private ["So21UIAppearanceContainerP", "isHidden"]
 - !private ["So21UIAppearanceContainerP", "items"]
+- !private ["So21UIAppearanceContainerP", "message"]
 - !private ["So21UIAppearanceContainerP", "min"]
 - !private ["So21UIAppearanceContainerP", "modifyChoiceContentForDisplay"]
 - !private ["So21UIAppearanceContainerP", "numberOfLines"]
@@ -1796,6 +1809,7 @@ depends-member:
 - !private ["So18UIContentContainerP", "getCurrentTime"]
 - !private ["So18UIContentContainerP", "handleRefresh"]
 - !private ["So18UIContentContainerP", "init"]
+- !private ["So18UIContentContainerP", "message"]
 - !private ["So18UIContentContainerP", "min"]
 - !private ["So18UIContentContainerP", "modifyChoiceContentForDisplay"]
 - !private ["So18UIContentContainerP", "performSegue"]
@@ -1978,6 +1992,7 @@ depends-member:
 - !private ["So18UIFocusEnvironmentP", "isEnabled"]
 - !private ["So18UIFocusEnvironmentP", "isHidden"]
 - !private ["So18UIFocusEnvironmentP", "items"]
+- !private ["So18UIFocusEnvironmentP", "message"]
 - !private ["So18UIFocusEnvironmentP", "min"]
 - !private ["So18UIFocusEnvironmentP", "modifyChoiceContentForDisplay"]
 - !private ["So18UIFocusEnvironmentP", "numberOfLines"]
@@ -2131,6 +2146,7 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "isEnabled"]
 - !private ["So30UIPasteConfigurationSupportingP", "isHidden"]
 - !private ["So30UIPasteConfigurationSupportingP", "items"]
+- !private ["So30UIPasteConfigurationSupportingP", "message"]
 - !private ["So30UIPasteConfigurationSupportingP", "min"]
 - !private ["So30UIPasteConfigurationSupportingP", "modifyChoiceContentForDisplay"]
 - !private ["So30UIPasteConfigurationSupportingP", "numberOfLines"]
@@ -2255,6 +2271,7 @@ depends-member:
 - !private ["So11UIResponderC", "isEnabled"]
 - !private ["So11UIResponderC", "isHidden"]
 - !private ["So11UIResponderC", "items"]
+- !private ["So11UIResponderC", "message"]
 - !private ["So11UIResponderC", "min"]
 - !private ["So11UIResponderC", "modifyChoiceContentForDisplay"]
 - !private ["So11UIResponderC", "numberOfLines"]
@@ -2358,6 +2375,7 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "isEnabled"]
 - !private ["So30UIResponderStandardEditActionsP", "isHidden"]
 - !private ["So30UIResponderStandardEditActionsP", "items"]
+- !private ["So30UIResponderStandardEditActionsP", "message"]
 - !private ["So30UIResponderStandardEditActionsP", "min"]
 - !private ["So30UIResponderStandardEditActionsP", "modifyChoiceContentForDisplay"]
 - !private ["So30UIResponderStandardEditActionsP", "numberOfLines"]
@@ -2490,6 +2508,7 @@ depends-member:
 - !private ["So35UISpringLoadedInteractionSupportingP", "isEnabled"]
 - !private ["So35UISpringLoadedInteractionSupportingP", "isHidden"]
 - !private ["So35UISpringLoadedInteractionSupportingP", "items"]
+- !private ["So35UISpringLoadedInteractionSupportingP", "message"]
 - !private ["So35UISpringLoadedInteractionSupportingP", "refreshControl"]
 - !private ["So35UISpringLoadedInteractionSupportingP", "reloadData"]
 - !private ["So35UISpringLoadedInteractionSupportingP", "rowHeight"]
@@ -2533,6 +2552,7 @@ depends-member:
 - !private ["So16UIStateRestoringP", "getCurrentTime"]
 - !private ["So16UIStateRestoringP", "handleRefresh"]
 - !private ["So16UIStateRestoringP", "init"]
+- !private ["So16UIStateRestoringP", "message"]
 - !private ["So16UIStateRestoringP", "min"]
 - !private ["So16UIStateRestoringP", "modifyChoiceContentForDisplay"]
 - !private ["So16UIStateRestoringP", "performSegue"]
@@ -2854,6 +2874,7 @@ depends-member:
 - !private ["So18UITraitEnvironmentP", "isEnabled"]
 - !private ["So18UITraitEnvironmentP", "isHidden"]
 - !private ["So18UITraitEnvironmentP", "items"]
+- !private ["So18UITraitEnvironmentP", "message"]
 - !private ["So18UITraitEnvironmentP", "min"]
 - !private ["So18UITraitEnvironmentP", "modifyChoiceContentForDisplay"]
 - !private ["So18UITraitEnvironmentP", "numberOfLines"]
@@ -2992,6 +3013,7 @@ depends-member:
 - !private ["So16UIViewControllerC", "getCurrentTime"]
 - ["So16UIViewControllerC", "handleRefresh"]
 - ["So16UIViewControllerC", "init"]
+- !private ["So16UIViewControllerC", "message"]
 - !private ["So16UIViewControllerC", "min"]
 - !private ["So16UIViewControllerC", "modifyChoiceContentForDisplay"]
 - ["So16UIViewControllerC", "numberOfSections"]
@@ -3168,6 +3190,7 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "key"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "logEvent"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "main"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "message"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "min"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "modifyChoiceContentForDisplay"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "numberOfLines"]
@@ -3723,4 +3746,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/MapKit.framework/Headers/MapKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
-interface-hash: "981a4d2a71e770129f6048f9723e6189"
+interface-hash: "7d28170b99afe0e28d5a380436c28a8c"

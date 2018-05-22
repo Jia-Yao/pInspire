@@ -60,6 +60,14 @@ class Choice {
         }
     }
     
+    func invisibleUsersForMe(userId: String) -> [String] {
+        return invisibleUsers.filter { $0 != "dummy" }.filter { $0 != userId }.map { _ in "0" }
+    }
+    
+    func totalUsersForMe(userId: String) -> [String] {
+        return visibleUsersForMe(userId: userId) + invisibleUsersForMe(userId: userId)
+    }
+    
     func addUser(userId: String, isAnonymous: Bool) {
         votesDict[userId] = !isAnonymous
     }

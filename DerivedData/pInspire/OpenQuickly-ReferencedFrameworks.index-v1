@@ -19,8 +19,8 @@
 	<string>Bolts</string>
 	<string>FacebookLogin</string>
 	<string>sys</string>
-	<string>MobileCoreServices</string>
 	<string>JSQMessagesViewController</string>
+	<string>MobileCoreServices</string>
 	<string>UserNotifications</string>
 	<string>CoreTelephony</string>
 	<string>JSQSystemSoundPlayer</string>
@@ -38,16 +38,16 @@
 	<string>MapKit</string>
 	<string>FirebaseCrash</string>
 	<string>Foundation</string>
+	<string>QuartzCore</string>
 	<string>Fabric</string>
 	<string>os</string>
-	<string>QuartzCore</string>
 	<string>FirebaseAppIndexing</string>
 	<string>FBSDKLoginKit</string>
 	<string>Security</string>
 	<string>FirebaseInvites</string>
 	<string>IQKeyboardManagerSwift</string>
-	<string>FBSDKCoreKit</string>
 	<string>FirebaseStorage</string>
+	<string>FBSDKCoreKit</string>
 	<string>FirebaseFunctions</string>
 	<string>FirebaseAnalytics</string>
 	<string>CoreGraphics</string>

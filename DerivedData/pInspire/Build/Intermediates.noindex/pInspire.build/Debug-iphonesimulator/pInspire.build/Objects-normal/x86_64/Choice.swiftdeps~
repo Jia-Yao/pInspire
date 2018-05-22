@@ -8,6 +8,7 @@ provides-member:
 provides-dynamic-lookup:
 depends-top-level:
 - !private "!"
+- !private "!="
 - !private "+"
 - !private "=="
 - !private "Array"
@@ -19,14 +20,19 @@ depends-top-level:
 - "Int"
 - "String"
 - "StringLiteralType"
+- !private "UnicodeScalarType"
 depends-member:
 - ["12FacebookCore26AppEventParameterValueTypeP", "init"]
 - !private ["Sa", "contains"]
+- !private ["Sa", "filter"]
 - !private ["Sa", "init"]
 - !private ["Sa", "keys"]
+- !private ["Sa", "map"]
 - !private ["s23BidirectionalCollectionP", "contains"]
+- !private ["s23BidirectionalCollectionP", "filter"]
 - ["s23BidirectionalCollectionP", "init"]
 - !private ["s23BidirectionalCollectionP", "keys"]
+- !private ["s23BidirectionalCollectionP", "map"]
 - !private ["Sb", "_getBuiltinLogicValue"]
 - !private ["s7CVarArgP", "_getBuiltinLogicValue"]
 - !private ["s7CVarArgP", "contains"]
@@ -34,6 +40,7 @@ depends-member:
 - !private ["s7CVarArgP", "filter"]
 - ["s7CVarArgP", "init"]
 - !private ["s7CVarArgP", "keys"]
+- !private ["s7CVarArgP", "map"]
 - !private ["s7CVarArgP", "subscript"]
 - ["8pInspire6ChoiceC", "Bool"]
 - ["8pInspire6ChoiceC", "Dictionary"]
@@ -45,6 +52,7 @@ depends-member:
 - ["8pInspire6ChoiceC", "deinit"]
 - ["8pInspire6ChoiceC", "init"]
 - !private ["8pInspire6ChoiceC", "invisibleUsers"]
+- ["8pInspire6ChoiceC", "invisibleUsersForMe"]
 - ["8pInspire6ChoiceC", "numOfVotes"]
 - ["8pInspire6ChoiceC", "numOfVotesForMe"]
 - ["8pInspire6ChoiceC", "userHasVotedThis"]
@@ -56,6 +64,7 @@ depends-member:
 - !private ["s10CollectionP", "filter"]
 - ["s10CollectionP", "init"]
 - !private ["s10CollectionP", "keys"]
+- !private ["s10CollectionP", "map"]
 - !private ["s10CollectionP", "subscript"]
 - ["s10ComparableP", "init"]
 - !private ["s28CustomDebugStringConvertibleP", "contains"]
@@ -63,6 +72,7 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "filter"]
 - ["s28CustomDebugStringConvertibleP", "init"]
 - !private ["s28CustomDebugStringConvertibleP", "keys"]
+- !private ["s28CustomDebugStringConvertibleP", "map"]
 - !private ["s28CustomDebugStringConvertibleP", "subscript"]
 - !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
 - ["s29CustomPlaygroundQuickLookableP", "init"]
@@ -72,6 +82,7 @@ depends-member:
 - !private ["s17CustomReflectableP", "filter"]
 - ["s17CustomReflectableP", "init"]
 - !private ["s17CustomReflectableP", "keys"]
+- !private ["s17CustomReflectableP", "map"]
 - !private ["s17CustomReflectableP", "subscript"]
 - !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
 - !private ["s23CustomStringConvertibleP", "contains"]
@@ -79,6 +90,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "filter"]
 - ["s23CustomStringConvertibleP", "init"]
 - !private ["s23CustomStringConvertibleP", "keys"]
+- !private ["s23CustomStringConvertibleP", "map"]
 - !private ["s23CustomStringConvertibleP", "subscript"]
 - !private ["s9DecodableP", "_getBuiltinLogicValue"]
 - !private ["s9DecodableP", "contains"]
@@ -86,6 +98,7 @@ depends-member:
 - !private ["s9DecodableP", "filter"]
 - ["s9DecodableP", "init"]
 - !private ["s9DecodableP", "keys"]
+- !private ["s9DecodableP", "map"]
 - !private ["s9DecodableP", "subscript"]
 - !private ["s10DictionaryV", "count"]
 - !private ["s10DictionaryV", "filter"]
@@ -98,6 +111,7 @@ depends-member:
 - !private ["s9EncodableP", "filter"]
 - ["s9EncodableP", "init"]
 - !private ["s9EncodableP", "keys"]
+- !private ["s9EncodableP", "map"]
 - !private ["s9EncodableP", "subscript"]
 - !private ["s9EquatableP", "_getBuiltinLogicValue"]
 - !private ["s9EquatableP", "contains"]
@@ -105,10 +119,13 @@ depends-member:
 - !private ["s9EquatableP", "filter"]
 - ["s9EquatableP", "init"]
 - !private ["s9EquatableP", "keys"]
+- !private ["s9EquatableP", "map"]
 - !private ["s9EquatableP", "subscript"]
 - !private ["s25ExpressibleByArrayLiteralP", "contains"]
+- !private ["s25ExpressibleByArrayLiteralP", "filter"]
 - !private ["s25ExpressibleByArrayLiteralP", "init"]
 - !private ["s25ExpressibleByArrayLiteralP", "keys"]
+- !private ["s25ExpressibleByArrayLiteralP", "map"]
 - !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
 - !private ["s30ExpressibleByDictionaryLiteralP", "count"]
 - !private ["s30ExpressibleByDictionaryLiteralP", "filter"]
@@ -125,30 +142,41 @@ depends-member:
 - ["s25LosslessStringConvertibleP", "init"]
 - ["s10MirrorPathP", "init"]
 - !private ["s17MutableCollectionP", "contains"]
+- !private ["s17MutableCollectionP", "filter"]
 - !private ["s17MutableCollectionP", "init"]
 - !private ["s17MutableCollectionP", "keys"]
+- !private ["s17MutableCollectionP", "map"]
 - !private ["s22RandomAccessCollectionP", "contains"]
+- !private ["s22RandomAccessCollectionP", "filter"]
 - !private ["s22RandomAccessCollectionP", "init"]
 - !private ["s22RandomAccessCollectionP", "keys"]
+- !private ["s22RandomAccessCollectionP", "map"]
 - !private ["s26RangeReplaceableCollectionP", "contains"]
+- !private ["s26RangeReplaceableCollectionP", "filter"]
 - ["s26RangeReplaceableCollectionP", "init"]
 - !private ["s26RangeReplaceableCollectionP", "keys"]
+- !private ["s26RangeReplaceableCollectionP", "map"]
 - !private ["s8SequenceP", "contains"]
 - !private ["s8SequenceP", "count"]
 - !private ["s8SequenceP", "filter"]
 - ["s8SequenceP", "init"]
 - !private ["s8SequenceP", "keys"]
+- !private ["s8SequenceP", "map"]
 - !private ["s8SequenceP", "subscript"]
 - ["SS", "init"]
 - ["s14StringProtocolP", "init"]
 - ["s16TextOutputStreamP", "init"]
 - ["s20TextOutputStreamableP", "init"]
 - !private ["s14_ArrayProtocolP", "contains"]
+- !private ["s14_ArrayProtocolP", "filter"]
 - !private ["s14_ArrayProtocolP", "init"]
 - !private ["s14_ArrayProtocolP", "keys"]
+- !private ["s14_ArrayProtocolP", "map"]
 - !private ["s24_DestructorSafeContainerP", "contains"]
+- !private ["s24_DestructorSafeContainerP", "filter"]
 - !private ["s24_DestructorSafeContainerP", "init"]
 - !private ["s24_DestructorSafeContainerP", "keys"]
+- !private ["s24_DestructorSafeContainerP", "map"]
 - !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
 - ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
 - ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
@@ -161,6 +189,7 @@ depends-member:
 - !private ["s21_ObjectiveCBridgeableP", "filter"]
 - ["s21_ObjectiveCBridgeableP", "init"]
 - !private ["s21_ObjectiveCBridgeableP", "keys"]
+- !private ["s21_ObjectiveCBridgeableP", "map"]
 - !private ["s21_ObjectiveCBridgeableP", "subscript"]
 - ["s16_SwiftStringViewP", "init"]
 depends-nominal:
@@ -398,4 +427,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/MapKit.framework/Headers/MapKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
-interface-hash: "51842c8c6eb96f04b45fcb41910318da"
+interface-hash: "81262360139a2646286b78cd5e0f2262"

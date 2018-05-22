@@ -55,7 +55,7 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     private var peopleIds: [String]? {
-        return clickedChoice?.visibleUsersForMe(userId: user?.userId ?? "")
+        return clickedChoice?.totalUsersForMe(userId: user?.userId ?? "")
     }
     
     override func viewDidLoad() {
@@ -144,7 +144,7 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "NameCellUnit"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-        let name = user?.idNameConverter[peopleIds![indexPath.row]]
+        let name = peopleIds![indexPath.row] == "0" ? "Anonymous" : user?.idNameConverter[peopleIds![indexPath.row]]
         cell.textLabel?.text = name
         cell.selectionStyle = .none
         return cell

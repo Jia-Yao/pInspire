@@ -20,6 +20,7 @@ class AddContactsTableViewCell: UITableViewCell {
     var my_name = "dummy"
     var friend_id = "dummy"
     var refUser: DatabaseReference!
+    var refInvitation: DatabaseReference!
     
     @IBOutlet weak var ProfilePhoto: UIImageView!
     
@@ -43,6 +44,9 @@ class AddContactsTableViewCell: UITableViewCell {
             } else {
                 self.refUser.child(self.my_id).child("Friends").child(self.friend_id).setValue(self.Name.text)
                 self.refUser.child(self.friend_id).child("Friends").child(self.my_id).setValue(self.my_name)
+                let key = self.refInvitation.child(self.friend_id).childByAutoId()
+                let newMessage = ["senderId": self.my_id, "senderName": self.my_name, "text": " added you as a contact on pInspire", "seen": false] as [String : Any]
+                key.setValue(newMessage)
                 self.delegate?.didAddContact(self)
             }
         })

@@ -114,7 +114,7 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
             if message == nil || message == "" {
                 message = "The poll \"" + poll.question + "\" is so interesting, let's chat about it ONLINE!"
             } else {
-                message = message! + " Let's chat about it ONLINE!"
+                message = message!
             }
             let _ = self.createGroupIdToDatabase(for: members, from: poll, message: message!)
             self.tabBarController!.selectedIndex = 3
@@ -128,7 +128,7 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
             } else {
                 message = message! + " Let's chat about it OFFLINE!"
             }
-            self.createInvitationToDatabase(from: (self.user?.userId)!, to: members_without_self, message: message!)
+            self.createInvitationToDatabase(from: (self.user?.userId)!, to: members_without_self, message: message!, pollQuestion: poll.question, names: members_without_self_name.joined(separator: ", "))
             let alert = UIAlertController(title: "Invitations Sent!", message: "", preferredStyle: .alert)
             self.present(alert, animated: true, completion: nil)
             // Hide in 2 seconds
@@ -172,7 +172,7 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
             } else {
                 message = "Reporting poll " + poll.Id + " " + poll.question + " because \"" + message! + "\""
             }
-            self.createInvitationToDatabase(from: (self.user?.userId)!, to: administrators, message: message!)
+            self.createInvitationToDatabase(from: (self.user?.userId)!, to: administrators, message: message!, pollQuestion: nil, names: nil)
             let alert = UIAlertController(title: "Report Message Sent!", message: "", preferredStyle: .alert)
             self.present(alert, animated: true, completion: nil)
             // Hide in 2 seconds
@@ -227,10 +227,16 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
         return itemRef.key
     }
     
-    private func createInvitationToDatabase(from sender: String, to receivers: [String], message: String) {
+    private func createInvitationToDatabase(from sender: String, to receivers: [String], message: String, pollQuestion: String?, names: String?) {
         for receiver in receivers{
             let key = refInvitation.child(receiver).childByAutoId()
             let newMessage = ["senderId": user!.userId, "senderName": userName!, "text": message, "seen": false] as [String : Any]
+            key.setValue(newMessage)
+        }
+        if pollQuestion != nil && names != nil{
+            let key = refInvitation.child(sender).childByAutoId()
+            let text = "You have invited " + names! + " to discuss OFFLINE about the poll \"" + pollQuestion! + "\""
+            let newMessage = ["senderId": user!.userId, "senderName": "", "text": text, "seen": false] as [String : Any]
             key.setValue(newMessage)
         }
     }

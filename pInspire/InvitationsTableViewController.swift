@@ -43,7 +43,7 @@ class InvitationsTableViewController: UITableViewController {
                 let invitationId = invitation.key
                 if let info = invitation.value as? [String: AnyObject], let name = info["senderName"] as? String, let text = info["text"] as? String, let senderId = info["senderId"] as? String,
                     let hasSeen = info["seen"] as? Bool {
-                    let newText = name + ": " + text
+                    let newText = name == "" ? text : name + ": " + text
                     let newInvitation = Invitation(text: newText, hasSeen: hasSeen, senderId: senderId, invitationId: invitationId)
                     self.invitationMessages.append(newInvitation)
                 }
@@ -73,9 +73,9 @@ class InvitationsTableViewController: UITableViewController {
         return 1
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Offline Invitations"
-    }
+//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return "Offline Invitations"
+//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return invitationMessages.count

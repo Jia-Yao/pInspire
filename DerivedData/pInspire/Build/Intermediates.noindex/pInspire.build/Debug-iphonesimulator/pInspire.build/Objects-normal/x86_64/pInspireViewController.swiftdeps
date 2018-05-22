@@ -19,6 +19,8 @@ provides-dynamic-lookup:
 - "viewDidLoad"
 depends-top-level:
 - !private "!"
+- !private "!="
+- !private "&&"
 - !private "+"
 - !private "+="
 - !private "-"
@@ -3723,4 +3725,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/MapKit.framework/Headers/MapKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
-interface-hash: "981a4d2a71e770129f6048f9723e6189"
+interface-hash: "7d28170b99afe0e28d5a380436c28a8c"
