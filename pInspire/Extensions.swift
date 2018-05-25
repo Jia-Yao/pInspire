@@ -14,6 +14,28 @@ extension Int {
     }
 }
 
+extension String
+{
+    func replace(target: String, withString: String) -> String
+    {
+        return self.replacingOccurrences(of: target, with: withString, options: NSString.CompareOptions.literal, range: nil)
+    }
+}
+
+extension String
+{
+    func formatIntoValidFirebaseKeyString() -> String
+    {
+        var newStr = self
+        let invalidChars = ["#", "/", ".", "[", "]", "$"]
+        for invalidChar in invalidChars {
+            if self.contains(invalidChar) {
+                newStr = newStr.replace(target: invalidChar, withString:" ")
+            }
+        }
+        return newStr
+    }
+}
 extension Array {
     mutating func shuffle() {
         var last = count - 1

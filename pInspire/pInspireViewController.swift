@@ -201,17 +201,20 @@ class pInspireViewController: UITableViewController, pInspireTableViewCellDelega
     private func selectDiscussionMembers(from poll: Poll) -> [String: Bool] {
         var members = poll.visibleVotedUserIds
         members.remove(at: members.index(of: user!.userId)!)
+        
         members.shuffle()
+        
         let selectNumOfMembers = min(Constants.chatMemberUpperLimit, poll.numOfVisibleVotedUsers)
         var selectedDict = [String: Bool]()
         for memberId in Array(members[0..<selectNumOfMembers]) {
-            selectedDict[memberId] = false
+            selectedDict[memberId] = true
         }
         selectedDict.updateValue(true, forKey: user!.userId)
         return selectedDict
         
-        /* while (members.count < Constants.chatMemberUpperLimit) && (members.count < (poll?.numOfVisibleVotedUsers)!) {
-         Can do some smarter way here.
+        /*while (members.count < Constants.chatMemberUpperLimit) && (members.count < (poll?.numOfVisibleVotedUsers)!) {
+         // Can do some smarter way here.
+            
          }*/
     }
 

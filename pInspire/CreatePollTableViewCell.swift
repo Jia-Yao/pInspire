@@ -23,7 +23,7 @@ class CreatePollTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if let view = self.viewControllerForTableView as? CreatePollViewController{
-            view.updateDoneButtonState()
+            // view.updateDoneButtonState()
         }
         return true
     }

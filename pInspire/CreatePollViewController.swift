@@ -13,7 +13,6 @@ import Firebase
 class CreatePollViewController: UIViewController, UITextViewDelegate, UITableViewDelegate, UITableViewDataSource {
 
     //MARK: Properties
-    
     @IBOutlet weak var bottomHeight: NSLayoutConstraint!
     @IBOutlet weak var doneButton: UIButton! {
         didSet{
@@ -167,19 +166,7 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
             } else {
                 Analytics.logEvent("create_poll_post_public", parameters: ["user": user!.userId, "time": getCurrentTime()])
             }
-            for row in 0..<choices.count {
-                let indexPath = IndexPath(row: row, section: 0)
-                guard let cell = choicesTable.cellForRow(at: indexPath) as? CreatePollTableViewCell else {
-                    fatalError("The referenced cell is not an instance of CreatePollTableViewCell.")
-                }
-                choices[row].content = cell.choiceContent.text ?? ""
-            }
-            
-//            print(question + " " + String(isAnonymous))
-//            for row in 0..<choices.count{
-//                print (String(row) + " " + choices[row].content)
-//            }
-            
+
             writeNewPoll(question: question, choices: choices, user: userName!, isAnonymous: isAnonymous)
         }
         dismiss(animated: true, completion: nil)
@@ -195,6 +182,7 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
             if let cell = choicesTable.cellForRow(at: indexPath) as? CreatePollTableViewCell {
                 if cell.choiceContent.text != "" {
                     nonEmptyChoices += 1
+                    choices[row].content = cell.choiceContent.text!
                 }
             }
         }
@@ -209,7 +197,8 @@ class CreatePollViewController: UIViewController, UITextViewDelegate, UITableVie
                 if ["0", "1", "2"].contains(choice.content) {
                     choicesDict[choice.content + "&&&&&&&&"] = ["dummy": false]
                 } else {
-                    choicesDict[choice.content] = ["dummy": false]
+                    let key = choice.content.formatIntoValidFirebaseKeyString()
+                    choicesDict[key] = ["dummy": false]
                 }
             }
         }
